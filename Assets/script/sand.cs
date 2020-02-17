@@ -1,0 +1,48 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class sand : MonoBehaviour {
+
+    int freeze_time = 0;
+    public GameObject stage;
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+        if(freeze_time>0)
+        {
+            freeze_time--;
+        }
+        else
+        {
+            freeze_time = 0;
+
+            Rigidbody rb = this.GetComponent<Rigidbody>();
+            rb.constraints = RigidbodyConstraints.None;
+        }
+		
+	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+
+        if (other.gameObject.CompareTag("rain"))
+        {
+            freeze_time = 100;
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+        }
+
+        if (other.gameObject.CompareTag("wall"))
+        {
+            freeze_time = 0;
+            rb.constraints = RigidbodyConstraints.None;
+        }
+    }
+}
