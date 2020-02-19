@@ -494,6 +494,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: back
       objectReference: {fileID: 0}
+    - target: {fileID: 1139142233710478, guid: e8ae307dbdba78043b72101de1b04132, type: 3}
+      propertyPath: m_TagString
+      value: wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610000011747956, guid: e8ae307dbdba78043b72101de1b04132, type: 3}
+      propertyPath: m_TagString
+      value: wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745923724257770, guid: e8ae307dbdba78043b72101de1b04132, type: 3}
+      propertyPath: m_TagString
+      value: wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4053720479984330, guid: e8ae307dbdba78043b72101de1b04132, type: 3}
       propertyPath: m_RootOrder
       value: 10

@@ -5,7 +5,7 @@ using UnityEngine;
 public class sand : MonoBehaviour {
 
     int freeze_time = 0;
-    public GameObject stage;
+  
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +26,16 @@ public class sand : MonoBehaviour {
             Rigidbody rb = this.GetComponent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.None;
         }
-		
-	}
+
+        Transform tra = this.transform;
+
+        //削除処理
+        if (tra.position.y < -5)
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
