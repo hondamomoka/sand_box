@@ -268,6 +268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rain_manager (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1867333760205286, guid: 8a5ceabe4541587479f238f67d8a9ba8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4125068233840950, guid: 8a5ceabe4541587479f238f67d8a9ba8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.891896
@@ -396,6 +400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rain_manager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1867333760205286, guid: 8a5ceabe4541587479f238f67d8a9ba8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4125068233840950, guid: 8a5ceabe4541587479f238f67d8a9ba8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.69
@@ -437,6 +445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1867333760205286, guid: 8a5ceabe4541587479f238f67d8a9ba8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4125068233840950, guid: 8a5ceabe4541587479f238f67d8a9ba8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.76
