@@ -22,12 +22,6 @@ public class rain : MonoBehaviour
     {
         Transform tra = this.transform;
 
-        Vector3 pos = tra.position;
-        //pos.y += -0.2f;
-
-        //tra.position = pos;
-
-
         //削除処理
         if (tra.position.y<-5)
         {

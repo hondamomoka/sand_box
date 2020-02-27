@@ -11,11 +11,11 @@ public class create_sand : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        obj_sand = new GameObject[500];
+        obj_sand = new GameObject[400];
         float count = -2.8f;
         float y = 0.0f;
 
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < 400; i++)
         {
             obj_sand[i] = Instantiate(sand, new Vector3(count, y, -0.1f), Quaternion.identity);
 
