@@ -19,7 +19,7 @@ public class create_sand : MonoBehaviour {
         {
             obj_sand[i] = Instantiate(sand, new Vector3(count, y, -0.1f), Quaternion.identity);
 
-            obj_sand[i].transform.parent = GameObject.Find("stage").transform;
+            obj_sand[i].transform.parent = GameObject.Find("stage_2").transform;
 
             count += 0.1f;
 
