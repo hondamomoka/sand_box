@@ -8,14 +8,6 @@ TagManager:
   - player
   - wall
   - rain
-  - water
-<<<<<<< HEAD
-  - sands
-  - door
-  - stage
-  - swich
-  - wall_swich
->>>>>>> origin/master
   layers:
   - Default
   - TransparentFX
@@ -25,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Wall_Alpha
-  - Player
+  - 
+  - 
+  - 
   - 
   - 
   - 
