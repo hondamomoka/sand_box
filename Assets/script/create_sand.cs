@@ -7,13 +7,13 @@ public class create_sand : MonoBehaviour {
 
     public GameObject sand;
     GameObject[] obj_sand;
-    public float x;
-    public float y;
+    float x;
+    float y;
     // Use this for initialization
     void Start()
     {
         obj_sand = new GameObject[400];
-        float count = -2.8f;
+       // float count = -2.8f;
        // float y = 0.0f;
 
         Transform mytra = this.transform;
@@ -21,16 +21,16 @@ public class create_sand : MonoBehaviour {
         Vector3 size = mytra.localScale;
         Vector3 pos = mytra.position;
 
-        x= pos.x - (size.x / 2);
-        y= pos.y - (size.y / 2);
+        x= pos.x - (size.x / 2.0f);
+        y= pos.y - (size.y / 2.0f);
 
-        for (int j = 0; j < (int)size.y * 10; j++)
+        for (int j = 0; j < (int)(size.y * 10.0f); j++)
         {
-            for (int i = 0; i < (int)size.x * 10; i++)
+            for (int i = 0; i < (int)(size.x * 10.0f); i++)
             {
-                obj_sand[i] = Instantiate(sand, new Vector3(x + ((float)i / 10), y + ((float)j / 10), -0.1f), Quaternion.identity);
+                obj_sand[i] = Instantiate(sand, new Vector3(x + ((float)i / 10.0f), y + ((float)j / 10.0f), -0.1f), Quaternion.identity);
 
-                obj_sand[i].transform.parent = GameObject.Find("stage_2").transform;
+                obj_sand[i].transform.parent = GameObject.Find("stage").transform;
 
                 //count += 0.1f;
 
