@@ -48,18 +48,6 @@ public class sand_float : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        Rigidbody rb = this.GetComponent<Rigidbody>();
-
-        if (other.gameObject.CompareTag("water"))
-        {
-            float_time = 300;
-            //rb.constraints = RigidbodyConstraints.FreezePositionX;
-            //rb.constraints = RigidbodyConstraints.FreezePositionZ;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();
