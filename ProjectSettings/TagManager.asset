@@ -8,6 +8,11 @@ TagManager:
   - player
   - wall
   - rain
+  - sands
+  - door
+  - swich
+  - wall_swich
+  - water
   layers:
   - Default
   - TransparentFX
