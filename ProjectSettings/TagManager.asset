@@ -9,6 +9,9 @@ TagManager:
   - wall
   - rain
   - water
+  - stage
+  - swich
+  - wall_swich
   layers:
   - Default
   - TransparentFX
