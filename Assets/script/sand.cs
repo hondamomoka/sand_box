@@ -46,6 +46,11 @@ public class sand : MonoBehaviour {
             freeze_time = 100;
             rb.constraints = RigidbodyConstraints.FreezePosition;
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    { 
+        Rigidbody rb = this.GetComponent<Rigidbody>();
 
         if (other.gameObject.CompareTag("wall"))
         {
