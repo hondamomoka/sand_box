@@ -49,7 +49,8 @@ public class sand : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other)
-    { 
+    {
+       
         Rigidbody rb = this.GetComponent<Rigidbody>();
 
         if (other.gameObject.CompareTag("wall"))

@@ -12,6 +12,8 @@ public class rotation : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, 0, -1.0f);
@@ -22,6 +24,17 @@ public class rotation : MonoBehaviour {
         {
             transform.Rotate(0, 0, 1.0f);
         }
- 
+
+        //右９０度
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.Rotate(0, 0, 90.0f);
+        }
+
+        //左９０度
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            transform.Rotate(0, 0, -90.0f);
+        }
     }
 }
