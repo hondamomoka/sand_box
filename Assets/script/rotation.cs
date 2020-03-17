@@ -26,7 +26,7 @@ public class rotation : MonoBehaviour {
         }
 
         //右９０度
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             transform.Rotate(0, 0, 90.0f);
         }

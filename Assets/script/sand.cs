@@ -15,7 +15,12 @@ public class sand : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(freeze_time>0)
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+        Transform tra = this.transform;
+
+      
+
+        if (freeze_time>0)
         {
             freeze_time--;
         }
@@ -23,11 +28,11 @@ public class sand : MonoBehaviour {
         {
             freeze_time = 0;
 
-            Rigidbody rb = this.GetComponent<Rigidbody>();
+           
             rb.constraints = RigidbodyConstraints.None;
         }
 
-        Transform tra = this.transform;
+       
 
         //削除処理
         if (tra.position.y < -5)
