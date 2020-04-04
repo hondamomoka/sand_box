@@ -26,7 +26,7 @@ public class CreateSandsKyo : MonoBehaviour
                                       sandscreater.position.y - sands.transform.localScale.y * i / col,
                                       //-Random.Range(sandscreater.position.z + sands.transform.localScale.z / 2, 1 - sands.transform.localScale.z / 2));
                                       -1.5f);
-        obj_sands[i] = Instantiate(sands, pos, Quaternion.identity);
+            obj_sands[i] = Instantiate(sands, pos, Quaternion.identity);
             obj_sands[i].transform.parent = GameObject.Find("Stage").transform;
         }
     }
