@@ -7,6 +7,7 @@ public class CreateSandsKyo : MonoBehaviour
     public  GameObject sands;   // 発生するオブジェクト
     public  int        line;    // 発生するオブジェクトの行数
     public  int        col;     // 発生するオブジェクトの列数
+    public  string     stage;
     //public  int        num;     // 発生するオブジェクトの総数
 
     GameObject[] obj_sands;    // 生成されたオブジェクトを格納する行列
@@ -27,7 +28,7 @@ public class CreateSandsKyo : MonoBehaviour
                                       //-Random.Range(sandscreater.position.z + sands.transform.localScale.z / 2, 1 - sands.transform.localScale.z / 2));
                                       -1.5f);
             obj_sands[i] = Instantiate(sands, pos, Quaternion.identity);
-            obj_sands[i].transform.parent = GameObject.Find("Stage").transform;
+            obj_sands[i].transform.parent = GameObject.Find(stage).transform;
         }
     }
 
