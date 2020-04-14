@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swich : MonoBehaviour
+public class swich_A : MonoBehaviour
 {
     public GameObject wall;
-    public int count = 0;
+    int count = 0;
     bool on = false;
 
     // Start is called before the first frame update
