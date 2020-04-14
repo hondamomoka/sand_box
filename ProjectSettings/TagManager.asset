@@ -13,6 +13,7 @@ TagManager:
   - swich
   - wall_swich
   - water
+  - zoom
   layers:
   - Default
   - TransparentFX
