@@ -4,68 +4,40 @@ using UnityEngine;
 
 public class Blance : MonoBehaviour
 {
-    public float rot = 0.0f;
-    public int stay_count = 0;
-    bool tf = false;
+    
+    int stay_count = 0;  //回転までのカウント
+    bool tf = false;            //回転on off
+    float rot_count = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (rot != 0.0f)
-        //{
-        //    if (rot < 0.0f)
-        //    {
-        //        transform.Rotate(0.0f, 0.0f, -rot);
-        //        rot = 0.0f;
-        //    }
-        //    else
-        //    {
-        //        transform.Rotate(0.0f, 0.0f, rot);
-        //        rot = 0.0f;
-        //    }
-        //}
-
         //回転処理
-
-        //stay_count--;
 
         Transform tra = this.transform;
         Vector3 Angle = tra.eulerAngles;
+       
 
-        //if (stay_count < 0)
-        //{
-        //    stay_count = 0;
-
-        //    if (Angle.z < 0)
-        //    {
-        //        rot -= 0.2f;
-
-        //        if(rot<0.0f)
-        //        {
-        //            rot = 0.0f;
-        //        }
-        //    }
-        //    else if (Angle.z > 0)
-        //    {
-        //        rot += 0.2f;
-
-        //        if(rot>0.0f)
-        //        {
-        //            rot = 0.0f;
-        //        }
-        //    }
-        //}
-
-        if(stay_count>30)
+        if(tf==true)
         {
-            stay_count = 0;
-            Angle.z += 45.0f;
+            Angle.z += 1.0f;
+            rot_count += 1.0f;
+
+             if (rot_count>=45.0f)
+            {
+                rot_count = 0.0f;
+               
+                tf = false;
+                stay_count = 0;
+            }
+
             tra.eulerAngles = Angle;
         }
 
@@ -80,22 +52,18 @@ public class Blance : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-       
-        Transform tra = this.transform;
-        Vector3 pos = tra.position;
 
-        if (collision.gameObject.CompareTag("sand"))
+        if (!tf)
         {
-            //if(collision.transform.position.x-pos.x<0.0f)
-            //{
-            //    rot += 0.01f;
-            //}
-            //else if (collision.transform.position.x - pos.x > 0.0f)
-            //{
-            //    rot -= 0.01f;
-            //}
+            if (collision.gameObject.CompareTag("sand"))
+            {
+                stay_count += 1;
 
-            stay_count += 1;
+                if (stay_count > 30)
+                {
+                    tf = true;
+                }
+            }
         }
     }
 }
