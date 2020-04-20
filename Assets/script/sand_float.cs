@@ -41,9 +41,6 @@ public class sand_float : MonoBehaviour
         else
         {
             float_time = 0;
-
-            //Rigidbody rb = this.GetComponent<Rigidbody>();
-            //rb.constraints = RigidbodyConstraints.None;
         }
 
         Transform tra = this.transform;

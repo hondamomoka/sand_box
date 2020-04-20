@@ -5,11 +5,13 @@ using UnityEngine;
 public class sand : MonoBehaviour {
 
     int freeze_time = 0;
-  
+    public int float_time = 0;
+    public int type = 0;//0;normal 1:float
 
-	// Use this for initialization
-	void Start () {
-		
+    public Material[] material;
+
+    // Use this for initialization
+    void Start () {
 	}
 	
 	// Update is called once per frame
@@ -18,24 +20,49 @@ public class sand : MonoBehaviour {
         Rigidbody rb = this.GetComponent<Rigidbody>();
         Transform tra = this.transform;
 
-      
+        
 
-        if (freeze_time>0)
+        //normal_ver
+        if (type == 0)
         {
-            freeze_time--;
+            if (freeze_time > 0)
+            {
+                freeze_time--;
+            }
+            else
+            {
+                freeze_time = 0;
+
+
+                rb.constraints = RigidbodyConstraints.None;
+            }
         }
+        //float_ver
         else
         {
-            freeze_time = 0;
+            if (float_time > 0)
+            {
+                float_time--;
 
-           
-            rb.constraints = RigidbodyConstraints.None;
+                Vector3 add = new Vector3(0.0f, 3.0f, 0.0f);
+
+                rb.AddForce(add);
+
+            }
+            //float_timeが終わったら元のsandに戻す
+            else
+            {
+                float_time = 0;
+                type = 0;
+                this.gameObject.layer = 8;
+                this.GetComponent<Renderer>().material = material[type];
+                rb.mass = 1.0f;
+            }
         }
-
-       
+    
 
         //削除処理
-        if (tra.position.y < -5)
+        if (tra.position.y < -10)
         {
             Destroy(this.gameObject);
         }
@@ -46,12 +73,35 @@ public class sand : MonoBehaviour {
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();
 
-        if (other.gameObject.CompareTag("rain"))
+        if(type==0)
         {
-            freeze_time = 100;
-            rb.constraints = RigidbodyConstraints.FreezePosition;
+            if (other.gameObject.CompareTag("rain"))
+            {
+                freeze_time = 100;
+                rb.constraints = RigidbodyConstraints.FreezePosition;
+            }
+            //windに当たった場合ｘ秒間自身をsand_floatに変える
+            else if (other.gameObject.CompareTag("wind"))
+            {
+                //レイヤーをsand_floatに変える
+                this.gameObject.layer = 9;
+                type = 1;
+                float_time = 300;
+                this.GetComponent<Renderer>().material = material[type];
+                rb.mass = 0.2f;
+               
+            }
+        }
+        else
+        {
+            if (other.gameObject.CompareTag("rain"))
+            {
+                float_time = 300;
+            }
         }
     }
+
+    
 
     private void OnCollisionEnter(Collision other)
     {

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 135165670996217168}
   - component: {fileID: 54440483108481282}
   - component: {fileID: 114000040337402642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sand
-  m_TagString: sand
+  m_TagString: sand_normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb88d58109c7c24eb5760fdaeb5a6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  float_time: 0
+  material:
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}

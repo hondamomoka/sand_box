@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - sand
   - player
   - wall
   - rain
@@ -14,6 +13,10 @@ TagManager:
   - wall_swich
   - water
   - zoom
+  - sand_normal
+  - sand_float
+  - sand
+  - wind
   layers:
   - Default
   - TransparentFX
@@ -23,9 +26,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - sand_normal
+  - sand_float
+  - join_float
   - 
   - 
   - 
