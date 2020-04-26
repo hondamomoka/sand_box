@@ -7,7 +7,10 @@ public class CreateSandsKyo : MonoBehaviour
     public  GameObject sands;   // 発生するオブジェクト
     public  int        line;    // 発生するオブジェクトの行数
     public  int        col;     // 発生するオブジェクトの列数
+    public  float      size;
     public  string     stage;
+    public  Material   mat;
+    public  string     sands_layer;
     //public  int        num;     // 発生するオブジェクトの総数
 
     GameObject[] obj_sands;    // 生成されたオブジェクトを格納する行列
@@ -21,14 +24,33 @@ public class CreateSandsKyo : MonoBehaviour
         obj_sands = new GameObject[num];
         sandscreater = GetComponent<Transform>();
 
+        if(size == 0)
+        {
+            size = sands.transform.localScale.x;
+        }
+
         for (int i = 0; i < num; i++)
         {
-            Vector3 pos = new Vector3(sandscreater.position.x - (col - 1) / 2 * sands.transform.localScale.x + (i % col) * sands.transform.localScale.x,
-                                      sandscreater.position.y - sands.transform.localScale.y * i / col,
-                                      //-Random.Range(sandscreater.position.z + sands.transform.localScale.z / 2, 1 - sands.transform.localScale.z / 2));
-                                      -1.5f);
+            Vector3 pos = new Vector3(sandscreater.position.x - (col - 1) / 2 * size + (i % col) * size,
+                                      sandscreater.position.y - size * i / col,
+                                      sandscreater.position.z);
+            //Vector3 pos = new Vector3(sandscreater.position.x - (col - 1) / 2 * sands.transform.localScale.x + (i % col) * sands.transform.localScale.x,
+            //                          sandscreater.position.y - sands.transform.localScale.y * i / col,
+            //                          //-Random.Range(sandscreater.position.z + sands.transform.localScale.z / 2, 1 - sands.transform.localScale.z / 2));
+            //                          -1.5f);
             obj_sands[i] = Instantiate(sands, pos, Quaternion.identity);
             obj_sands[i].transform.parent = GameObject.Find(stage).transform;
+            obj_sands[i].transform.localScale = new Vector3(size, size, size);
+
+            if(mat != null)
+            {
+                obj_sands[i].GetComponent<Renderer>().sharedMaterial = mat;
+            }
+
+            if(sands_layer != null)
+            {
+                obj_sands[i].layer = LayerMask.NameToLayer(sands_layer);
+            }
         }
     }
 

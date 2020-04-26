@@ -41,4 +41,24 @@ public class SetUpObjects : MonoBehaviour
     {
         GetComponent<Transform>().transform.Translate(pos, Space.Self);
     }
+
+    void Set_Material(Material m)
+    {
+        gameObject.GetComponent<Renderer>().sharedMaterial = m;
+    }
+
+    //void Set_Layer(LayerMask lm)
+    //{
+    //    gameObject.layer = lm;
+    //}
+
+    void Set_Layer(string lm)
+    {
+        gameObject.layer = LayerMask.NameToLayer(lm);
+    }
+
+    //void Set_Layer(int lm)
+    //{
+    //    gameObject.layer = lm;
+    //}
 }

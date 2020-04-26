@@ -17,6 +17,8 @@ TagManager:
   - sand_float
   - sand
   - wind
+  - player_switch
+  - wall_alpha
   layers:
   - Default
   - TransparentFX
@@ -32,11 +34,11 @@ TagManager:
   - hool
   - player
   - shutter
-  - 
-  - 
-  - 
-  - 
-  - 
+  - wall_through_player
+  - wall_through_sands
+  - sands_red
+  - sands_yellow
+  - wall_alpha
   - 
   - 
   - 
