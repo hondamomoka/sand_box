@@ -19,6 +19,8 @@ TagManager:
   - wind
   - player_switch
   - wall_alpha
+  - distination
+  - move_cube
   layers:
   - Default
   - TransparentFX
