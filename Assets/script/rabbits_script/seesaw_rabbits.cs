@@ -39,7 +39,7 @@ public class seesaw_rabbits : MonoBehaviour
             {
                 if(rot<rot_max)
                 {
-                    transform.Rotate(0, 0, -1.0f);
+                    transform.Rotate(0, 0, -0.2f);
                 }
                 else
                 {
@@ -47,7 +47,7 @@ public class seesaw_rabbits : MonoBehaviour
                     gear1.stop = true;
                     gear2.stop = true;
                 }
-                rot++;
+                rot+=0.2f;
             }
         }
     }
