@@ -33,8 +33,19 @@ public class Scene_Manager : MonoBehaviour
                 //難易度選択画面
             case "Selects":
                 if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("stage_uni");
                 if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+                    SceneManager.LoadScene("stage_dolphin");
+                if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+                    SceneManager.LoadScene("stage_rabbits");
+                if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
+                    SceneManager.LoadScene("stage_jellyfish");
+                if (Input.GetKeyDown(KeyCode.Keypad5) || Input.GetKeyDown(KeyCode.Alpha5))
+                    SceneManager.LoadScene("stage_cobra");
+                if (Input.GetKeyDown(KeyCode.Keypad6) || Input.GetKeyDown(KeyCode.Alpha6))
+                    SceneManager.LoadScene("stage_turtle");
+
+                if (Input.GetKeyDown(KeyCode.Keypad7) || Input.GetKeyDown(KeyCode.Alpha7))
                     SceneManager.LoadScene("Title");
                 break;
                 //操作説明画面
@@ -54,13 +65,18 @@ public class Scene_Manager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
                     SceneManager.LoadScene("Selects");
                 break;
-                //ゲーム画面
-            case "SampleScene":
-                //Yでポーズ画面へ遷移できるが内容が初期化されてしまう
-                if (Input.GetKeyDown(KeyCode.Y))
-                    SceneManager.LoadScene("Menu");
-                break;
+            //    //ゲーム画面
+            //case "SampleScene":
+            //    //Yでポーズ画面へ遷移できるが内容が初期化されてしまう
+            //    if (Input.GetKeyDown(KeyCode.Y))
+            //        SceneManager.LoadScene("Menu");
+            //    break;
+
+            //ゲーム画面
             default:
+                if (Input.GetKeyDown(KeyCode.Y))
+                    SceneManager.LoadScene("Selects");
+
                 break;
         }
     }

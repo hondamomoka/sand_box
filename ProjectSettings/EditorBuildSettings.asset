@@ -23,4 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Selects.unity
     guid: 421e134b7e80cfb428e6550495b4a0b6
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_uni.unity
+    guid: e05d2ce3f87d54742bd48f4507cb489b
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_turtle.unity
+    guid: e84944317008b2a4e8996c45cfdcf89c
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_rabbits.unity
+    guid: 0b40bec35c3ddd84bae5d8d08ce1d3b1
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_jellyfish.unity
+    guid: 31c00c2e38ffb044e9f784f8bfe421f6
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_dolphin.unity
+    guid: bf2812c99ad2e7249b81768303a077d0
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_cobra.unity
+    guid: 4b8225d11bf5b7f46a500059f188f044
   m_configObjects: {}
