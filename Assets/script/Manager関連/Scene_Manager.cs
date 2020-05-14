@@ -30,22 +30,51 @@ public class Scene_Manager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
                     Quit();
                 break;
-                //難易度選択画面
+                //ステージ選択画面
             case "Selects":
-                if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.A))
+                    SceneManager.LoadScene("stage_volbox");
+                if (Input.GetKeyDown(KeyCode.B))
                     SceneManager.LoadScene("stage_uni");
-                if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.C))
                     SceneManager.LoadScene("stage_dolphin");
-                if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.D))
                     SceneManager.LoadScene("stage_rabbits");
-                if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
+                if (Input.GetKeyDown(KeyCode.E))
                     SceneManager.LoadScene("stage_jellyfish");
-                if (Input.GetKeyDown(KeyCode.Keypad5) || Input.GetKeyDown(KeyCode.Alpha5))
+                if (Input.GetKeyDown(KeyCode.F))
                     SceneManager.LoadScene("stage_cobra");
-                if (Input.GetKeyDown(KeyCode.Keypad6) || Input.GetKeyDown(KeyCode.Alpha6))
+                if (Input.GetKeyDown(KeyCode.G))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.H))
+                    SceneManager.LoadScene("stage_pig");
+                if (Input.GetKeyDown(KeyCode.I))
+                    SceneManager.LoadScene("stage_gorira");
+                if (Input.GetKeyDown(KeyCode.J))
+                    SceneManager.LoadScene("stage_risu");
+                if (Input.GetKeyDown(KeyCode.K))
+                    SceneManager.LoadScene("stage_shell");
+                if (Input.GetKeyDown(KeyCode.L))
+                    SceneManager.LoadScene("stage_clione");
+                if (Input.GetKeyDown(KeyCode.M))
+                    SceneManager.LoadScene("stage_cattle");
+                if (Input.GetKeyDown(KeyCode.N))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.O))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.P))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.Q))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.R))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.S))
+                    SceneManager.LoadScene("stage_turtle");
+                if (Input.GetKeyDown(KeyCode.T))
                     SceneManager.LoadScene("stage_turtle");
 
-                if (Input.GetKeyDown(KeyCode.Keypad7) || Input.GetKeyDown(KeyCode.Alpha7))
+                //タイトルへ戻る
+                if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
                     SceneManager.LoadScene("Title");
                 break;
                 //操作説明画面
