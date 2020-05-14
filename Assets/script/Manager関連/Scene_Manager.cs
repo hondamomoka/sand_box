@@ -65,12 +65,6 @@ public class Scene_Manager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
                     SceneManager.LoadScene("Selects");
                 break;
-            //    //ゲーム画面
-            //case "SampleScene":
-            //    //Yでポーズ画面へ遷移できるが内容が初期化されてしまう
-            //    if (Input.GetKeyDown(KeyCode.Y))
-            //        SceneManager.LoadScene("Menu");
-            //    break;
 
             //ゲーム画面
             default:
