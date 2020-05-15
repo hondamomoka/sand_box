@@ -6,6 +6,10 @@ public class crab_manager : MonoBehaviour
 {
     public switch_crab sw0;
     public switch_crab sw1;
+    public switch_crab sw2;
+    public switch_crab sw3;
+    public switch_crab sw4;
+    public switch_crab sw5;
     public bool on;
     public GameObject scissor1;
     public GameObject scissor2;
@@ -35,6 +39,13 @@ public class crab_manager : MonoBehaviour
                 scissor2.layer = 11;
                 scissor3.layer = 11;
                 scissor4.layer = 11;
+
+                sw0.delete();
+                sw1.delete();
+                sw2.delete();
+                sw3.delete();
+                sw4.delete();
+                sw5.delete();
             }
         }
       

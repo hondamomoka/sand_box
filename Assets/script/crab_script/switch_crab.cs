@@ -11,7 +11,7 @@ public class switch_crab : MonoBehaviour
     public GameObject kani;
     public switch_crab sw1;
     public switch_crab sw2;
-
+    bool end;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,23 +20,29 @@ public class switch_crab : MonoBehaviour
         Vector3 size = mytra.localScale;
 
         max_count = (int)(size.x * size.y * 100);
+        end = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!on)
+        if(!end)
         {
-            if (count > max_count)
+            if (!on)
             {
-                kani.GetComponent<Renderer>().material = material[1];
-                this.GetComponent<Renderer>().material = material[0];
-                on = true;
-                count = 0;
-                sw1.sw_on();
-                sw2.sw_on();
+                if (count > max_count)
+                {
+                    kani.GetComponent<Renderer>().material = material[1];
+                    this.GetComponent<Renderer>().material = material[0];
+                    on = true;
+                    count = 0;
+                    sw1.sw_on();
+                    sw2.sw_on();
+                }
             }
         }
+
+        
         
     }
 
@@ -64,5 +70,11 @@ public class switch_crab : MonoBehaviour
     {
         on = false;
         this.GetComponent<Renderer>().material = material[2];
+    }
+
+    public void delete()
+    {
+        end = true;
+        this.GetComponent<Renderer>().material = material[3];
     }
 }
