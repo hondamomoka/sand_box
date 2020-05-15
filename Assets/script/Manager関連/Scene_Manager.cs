@@ -59,17 +59,17 @@ public class Scene_Manager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.M))
                     SceneManager.LoadScene("stage_cattle");
                 if (Input.GetKeyDown(KeyCode.N))
-                    SceneManager.LoadScene("stage_turtle");
+                    SceneManager.LoadScene("stage_whale");
                 if (Input.GetKeyDown(KeyCode.O))
-                    SceneManager.LoadScene("stage_turtle");
+                    SceneManager.LoadScene("stage_crocodile");
                 if (Input.GetKeyDown(KeyCode.P))
-                    SceneManager.LoadScene("stage_turtle");
+                    SceneManager.LoadScene("stage_penguin");
                 if (Input.GetKeyDown(KeyCode.Q))
-                    SceneManager.LoadScene("stage_turtle");
+                    SceneManager.LoadScene("stage_snails");
                 if (Input.GetKeyDown(KeyCode.R))
-                    SceneManager.LoadScene("stage_turtle");
+                    SceneManager.LoadScene("stage_pigeon");
                 if (Input.GetKeyDown(KeyCode.S))
-                    SceneManager.LoadScene("stage_turtle");
+                    SceneManager.LoadScene("stage_crab");
                 if (Input.GetKeyDown(KeyCode.T))
                     SceneManager.LoadScene("stage_turtle");
 

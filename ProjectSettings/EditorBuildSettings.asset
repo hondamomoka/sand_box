@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 949bf81b8bc762547af1b067121f2b57
   - enabled: 1
@@ -62,4 +59,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage/stage_cattle.unity
     guid: a7f1d4964d373e340876bd23f230148a
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_snails.unity
+    guid: eee001d199970674ca8f1e8e17a7e390
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_pigeon.unity
+    guid: f5f08da68f1847f43afefafab5c885e0
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_penguin.unity
+    guid: 877068c347e26e8498aa613ea0d18eda
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_crocodile.unity
+    guid: fa8804e84698b89429b4bd7580c2bed4
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_whale.unity
+    guid: 04480c6cc2c68b240b27a0daaee01949
   m_configObjects: {}
