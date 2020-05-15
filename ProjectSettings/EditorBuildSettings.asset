@@ -41,4 +41,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage/stage_cobra.unity
     guid: 4b8225d11bf5b7f46a500059f188f044
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_volbox.unity
+    guid: cccb6631e7bb3a8438686439c5562586
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_shell.unity
+    guid: 438d2ab3cd274e84491e98faa123fe5d
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_risu.unity
+    guid: 8d724e33e6db26e40b7afcc2d4a8316c
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_pig.unity
+    guid: 2cabc67585a9784409217cff88ec797a
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_gorira.unity
+    guid: 9045f9eefb5f28949998e57903cd860a
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_clione.unity
+    guid: 043327f979aad4b498b4a0bedf74d3e5
+  - enabled: 1
+    path: Assets/Scenes/stage/stage_cattle.unity
+    guid: a7f1d4964d373e340876bd23f230148a
   m_configObjects: {}
