@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Clear_Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //何かのobjectに衝突した時の処理
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag == "player")
+        {
+            SceneManager.LoadScene("Selects");
+        }
     }
 }
