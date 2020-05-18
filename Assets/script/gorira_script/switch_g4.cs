@@ -24,7 +24,9 @@ public class switch_g4 : MonoBehaviour
             count = 0;
             this.GetComponent<Renderer>().material = material[0];
 
-            Destroy(wall);
+            //Wallの色をゴリラ色から黄（半透明）に
+            wall.layer = 14;
+            wall.GetComponent<Renderer>().material = material[1];
         }
     }
 
