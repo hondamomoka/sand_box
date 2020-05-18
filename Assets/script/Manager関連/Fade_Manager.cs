@@ -5,6 +5,7 @@ using UnityEngine.UI;     //UIを使用可能にする
 
 public class Fade_Manager : MonoBehaviour
 {
+    //canvasは残しておいて…
     public float speed = 0.01f;  //透明化の速さ
     float alfa;                  //A値を操作するための変数
     float red, green, blue;      //RGBを操作するための変数
@@ -15,7 +16,6 @@ public class Fade_Manager : MonoBehaviour
         red = GetComponent<Image>().color.r;
         green = GetComponent<Image>().color.g;
         blue = GetComponent<Image>().color.b;
-        Debug.Log("見えてる？");
     }
 
     void Update()
