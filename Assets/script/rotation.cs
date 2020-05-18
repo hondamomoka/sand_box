@@ -36,5 +36,15 @@ public class rotation : MonoBehaviour {
         {
             transform.Rotate(0, 0, -90.0f);
         }
+
+        if(Input.GetKey("joystick botton 4"))
+        {
+            transform.Rotate(0, 0, 1.0f);
+        }
+
+        if (Input.GetKey("joystick botton 5"))
+        {
+            transform.Rotate(0, 0, -1.0f);
+        }
     }
 }
