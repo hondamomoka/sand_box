@@ -221,6 +221,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925899232}
     m_Modifications:
+    - target: {fileID: 1273233001187109002, guid: 471254d4784582d4aa6c5e9009efcb59,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5832210282181147013, guid: 471254d4784582d4aa6c5e9009efcb59,
         type: 3}
       propertyPath: m_Name
@@ -1048,6 +1053,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: cb04ce3fab52fdc47938dc1a10546950, type: 2}
   g_cube: {fileID: 1574831837}
   switch0: {fileID: 1874222407}
+  switch_mesh:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &225350512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1528,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925899232}
     m_Modifications:
+    - target: {fileID: 1273233001187109002, guid: 471254d4784582d4aa6c5e9009efcb59,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 2705409013311302826, guid: 471254d4784582d4aa6c5e9009efcb59,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5832210282181147013, guid: 471254d4784582d4aa6c5e9009efcb59,
         type: 3}
       propertyPath: m_Name
@@ -4750,6 +4768,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: cb04ce3fab52fdc47938dc1a10546950, type: 2}
   g_cube: {fileID: 1297707593}
   g_cube3: {fileID: 670133899}
+  switch_mesh:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1622447103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,6 +4988,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: cb04ce3fab52fdc47938dc1a10546950, type: 2}
   g_cube: {fileID: 670133899}
   g_cube2: {fileID: 66489590}
+  switch_mesh:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1740003589
 GameObject:
   m_ObjectHideFlags: 0

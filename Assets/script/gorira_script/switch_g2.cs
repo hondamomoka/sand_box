@@ -8,6 +8,7 @@ public class switch_g2 : MonoBehaviour
     public GameObject g_cube;
    // public GameObject g_cube2;
     public GameObject g_cube3;
+    public Mesh[] switch_mesh;
 
     int count;
     int max_count;
@@ -38,6 +39,7 @@ public class switch_g2 : MonoBehaviour
                 //スイッチの色を変換：赤から黄
                 switch_type = 0;
                 this.GetComponent<Renderer>().material = material[0];
+                this.GetComponent<MeshFilter>().sharedMesh = switch_mesh[1];
 
                 //指定キューブの色を変換：黄から赤
                 //g_cube2.layer = 13;
@@ -60,6 +62,7 @@ public class switch_g2 : MonoBehaviour
                 //スイッチの色を黄から赤に
                 switch_type = 1;
                 this.GetComponent<Renderer>().material = material[1];
+                this.GetComponent<MeshFilter>().sharedMesh = switch_mesh[0];
 
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
