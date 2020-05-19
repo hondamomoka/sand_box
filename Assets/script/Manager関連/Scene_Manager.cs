@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
+    GameObject fadeManager;
+    Fade_Manager script;
+    public bool fadeIn;
+    public string fadeOut;
+
     void Quit()
     {
 #if UNITY_EDITOR
@@ -14,7 +19,16 @@ public class Scene_Manager : MonoBehaviour
 #endif
     }
 
-    // Update is called once per frame
+    void Awake()
+    {
+        fadeManager = GameObject.Find("Panel");
+        script = fadeManager.GetComponent<Fade_Manager>();
+
+        if(fadeIn != true)
+        fadeIn = false;
+        fadeOut = null;
+    }
+
     void Update()
     {
         switch(SceneManager.GetActiveScene().name)
@@ -22,83 +36,83 @@ public class Scene_Manager : MonoBehaviour
             //タイトル
             case "Title":
                 if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    SceneManager.LoadScene("Selects");
+                    fadeOut = "Selects";
                 if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
-                    SceneManager.LoadScene("Option");
+                    fadeOut = "Option";
                 if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
-                    SceneManager.LoadScene("Manual");
+                    fadeOut = "Manual";
                 if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
                     Quit();
                 break;
                 //ステージ選択画面
             case "Selects":
                 if (Input.GetKeyDown(KeyCode.A))
-                    SceneManager.LoadScene("stage_volbox");
+                    fadeOut = "stage_volbox";
                 if (Input.GetKeyDown(KeyCode.B))
-                    SceneManager.LoadScene("stage_uni");
+                    fadeOut = "stage_uni";
                 if (Input.GetKeyDown(KeyCode.C))
-                    SceneManager.LoadScene("stage_dolphin");
+                    fadeOut = "stage_dolphin";
                 if (Input.GetKeyDown(KeyCode.D))
-                    SceneManager.LoadScene("stage_rabbits");
+                    fadeOut = "stage_rabbits";
                 if (Input.GetKeyDown(KeyCode.E))
-                    SceneManager.LoadScene("stage_jellyfish");
+                    fadeOut = "stage_jellyfish";
                 if (Input.GetKeyDown(KeyCode.F))
-                    SceneManager.LoadScene("stage_cobra");
+                    fadeOut = "stage_cobra";
                 if (Input.GetKeyDown(KeyCode.G))
-                    SceneManager.LoadScene("stage_turtle");
+                    fadeOut = "stage_turtle";
                 if (Input.GetKeyDown(KeyCode.H))
-                    SceneManager.LoadScene("stage_pig");
+                    fadeOut = "stage_pig";
                 if (Input.GetKeyDown(KeyCode.I))
-                    SceneManager.LoadScene("stage_gorira");
+                    fadeOut = "stage_gorira";
                 if (Input.GetKeyDown(KeyCode.J))
-                    SceneManager.LoadScene("stage_risu");
+                    fadeOut = "stage_risu";
                 if (Input.GetKeyDown(KeyCode.K))
-                    SceneManager.LoadScene("stage_shell");
+                    fadeOut = "stage_shell";
                 if (Input.GetKeyDown(KeyCode.L))
-                    SceneManager.LoadScene("stage_clione");
+                    fadeOut = "stage_clione";
                 if (Input.GetKeyDown(KeyCode.M))
-                    SceneManager.LoadScene("stage_cattle");
+                    fadeOut = "stage_cattle";
                 if (Input.GetKeyDown(KeyCode.N))
-                    SceneManager.LoadScene("stage_whale");
+                    fadeOut = "stage_whale";
                 if (Input.GetKeyDown(KeyCode.O))
-                    SceneManager.LoadScene("stage_crocodile");
+                    fadeOut = "stage_crocodile";
                 if (Input.GetKeyDown(KeyCode.P))
-                    SceneManager.LoadScene("stage_penguin");
+                    fadeOut = "stage_penguin";
                 if (Input.GetKeyDown(KeyCode.Q))
-                    SceneManager.LoadScene("stage_snails");
+                    fadeOut = "stage_snails";
                 if (Input.GetKeyDown(KeyCode.R))
-                    SceneManager.LoadScene("stage_pigeon");
+                    fadeOut = "stage_pigeon";
                 if (Input.GetKeyDown(KeyCode.S))
-                    SceneManager.LoadScene("stage_crab");
+                    fadeOut = "stage_crab";
                 if (Input.GetKeyDown(KeyCode.T))
-                    SceneManager.LoadScene("stage_turtle");
+                    fadeOut = "stage_turtle";
 
                 //タイトルへ戻る
                 if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
-                    SceneManager.LoadScene("Title");
+                    fadeOut = "Title";
                 break;
                 //操作説明画面
             case "Manual":
                 if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    SceneManager.LoadScene("Title");
+                    fadeOut = "Title";
                 break;
                 //オプション画面
             case "Option":
                 if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    SceneManager.LoadScene("Title");
+                    fadeOut = "Title";
                 break;
                 //ゲーム中のポーズ画面
             case "Menu":
                 if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    SceneManager.LoadScene("SampleScene");
+                    fadeOut = "SampleScene";
                 if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
-                    SceneManager.LoadScene("Selects");
+                    fadeOut = "Selects";
                 break;
 
             //ゲーム画面
             default:
                 if (Input.GetKeyDown(KeyCode.Y))
-                    SceneManager.LoadScene("Selects");
+                    fadeOut = "Selects";
 
                 break;
         }
