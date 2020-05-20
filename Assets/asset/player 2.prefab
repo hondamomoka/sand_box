@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 798791973251779194}
   - component: {fileID: 2732673888767418093}
   - component: {fileID: 721164660141600214}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3639450885976574149}
   - component: {fileID: 8033732662987306719}
   - component: {fileID: 3210319859834580828}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,8 +201,8 @@ GameObject:
   - component: {fileID: 3218834376863415453}
   - component: {fileID: 7457846102592243286}
   - component: {fileID: 5167497758609228671}
-  m_Layer: 0
-  m_Name: Player 2
+  m_Layer: 12
+  m_Name: player 2
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 3705928291349066791}
   - component: {fileID: 6617576477268665606}
   - component: {fileID: 8017299591110892792}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pDisc1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 423325063217792099}
   - component: {fileID: 1528985068797928544}
   - component: {fileID: 3076174340366942173}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: typeMesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 1968312723098704170}
   - component: {fileID: 952394598799272274}
   - component: {fileID: 1976322478694401073}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: typeMesh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
