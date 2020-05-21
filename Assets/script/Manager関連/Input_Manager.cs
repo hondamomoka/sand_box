@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Input_Manager : MonoBehaviour
 {
+    private enum xBoxController : int
+    {
+
+    }
+
+
     void Update()
     {
-        if (Input.GetKeyDown("joystick button 0"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             Debug.Log("A");
-        if (Input.GetKeyDown("joystick button 1"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             Debug.Log("B");
         if (Input.GetKeyDown("joystick button 2"))
             Debug.Log("X");
@@ -25,7 +31,7 @@ public class Input_Manager : MonoBehaviour
         if (Input.GetKeyDown("joystick button 8"))
             Debug.Log("L Stick (押し込み)");
         if (Input.GetKeyDown("joystick button 9"))
-            Debug.Log("R Stick (押し込み)	");
+            Debug.Log("R Stick (押し込み)");
 
         //L Stick
         float lsh = Input.GetAxis("L_Stick_H");
@@ -60,10 +66,6 @@ public class Input_Manager : MonoBehaviour
         else if (tri < 0)
         {
             Debug.Log("R trigger:" + tri);
-        }
-        else
-        {
-            Debug.Log("  trigger:none");
         }
     }
 }
