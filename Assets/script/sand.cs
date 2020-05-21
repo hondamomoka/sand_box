@@ -9,10 +9,12 @@ public class sand : MonoBehaviour {
     public int type = 0;//0;normal 1:float
 
     public Material[] material;
+    Vector3 add;
 
     // Use this for initialization
     void Start () {
-	}
+        add = new Vector3(0.0f, 30.0f, 0.0f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,27 +40,27 @@ public class sand : MonoBehaviour {
             }
         }
         //float_ver
-        else
-        {
-            if (float_time > 0)
-            {
-                float_time--;
+        //else
+        //{
+        //    if (float_time > 0)
+        //    {
+        //        float_time--;
 
-                Vector3 add = new Vector3(0.0f, 3.0f, 0.0f);
+                
 
-                rb.AddForce(add);
+        //        rb.AddForce(add);
 
-            }
-            //float_timeが終わったら元のsandに戻す
-            else
-            {
-                float_time = 0;
-                type = 0;
-                this.gameObject.layer = 8;
-                this.GetComponent<Renderer>().material = material[type];
-                rb.mass = 1.0f;
-            }
-        }
+        //    }
+        //    //float_timeが終わったら元のsandに戻す
+        //    else
+        //    {
+        //        float_time = 0;
+        //        type = 0;
+        //        this.gameObject.layer = 8;
+        //        this.GetComponent<Renderer>().material = material[type];
+        //        rb.mass = 1.0f;
+        //    }
+        //}
     
 
         //削除処理
@@ -69,49 +71,64 @@ public class sand : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Rigidbody rb = this.GetComponent<Rigidbody>();
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Rigidbody rb = this.GetComponent<Rigidbody>();
 
-        if(type==0)
-        {
-            if (other.gameObject.CompareTag("rain"))
-            {
-                freeze_time = 100;
-                rb.constraints = RigidbodyConstraints.FreezePosition;
-            }
-            //windに当たった場合ｘ秒間自身をsand_floatに変える
-            else if (other.gameObject.CompareTag("wind"))
-            {
-                //レイヤーをsand_floatに変える
-                this.gameObject.layer = 9;
-                type = 1;
-                float_time = 300;
-                this.GetComponent<Renderer>().material = material[type];
-                rb.mass = 0.2f;
-               
-            }
-        }
-        else
-        {
-            if (other.gameObject.CompareTag("rain"))
-            {
-                float_time = 300;
-            }
-        }
-    }
+    //    if(type==0)
+    //    {
+    //        if (other.gameObject.CompareTag("rain"))
+    //        {
+    //            freeze_time = 100;
+    //            rb.constraints = RigidbodyConstraints.FreezePosition;
+    //        }
+    //        //windに当たった場合ｘ秒間自身をsand_floatに変える
+           
+    //    }
+    //    else
+    //    {
+    //        if (other.gameObject.CompareTag("rain"))
+    //        {
+    //            float_time = 300;
+    //        }
+    //    }
+    //}
 
     
 
-    private void OnCollisionEnter(Collision other)
-    {
+    //private void OnCollisionEnter(Collision other)
+    //{
        
-        Rigidbody rb = this.GetComponent<Rigidbody>();
+    //    Rigidbody rb = this.GetComponent<Rigidbody>();
 
-        if (other.gameObject.CompareTag("wall"))
+    //    if (other.gameObject.CompareTag("wall"))
+    //    {
+    //        freeze_time = 0;
+    //        rb.constraints = RigidbodyConstraints.None;
+    //    }
+    //}
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("wind"))
         {
-            freeze_time = 0;
-            rb.constraints = RigidbodyConstraints.None;
+            //レイヤーをsand_floatに変える
+            this.gameObject.layer = 9;
+            type = 1;
+            this.GetComponent<Renderer>().material = material[type];
+            //this.GetComponent<Rigidbody>().mass = 0.2f;
+            this.GetComponent<Rigidbody>().AddForce(add);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("wind"))
+        {
+            type = 0;
+            this.gameObject.layer = 8;
+            this.GetComponent<Renderer>().material = material[type];
+        }
+
     }
 }
