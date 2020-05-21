@@ -21,7 +21,7 @@ public class Scene_Manager : MonoBehaviour
 
     void Awake()
     {
-        fadeManager = GameObject.Find("Panel");
+        fadeManager = GameObject.Find("fade");
         script = fadeManager.GetComponent<Fade_Manager>();
 
         if(fadeIn != true)

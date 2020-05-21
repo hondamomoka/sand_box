@@ -1,23 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using System.Collections;
 
 public class Audio_Manager : MonoBehaviour
 {
     private AudioSource source;
 
     [SerializeField] private AudioClip audioClip1;
-    [SerializeField] private AudioClip audioClip2;
-    [SerializeField] private AudioClip audioClip3;
-    [SerializeField] private AudioClip audioClip4;
-    [SerializeField] private AudioClip audioClip5;
-    [SerializeField] private AudioClip audioClip6;
-    [SerializeField] private AudioClip audioClip7;
-    [SerializeField] private AudioClip audioClip8;
-    [SerializeField] private AudioClip audioClip9;
 
-
+    
     [SerializeField] private AudioClip titleBGM;
 
 
@@ -30,15 +21,32 @@ public class Audio_Manager : MonoBehaviour
     void Start()
     {
         source.Play();
-
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             source.PlayOneShot(audioClip1);
         }
+    }
 
+    //ギミック作動の際にギミック側で使ってもらう関数
+    //これを使うとSEが1度だけ流れる
+    //使い方
+    //1.以下の変数を宣言
+    // GameObject audioManager;
+    // Audio_Manager script;
+    // [SerializeField] private AudioClip audioClip;
+    //2.Start(Awake)で以下を宣言
+    //audioManager = GameObject.Find("GameManager");
+    //script = fadeManager.GetComponent<Audio_Manager>();
+    //3.Unity側のScriptにaudioClipがアタッチできるようになってるので使いたい音をアタッチ
+    //4.使いたい場面で以下を宣言
+    //script.PlaySE(audioClip);
+    //以上
+    public void PlaySE(AudioClip audioClip)
+    {
+        source.PlayOneShot(audioClip);
     }
 }

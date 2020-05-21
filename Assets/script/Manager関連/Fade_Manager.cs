@@ -10,7 +10,6 @@ public class Fade_Manager : MonoBehaviour
     //canvasは残しておいて…
     [SerializeField]
     private float speed;         //透明化の速さ
-    //float alfa;                  //A値を操作するための変数
     Color color;                 //RGBを操作するための変数
 
     GameObject gameManager;
