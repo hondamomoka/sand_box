@@ -50,12 +50,12 @@ public class SelectController : MonoBehaviour
             {
                 CursorPos -= 1;
             }
- 
         }
         // 右に移動
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(CursorPos != StageSelect.stage_20){
+            if(CursorPos != StageSelect.stage_20)
+            {
                 CursorPos += 1;
             }
         }

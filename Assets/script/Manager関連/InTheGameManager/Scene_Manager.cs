@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
-
     public enum Stage : int
     {
         TITLE,
@@ -39,16 +38,11 @@ public class Scene_Manager : MonoBehaviour
 
     public Stage stage;
 
-    GameObject fadeManager;
-    Fade_Manager script;
     public bool fadeIn;
     public Stage fadeOut;
 
     void Awake()
     {
-        fadeManager = GameObject.Find("fade");
-        script = fadeManager.GetComponent<Fade_Manager>();
-
         if(fadeIn != true)
         fadeIn = false;
         fadeOut = Stage.SCENE_MAX;
@@ -102,7 +96,7 @@ public class Scene_Manager : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.T))
                 SceneChange(Stage.STAGE_CRAB);
             else if (Input.GetKeyDown(KeyCode.U))
-                SceneChange(Stage.TITLE);
+                SceneChange(Stage.SELECTS);
         }
     }
 

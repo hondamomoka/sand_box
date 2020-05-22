@@ -69,6 +69,8 @@ public class Fade_Manager : MonoBehaviour
     {
         if (script.fadeIn == true)
         {
+            if(script.fadeOut != Scene_Manager.Stage.SCENE_MAX)
+                script.fadeIn = false;
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
