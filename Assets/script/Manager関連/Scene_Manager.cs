@@ -5,19 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
+
+    public enum Stage : int
+    {
+        TITLE,
+        SELECTS,
+        OPTION,
+        MANUAL,
+
+        STAGE_CELL,
+        STAGE_VOLBOX,
+        STAGE_UNI,
+        STAGE_DOLPHIN,
+        STAGE_RABBITS,
+        STAGE_COBRA,
+        STAGE_TURTLE,
+        STAGE_PIG,
+        STAGE_GORIRA,
+        STAGE_RISU,
+        STAGE_SHELL,
+        STAGE_CLIONE,
+        STAGE_CATTLE,
+        STAGE_WHALE,
+        STAGE_CROCODILE,
+        STAGE_JELLYFISH,
+        STAGE_PENGUIN,
+        STAGE_SNAILS,
+        STAGE_PIGEON,
+        STAGE_CRAB,
+
+        SCENE_MAX
+    }
+
+    public Stage stage;
+
     GameObject fadeManager;
     Fade_Manager script;
     public bool fadeIn;
-    public string fadeOut;
-
-    void Quit()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_STANDALONE
-      UnityEngine.Application.Quit();
-#endif
-    }
+    public Stage fadeOut;
 
     void Awake()
     {
@@ -26,95 +51,63 @@ public class Scene_Manager : MonoBehaviour
 
         if(fadeIn != true)
         fadeIn = false;
-        fadeOut = null;
+        fadeOut = Stage.SCENE_MAX;
+
+        stage = Stage.TITLE;
     }
 
     void Update()
     {
-        switch(SceneManager.GetActiveScene().name)
+        //ステージ選択画面
+        if (stage == Stage.SELECTS)
         {
-            //タイトル
-            case "Title":
-                if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    fadeOut = "Selects";
-                if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
-                    fadeOut = "Option";
-                if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
-                    fadeOut = "Manual";
-                if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
-                    Quit();
-                break;
-                //ステージ選択画面
-            case "Selects":
-                if (Input.GetKeyDown(KeyCode.A))
-                    fadeOut = "stage_volbox";
-                if (Input.GetKeyDown(KeyCode.B))
-                    fadeOut = "stage_uni";
-                if (Input.GetKeyDown(KeyCode.C))
-                    fadeOut = "stage_dolphin";
-                if (Input.GetKeyDown(KeyCode.D))
-                    fadeOut = "stage_rabbits";
-                if (Input.GetKeyDown(KeyCode.E))
-                    fadeOut = "stage_jellyfish";
-                if (Input.GetKeyDown(KeyCode.F))
-                    fadeOut = "stage_cobra";
-                if (Input.GetKeyDown(KeyCode.G))
-                    fadeOut = "stage_turtle";
-                if (Input.GetKeyDown(KeyCode.H))
-                    fadeOut = "stage_pig";
-                if (Input.GetKeyDown(KeyCode.I))
-                    fadeOut = "stage_gorira";
-                if (Input.GetKeyDown(KeyCode.J))
-                    fadeOut = "stage_risu";
-                if (Input.GetKeyDown(KeyCode.K))
-                    fadeOut = "stage_shell";
-                if (Input.GetKeyDown(KeyCode.L))
-                    fadeOut = "stage_clione";
-                if (Input.GetKeyDown(KeyCode.M))
-                    fadeOut = "stage_cattle";
-                if (Input.GetKeyDown(KeyCode.N))
-                    fadeOut = "stage_whale";
-                if (Input.GetKeyDown(KeyCode.O))
-                    fadeOut = "stage_crocodile";
-                if (Input.GetKeyDown(KeyCode.P))
-                    fadeOut = "stage_penguin";
-                if (Input.GetKeyDown(KeyCode.Q))
-                    fadeOut = "stage_snails";
-                if (Input.GetKeyDown(KeyCode.R))
-                    fadeOut = "stage_pigeon";
-                if (Input.GetKeyDown(KeyCode.S))
-                    fadeOut = "stage_crab";
-                if (Input.GetKeyDown(KeyCode.T))
-                    fadeOut = "stage_turtle";
-
-                //タイトルへ戻る
-                if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
-                    fadeOut = "Title";
-                break;
-                //操作説明画面
-            case "Manual":
-                if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    fadeOut = "Title";
-                break;
-                //オプション画面
-            case "Option":
-                if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    fadeOut = "Title";
-                break;
-                //ゲーム中のポーズ画面
-            case "Menu":
-                if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-                    fadeOut = "SampleScene";
-                if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
-                    fadeOut = "Selects";
-                break;
-
-            //ゲーム画面
-            default:
-                if (Input.GetKeyDown(KeyCode.Y))
-                    fadeOut = "Selects";
-
-                break;
+            if (Input.GetKeyDown(KeyCode.A))
+                SceneChange(Stage.STAGE_CELL);
+            else if (Input.GetKeyDown(KeyCode.B))
+                SceneChange(Stage.STAGE_VOLBOX);
+            else if (Input.GetKeyDown(KeyCode.C))
+                SceneChange(Stage.STAGE_UNI);
+            else if (Input.GetKeyDown(KeyCode.D))
+                SceneChange(Stage.STAGE_DOLPHIN);
+            else if (Input.GetKeyDown(KeyCode.E))
+                SceneChange(Stage.STAGE_RABBITS);
+            else if (Input.GetKeyDown(KeyCode.F))
+                SceneChange(Stage.STAGE_COBRA);
+            else if (Input.GetKeyDown(KeyCode.G))
+                SceneChange(Stage.STAGE_TURTLE);
+            else if (Input.GetKeyDown(KeyCode.H))
+                SceneChange(Stage.STAGE_PIG);
+            else if (Input.GetKeyDown(KeyCode.I))
+                SceneChange(Stage.STAGE_GORIRA);
+            else if (Input.GetKeyDown(KeyCode.J))
+                SceneChange(Stage.STAGE_RISU);
+            else if (Input.GetKeyDown(KeyCode.K))
+                SceneChange(Stage.STAGE_SHELL);
+            else if (Input.GetKeyDown(KeyCode.L))
+                SceneChange(Stage.STAGE_CLIONE);
+            else if (Input.GetKeyDown(KeyCode.M))
+                SceneChange(Stage.STAGE_CATTLE);
+            else if (Input.GetKeyDown(KeyCode.N))
+                SceneChange(Stage.STAGE_WHALE);
+            else if (Input.GetKeyDown(KeyCode.O))
+                SceneChange(Stage.STAGE_CROCODILE);
+            else if (Input.GetKeyDown(KeyCode.P))
+                SceneChange(Stage.STAGE_JELLYFISH);
+            else if (Input.GetKeyDown(KeyCode.Q))
+                SceneChange(Stage.STAGE_PENGUIN);
+            else if (Input.GetKeyDown(KeyCode.R))
+                SceneChange(Stage.STAGE_SNAILS);
+            else if (Input.GetKeyDown(KeyCode.S))
+                SceneChange(Stage.STAGE_PIGEON);
+            else if (Input.GetKeyDown(KeyCode.T))
+                SceneChange(Stage.STAGE_CRAB);
+            else if (Input.GetKeyDown(KeyCode.U))
+                SceneChange(Stage.TITLE);
         }
+    }
+
+    public void SceneChange(Stage change)
+    {
+        fadeOut = change;
     }
 }

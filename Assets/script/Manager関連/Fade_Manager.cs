@@ -49,19 +49,18 @@ public class Fade_Manager : MonoBehaviour
     }
 
     //フェードの関数
-    public void FadeOut()
+    void FadeOut()
     {
-        if(script.fadeOut != null)
+        if (script.fadeOut != Scene_Manager.Stage.SCENE_MAX)
         {
-            Debug.Log(script.fadeOut);
             panel.color = color;
             color.a += speed * Time.deltaTime;
 
             if (color.a >= 1.0f)
             {
                 script.fadeIn = true;
-               SceneManager.LoadScene(script.fadeOut);
-                script.fadeOut = null;
+                SceneManager.LoadScene((int)script.fadeOut);
+                script.fadeOut = Scene_Manager.Stage.SCENE_MAX;
             }
         }
     }

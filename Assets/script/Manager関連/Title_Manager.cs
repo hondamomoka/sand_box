@@ -12,10 +12,15 @@ public class Title_Manager : MonoBehaviour
     private float lsv;      //Lスティック縦に動かしたときの値を格納する
     private bool stickFlag;
 
-    private GameObject audioManager;
-    private Audio_Manager script;
+    private bool fadeFlag;
+
+    private GameObject manager;
+    private Audio_Manager am;
+    private Scene_Manager sm;
+
     [SerializeField] private AudioClip audioClip1;
     [SerializeField] private AudioClip audioClip2;
+
 
     void Awake()
     {
@@ -23,58 +28,69 @@ public class Title_Manager : MonoBehaviour
 
         selectObject = GameObject.Find("select");
 
-        audioManager = GameObject.Find("GameManager");
-        script = audioManager.GetComponent<Audio_Manager>();
+        manager = GameObject.Find("GameManager");
+        am = manager.GetComponent<Audio_Manager>();
+        sm = manager.GetComponent<Scene_Manager>();
+
+        fadeFlag = false;
     }
 
     void Update()
     {
-        lsv = Input.GetAxis("R_Stick_V");
-        if (lsv <= 0.1 && lsv >= -0.1)
-            stickFlag = true;
+        if(fadeFlag == false)
+        {
+            lsv = Input.GetAxis("R_Stick_V");
+            if (lsv <= 0.1 && lsv >= -0.1)
+                stickFlag = true;
 
-        //決定Aボタン
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))
-        {
-            script.PlaySE(audioClip1);
-            switch (select)
+            //決定Aボタン
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))
             {
-                case 0:
-                    SceneManager.LoadScene("Selects");
-                    break;
-                case 1:
-                    SceneManager.LoadScene("Selects");
-                    break;
-                case 2:
-                    SceneManager.LoadScene("Option");
-                    break;
-                case 3:
-                    SceneManager.LoadScene("Manual");
-                    break;
-                case 4:
-                    Quit();
-                    break;
+                am.PlaySE(audioClip1);
+                switch (select)
+                {
+                    case 0:
+                        sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                        break;
+                    case 1:
+                        sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                        break;
+                    case 2:
+                        sm.SceneChange(Scene_Manager.Stage.OPTION);
+                        break;
+                    case 3:
+                        sm.SceneChange(Scene_Manager.Stage.MANUAL);
+                        break;
+                    case 4:
+                        Quit();
+                        break;
+                }
+                fadeFlag = true;
+                sm.stage = Scene_Manager.Stage.SELECTS;
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
-        {
-            if (selectObject.transform.position.y != -49.0f)
+            if (stickFlag == true)
             {
-                selectObject.transform.position += new Vector3(0, 30.0f, 0);
-                select -= 1;
-                script.PlaySE(audioClip2);
-                stickFlag = false;
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
-        {
-            if (selectObject.transform.position.y != -169.0f)
-            {
-                selectObject.transform.position += new Vector3(0, -30.0f, 0);
-                select += 1;
-                script.PlaySE(audioClip2);
-                stickFlag = false;
+                if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
+                {
+                    if (selectObject.transform.position.y != -49.0f)
+                    {
+                        selectObject.transform.position += new Vector3(0, 30.0f, 0);
+                        select -= 1;
+                        am.PlaySE(audioClip2);
+                        stickFlag = false;
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
+                {
+                    if (selectObject.transform.position.y != -169.0f)
+                    {
+                        selectObject.transform.position += new Vector3(0, -30.0f, 0);
+                        select += 1;
+                        am.PlaySE(audioClip2);
+                        stickFlag = false;
+                    }
+                }
             }
         }
     }
@@ -87,5 +103,4 @@ public class Title_Manager : MonoBehaviour
       UnityEngine.Application.Quit();
 #endif
     }
-
 }
