@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class swich_Wind : MonoBehaviour
 {
-    public GameObject wind;
+    public wind_2 wind;
     bool on = false;
 
     // Start is called before the first frame update
@@ -26,7 +26,8 @@ public class swich_Wind : MonoBehaviour
             if (other.gameObject.CompareTag("player"))
             {
                 on = true;
-                Instantiate(wind, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+                wind.start();
               
                 Destroy(this.gameObject);
             }
