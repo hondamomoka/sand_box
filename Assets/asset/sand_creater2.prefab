@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sand: {fileID: 1247860127555892, guid: 5330d06123c718f45b5d2b1015698850, type: 3}
+  on: 0
 --- !u!65 &4614387569118744868
 BoxCollider:
   m_ObjectHideFlags: 0

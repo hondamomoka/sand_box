@@ -7,10 +7,9 @@ public class buccal_cone : MonoBehaviour
     public int count;
     int count_max;
     public Material[] material;
-    public GameObject gorl;
-    public hool_2 hool;
+    public GameObject gole;
     bool on;
-
+    public delete_sand ds;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +25,8 @@ public class buccal_cone : MonoBehaviour
         {
             if (count > 340)
             {
-                Destroy(gorl);
-                hool.on = true;
+                Destroy(gole);
+                ds.on = true;
                 on = false;
             }
         }
