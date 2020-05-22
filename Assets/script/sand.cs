@@ -126,7 +126,7 @@ public class sand : MonoBehaviour {
         if (other.gameObject.CompareTag("wind"))
         {
             type = 0;
-            this.gameObject.layer = 8;
+            this.gameObject.layer = 19;
             this.GetComponent<Renderer>().material = material[type];
         }
 

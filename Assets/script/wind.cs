@@ -7,12 +7,12 @@ public class wind : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.parent = GameObject.Find("stage").transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        transform.Rotate(0, 2.0f, 0);
     }
 }

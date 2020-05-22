@@ -4764,7 +4764,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6995993384031620946}
   - component: {fileID: 6995993384031620945}
-  - component: {fileID: 6995993384031620944}
   m_Layer: 0
   m_Name: wind 1
   m_TagString: Untagged
@@ -4802,18 +4801,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0965471, y: 5.869402, z: 1}
   m_Center: {x: 0.048273563, y: 2.434701, z: 0}
---- !u!114 &6995993384031620944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6995993384031620947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffef1ce23c591534199ac557772564ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6995993384628097677
 GameObject:
   m_ObjectHideFlags: 0
