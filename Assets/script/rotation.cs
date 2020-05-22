@@ -14,39 +14,15 @@ public class rotation : MonoBehaviour {
 
         Rigidbody rb = this.GetComponent<Rigidbody>();
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, 0, -1.0f);
-
-        }
-        else if (Input.GetKey("joystick button 5"))
+        //入力の強さで回転の速度が変わるのを追加したい
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Joystick1Button5))
         {
             transform.Rotate(0, 0, -1.0f);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Joystick1Button4))
         {
             transform.Rotate(0, 0, 1.0f);
         }
-        else if (Input.GetKey("joystick button 4"))
-        {
-            transform.Rotate(0, 0, 1.0f);
-        }
-
-        //右９０度
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            transform.Rotate(0, 0, 90.0f);
-        }
-
-        //左９０度
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            transform.Rotate(0, 0, -90.0f);
-        }
-
-       
-
-       
     }
 }

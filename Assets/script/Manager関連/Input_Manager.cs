@@ -16,21 +16,21 @@ public class Input_Manager : MonoBehaviour
             Debug.Log("A");
         if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             Debug.Log("B");
-        if (Input.GetKeyDown("joystick button 2"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
             Debug.Log("X");
-        if (Input.GetKeyDown("joystick button 3"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
             Debug.Log("Y");
-        if (Input.GetKeyDown("joystick button 4"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button4))
             Debug.Log("LB");
-        if (Input.GetKeyDown("joystick button 5"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
             Debug.Log("RB");
-        if (Input.GetKeyDown("joystick button 6"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button6))
             Debug.Log("View");
-        if (Input.GetKeyDown("joystick button 7"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
             Debug.Log("Menu");
-        if (Input.GetKeyDown("joystick button 8"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button8))
             Debug.Log("L Stick (押し込み)");
-        if (Input.GetKeyDown("joystick button 9"))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button9))
             Debug.Log("R Stick (押し込み)");
 
         //L Stick
