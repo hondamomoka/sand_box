@@ -9,9 +9,11 @@ public class create_sand : MonoBehaviour {
     GameObject[] obj_sand;
     float x;
     float y;
+    public bool on;
     // Use this for initialization
     void Start()
     {
+        on = false;
         obj_sand = new GameObject[400];
        // float count = -2.8f;
        // float y = 0.0f;
@@ -48,4 +50,6 @@ public class create_sand : MonoBehaviour {
 
       
     }
+
+    
 }
