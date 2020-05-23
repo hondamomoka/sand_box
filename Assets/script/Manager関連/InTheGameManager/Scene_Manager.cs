@@ -41,6 +41,8 @@ public class Scene_Manager : MonoBehaviour
     public bool fadeIn;
     public Stage fadeOut;
 
+    public bool nowfade;
+
     void Awake()
     {
         if(fadeIn != true)
@@ -48,6 +50,8 @@ public class Scene_Manager : MonoBehaviour
         fadeOut = Stage.SCENE_MAX;
 
         stage = Stage.TITLE;
+
+        nowfade = false;
     }
 
     void Update()

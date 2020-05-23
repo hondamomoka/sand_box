@@ -44,8 +44,8 @@ public class Fade_Manager : MonoBehaviour
 
     void Update()
     {
-        FadeOut();
         FadeIn();
+        FadeOut();
     }
 
     //フェードの関数
@@ -53,6 +53,12 @@ public class Fade_Manager : MonoBehaviour
     {
         if (script.fadeOut != Scene_Manager.Stage.SCENE_MAX)
         {
+            if (script.fadeIn == true)
+                script.fadeOut = Scene_Manager.Stage.SCENE_MAX;
+
+            if(script.nowfade == false)
+                script.nowfade = true;
+
             panel.color = color;
             color.a += speed * Time.deltaTime;
 
@@ -69,12 +75,13 @@ public class Fade_Manager : MonoBehaviour
     {
         if (script.fadeIn == true)
         {
-            if(script.fadeOut != Scene_Manager.Stage.SCENE_MAX)
-                script.fadeIn = false;
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
+            {
                 script.fadeIn = false;
+                script.nowfade = false;
+            }
         }
     }
 }

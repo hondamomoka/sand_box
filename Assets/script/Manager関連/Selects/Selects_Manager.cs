@@ -33,10 +33,10 @@ public class Selects_Manager : MonoBehaviour
 
     void Update()
     {
-        if (fadeFlag == false)
+        if (!sm.fadeIn && !fadeFlag)
         {
-            lsv = Input.GetAxis("R_Stick_V");
-            lsv = Input.GetAxis("R_Stick_H");
+            lsv = Input.GetAxis("L_Stick_V");
+            lsv = Input.GetAxis("L_Stick_H");
 
             if (lsv <= 0.1 && lsv >= -0.1 && lsh <= 0.1 && lsh >= -0.1)
                 stickFlag = true;

@@ -25,7 +25,7 @@ public class Manual_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X))
         {
-            if (fadeFlag == false)
+            if (!sm.fadeIn && !fadeFlag)
             {
                 am.PlaySE(audioClip);
                 sm.SceneChange(Scene_Manager.Stage.TITLE);
