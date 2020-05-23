@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Title_Manager : MonoBehaviour
 {
-    private int select;     //選択肢、始めはContinue
-
     private GameObject selectObject;
 
     private float lsv;      //Lスティック縦に動かしたときの値を格納する
@@ -24,8 +22,6 @@ public class Title_Manager : MonoBehaviour
 
     void Awake()
     {
-        select = 1;
-
         selectObject = GameObject.Find("select");
 
         manager = GameObject.Find("GameManager");
@@ -33,6 +29,11 @@ public class Title_Manager : MonoBehaviour
         sm = manager.GetComponent<Scene_Manager>();
 
         fadeFlag = false;
+    }
+
+    void Start()
+    {
+        selectObject.transform.position = new Vector3(1, (-49.0f - 30.0f * sm.titleSelect), 300);
     }
 
     void Update()
@@ -47,7 +48,7 @@ public class Title_Manager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))
             {
                 am.PlaySE(audioClip1);
-                switch (select)
+                switch (sm.titleSelect)
                 {
                     case 0:
                         sm.SceneChange(Scene_Manager.Stage.SELECTS);
@@ -76,7 +77,7 @@ public class Title_Manager : MonoBehaviour
                     if (selectObject.transform.position.y != -49.0f)
                     {
                         selectObject.transform.position += new Vector3(0, 30.0f, 0);
-                        select -= 1;
+                        sm.titleSelect -= 1;
                         am.PlaySE(audioClip2);
                         stickFlag = false;
                     }
@@ -86,7 +87,7 @@ public class Title_Manager : MonoBehaviour
                     if (selectObject.transform.position.y != -169.0f)
                     {
                         selectObject.transform.position += new Vector3(0, -30.0f, 0);
-                        select += 1;
+                        sm.titleSelect += 1;
                         am.PlaySE(audioClip2);
                         stickFlag = false;
                     }

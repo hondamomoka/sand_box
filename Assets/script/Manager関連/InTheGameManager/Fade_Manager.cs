@@ -85,3 +85,4 @@ public class Fade_Manager : MonoBehaviour
         }
     }
 }
+

@@ -36,7 +36,7 @@ public class Selects_Manager : MonoBehaviour
         if (!sm.fadeIn && !fadeFlag)
         {
             lsv = Input.GetAxis("L_Stick_V");
-            lsv = Input.GetAxis("L_Stick_H");
+            lsh = Input.GetAxis("L_Stick_H");
 
             if (lsv <= 0.1 && lsv >= -0.1 && lsh <= 0.1 && lsh >= -0.1)
                 stickFlag = true;
@@ -74,9 +74,10 @@ public class Selects_Manager : MonoBehaviour
                         stickFlag = false;
                     }
                 }
+
                 else if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
                 {
-                    if (selectScene <= 2)
+                    if (selectScene >= 2)
                     {
                         am.PlaySE(audioClip3);
                         stickFlag = false;
@@ -84,7 +85,7 @@ public class Selects_Manager : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                 {
-                    if (selectScene >= 18)
+                    if (selectScene <= 18)
                     {
                         am.PlaySE(audioClip3);
                         stickFlag = false;

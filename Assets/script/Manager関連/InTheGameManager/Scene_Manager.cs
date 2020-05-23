@@ -43,6 +43,8 @@ public class Scene_Manager : MonoBehaviour
 
     public bool nowfade;
 
+    public int titleSelect;
+
     void Awake()
     {
         if(fadeIn != true)
@@ -52,6 +54,8 @@ public class Scene_Manager : MonoBehaviour
         stage = Stage.TITLE;
 
         nowfade = false;
+
+        titleSelect = 1;
     }
 
     void Update()
