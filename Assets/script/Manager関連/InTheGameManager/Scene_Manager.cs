@@ -47,8 +47,7 @@ public class Scene_Manager : MonoBehaviour
 
     void Awake()
     {
-        if(fadeIn != true)
-        fadeIn = false;
+        fadeIn = true;
         fadeOut = Stage.SCENE_MAX;
 
         stage = Stage.TITLE;
@@ -60,52 +59,8 @@ public class Scene_Manager : MonoBehaviour
 
     void Update()
     {
-        //ステージ選択画面
-        if (stage == Stage.SELECTS)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-                SceneChange(Stage.STAGE_CELL);
-            else if (Input.GetKeyDown(KeyCode.B))
-                SceneChange(Stage.STAGE_VOLBOX);
-            else if (Input.GetKeyDown(KeyCode.C))
-                SceneChange(Stage.STAGE_UNI);
-            else if (Input.GetKeyDown(KeyCode.D))
-                SceneChange(Stage.STAGE_DOLPHIN);
-            else if (Input.GetKeyDown(KeyCode.E))
-                SceneChange(Stage.STAGE_RABBITS);
-            else if (Input.GetKeyDown(KeyCode.F))
-                SceneChange(Stage.STAGE_COBRA);
-            else if (Input.GetKeyDown(KeyCode.G))
-                SceneChange(Stage.STAGE_TURTLE);
-            else if (Input.GetKeyDown(KeyCode.H))
-                SceneChange(Stage.STAGE_PIG);
-            else if (Input.GetKeyDown(KeyCode.I))
-                SceneChange(Stage.STAGE_GORIRA);
-            else if (Input.GetKeyDown(KeyCode.J))
-                SceneChange(Stage.STAGE_RISU);
-            else if (Input.GetKeyDown(KeyCode.K))
-                SceneChange(Stage.STAGE_SHELL);
-            else if (Input.GetKeyDown(KeyCode.L))
-                SceneChange(Stage.STAGE_CLIONE);
-            else if (Input.GetKeyDown(KeyCode.M))
-                SceneChange(Stage.STAGE_CATTLE);
-            else if (Input.GetKeyDown(KeyCode.N))
-                SceneChange(Stage.STAGE_WHALE);
-            else if (Input.GetKeyDown(KeyCode.O))
-                SceneChange(Stage.STAGE_CROCODILE);
-            else if (Input.GetKeyDown(KeyCode.P))
-                SceneChange(Stage.STAGE_JELLYFISH);
-            else if (Input.GetKeyDown(KeyCode.Q))
-                SceneChange(Stage.STAGE_PENGUIN);
-            else if (Input.GetKeyDown(KeyCode.R))
-                SceneChange(Stage.STAGE_SNAILS);
-            else if (Input.GetKeyDown(KeyCode.S))
-                SceneChange(Stage.STAGE_PIGEON);
-            else if (Input.GetKeyDown(KeyCode.T))
-                SceneChange(Stage.STAGE_CRAB);
-            else if (Input.GetKeyDown(KeyCode.U))
+            if (Input.GetKeyDown(KeyCode.R))
                 SceneChange(Stage.SELECTS);
-        }
     }
 
     public void SceneChange(Stage change)

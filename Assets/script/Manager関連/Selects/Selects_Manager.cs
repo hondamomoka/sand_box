@@ -20,6 +20,36 @@ public class Selects_Manager : MonoBehaviour
 
     private int selectScene;
 
+    private GameObject selectObject;
+
+    private enum StageSelect
+    {
+        none,
+        stage_1,
+        stage_2,
+        stage_3,
+        stage_4,
+        stage_5,
+        stage_6,
+        stage_7,
+        stage_8,
+        stage_9,
+        stage_10,
+        stage_11,
+        stage_12,
+        stage_13,
+        stage_14,
+        stage_15,
+        stage_16,
+        stage_17,
+        stage_18,
+        stage_19,
+        stage_20,
+        MAX
+    }
+
+    private StageSelect CursorPos;
+
     void Awake()
     {
         manager = GameObject.Find("GameManager");
@@ -28,26 +58,31 @@ public class Selects_Manager : MonoBehaviour
 
         fadeFlag = false;
 
-        selectScene = 0;
+        selectScene = 1;
+
+        selectObject = GameObject.Find("SelectCursor");
+
+        selectObject.transform.position = CursorPositionLR(selectScene);
     }
 
     void Update()
     {
         if (!sm.fadeIn && !fadeFlag)
         {
+            //コントローラ左スティックの更新
             lsv = Input.GetAxis("L_Stick_V");
             lsh = Input.GetAxis("L_Stick_H");
 
             if (lsv <= 0.1 && lsv >= -0.1 && lsh <= 0.1 && lsh >= -0.1)
                 stickFlag = true;
 
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))  //決定
             {
                 am.PlaySE(audioClip1);
-                sm.SceneChange((Scene_Manager.Stage)selectScene + 5);
+                sm.SceneChange((Scene_Manager.Stage)selectScene + 3);
                 fadeFlag = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X))
+            else if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X)) //キャンセル
             {
                 am.PlaySE(audioClip2);
                 sm.SceneChange(Scene_Manager.Stage.TITLE);
@@ -58,29 +93,32 @@ public class Selects_Manager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.RightArrow) || lsh >= 0.9)
                 {
-                    if (selectScene != 19)
+                    if (selectScene != 20)
                     {
                         selectScene++;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
+                        selectObject.transform.position = CursorPositionLR(selectScene);
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                 {
-                    if (selectScene != 0)
+                    if (selectScene != 1)
                     {
                         selectScene--;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
+                        selectObject.transform.position = CursorPositionLR(selectScene);
                     }
                 }
 
                 else if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
                 {
-                    if (selectScene >= 2)
+                    if (selectScene >= 3)
                     {
                         am.PlaySE(audioClip3);
                         stickFlag = false;
+                        selectObject.transform.position = CursorPositionUp(selectScene);
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
@@ -89,9 +127,147 @@ public class Selects_Manager : MonoBehaviour
                     {
                         am.PlaySE(audioClip3);
                         stickFlag = false;
+                        selectObject.transform.position = CursorPositionDown(selectScene);
                     }
                 }
             }
         }
+    }
+
+    private Vector3 CursorPositionLR(int pos)
+    {
+        Vector3 select = new Vector3(0,0,0);
+
+        switch (pos)
+        {
+            case 1:
+                select = new Vector3(-2.323f, 1.14f, 1.29f);
+                break;
+
+            case 2:
+                select = new Vector3(-1.18f, 1.14f, 1.29f);
+                break;
+
+            case 3:
+                select = new Vector3(-2.7f, 1.14f, 0.25f);
+                break;
+
+            case 4:
+                select = new Vector3(-1.73f, 1.14f, 0.25f);
+                break;
+
+            case 5:
+                select = new Vector3(-0.65f, 1.14f, 0.25f);
+                break;
+
+            case 6:
+                select = new Vector3(-2.31f, 1.14f, -0.86f);
+                break;
+
+            case 7:
+                select = new Vector3(-1.16f, 1.14f, -0.86f);
+                break;
+
+            case 8:
+                select = new Vector3(-2.688f, 1.14f, -1.9f);
+                break;
+
+            case 9:
+                select = new Vector3(-1.686f, 1.14f, -1.9f);
+                break;
+
+            case 10:
+                select = new Vector3(-0.7f, 1.14f, -1.9f);
+                break;
+
+            case 11:
+                select = new Vector3(0.812f, 1.14f, 1.318f);
+                break;
+
+            case 12:
+                select = new Vector3(1.798f, 1.14f, 1.318f);
+                break;
+
+            case 13:
+                select = new Vector3(2.8f, 1.14f, 1.318f);
+                break;
+
+            case 14:
+                select = new Vector3(1.272f, 1.14f, 0.278f);
+                break;
+
+            case 15:
+                select = new Vector3(2.422f, 1.14f, 0.278f);
+                break;
+
+            case 16:
+                select = new Vector3(0.762f, 1.14f, -0.831f);
+                break;
+
+            case 17:
+                select = new Vector3(1.842f, 1.14f, -0.831f);
+                break;
+
+            case 18:
+                select = new Vector3(2.812f, 1.14f, -0.831f);
+                break;
+
+            case 19:
+                select = new Vector3(1.292f, 1.14f, -1.871f);
+                break;
+
+            case 20:
+                select = new Vector3(2.37f, 1.14f, -1.871f);
+                break;
+
+            default:
+                Debug.Log("エラッたww");
+                break;
+        }
+
+        return select;
+    }
+
+    private Vector3 CursorPositionUp(int pos)
+    {
+        Vector3 select = new Vector3(0, 0, 0);
+
+        switch (pos)
+        {
+            case 3:
+            case 8:
+            case 16:
+                pos -= 2;
+                break;
+            default:
+                pos -= 3;
+                break;
+        }
+        selectScene = pos;
+        select = CursorPositionLR(pos);
+        return select;
+    }
+
+    private Vector3 CursorPositionDown(int pos)
+    {
+        Vector3 select = new Vector3(0, 0, 0);
+
+        switch (pos)
+        {
+            case 3:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 16:
+                pos += 3;
+                break;
+            default:
+                pos += 2;
+                break;
+        }
+        selectScene = pos;
+        select = CursorPositionLR(pos);
+        return select;
     }
 }

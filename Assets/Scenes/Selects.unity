@@ -4049,7 +4049,6 @@ GameObject:
   - component: {fileID: 2094159214}
   - component: {fileID: 2094159213}
   - component: {fileID: 2094159212}
-  - component: {fileID: 2094159211}
   m_Layer: 0
   m_Name: SelectCursor
   m_TagString: Untagged
@@ -4057,19 +4056,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2094159211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094159210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5b31b15ba96924a985abcc40c3a3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CursorPos: 0
 --- !u!23 &2094159212
 MeshRenderer:
   m_ObjectHideFlags: 0
