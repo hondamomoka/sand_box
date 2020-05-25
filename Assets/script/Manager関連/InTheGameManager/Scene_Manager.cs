@@ -15,28 +15,28 @@ public class Scene_Manager : MonoBehaviour
         STAGE_CELL,
         STAGE_VOLBOX,
         STAGE_UNI,
-        STAGE_DOLPHIN,
-        STAGE_RABBITS,
-        STAGE_COBRA,
-        STAGE_TURTLE,
-        STAGE_PIG,
-        STAGE_GORIRA,
-        STAGE_RISU,
-        STAGE_SHELL,
-        STAGE_CLIONE,
-        STAGE_CATTLE,
-        STAGE_WHALE,
         STAGE_CROCODILE,
+        STAGE_PIG,
+        STAGE_RABBITS,
+        STAGE_WHALE,
+        STAGE_RISU,
+        STAGE_DOLPHIN,
+        STAGE_COBRA,
         STAGE_JELLYFISH,
+        STAGE_CATTLE,
         STAGE_PENGUIN,
+        STAGE_GORIRA,
+        STAGE_CLIONE,
+        STAGE_CRAB,
+        STAGE_SHELL,
         STAGE_SNAILS,
         STAGE_PIGEON,
-        STAGE_CRAB,
+        STAGE_TURTLE,
 
         SCENE_MAX
     }
 
-    public Stage stage;
+    public Stage stage;     //クリア処理出来次第削除予定
 
     public bool fadeIn;
     public Stage fadeOut;
@@ -44,6 +44,7 @@ public class Scene_Manager : MonoBehaviour
     public bool nowfade;
 
     public int titleSelect;
+    public int selectSelect;
 
     void Awake()
     {
@@ -54,7 +55,8 @@ public class Scene_Manager : MonoBehaviour
 
         nowfade = false;
 
-        titleSelect = 1;
+        titleSelect = 0;
+        selectSelect = 1;
     }
 
     void Update()

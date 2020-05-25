@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Audio_Manager : MonoBehaviour
 {
-    private AudioSource source;
+    public AudioSource source;
     
-    [SerializeField] private AudioClip titleBGM;
-    [SerializeField] private AudioClip stageBGM01;
-
+    public float seVol;
 
     void Awake()
     {
         source = GetComponent<AudioSource>();
-        source.clip = titleBGM;
+        source.volume = 0.5f;
+        seVol = 0.5f;
     }
 
-    void Start()
+    public void PlayBGM(AudioClip audioClip)
     {
+        source.clip = audioClip;
         source.Play();
     }
 
@@ -37,6 +37,6 @@ public class Audio_Manager : MonoBehaviour
     //以上
     public void PlaySE(AudioClip audioClip)
     {
-        source.PlayOneShot(audioClip);
+        source.PlayOneShot(audioClip,seVol);
     }
 }

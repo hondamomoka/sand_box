@@ -18,8 +18,6 @@ public class Selects_Manager : MonoBehaviour
     private float lsh;      //Lスティック横に動かしたときの値を格納する
     private bool stickFlag;
 
-    private int selectScene;
-
     private GameObject selectObject;
 
     private enum StageSelect
@@ -58,11 +56,9 @@ public class Selects_Manager : MonoBehaviour
 
         fadeFlag = false;
 
-        selectScene = 1;
-
         selectObject = GameObject.Find("SelectCursor");
 
-        selectObject.transform.position = CursorPositionLR(selectScene);
+        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
     }
 
     void Update()
@@ -73,19 +69,21 @@ public class Selects_Manager : MonoBehaviour
             lsv = Input.GetAxis("L_Stick_V");
             lsh = Input.GetAxis("L_Stick_H");
 
+            //ステージが一気に動かないようにする
             if (lsv <= 0.1 && lsv >= -0.1 && lsh <= 0.1 && lsh >= -0.1)
                 stickFlag = true;
 
             if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))  //決定
             {
                 am.PlaySE(audioClip1);
-                sm.SceneChange((Scene_Manager.Stage)selectScene + 3);
+                sm.SceneChange((Scene_Manager.Stage)sm.selectSelect + 3);
                 fadeFlag = true;
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X)) //キャンセル
             {
                 am.PlaySE(audioClip2);
                 sm.SceneChange(Scene_Manager.Stage.TITLE);
+                sm.titleSelect = 1;
                 fadeFlag = true;
             }
 
@@ -93,43 +91,43 @@ public class Selects_Manager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.RightArrow) || lsh >= 0.9)
                 {
-                    if (selectScene != 20)
+                    if (sm.selectSelect != 20)
                     {
-                        selectScene++;
+                        sm.selectSelect++;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(selectScene);
+                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                 {
-                    if (selectScene != 1)
+                    if (sm.selectSelect != 1)
                     {
-                        selectScene--;
+                        sm.selectSelect--;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(selectScene);
+                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                     }
                 }
 
                 else if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
                 {
-                    if (selectScene >= 6)
+                    if (sm.selectSelect >= 6)
                     {
-                        selectScene -= 5;
+                        sm.selectSelect -= 5;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(selectScene);
+                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                 {
-                    if (selectScene <= 15)
+                    if (sm.selectSelect <= 15)
                     {
-                        selectScene += 5;
+                        sm.selectSelect += 5;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(selectScene);
+                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                     }
                 }
             }
@@ -230,5 +228,4 @@ public class Selects_Manager : MonoBehaviour
 
         return select;
     }
-
 }

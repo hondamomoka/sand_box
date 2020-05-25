@@ -17,36 +17,37 @@ public class rotation_panguin : MonoBehaviour
     void Update()
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();
+        float tri = Input.GetAxis("L_R_Trigger");
 
-        if(rot>-20.0f)
+        if (rot>-20.0f)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (tri > 0)
             {
-                transform.Rotate(0, 0, -1.0f);
-                rot -= 1.0f;
+                rot += tri * -44.5f * Time.deltaTime;
+                transform.Rotate(0, 0, -44.5f * Time.deltaTime);
             }
-            else if (Input.GetKey("joystick button 5"))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Rotate(0, 0, -1.0f);
-                rot -= 1.0f;
+                rot -= 33.4f * Time.deltaTime;
+                transform.Rotate(0, 0, -33.4f * Time.deltaTime);
             }
         }
 
-        if(rot<20.0f)
+        if (rot<20.0f)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (tri < 0)
             {
-                transform.Rotate(0, 0, 1.0f);
-                rot += 1.0f;
+                rot -= tri * 44.5f * Time.deltaTime;
+                transform.Rotate(0, 0, tri * -44.5f * Time.deltaTime);
             }
-            else if (Input.GetKey("joystick button 4"))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Rotate(0, 0, 1.0f);
-                rot += 1.0f;
+                rot += 33.4f * Time.deltaTime;
+                transform.Rotate(0, 0, 33.4f * Time.deltaTime);
             }
         }
-     
 
-       
+
+
     }
 }
