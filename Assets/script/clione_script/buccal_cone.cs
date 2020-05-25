@@ -25,7 +25,8 @@ public class buccal_cone : MonoBehaviour
         {
             if (count > 340)
             {
-                Destroy(gole);
+                gole.GetComponent<Renderer>().material = material[2];
+                gole.layer = 14;
                 ds.on = true;
                 on = false;
             }
