@@ -6,6 +6,7 @@ public class swich_B : MonoBehaviour
 {
     public GameObject wall;
     bool on = false;
+    public Material[] material;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,9 @@ public class swich_B : MonoBehaviour
             if (other.gameObject.CompareTag("player"))
             {
                 on = true;
-                transform.position += new Vector3(0, 0, 0.2f);
-                Destroy(wall);
+                wall.GetComponent<Renderer>().material = material[1];
+                wall.layer = 14;
+                this.GetComponent<Renderer>().material = material[0];
             }
         }
     }

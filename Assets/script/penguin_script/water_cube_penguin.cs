@@ -16,21 +16,23 @@ public class water_cube_penguin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider other)
+   
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if(!on)
+        if (!on)
         {
-            if (other.gameObject.CompareTag("sand_normal") &&other.gameObject.layer==8)
+            if (collision.gameObject.CompareTag("sand_normal"))
             {
-                Destroy(other);
+                //Destroy(collision.gameObject);
                 this.GetComponent<Renderer>().material = material[0];
                 on = true;
-                this.gameObject.GetComponent<Collider>().isTrigger = false;
+                this.gameObject.GetComponent<Collider>().isTrigger = true;
+                Destroy(this.gameObject);
             }
         }
-       
     }
 }

@@ -128,3 +128,5 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
+  move: 0
+  ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}

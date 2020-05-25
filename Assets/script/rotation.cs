@@ -2,51 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotation : MonoBehaviour {
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-
-    // Update is called once per frame
-    void Update() {
-
+public class rotation : MonoBehaviour
+{
+    void Update()
+    {
         Rigidbody rb = this.GetComponent<Rigidbody>();
+        float tri = Input.GetAxis("L_R_Trigger");
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (tri > 0)
         {
-            transform.Rotate(0, 0, -1.0f);
-
+            transform.Rotate(0, 0, tri * 30 * Time.deltaTime);
         }
-        else if (Input.GetKey("joystick button 5"))
+        else if (tri < 0)
         {
-            transform.Rotate(0, 0, -1.0f);
+            transform.Rotate(0, 0, tri * 30 * Time.deltaTime);
         }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(0, 0, 1.0f);
+            transform.Rotate(0, 0, -30.0f * Time.deltaTime);
         }
-        else if (Input.GetKey("joystick button 4"))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(0, 0, 1.0f);
+            transform.Rotate(0, 0, 30.0f * Time.deltaTime);
         }
-
-        //右９０度
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            transform.Rotate(0, 0, 90.0f);
-        }
-
-        //左９０度
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            transform.Rotate(0, 0, -90.0f);
-        }
-
-       
-
-       
     }
 }

@@ -30,10 +30,10 @@ public class switch_pig1 : MonoBehaviour
         {
             on = true;
             count = 0;
-            this.GetComponent<Renderer>().material = material[1];
+            this.GetComponent<Renderer>().material = material[2];
 
             wall.layer = 0;
-            wall.GetComponent<Renderer>().material = material[1];
+            wall.GetComponent<Renderer>().material = material[3];
            // sw.on += 1;
         }
     }
@@ -69,7 +69,7 @@ public class switch_pig1 : MonoBehaviour
     public void reset_p()
     {
         on = false;
-        this.GetComponent<Renderer>().material = material[0];
+        this.GetComponent<Renderer>().material = material[1];
 
         wall.layer = 13;
         wall.GetComponent<Renderer>().material = material[0];

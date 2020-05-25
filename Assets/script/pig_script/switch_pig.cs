@@ -34,9 +34,13 @@ public class switch_pig : MonoBehaviour
                 count += 1;
             }
 
-            if(count>=1)
+            if(count==1)
             {
                 this.GetComponent<Renderer>().material = material[0];
+            }
+            else if(count==2)
+            {
+                this.GetComponent<Renderer>().material = material[2];
             }
         }
     }
@@ -59,12 +63,13 @@ public class switch_pig : MonoBehaviour
         {
             if (other.gameObject.CompareTag("player"))
             {
+                on = true;
                 switch1.crea();
                 switch2.crea();
                 this.GetComponent<Renderer>().material = material[1];
 
                 sw.layer = 13;
-                sw.GetComponent<Renderer>().material = material[0];
+                sw.GetComponent<Renderer>().material = material[3];
             }
         }
     }

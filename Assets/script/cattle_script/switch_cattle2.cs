@@ -5,7 +5,7 @@ using UnityEngine;
 public class switch_cattle2 : MonoBehaviour
 {
     public int count;
-    int max_count;
+    public int max_count;
     public bool on;
     public Material[] material;
     public GameObject cube;
