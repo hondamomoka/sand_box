@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreateSandsKyo : MonoBehaviour
 {
@@ -13,18 +14,17 @@ public class CreateSandsKyo : MonoBehaviour
     public  string     sands_layer;
     //public  int        num;     // 発生するオブジェクトの総数
 
-    GameObject[] obj_sands;    // 生成されたオブジェクトを格納する行列
+    public GameObject[] obj_sands;    // 生成されたオブジェクトを格納する行列
     Transform    sandscreater; // 生成器のTransform情報
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int num = line * col;
 
         obj_sands = new GameObject[num];
         sandscreater = GetComponent<Transform>();
 
-        if(size == 0)
+        if (size == 0)
         {
             size = sands.transform.localScale.x;
         }
@@ -34,24 +34,30 @@ public class CreateSandsKyo : MonoBehaviour
             Vector3 pos = new Vector3(sandscreater.position.x - (col - 1) / 2 * size + (i % col) * size,
                                       sandscreater.position.y - size * i / col,
                                       sandscreater.position.z);
-            //Vector3 pos = new Vector3(sandscreater.position.x - (col - 1) / 2 * sands.transform.localScale.x + (i % col) * sands.transform.localScale.x,
-            //                          sandscreater.position.y - sands.transform.localScale.y * i / col,
-            //                          //-Random.Range(sandscreater.position.z + sands.transform.localScale.z / 2, 1 - sands.transform.localScale.z / 2));
-            //                          -1.5f);
             obj_sands[i] = Instantiate(sands, pos, Quaternion.identity);
             obj_sands[i].transform.parent = GameObject.Find(stage).transform;
             obj_sands[i].transform.localScale = new Vector3(size, size, size);
 
-            if(mat != null)
+            if (mat != null)
             {
                 obj_sands[i].GetComponent<Renderer>().sharedMaterial = mat;
             }
 
-            if(sands_layer != null)
+            if (sands_layer != "sands_normal")
             {
                 obj_sands[i].layer = LayerMask.NameToLayer(sands_layer);
             }
         }
+
+        //if (SceneManager.GetActiveScene().name == "stage_snails")
+        //{
+        //    GameObject.Find("Scales").SendMessage("Get_Sands", obj_sands);
+        //}
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

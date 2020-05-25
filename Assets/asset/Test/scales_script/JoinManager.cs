@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class JoinManager : MonoBehaviour
 {
+    public GameObject bucket;
+    public GameObject handle;
+
     // Start is called before the first frame update
     void Start()
     {

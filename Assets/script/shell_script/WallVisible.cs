@@ -11,7 +11,7 @@ public class WallVisible : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        children = GetComponentsInChildren<Renderer>();   
+        children = GetComponentsInChildren<Renderer>();
     }
 
     // Update is called once per frame

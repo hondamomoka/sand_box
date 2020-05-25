@@ -533,7 +533,7 @@ MonoBehaviour:
   size: 0.15
   stage: Stage
   mat: {fileID: 0}
-  sands_layer: 
+  sands_layer: sands_red
 --- !u!1 &382823569
 GameObject:
   m_ObjectHideFlags: 0

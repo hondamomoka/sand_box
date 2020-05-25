@@ -21,6 +21,11 @@ TagManager:
   - wall_alpha
   - distination
   - move_cube
+  - bucket_right_board
+  - bucket_right_zone
+  - bucket_left_board
+  - bucket_left_zone
+  - stage
   layers:
   - Default
   - TransparentFX
