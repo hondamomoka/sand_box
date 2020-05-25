@@ -16,6 +16,7 @@ public class Title_Manager : MonoBehaviour
     private Audio_Manager am;
     private Scene_Manager sm;
 
+    [SerializeField] private AudioClip titleBGM;
     [SerializeField] private AudioClip audioClip1;
     [SerializeField] private AudioClip audioClip2;
 
@@ -34,6 +35,8 @@ public class Title_Manager : MonoBehaviour
     void Start()
     {
         selectObject.transform.position = new Vector3(1, (-49.0f - 30.0f * sm.titleSelect), 300);
+        if(am.source.clip != titleBGM)
+            am.PlayBGM(titleBGM);
     }
 
     void Update()

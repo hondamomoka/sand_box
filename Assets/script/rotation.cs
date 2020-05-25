@@ -11,11 +11,11 @@ public class rotation : MonoBehaviour
 
         if (tri > 0)
         {
-            transform.Rotate(0, 0, tri * 30 * Time.deltaTime);
+            transform.Rotate(0, 0, tri * -30 * Time.deltaTime);
         }
         else if (tri < 0)
         {
-            transform.Rotate(0, 0, tri * 30 * Time.deltaTime);
+            transform.Rotate(0, 0, tri * -30 * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {

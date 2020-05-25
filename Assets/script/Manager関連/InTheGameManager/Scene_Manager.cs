@@ -44,6 +44,7 @@ public class Scene_Manager : MonoBehaviour
     public bool nowfade;
 
     public int titleSelect;
+    public int selectSelect;
 
     void Awake()
     {
@@ -55,6 +56,7 @@ public class Scene_Manager : MonoBehaviour
         nowfade = false;
 
         titleSelect = 1;
+        selectSelect = 1;
     }
 
     void Update()

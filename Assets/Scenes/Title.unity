@@ -244,8 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdef302aa0bde74aa5aca94b160402a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip1: {fileID: 8300000, guid: cd2a09bdd85e3ed489acc7486cceb394, type: 3}
-  audioClip2: {fileID: 8300000, guid: 546b5364283becd42afd8e14c88e040f, type: 3}
+  titleBGM: {fileID: 8300000, guid: 88081403e6023c24195d14eac110056e, type: 3}
+  audioClip1: {fileID: 8300000, guid: adffc77510821db499d05c93e47828e2, type: 3}
+  audioClip2: {fileID: 8300000, guid: fb233818a584b284db8b409bd46f66e5, type: 3}
 --- !u!4 &519604355
 Transform:
   m_ObjectHideFlags: 0
@@ -669,6 +670,7 @@ MonoBehaviour:
   fadeOut: 0
   nowfade: 0
   titleSelect: 0
+  selectSelect: 0
 --- !u!114 &1172012494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +697,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -801,8 +803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2fbb1a872775e42b84da2e2593fce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleBGM: {fileID: 8300000, guid: 88081403e6023c24195d14eac110056e, type: 3}
-  stageBGM01: {fileID: 8300000, guid: b45d7f1113d228c47992ec8cecfde412, type: 3}
+  source: {fileID: 0}
+  seVol: 0
 --- !u!1 &1260702743
 GameObject:
   m_ObjectHideFlags: 0
