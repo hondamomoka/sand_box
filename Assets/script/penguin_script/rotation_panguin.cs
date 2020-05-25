@@ -23,7 +23,7 @@ public class rotation_panguin : MonoBehaviour
         {
             if (tri > 0)
             {
-                rot += tri * 44.5f * Time.deltaTime;
+                rot += tri * -44.5f * Time.deltaTime;
                 transform.Rotate(0, 0, -44.5f * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
@@ -37,7 +37,7 @@ public class rotation_panguin : MonoBehaviour
         {
             if (tri < 0)
             {
-                rot -= tri * -44.5f * Time.deltaTime;
+                rot -= tri * 44.5f * Time.deltaTime;
                 transform.Rotate(0, 0, tri * -44.5f * Time.deltaTime);
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
