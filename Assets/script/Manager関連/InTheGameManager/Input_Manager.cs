@@ -61,11 +61,11 @@ public class Input_Manager : MonoBehaviour
         float tri = Input.GetAxis("L_R_Trigger");
         if (tri > 0)
         {
-            Debug.Log("L trigger:" + tri);
+            Debug.Log("R trigger:" + tri);
         }
         else if (tri < 0)
         {
-            Debug.Log("R trigger:" + tri);
+            Debug.Log("L trigger:" + tri); 
         }
     }
 }

@@ -2,27 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotation : MonoBehaviour {
+public class rotation : MonoBehaviour
+{
+    private bool        contFlag;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
+    private string[]    stControll;
 
-    // Update is called once per frame
-    void Update() {
+    void Start()
+    {
+        var controll = Input.GetJoystickNames();
 
+        //if (controll[2] == "")
+        //    contFlag = false;
+        //else
+        //    contFlag = true;
+
+        Debug.Log(controll.Length);
+        //Debug.Log(contFlag);
+    }
+
+    void Update()
+    {
         Rigidbody rb = this.GetComponent<Rigidbody>();
 
-        //入力の強さで回転の速度が変わるのを追加したい
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Joystick1Button5))
+        if (contFlag == true)
         {
-            transform.Rotate(0, 0, -1.0f);
-        }
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Joystick1Button4))
+            if (Input.GetKey(KeyCode.Joystick1Button5))
+            {
+                transform.Rotate(0, 0, -10.0f * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.Joystick1Button4))
+            {
+                transform.Rotate(0, 0, 10.0f * Time.deltaTime);
+            }
+        }
+        else
         {
-            transform.Rotate(0, 0, 1.0f);
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Rotate(0, 0, -120.0f * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Rotate(0, 0, 120.0f * Time.deltaTime);
+            }
         }
     }
 }
