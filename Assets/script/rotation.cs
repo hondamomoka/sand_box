@@ -25,5 +25,13 @@ public class rotation : MonoBehaviour
         {
             transform.Rotate(0, 0, 30.0f * Time.deltaTime);
         }
+        else if (Input.GetKey(KeyCode.PageDown))
+        {
+            transform.Rotate(0, 0, -1.0f, Space.World);
+        }
+        else if (Input.GetKey(KeyCode.PageUp))
+        {
+            transform.Rotate(0, 0, 1.0f, Space.World);
+        }
     }
 }

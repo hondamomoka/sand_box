@@ -16,8 +16,9 @@ public class ScalesBehaviour : MonoBehaviour
     public float return_rot_speed;
     public float deviation;
     public Vector3 handle_Angular_Velocity;
-
     public GameObject[] obj_sands;
+    public bool isPlayerInBucket;
+    public bool isWithPlayer;
 
     SandInScales sands;
 
@@ -32,6 +33,7 @@ public class ScalesBehaviour : MonoBehaviour
 
     public enum HANDLE_STATE
     {
+        STATE_NONE,
         STATE_BALANCE,
         STATE_TURN_TO_LEFT,
         STATE_TURN_TO_RIGHT,
@@ -86,11 +88,11 @@ public class ScalesBehaviour : MonoBehaviour
         // 砂の取得
         obj_sands = SandCreater.GetComponent<CreateSandsKyo>().obj_sands;
 
-        // 砂に天秤と相互作用するためのスクリプトを追加
-        for (int i = 0; i < obj_sands.Length; i++)
-        {
-            obj_sands[i].AddComponent<SandInScales>();
-        }
+        // 天秤にPlayerがいるかどうか
+        isPlayerInBucket = false;
+
+        // 天秤にPlayerがいたかどうか
+        isWithPlayer = false;
     }
 
     // Update is called once per frame
@@ -112,19 +114,26 @@ public class ScalesBehaviour : MonoBehaviour
         {
             StickJoin_Trs[i].eulerAngles = Vector3.zero;
         }
+
+        if(weights[0] == 50 && weights[1] == 50)
+        {
+            isWithPlayer = false;
+        }
     }
 
     // Handle_Stateのチェック・回転前
     void Check_Handle_State_Before_Rotate()
     {
         // 左端が重い
-        if (weights[0] > weights[1] && Handle_State != HANDLE_STATE.STATE_STAY_IN_LEFT)
+        if (weights[0] > weights[1] &&
+            Handle_State != HANDLE_STATE.STATE_STAY_IN_LEFT)
         {
             Handle_State = HANDLE_STATE.STATE_TURN_TO_LEFT;
         }
 
         // 右端が重い
-        if (weights[0] < weights[1] && Handle_State != HANDLE_STATE.STATE_STAY_IN_RIGHT)
+        if (weights[0] < weights[1] &&
+            Handle_State != HANDLE_STATE.STATE_STAY_IN_RIGHT)
         {
             Handle_State = HANDLE_STATE.STATE_TURN_TO_RIGHT;
         }
@@ -133,12 +142,14 @@ public class ScalesBehaviour : MonoBehaviour
         if (weights[0] == weights[1])
         {
             // 左端が沈んでいる
-            if (Handle_State == HANDLE_STATE.STATE_STAY_IN_LEFT || Handle_State == HANDLE_STATE.STATE_TURN_TO_LEFT)
+            if (Handle_State == HANDLE_STATE.STATE_STAY_IN_LEFT ||
+                Handle_State == HANDLE_STATE.STATE_TURN_TO_LEFT)
             {
                 Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT;
             }
             // 右端が沈んでいる
-            else if (Handle_State == HANDLE_STATE.STATE_STAY_IN_RIGHT || Handle_State == HANDLE_STATE.STATE_TURN_TO_RIGHT)
+            else if (Handle_State == HANDLE_STATE.STATE_STAY_IN_RIGHT ||
+                Handle_State == HANDLE_STATE.STATE_TURN_TO_RIGHT)
             {
                 Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT;
             }
@@ -183,6 +194,7 @@ public class ScalesBehaviour : MonoBehaviour
                 if (Handle_Trs.localEulerAngles.z > range_low + deviation && Handle_Trs.localEulerAngles.z < range_high)
                 {
                     Handle_Trs.localEulerAngles = new Vector3(0, 0, range_low);
+
                     Handle_State = HANDLE_STATE.STATE_STAY_IN_LEFT;
                 }
                 break;
@@ -190,6 +202,7 @@ public class ScalesBehaviour : MonoBehaviour
                 if (Handle_Trs.localEulerAngles.z < 360.0f - range_low - deviation && Handle_Trs.localEulerAngles.z > 360.0f - range_high)
                 {
                     Handle_Trs.localEulerAngles = new Vector3(0, 0, 360.0f - range_low);
+
                     Handle_State = HANDLE_STATE.STATE_STAY_IN_RIGHT;
                 }
                 break;
@@ -227,15 +240,9 @@ public class ScalesBehaviour : MonoBehaviour
         Handle_Trs.localEulerAngles = new Vector3(Handle_Trs.localEulerAngles.x, Handle_Trs.localEulerAngles.y, z);
     }
 
-    // WeightsLeftのセット
-    void Set_Weights_Left(float mass)
+    public void Reset_Sands(GameObject SC)
     {
-        weights[0] += mass;
-    }
-
-    // WeightsRightのセット
-    void Set_Weights_Right(float mass)
-    {
-        weights[1] += mass;
+        // 砂の取得
+        obj_sands = SC.GetComponent<CreateSandsKyo>().obj_sands;
     }
 }

@@ -10,7 +10,8 @@ public class SandInScales : MonoBehaviour
 
     GameObject Stage;
     Rigidbody Sand_Rb;
-    
+    ScalesBehaviour Scales_Script;
+    int sand_layer;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class SandInScales : MonoBehaviour
         Stage = GameObject.Find("Stage");
         Sand_Rb = GetComponent<Rigidbody>();
         isInBucket = false;
+        Scales_Script = Scales.GetComponent<ScalesBehaviour>();
+        sand_layer = gameObject.layer;
     }
 
     // Update is called once per frame
@@ -60,8 +63,8 @@ public class SandInScales : MonoBehaviour
                 transform.parent = Stage.transform;
             }
 
-            // layer: sand_normal
-            gameObject.layer = 8;
+            // layer: もとに戻る
+            gameObject.layer = sand_layer;
         }
         else if (other.collider.gameObject.CompareTag("sands") &&
             other.collider.gameObject.GetComponent<SandInScales>().isInBucket == true &&
@@ -95,8 +98,8 @@ public class SandInScales : MonoBehaviour
                 transform.parent = Stage.transform;
             }
 
-            // layer: sand_normal
-            gameObject.layer = 8;
+            // layer: もとに戻る
+            gameObject.layer = sand_layer;
         }
         else if (other.collider.gameObject.CompareTag("sands") &&
             other.collider.gameObject.GetComponent<SandInScales>().isInBucket == true &&
@@ -114,7 +117,7 @@ public class SandInScales : MonoBehaviour
 
         // layer: wall_through_player
         gameObject.layer = 14;
-        Scales.GetComponent<ScalesBehaviour>().weights[0] += Sand_Rb.mass;
+        Scales_Script.weights[0] += Sand_Rb.mass;
     }
 
     void Set_Sands_When_Out_Bucket()
@@ -122,8 +125,8 @@ public class SandInScales : MonoBehaviour
         isInBucket = false;
         transform.parent = null;
 
-        // layer: sand_normal
-        gameObject.layer = 8;
-        Scales.GetComponent<ScalesBehaviour>().weights[0] -= Sand_Rb.mass;
+        // layer: もとに戻る
+        gameObject.layer = sand_layer;
+        Scales_Script.weights[0] -= Sand_Rb.mass;
     }
 }

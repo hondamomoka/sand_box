@@ -12,6 +12,7 @@ public class CreateSandsKyo : MonoBehaviour
     public  string     stage;
     public  Material   mat;
     public  string     sands_layer;
+    public bool isWithScales;
     //public  int        num;     // 発生するオブジェクトの総数
 
     public GameObject[] obj_sands;    // 生成されたオブジェクトを格納する行列
@@ -46,6 +47,15 @@ public class CreateSandsKyo : MonoBehaviour
             if (sands_layer != "sands_normal")
             {
                 obj_sands[i].layer = LayerMask.NameToLayer(sands_layer);
+            }
+        }
+
+        if (isWithScales == true)
+        {
+            // 砂に天秤と相互作用するためのスクリプトを追加
+            for (int i = 0; i < obj_sands.Length; i++)
+            {
+                obj_sands[i].AddComponent<SandInScales>();
             }
         }
 
