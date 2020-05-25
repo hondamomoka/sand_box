@@ -83,6 +83,7 @@ public class Selects_Manager : MonoBehaviour
             {
                 am.PlaySE(audioClip2);
                 sm.SceneChange(Scene_Manager.Stage.TITLE);
+                sm.titleSelect = 1;
                 fadeFlag = true;
             }
 

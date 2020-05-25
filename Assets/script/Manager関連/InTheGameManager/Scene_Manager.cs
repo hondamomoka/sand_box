@@ -36,7 +36,7 @@ public class Scene_Manager : MonoBehaviour
         SCENE_MAX
     }
 
-    public Stage stage;
+    public Stage stage;     //クリア処理出来次第削除予定
 
     public bool fadeIn;
     public Stage fadeOut;
@@ -55,7 +55,7 @@ public class Scene_Manager : MonoBehaviour
 
         nowfade = false;
 
-        titleSelect = 1;
+        titleSelect = 0;
         selectSelect = 1;
     }
 

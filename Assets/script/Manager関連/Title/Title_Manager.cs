@@ -55,6 +55,7 @@ public class Title_Manager : MonoBehaviour
                 {
                     case 0:
                         sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                        sm.selectSelect = 1;
                         break;
                     case 1:
                         sm.SceneChange(Scene_Manager.Stage.SELECTS);
