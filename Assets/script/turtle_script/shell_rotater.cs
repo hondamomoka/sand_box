@@ -26,11 +26,11 @@ public class shell_rotater : MonoBehaviour
         }
         else if(rot_right==true)
         {
-            rot = -0.15f;
+            rot = -0.3f;
         }
        else  if (rot_left==true)
         {
-            rot = 0.15f;
+            rot = 0.3f;
         }
         else
         {

@@ -7,6 +7,7 @@ public class turtle_mng : MonoBehaviour
     public switch_turtle switch1;
     public switch_turtle switch2;
     public GameObject cube;
+    public Material[] material;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,10 @@ public class turtle_mng : MonoBehaviour
     {
         if(switch1.on&&switch2.on)
         {
-            Destroy(cube);
+            cube.GetComponent<Renderer>().material = material[0];
+            cube.layer = 14;
+            switch1.fin = true;
+            switch2.fin = true;
         }
     }
 }

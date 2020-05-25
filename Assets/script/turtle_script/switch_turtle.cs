@@ -8,12 +8,14 @@ public class switch_turtle : MonoBehaviour
     int max_count;
    public bool on;
     public Material[] material;
+    public bool fin;
 
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
         on = false;
+        fin = false;
 
         Transform mytra = this.transform;
         Vector3 size = mytra.localScale;
@@ -23,16 +25,24 @@ public class switch_turtle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(count>max_count)
+        if(!fin)
         {
-            on = true;
-            this.GetComponent<Renderer>().material = material[1];
+            if (count > max_count)
+            {
+                on = true;
+                this.GetComponent<Renderer>().material = material[1];
+            }
+            else
+            {
+                on = false;
+                this.GetComponent<Renderer>().material = material[0];
+            }
         }
         else
         {
-            on = false;
-            this.GetComponent<Renderer>().material = material[0];
+            this.GetComponent<Renderer>().material = material[2];
         }
+       
     }
 
 
@@ -49,6 +59,11 @@ public class switch_turtle : MonoBehaviour
         if (other.gameObject.CompareTag("sand_normal"))
         {
             count--;
+
+            if(count<0)
+            {
+                count = 0;
+            }
         }
     }
 }
