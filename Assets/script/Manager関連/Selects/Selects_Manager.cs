@@ -114,20 +114,22 @@ public class Selects_Manager : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
                 {
-                    if (selectScene >= 3)
+                    if (selectScene >= 6)
                     {
+                        selectScene -= 5;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
-                        selectObject.transform.position = CursorPositionUp(selectScene);
+                        selectObject.transform.position = CursorPositionLR(selectScene);
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                 {
-                    if (selectScene <= 18)
+                    if (selectScene <= 15)
                     {
+                        selectScene += 5;
                         am.PlaySE(audioClip3);
                         stickFlag = false;
-                        selectObject.transform.position = CursorPositionDown(selectScene);
+                        selectObject.transform.position = CursorPositionLR(selectScene);
                     }
                 }
             }
@@ -149,67 +151,68 @@ public class Selects_Manager : MonoBehaviour
                 break;
 
             case 3:
-                select = new Vector3(-2.7f, 1.14f, 0.25f);
+                select =new Vector3(0.812f, 1.14f, 1.318f);
                 break;
 
             case 4:
-                select = new Vector3(-1.73f, 1.14f, 0.25f);
+                select =new Vector3(1.798f, 1.14f, 1.318f);
                 break;
 
             case 5:
-                select = new Vector3(-0.65f, 1.14f, 0.25f);
+                select =new Vector3(2.8f, 1.14f, 1.318f);
                 break;
 
             case 6:
-                select = new Vector3(-2.31f, 1.14f, -0.86f);
+                select = new Vector3(-2.7f, 1.14f, 0.25f); 
                 break;
 
             case 7:
-                select = new Vector3(-1.16f, 1.14f, -0.86f);
+                select =  new Vector3(-1.73f, 1.14f, 0.25f); 
                 break;
 
             case 8:
-                select = new Vector3(-2.688f, 1.14f, -1.9f);
+                select = new Vector3(-0.65f, 1.14f, 0.25f); 
                 break;
 
             case 9:
-                select = new Vector3(-1.686f, 1.14f, -1.9f);
+                select =new Vector3(1.272f, 1.14f, 0.278f);
                 break;
 
             case 10:
-                select = new Vector3(-0.7f, 1.14f, -1.9f);
-                break;
-
-            case 11:
-                select = new Vector3(0.812f, 1.14f, 1.318f);
-                break;
-
-            case 12:
-                select = new Vector3(1.798f, 1.14f, 1.318f);
-                break;
-
-            case 13:
-                select = new Vector3(2.8f, 1.14f, 1.318f);
-                break;
-
-            case 14:
-                select = new Vector3(1.272f, 1.14f, 0.278f);
-                break;
-
-            case 15:
                 select = new Vector3(2.422f, 1.14f, 0.278f);
                 break;
 
+
+            case 11:
+                select =new Vector3(-2.31f, 1.14f, -0.86f); 
+                break;
+
+            case 12:
+                select =  new Vector3(-1.16f, 1.14f, -0.86f);
+                break;
+
+            case 13:
+                select =new Vector3(0.762f, 1.14f, -0.831f);
+                break;
+
+            case 14:
+                select =new Vector3(1.842f, 1.14f, -0.831f);
+                break;
+
+            case 15:
+                select =new Vector3(2.812f, 1.14f, -0.831f);
+                break;
+
             case 16:
-                select = new Vector3(0.762f, 1.14f, -0.831f);
+                select = new Vector3(-2.688f, 1.14f, -1.9f); 
                 break;
 
             case 17:
-                select = new Vector3(1.842f, 1.14f, -0.831f);
+                select = new Vector3(-1.686f, 1.14f, -1.9f);
                 break;
 
             case 18:
-                select = new Vector3(2.812f, 1.14f, -0.831f);
+                select = new Vector3(-0.7f, 1.14f, -1.9f);
                 break;
 
             case 19:
@@ -228,46 +231,4 @@ public class Selects_Manager : MonoBehaviour
         return select;
     }
 
-    private Vector3 CursorPositionUp(int pos)
-    {
-        Vector3 select = new Vector3(0, 0, 0);
-
-        switch (pos)
-        {
-            case 3:
-            case 8:
-            case 16:
-                pos -= 2;
-                break;
-            default:
-                pos -= 3;
-                break;
-        }
-        selectScene = pos;
-        select = CursorPositionLR(pos);
-        return select;
-    }
-
-    private Vector3 CursorPositionDown(int pos)
-    {
-        Vector3 select = new Vector3(0, 0, 0);
-
-        switch (pos)
-        {
-            case 3:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 16:
-                pos += 3;
-                break;
-            default:
-                pos += 2;
-                break;
-        }
-        selectScene = pos;
-        select = CursorPositionLR(pos);
-        return select;
-    }
 }
