@@ -10,10 +10,11 @@ public class Fade_Manager : MonoBehaviour
     //canvasは残しておいて…
     [SerializeField]
     private float speed;         //透明化の速さ
-    Color color;                 //RGBを操作するための変数
+    private Color color;         //RGBを操作するための変数
 
-    GameObject gameManager;
-    Scene_Manager script;
+    private GameObject gameManager;
+    private Scene_Manager sm;
+    private Audio_Manager am;
 
     [SerializeField]
     private Image panel;
@@ -30,7 +31,8 @@ public class Fade_Manager : MonoBehaviour
 
         //GameManagerを取得してFadeとシーン遷移を関連づける
         gameManager = GameObject.Find("GameManager");
-        script = gameManager.GetComponent<Scene_Manager>();
+        sm = gameManager.GetComponent<Scene_Manager>();
+        am = gameManager.GetComponent<Audio_Manager>();
 
         //シングルトン的運用
         if (Instance != null)
@@ -51,36 +53,39 @@ public class Fade_Manager : MonoBehaviour
     //フェードの関数
     void FadeOut()
     {
-        if (script.fadeOut != Scene_Manager.Stage.SCENE_MAX)
+        if (sm.nextScene != Scene_Manager.Stage.SCENE_MAX)
         {
-            if (script.fadeIn == true)
-                script.fadeOut = Scene_Manager.Stage.SCENE_MAX;
-
-            if(script.nowfade == false)
-                script.nowfade = true;
+            if (sm.fadeIn == true)
+                sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
 
             panel.color = color;
             color.a += speed * Time.deltaTime;
 
+            if ((int)sm.nextScene > (int)Scene_Manager.Stage.MANUAL)
+            {
+                am.source.volume -= speed * Time.deltaTime;
+            }
+
             if (color.a >= 1.0f)
             {
-                script.fadeIn = true;
-                SceneManager.LoadScene((int)script.fadeOut);
-                script.fadeOut = Scene_Manager.Stage.SCENE_MAX;
+                sm.fadeIn = true;
+                SceneManager.LoadScene((int)sm.nextScene);
+                sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
+                if(am.source.volume < am.bgVol)
+                am.source.Stop();
             }
         }
     }
 
     void FadeIn()
     {
-        if (script.fadeIn == true)
+        if (sm.fadeIn == true)
         {
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
             {
-                script.fadeIn = false;
-                script.nowfade = false;
+                sm.fadeIn = false;
             }
         }
     }

@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe6f89b29647434e9d02e73540f78ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   panel: {fileID: 1279647137}
 --- !u!114 &639124086
 MonoBehaviour:
@@ -667,8 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 0
   fadeIn: 0
-  fadeOut: 0
-  nowfade: 0
+  nextScene: 0
   titleSelect: 0
   selectSelect: 0
 --- !u!114 &1172012494
@@ -804,6 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
+  bgVol: 0
   seVol: 0
 --- !u!1 &1260702743
 GameObject:

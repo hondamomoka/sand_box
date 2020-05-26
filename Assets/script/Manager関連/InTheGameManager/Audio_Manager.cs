@@ -5,14 +5,16 @@ using UnityEngine;
 public class Audio_Manager : MonoBehaviour
 {
     public AudioSource source;
-    
+
+    public float bgVol;
     public float seVol;
 
     void Awake()
     {
         source = GetComponent<AudioSource>();
-        source.volume = 0.5f;
+        bgVol = 0.5f;
         seVol = 0.5f;
+        source.volume = bgVol;
     }
 
     public void PlayBGM(AudioClip audioClip)
