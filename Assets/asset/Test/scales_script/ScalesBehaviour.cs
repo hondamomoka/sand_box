@@ -10,6 +10,7 @@ public class ScalesBehaviour : MonoBehaviour
     public GameObject[] StickJoin;
     public GameObject[] Stick;
     public GameObject[] Bucket;
+    public GameObject Scales_Pos;
     public float[] weights;
     public int weights_index;
     public float rot_limit;
@@ -19,8 +20,6 @@ public class ScalesBehaviour : MonoBehaviour
     public GameObject[] obj_sands;
     public bool isPlayerInBucket;
     public bool isWithPlayer;
-
-    SandInScales sands;
 
     Transform Handle_Trs;
     Transform[] StickJoin_Trs;
@@ -41,6 +40,7 @@ public class ScalesBehaviour : MonoBehaviour
         STATE_STAY_IN_RIGHT,
         STATE_RETURN_BALANCE_FROM_LEFT,
         STATE_RETURN_BALANCE_FROM_RIGHT,
+        STATE_RETURN_BALANCE_FROM_HELPER,
     };
 
     public HANDLE_STATE Handle_State;
@@ -100,6 +100,12 @@ public class ScalesBehaviour : MonoBehaviour
     {
         handle_Angular_Velocity = Handle_Rb.angularVelocity;
 
+        // 天秤の位置更新
+        if (Scales_Pos != null)
+        {
+            transform.position = Scales_Pos.transform.position;
+        }
+
         // Handle_Stateのチェック・回転前
         Check_Handle_State_Before_Rotate();
 
@@ -115,6 +121,7 @@ public class ScalesBehaviour : MonoBehaviour
             StickJoin_Trs[i].eulerAngles = Vector3.zero;
         }
 
+        // 天秤に何もない場合
         if(weights[0] == 50 && weights[1] == 50)
         {
             isWithPlayer = false;
@@ -174,6 +181,7 @@ public class ScalesBehaviour : MonoBehaviour
                 Handle_Rb.AddForceAtPosition(Vector3.down * (weights[1] - weights[0]) / weights_index, Weights_World_Pos);
                 break;
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT:
+            case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER:
                 Return_To_Balance(rot_limit, -return_rot_speed);
                 break;
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT:
@@ -208,6 +216,7 @@ public class ScalesBehaviour : MonoBehaviour
                 break;
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT:
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT:
+            case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER:
                 if (Mathf.Cos(Handle_Trs.localEulerAngles.z * Mathf.Deg2Rad) >= Mathf.Cos(return_rot_speed * Mathf.Deg2Rad))
                 {
                     Handle_Trs.localEulerAngles = Vector3.zero;

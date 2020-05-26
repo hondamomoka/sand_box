@@ -683,7 +683,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5006512735775160344}
+  - {fileID: 5167497758325490251}
   - {fileID: 1974364461}
   - {fileID: 1038497814}
   - {fileID: 1400620677}
@@ -1278,6 +1278,8 @@ MonoBehaviour:
   stage: Stage
   mat: {fileID: 0}
   sands_layer: 
+  isWithScales: 0
+  obj_sands: []
 --- !u!1 &2032447829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,12 +1404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379894517e19b249bcb4175b02177c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &5006512735775160344 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 201561490703432274, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
-    type: 3}
-  m_PrefabInstance: {fileID: 5167497758325490250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5167497758325490250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1470,10 +1466,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3789584212799014977, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3913424082118105093, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f84c2cb3db4045459fe71ae50f0a4af, type: 3}
+--- !u!4 &5167497758325490251 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+    type: 3}
+  m_PrefabInstance: {fileID: 5167497758325490250}
+  m_PrefabAsset: {fileID: 0}

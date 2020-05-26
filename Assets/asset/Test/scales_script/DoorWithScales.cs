@@ -85,7 +85,7 @@ public class DoorWithScales : MonoBehaviour
             Scales_Script.isPlayerInBucket == false &&
             Scales_Script.isWithPlayer == true)
         {
-            Door_Renderer.material = Door_Mats[2];
+            Door_Renderer.material = Door_Mats[1];
 
             // layer: wall_through_player
             gameObject.layer = 14;

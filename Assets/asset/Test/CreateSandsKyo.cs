@@ -58,11 +58,6 @@ public class CreateSandsKyo : MonoBehaviour
                 obj_sands[i].AddComponent<SandInScales>();
             }
         }
-
-        //if (SceneManager.GetActiveScene().name == "stage_snails")
-        //{
-        //    GameObject.Find("Scales").SendMessage("Get_Sands", obj_sands);
-        //}
     }
     // Start is called before the first frame update
     void Start()

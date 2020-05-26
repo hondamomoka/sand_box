@@ -10,6 +10,7 @@ public class SwitchBehaviour : MonoBehaviour
     public GameObject   obj_name;
     public string       obj_layer;
     public string       action;
+    public bool isShining;
 
     private int cnt;
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class SwitchBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("player"))
         {
             gameObject.SetActive(false);
 

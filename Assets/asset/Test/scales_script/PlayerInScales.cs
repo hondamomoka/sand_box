@@ -21,7 +21,9 @@ public class PlayerInScales : MonoBehaviour
         Player_Rb = GetComponent<Rigidbody>();
         Player_Collider = GetComponentsInChildren<Collider>();
         Player_Trs = GetComponentsInChildren<Transform>();
+
         Scales_Script = Scales.GetComponent<ScalesBehaviour>();
+
     }
 
     // Update is called once per frame
