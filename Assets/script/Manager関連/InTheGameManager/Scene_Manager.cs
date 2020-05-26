@@ -39,9 +39,7 @@ public class Scene_Manager : MonoBehaviour
     public Stage stage;     //クリア処理出来次第削除予定
 
     public bool fadeIn;
-    public Stage fadeOut;
-
-    public bool nowfade;
+    public Stage nextScene;
 
     public int titleSelect;
     public int selectSelect;
@@ -49,11 +47,9 @@ public class Scene_Manager : MonoBehaviour
     void Awake()
     {
         fadeIn = true;
-        fadeOut = Stage.SCENE_MAX;
+        nextScene = Stage.SCENE_MAX;
 
         stage = Stage.TITLE;
-
-        nowfade = false;
 
         titleSelect = 0;
         selectSelect = 1;
@@ -67,6 +63,6 @@ public class Scene_Manager : MonoBehaviour
 
     public void SceneChange(Stage change)
     {
-        fadeOut = change;
+        nextScene = change;
     }
 }

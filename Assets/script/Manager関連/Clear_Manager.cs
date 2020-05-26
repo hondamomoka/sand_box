@@ -10,7 +10,6 @@ public class Clear_Manager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("player"))
         {
-            Debug.Log("入ったよ～");
             SceneManager.LoadScene("Selects");
         }
     }
