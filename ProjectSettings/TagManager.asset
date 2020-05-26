@@ -26,6 +26,7 @@ TagManager:
   - bucket_left_board
   - bucket_left_zone
   - stage
+  - book
   layers:
   - Default
   - TransparentFX

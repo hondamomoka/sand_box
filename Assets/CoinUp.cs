@@ -10,6 +10,7 @@ public class CoinUp : MonoBehaviour
     public float startpos_y;
     public float startpos_z;
     public float endpos_y;
+    public float upspeed;
     float add_y;
 
     bool start;
@@ -26,32 +27,28 @@ public class CoinUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-
-            start1 = true;
-        }
         if (start1 == true)
         {
-            StartCoinUp();
+            if (start == false)
+            {
+                this.transform.position = new Vector3(startpos_x, startpos_y, startpos_z);
+                start = true;
+            }
+            else
+            {
+                if (startpos_y + add_y <= endpos_y)
+                {
+                    add_y += upspeed;    // y座標へ0.01加算
+                }
+
+                this.transform.position = new Vector3(startpos_x, startpos_y + add_y, startpos_z);
+            }
         }
+
     }
 
     public void StartCoinUp()
     {
-        if (start == false)
-        {
-            this.transform.position = new Vector3(startpos_x, startpos_y, startpos_z);
-            start = true;
-        }
-        else
-        {
-            if (startpos_y + add_y <= endpos_y)
-            {
-                add_y += 0.01f;    // y座標へ0.01加算
-            }
-
-            this.transform.position = new Vector3(startpos_x, startpos_y + add_y, startpos_z);
-        }
+        start1 = true;
     }
 }
