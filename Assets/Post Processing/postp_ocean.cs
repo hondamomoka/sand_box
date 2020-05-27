@@ -27,6 +27,7 @@ public class postp_ocean : MonoBehaviour
         if (on)
         {
             posv = PostProcessManager.instance.QuickVolume(gameObject.layer, 0f, bloom);
+            on = false;
         }
     }
 }
