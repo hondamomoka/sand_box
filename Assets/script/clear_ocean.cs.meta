@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: fffa81069e385074b9ed2eadcbb575ce
+guid: 8a003913db60fbf42912fb1ffdb2cb2e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - came: {instanceID: 0}
   - coin: {fileID: 4306781664047381608, guid: 5d6cd53f36411a041ac93cc0dc258e7e, type: 3}
-  - postp: {fileID: 1993012757472907814, guid: 8715d5f6b72151e4dbe518b9ffb39310, type: 3}
+  - postp: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
