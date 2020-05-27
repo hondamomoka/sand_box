@@ -35,7 +35,8 @@ public class PlayerInScales : MonoBehaviour
             Scales_Script.weights[0] > Scales_Script.weights[1] &&
             transform.parent == Bucket.transform)
         {
-            transform.parent = null;
+            //transform.parent = null;
+
             for (int i = 0; i < Player_Collider.Length; i++)
             {
                 Player_Collider[i].isTrigger = true;
@@ -77,8 +78,8 @@ public class PlayerInScales : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag(trigger_exit) &&
-            transform.parent == null)
+        if (other.gameObject.CompareTag(trigger_exit)) //&&
+            //transform.parent == null)
         {
             transform.parent = GameObject.Find("Stage").transform;
 

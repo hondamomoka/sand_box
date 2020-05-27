@@ -8,6 +8,7 @@ public class ScalesHelper : MonoBehaviour
     public GameObject Bucket_Board;
     public GameObject SandCreater;
     public GameObject[] obj_sands;
+    public GameObject Sands_Trigger;
 
     ScalesBehaviour Scales_Script;
     Collider Bucket_Board_Collider;
@@ -37,6 +38,7 @@ public class ScalesHelper : MonoBehaviour
         {
             Bucket_Board_Collider.isTrigger = false;
             isHelper = false;
+            Sands_Trigger.SetActive(false);
         }
     }
 
@@ -48,6 +50,7 @@ public class ScalesHelper : MonoBehaviour
             Bucket_Board_Collider.isTrigger = true;
             isHelper = true;
             Scales_Script.weights[0] = 50;
+            Sands_Trigger.SetActive(true);
         }
     }
 }

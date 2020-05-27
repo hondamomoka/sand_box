@@ -50,6 +50,11 @@ public class SandInScales : MonoBehaviour
         {
             Set_Sands_With_Helper_Tigger();
         }
+
+        if(other.gameObject.CompareTag("stage_border"))
+        {
+            transform.position = GameObject.FindGameObjectWithTag("sands").transform.position;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -65,6 +70,11 @@ public class SandInScales : MonoBehaviour
         else
         {
             Set_Sands_With_Helper_Tigger();
+        }
+
+        if (other.gameObject.CompareTag("stage_border"))
+        {
+            transform.position = GameObject.FindGameObjectWithTag("sands").transform.position;
         }
     }
 
@@ -175,6 +185,7 @@ public class SandInScales : MonoBehaviour
     {
         isInBucket = false;
         transform.parent = null;
+        //transform.parent = Stage.transform;
 
         // layer: もとに戻る
         gameObject.layer = sand_layer;
@@ -186,6 +197,8 @@ public class SandInScales : MonoBehaviour
         if(transform.parent == Bucket.transform)
         {
             isInBucket = false;
+
+            //transform.parent = Stage.transform;
             transform.parent = null;
 
             // layer: もとに戻る
