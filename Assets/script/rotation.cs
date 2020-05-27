@@ -27,11 +27,11 @@ public class rotation : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.PageDown))
         {
-            transform.Rotate(0, 0, -1.0f, Space.World);
+            transform.Rotate(0, 0, -80.0f * Time.deltaTime, Space.World);
         }
         else if (Input.GetKey(KeyCode.PageUp))
         {
-            transform.Rotate(0, 0, 1.0f, Space.World);
+            transform.Rotate(0, 0, 80.0f * Time.deltaTime, Space.World);
         }
     }
 }

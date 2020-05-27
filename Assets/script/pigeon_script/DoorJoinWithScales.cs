@@ -5,6 +5,8 @@ using UnityEngine;
 public class DoorJoinWithScales : MonoBehaviour
 {
     public GameObject Handle;
+    public GameObject Door;
+    public Material Mat;
 
     bool isRot;
 
@@ -25,6 +27,7 @@ public class DoorJoinWithScales : MonoBehaviour
             if (z > 90.0f)
             {
                 isRot = true;
+                Door.GetComponent<Renderer>().material = Mat;
             }
 
         }
