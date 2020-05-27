@@ -8,11 +8,14 @@ public class clear : MonoBehaviour
     Vector3 camera_pos;
     public GameObject coin;
     public bool on;
+    public bool set;
+    public postp postp;
     // Start is called before the first frame update
     void Start()
     {
         camera_pos = came.transform.position;
         on = false;
+        set = false;
     }
 
     // Update is called once per frame
@@ -22,6 +25,8 @@ public class clear : MonoBehaviour
         {
             Instantiate(coin, new Vector3(camera_pos.x, camera_pos.y + 3.0f, camera_pos.z + 3.0f), Quaternion.identity);
             on = false;
+            set = true;
+            postp.on = true;
 
         }
      
@@ -29,9 +34,13 @@ public class clear : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("player"))
+        if(!set)
         {
-            on = true;
+            if (other.gameObject.CompareTag("player"))
+            {
+                on = true;
+            }
         }
+        
     }
 }
