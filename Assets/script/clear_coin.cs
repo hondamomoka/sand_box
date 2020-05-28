@@ -8,15 +8,18 @@ public class clear_coin : MonoBehaviour
 {
     bool down;
     bool next;
-
-
+    bool slow;
+   public float add;
+    float add_pos;
 
     // Start is called before the first frame update
     void Start()
     {
-     
 
+        add = 100.0f;
+        add_pos = -0.5f;
         down = true;
+        slow = false;
         next = false;
         transform.rotation = Quaternion.Euler(0, 0, 90.0f);
  
@@ -27,20 +30,52 @@ public class clear_coin : MonoBehaviour
     {
         if(down)
         {
-            transform.Rotate(120.0f * Time.deltaTime,0, 0.0f);
-            transform.Translate(-0.5f * Time.deltaTime, 0, 0);
+            add_pos += 0.01f * Time.deltaTime;
+            add -= 5.0f * Time.deltaTime;
+
+            if (add_pos>-0.005f)
+            {
+                add_pos = -0.005f;
+            }
+            
+            transform.Rotate(add * Time.deltaTime,0, 0.0f);
+            transform.Translate(add_pos * Time.deltaTime, 0, 0);
 
             if(transform.position.y<=0.0f)
             {
                 down = false;
-                next = true;
+                slow = true;
+               // next = true;
+               
+            }
+        }
+
+        if(slow)
+        {
+            add -= 15.0f * Time.deltaTime;
+
+            if(add<25)
+            {
+                Debug.Log("最低値");
+                add = 25;
+            }
+
+            transform.Rotate(add * Time.deltaTime, 0, 0.0f);
+
+            if (transform.rotation.y>0)
+            {
                 transform.rotation = Quaternion.Euler(0, 0, 90.0f);
+                slow = false;
+                next = true;
+
             }
         }
 
         if(next)
         {
-            if(Input.GetKey(KeyCode.Z)||Input.GetKey("joystick button 0")|| Input.GetKey("joystick button 1"))
+            
+
+            if (Input.GetKey(KeyCode.Z)||Input.GetKey("joystick button 0")|| Input.GetKey("joystick button 1"))
             {
                 SceneManager.LoadScene("Selects");
             }

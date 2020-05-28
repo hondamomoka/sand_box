@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5338306686218212002}
   - component: {fileID: 5338306686218212003}
   - component: {fileID: 1993012757472907814}
-  m_Layer: 26
+  m_Layer: 27
   m_Name: postpV_game
   m_TagString: Untagged
   m_Icon: {fileID: 0}

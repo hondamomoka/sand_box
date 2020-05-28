@@ -16,7 +16,7 @@ public class postp : MonoBehaviour
         on = false;
         bloom = ScriptableObject.CreateInstance<Bloom>();
         bloom.enabled.Override(true);
-        bloom.intensity.Override(20f);
+        bloom.intensity.Override(25f);
 
         
     }
@@ -27,6 +27,7 @@ public class postp : MonoBehaviour
         if(on)
         {
             posv = PostProcessManager.instance.QuickVolume(gameObject.layer, 0f, bloom);
+            on = false;
         }
     }
 }
