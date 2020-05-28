@@ -23,7 +23,7 @@ public class clear : MonoBehaviour
     {
         if(on)
         {
-            Instantiate(coin, new Vector3(camera_pos.x, camera_pos.y + 3.0f, camera_pos.z + 3.0f), Quaternion.identity);
+            Instantiate(coin, new Vector3(camera_pos.x, camera_pos.y + 3.0f, camera_pos.z + 1.5f), Quaternion.identity);
             on = false;
             set = true;
             postp.on = true;
