@@ -4,61 +4,113 @@ using UnityEngine;
 
 public class LiftMovement : MonoBehaviour
 {
-    public float      move_y;
-    public GameObject obj;
+    public GameObject Player;
+    //public GameObject Player_Force;
+    public GameObject Switch;
+    public float speed;
+    public float force;
 
-    private Vector3 origin_pos;
-    private int     directionY;
-    private float   lift_speed;
-    private float   moved_y;
-    private bool    moving;
+    float origin_pos_y;
+
+    public enum LIFT_STATE
+    {
+        STATE_NONE,
+        STATE_STOP,
+        STATE_MOVE_UP,
+        STATE_MOVE_DOWN,
+        STATE_STAY_IN_UP,
+        STATE_STAY_IN_DOWN,
+    };
+
+    public LIFT_STATE Lift_State;
 
     // Start is called before the first frame update
     void Start()
     {
-        origin_pos = GetComponent<Transform>().transform.position;
-        moved_y = 0.0f;
+        origin_pos_y = transform.localPosition.y;
+        Lift_State = LIFT_STATE.STATE_STAY_IN_UP;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(directionY != 0 && moved_y < move_y)
+        switch(Lift_State)
         {
-            MoveY();
-
-            if (moved_y >= move_y)
-            {
-                if (directionY < 0)
-                {
-                    obj.SetActive(true);
-                }
-                else if(directionY > 0)
-                {
-                    GameObject player = GameObject.Find("Player");
-                    player.transform.parent = GameObject.Find("Stage").transform;
-                    //player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 10000, 0), ForceMode.Force);
-                }
-                directionY = 0;
-                moved_y = 0;
-            }
+            case LIFT_STATE.STATE_MOVE_UP:
+                State_Move_Up();
+                break;
+            case LIFT_STATE.STATE_MOVE_DOWN:
+                State_Move_Down();
+                break;
+            case LIFT_STATE.STATE_STAY_IN_UP:
+                State_Stay_In_Up();
+                break;
+            case LIFT_STATE.STATE_STAY_IN_DOWN:
+                State_Stay_In_Down();
+                break;
+            default:
+                break;
         }
     }
 
-    void Set_DirectionY(int dy)
+    void State_Move_Up()
     {
-        directionY = dy;
+        transform.localPosition = new Vector3(
+            transform.localPosition.x,
+            transform.localPosition.y + speed,
+            transform.localPosition.z);
+
+        if (transform.localPosition.y > origin_pos_y)
+        {
+            transform.localPosition = new Vector3(
+                transform.localPosition.x,
+                origin_pos_y,
+                transform.localPosition.z);
+            Lift_State = LIFT_STATE.STATE_STAY_IN_UP;
+            //Player.GetComponent<FreezeLocalTransform>().LocalPosX = true;
+        }
     }
 
-    void Set_Speed(float s)
+    void State_Move_Down()
     {
-        lift_speed = s;
+        transform.localPosition = new Vector3(
+            transform.localPosition.x,
+            transform.localPosition.y - speed,
+            transform.localPosition.z);
+
+        if (transform.localPosition.y < origin_pos_y - 3.5f)
+        {
+            transform.localPosition = new Vector3(
+                transform.localPosition.x,
+                origin_pos_y - 3.5f,
+                transform.localPosition.z);
+            Lift_State = LIFT_STATE.STATE_STAY_IN_DOWN;
+        }
     }
 
-    void MoveY()
+    void State_Stay_In_Up()
     {
-        float movement = lift_speed * directionY;
-        GetComponent<Transform>().transform.Translate(new Vector3(0, movement, 0), Space.Self);
-        moved_y +=  Mathf.Abs(movement);
+        if (Player.transform.parent == transform)
+        {
+            Vector3 pos = Player.transform.localPosition;
+            pos.y -= 0.1f;
+
+            pos = gameObject.transform.TransformPoint(pos);
+
+            Player.GetComponent<Rigidbody>().AddForceAtPosition(
+                (Player.transform.position - pos).normalized * force,
+                Player.transform.position,
+                ForceMode.Impulse);
+
+            Player.transform.parent = null;
+        }
+    }
+
+    void State_Stay_In_Down()
+    {
+        if (Player.transform.parent != transform)
+        {
+            Switch.SetActive(true);
+        }
     }
 }

@@ -10,7 +10,6 @@ public class SwitchBehaviour : MonoBehaviour
     public GameObject   obj_name;
     public string       obj_layer;
     public string       action;
-    public bool isShining;
 
     private int cnt;
     // Start is called before the first frame update
