@@ -18,6 +18,11 @@ public class DoorWithScales : MonoBehaviour
     Renderer[] Bucket_Renderer;
     ScalesBehaviour Scales_Script;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     public enum DOOR_GIMMICK
     {
         NONE,
@@ -37,6 +42,10 @@ public class DoorWithScales : MonoBehaviour
         Door_Renderer = GetComponent<Renderer>();
         Bucket_Renderer = Bucket.GetComponentsInChildren<Renderer>();
         Scales_Script = Scales.GetComponent<ScalesBehaviour>();
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -46,12 +55,14 @@ public class DoorWithScales : MonoBehaviour
         {
             case DOOR_GIMMICK.IF_HANDLE_STAY_IN_LEFT:
                 If_Handle_Stay_In_Left();
+                script.PlaySE(audioClip);
                 break;
             case DOOR_GIMMICK.IF_HANDLE_STAY_IN_RIGHT:
                 If_Handle_Stay_In_Right();
                 break;
             case DOOR_GIMMICK.IF_EVENT_WITH_SWITCH:
                 If_Event_With_Switch();
+                script.PlaySE(audioClip);
                 break;
             default:
                 break;
