@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 2578959949731108515, guid: 22436a6ce98f7ae46abd0acb8358f318,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22436a6ce98f7ae46abd0acb8358f318, type: 3}
@@ -519,9 +519,9 @@ GameObject:
   - component: {fileID: 224846378}
   - component: {fileID: 224846377}
   - component: {fileID: 224846376}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body05
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224846374}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -669,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &265375062
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -757,9 +757,9 @@ GameObject:
   - component: {fileID: 349761123}
   - component: {fileID: 349761122}
   - component: {fileID: 349761121}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body11
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,7 +786,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349761119}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -853,7 +853,7 @@ PrefabInstance:
     - target: {fileID: 4060321517256212804, guid: ed9108f05b24a8b4193c5dd9811a43ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4060321517256212809, guid: ed9108f05b24a8b4193c5dd9811a43ac,
         type: 3}
@@ -1069,9 +1069,9 @@ GameObject:
   - component: {fileID: 404574543}
   - component: {fileID: 404574542}
   - component: {fileID: 404574541}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body02
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1098,7 +1098,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404574539}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1255,9 +1255,9 @@ GameObject:
   - component: {fileID: 539651599}
   - component: {fileID: 539651598}
   - component: {fileID: 539651597}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body04
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,7 +1284,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539651595}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2398,9 +2398,9 @@ GameObject:
   - component: {fileID: 948485448}
   - component: {fileID: 948485447}
   - component: {fileID: 948485446}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body10
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2427,7 +2427,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948485444}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2677,9 +2677,9 @@ GameObject:
   - component: {fileID: 1086220840}
   - component: {fileID: 1086220839}
   - component: {fileID: 1086220838}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body15
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2706,7 +2706,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086220836}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2822,9 +2822,9 @@ GameObject:
   - component: {fileID: 1118690493}
   - component: {fileID: 1118690492}
   - component: {fileID: 1118690491}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body12
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2851,7 +2851,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118690489}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3154,9 +3154,9 @@ GameObject:
   - component: {fileID: 1289892111}
   - component: {fileID: 1289892110}
   - component: {fileID: 1289892109}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body06
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3183,7 +3183,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289892107}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3247,9 +3247,9 @@ GameObject:
   - component: {fileID: 1311566181}
   - component: {fileID: 1311566180}
   - component: {fileID: 1311566179}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body07
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3276,7 +3276,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311566177}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3398,7 +3398,7 @@ PrefabInstance:
     - target: {fileID: 6243282237674284581, guid: 2ce156a422402064e9496adf9f64bfe0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ce156a422402064e9496adf9f64bfe0, type: 3}
@@ -3507,9 +3507,9 @@ GameObject:
   - component: {fileID: 1332680041}
   - component: {fileID: 1332680040}
   - component: {fileID: 1332680039}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body01
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3536,7 +3536,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332680037}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3600,9 +3600,9 @@ GameObject:
   - component: {fileID: 1352945075}
   - component: {fileID: 1352945074}
   - component: {fileID: 1352945073}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body08
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3629,7 +3629,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352945071}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3822,9 +3822,9 @@ GameObject:
   - component: {fileID: 1589610533}
   - component: {fileID: 1589610532}
   - component: {fileID: 1589610531}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body09
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3851,7 +3851,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589610529}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4008,9 +4008,9 @@ GameObject:
   - component: {fileID: 1737537095}
   - component: {fileID: 1737537094}
   - component: {fileID: 1737537093}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body13
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4037,7 +4037,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737537091}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4485,9 +4485,9 @@ GameObject:
   - component: {fileID: 2012485340}
   - component: {fileID: 2012485339}
   - component: {fileID: 2012485338}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body00
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4514,7 +4514,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012485336}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4578,9 +4578,9 @@ GameObject:
   - component: {fileID: 2032079720}
   - component: {fileID: 2032079719}
   - component: {fileID: 2032079718}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body14
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4607,7 +4607,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032079716}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4863,7 +4863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &2061547679
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5109,9 +5109,9 @@ GameObject:
   - component: {fileID: 2099877585}
   - component: {fileID: 2099877584}
   - component: {fileID: 2099877583}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Body03
-  m_TagString: Untagged
+  m_TagString: stage_border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5138,7 +5138,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099877581}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
