@@ -19,11 +19,11 @@ public class rotation : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(0, 0, -33.4f * Time.deltaTime);
+            transform.Rotate(0, 0, -44.5f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(0, 0, 33.4f * Time.deltaTime);
+            transform.Rotate(0, 0, 44.5f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.PageDown))
         {

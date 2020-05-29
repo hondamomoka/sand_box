@@ -7,10 +7,16 @@ public class coin_mode : MonoBehaviour
 {
     public Material[] material;
     int stage_type;
+    public save save;
+    public bool delete;
+    public bool load;
 
     // Start is called before the first frame update
     void Start()
     {
+        delete = false;
+        load = false;
+
         if (SceneManager.GetActiveScene().name == "stage_risu")
         {
             stage_type = 0;
@@ -97,11 +103,23 @@ public class coin_mode : MonoBehaviour
         }
 
         this.GetComponent<Renderer>().material = material[stage_type];
+        save.save_coin(stage_type);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (delete)
+        {
+            save.delete_coin();
+            delete = false;
+        }
+
+        if(load)
+        {
+            save.load_coin();
+            load = false;
+        }
     }
 }

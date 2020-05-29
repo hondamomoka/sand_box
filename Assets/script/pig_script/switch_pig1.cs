@@ -40,7 +40,6 @@ public class switch_pig1 : MonoBehaviour
             on = true;
             count = 0;
             this.GetComponent<Renderer>().material = material[2];
-            script.PlaySE(audioClip);
 
             wall.layer = 0;
             wall.GetComponent<Renderer>().material = material[3];

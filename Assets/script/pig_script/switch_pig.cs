@@ -46,12 +46,10 @@ public class switch_pig : MonoBehaviour
             if(count==1)
             {
                 this.GetComponent<Renderer>().material = material[0];
-                script.PlaySE(audioClip);
             }
             else if(count==2)
             {
                 this.GetComponent<Renderer>().material = material[2];
-                script.PlaySE(audioClip);
             }
         }
     }
@@ -66,6 +64,7 @@ public class switch_pig : MonoBehaviour
                 switch1.reset_p();
                 switch2.reset_p();
                 this.GetComponent<Renderer>().material = material[1];
+                script.PlaySE(audioClip);
 
                 on = false;
             }
@@ -78,6 +77,7 @@ public class switch_pig : MonoBehaviour
                 switch1.crea();
                 switch2.crea();
                 this.GetComponent<Renderer>().material = material[1];
+                script.PlaySE(audioClip);
 
                 sw.layer = 13;
                 sw.GetComponent<Renderer>().material = material[3];

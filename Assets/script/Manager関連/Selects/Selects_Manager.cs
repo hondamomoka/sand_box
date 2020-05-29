@@ -18,8 +18,11 @@ public class Selects_Manager : MonoBehaviour
     private float lsv;      //Lスティック縦に動かしたときの値を格納する
     private float lsh;      //Lスティック横に動かしたときの値を格納する
     private bool stickFlag;
+    private bool startFlag;
 
     private GameObject selectObject;
+    private GameObject endanimation;
+    private CoinUp cu;
 
     private enum StageSelect
     {
@@ -56,10 +59,12 @@ public class Selects_Manager : MonoBehaviour
         sm = manager.GetComponent<Scene_Manager>();
 
         fadeFlag = false;
+        startFlag = false;
 
         selectObject = GameObject.Find("SelectCursor");
 
-        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+        endanimation = GameObject.Find("Coin");
+        cu = endanimation.GetComponent<CoinUp>();
     }
 
     void Start()
@@ -81,61 +86,68 @@ public class Selects_Manager : MonoBehaviour
             if (lsv <= 0.1 && lsv >= -0.1 && lsh <= 0.1 && lsh >= -0.1)
                 stickFlag = true;
 
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))  //決定
-            {
-                am.PlaySE(audioClip1);
-                sm.SceneChange((Scene_Manager.Stage)sm.selectSelect + 3);
-                fadeFlag = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X)) //キャンセル
-            {
-                am.PlaySE(audioClip2);
-                sm.SceneChange(Scene_Manager.Stage.TITLE);
-                sm.titleSelect = 1;
-                fadeFlag = true;
-            }
-
-            if (stickFlag == true)
-            {
-                if (Input.GetKeyDown(KeyCode.RightArrow) || lsh >= 0.9)
+            if (cu.EndCoinUp() == true){
+                if (!startFlag)
                 {
-                    if (sm.selectSelect != 20)
-                    {
-                        sm.selectSelect++;
-                        am.PlaySE(audioClip3);
-                        stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
-                    }
+                    selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                    startFlag = true;
                 }
-                else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
+                if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))  //決定
                 {
-                    if (sm.selectSelect != 1)
-                    {
-                        sm.selectSelect--;
-                        am.PlaySE(audioClip3);
-                        stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
-                    }
+                    am.PlaySE(audioClip1);
+                    sm.SceneChange((Scene_Manager.Stage)sm.selectSelect + 3);
+                    fadeFlag = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X)) //キャンセル
+                {
+                    am.PlaySE(audioClip2);
+                    sm.SceneChange(Scene_Manager.Stage.TITLE);
+                    sm.titleSelect = 1;
+                    fadeFlag = true;
                 }
 
-                else if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
+                if (stickFlag == true)
                 {
-                    if (sm.selectSelect >= 6)
+                    if (Input.GetKeyDown(KeyCode.RightArrow) || lsh >= 0.9)
                     {
-                        sm.selectSelect -= 5;
-                        am.PlaySE(audioClip3);
-                        stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                        if (sm.selectSelect != 5 && sm.selectSelect != 10 && sm.selectSelect != 15 && sm.selectSelect != 20)
+                        {
+                            sm.selectSelect++;
+                            am.PlaySE(audioClip3);
+                            stickFlag = false;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                        }
                     }
-                }
-                else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
-                {
-                    if (sm.selectSelect <= 15)
+                    else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                     {
-                        sm.selectSelect += 5;
-                        am.PlaySE(audioClip3);
-                        stickFlag = false;
-                        selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                        if (sm.selectSelect != 1 && sm.selectSelect != 6 && sm.selectSelect != 11 && sm.selectSelect != 16)
+                        {
+                            sm.selectSelect--;
+                            am.PlaySE(audioClip3);
+                            stickFlag = false;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                        }
+                    }
+
+                    else if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
+                    {
+                        if (sm.selectSelect >= 6)
+                        {
+                            sm.selectSelect -= 5;
+                            am.PlaySE(audioClip3);
+                            stickFlag = false;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                        }
+                    }
+                    else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
+                    {
+                        if (sm.selectSelect <= 15)
+                        {
+                            sm.selectSelect += 5;
+                            am.PlaySE(audioClip3);
+                            stickFlag = false;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                        }
                     }
                 }
             }

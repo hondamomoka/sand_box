@@ -22,7 +22,7 @@ public class switch_cattle2 : MonoBehaviour
 
         Vector3 size = mytra.localScale;
 
-        max_count = (int)(size.x * size.y * 100);
+        max_count = (int)(size.x * size.y * 80);
         on = false;
 
         //音をつけるために追加
@@ -33,6 +33,8 @@ public class switch_cattle2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0,20f*Time.deltaTime);
+
         if(!on)
         {
             if (count > max_count)

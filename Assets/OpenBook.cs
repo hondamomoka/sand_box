@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class OpenBook : MonoBehaviour
 {
-    public GameObject leftcoin;
-    public GameObject rightcoin;
+    public GameObject Coin;
 
     void Start()
     {
@@ -23,8 +22,7 @@ public class OpenBook : MonoBehaviour
         //接触したオブジェクトのタグが"Player"のとき
         if (other.CompareTag("book"))
         {
-            leftcoin.GetComponent<CoinUp>().StartCoinUp();
-            rightcoin.GetComponent<CoinUp>().StartCoinUp();
+            Coin.GetComponent<CoinUp>().StartCoinUp();
         }
     }
 }

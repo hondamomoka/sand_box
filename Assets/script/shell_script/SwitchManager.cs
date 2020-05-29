@@ -49,6 +49,7 @@ public class SwitchManager : MonoBehaviour
     {
         bTime = true;
         wall.SendMessage("Be_Visible");
+        script.PlaySE(audioClip);
     }
 
     void Switch_On(int next)
