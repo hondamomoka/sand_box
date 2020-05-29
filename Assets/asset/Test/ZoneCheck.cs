@@ -11,10 +11,19 @@ public class ZoneCheck : MonoBehaviour
     public string     scene;
     public string     gimmick;
 
+    //音を再生するために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         sand_cnt = 0;
+
+        //音を再生するために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -58,6 +67,8 @@ public class ZoneCheck : MonoBehaviour
         if (sand_cnt >= trigger_cnt)
         {
             obj.SendMessage("Set_" + gimmick + "_State", true);
+            script.PlaySE(audioClip);
+
         }
         else
         {
