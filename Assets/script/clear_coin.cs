@@ -11,8 +11,8 @@ public class clear_coin : MonoBehaviour
     bool slow;
    public float add;
     float add_pos;
-
-
+    public ParticleSystem ps;
+    bool effect;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class clear_coin : MonoBehaviour
         down = true;
         slow = false;
         next = false;
+        effect = false;
         transform.rotation = Quaternion.Euler(0, 0, 90.0f);
  
     }
@@ -75,7 +76,12 @@ public class clear_coin : MonoBehaviour
 
         if(next)
         {
-            
+            if(!effect)
+            {
+                Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90,0,0));
+                effect = true;
+            }
+           
 
             if (Input.GetKey(KeyCode.Z)||Input.GetKey("joystick button 0")|| Input.GetKey("joystick button 1"))
             {
