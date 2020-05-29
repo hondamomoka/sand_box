@@ -5,8 +5,8 @@ using UnityEngine;
 public class switch_move1 : MonoBehaviour
 {
     public move_cube cube;
-    int max_count;
-    int count;
+    public int max_count;
+    public int count;
     public Material[] material;
 
     //音をつけるために追加
@@ -51,7 +51,7 @@ public class switch_move1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("sand_normal"))
+        if (other.gameObject.CompareTag("sand_normal") || other.gameObject.CompareTag("sands"))
         {
             count++;
         }
@@ -60,7 +60,7 @@ public class switch_move1 : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("sand_normal"))
+        if (other.gameObject.CompareTag("sand_normal") || other.gameObject.CompareTag("sands"))
         {
             count--;
             if (count < 0)

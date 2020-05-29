@@ -13,16 +13,18 @@ public class CreateSandsKyo : MonoBehaviour
     public  Material   mat;
     public  string     sands_layer;
     public bool isWithScales;
-    //public  int        num;     // 発生するオブジェクトの総数
-
+    public bool isWithBorderDestroy;
+    public  int        Sands_Max;     // 発生するオブジェクトの総数
+    public int Sands_Num;
     public GameObject[] obj_sands;    // 生成されたオブジェクトを格納する行列
     Transform    sandscreater; // 生成器のTransform情報
 
     void Awake()
     {
-        int num = line * col;
+        Sands_Max = line * col;
+        Sands_Num = Sands_Max;
 
-        obj_sands = new GameObject[num];
+        obj_sands = new GameObject[Sands_Max];
         sandscreater = GetComponent<Transform>();
 
         if (size == 0)
@@ -30,7 +32,7 @@ public class CreateSandsKyo : MonoBehaviour
             size = sands.transform.localScale.x;
         }
 
-        for (int i = 0; i < num; i++)
+        for (int i = 0; i < Sands_Max; i++)
         {
             Vector3 pos = new Vector3(sandscreater.position.x - (col - 1) / 2 * size + (i % col) * size,
                                       sandscreater.position.y - size * i / col,
@@ -47,6 +49,14 @@ public class CreateSandsKyo : MonoBehaviour
             if (sands_layer != "sands_normal")
             {
                 obj_sands[i].layer = LayerMask.NameToLayer(sands_layer);
+            }
+        }
+
+        if (isWithBorderDestroy == true)
+        {
+            for (int i = 0; i < obj_sands.Length; i++)
+            {
+                obj_sands[i].AddComponent<SandsWithBorderDestroy>();
             }
         }
 
@@ -68,6 +78,13 @@ public class CreateSandsKyo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Sands_Num = 0;
+        for (int i = 0; i < Sands_Max; i++)
+        {
+            if (obj_sands[i] != null)
+            {
+                Sands_Num++;
+            }
+        }
     }
 }

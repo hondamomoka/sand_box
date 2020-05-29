@@ -6,8 +6,8 @@ public class switch_move : MonoBehaviour
 {
     public move_cube cube;
     public move_cube cube2;
-    int max_count;
-    int count;
+    public int max_count;
+    public int count;
     bool c_mane;
     public Material[] material;
 
@@ -60,7 +60,7 @@ public class switch_move : MonoBehaviour
     {
         if(c_mane==true)
         {
-            if (other.gameObject.CompareTag("sand_normal"))
+            if (other.gameObject.CompareTag("sand_normal") || other.gameObject.CompareTag("sands"))
             {
                 count++;
             }
@@ -71,7 +71,7 @@ public class switch_move : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("sand_normal"))
+        if (other.gameObject.CompareTag("sand_normal") || other.gameObject.CompareTag("sands"))
         {
             count--;
             if(count<0)
