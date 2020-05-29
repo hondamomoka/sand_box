@@ -11,6 +11,11 @@ public class SwitchLinkSwitch : MonoBehaviour
     public int obj_layer;
     public int frame;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     Renderer Switch_Renderer;
     int cnt;
 
@@ -30,6 +35,10 @@ public class SwitchLinkSwitch : MonoBehaviour
         Switch_Renderer = GetComponent<Renderer>();
 
         cnt = 0;
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -48,7 +57,7 @@ public class SwitchLinkSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("player"))
         {
             gameObject.SetActive(false);
-
+            script.PlaySE(audioClip);
             switch (Gimmick)
             {
                 case GIMMICK.GIMMICK_ACTIVE_OTHER_SWITCH:

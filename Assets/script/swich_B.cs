@@ -8,10 +8,17 @@ public class swich_B : MonoBehaviour
     bool on = false;
     public Material[] material;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -30,6 +37,7 @@ public class swich_B : MonoBehaviour
                 wall.GetComponent<Renderer>().material = material[1];
                 wall.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
+                script.PlaySE(audioClip);
             }
         }
     }

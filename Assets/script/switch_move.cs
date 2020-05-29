@@ -11,6 +11,11 @@ public class switch_move : MonoBehaviour
     bool c_mane;
     public Material[] material;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,10 @@ public class switch_move : MonoBehaviour
         Transform mytra = this.transform;
         Vector3 size = mytra.localScale;
         max_count = (int)(size.x * size.y * 100);
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -35,6 +44,7 @@ public class switch_move : MonoBehaviour
                 c_mane = false;
                 count = 0;
                 this.GetComponent<Renderer>().material = material[1];
+                script.PlaySE(audioClip);
             }
         }
 

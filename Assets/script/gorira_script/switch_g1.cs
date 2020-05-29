@@ -13,6 +13,11 @@ public class switch_g1 : MonoBehaviour
     int max_count;
     int switch_type;//０：黄（プレイヤーが押せる)  １：赤（砂が押せる））
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,10 @@ public class switch_g1 : MonoBehaviour
         Transform mytra = this.transform;
         Vector3 size = mytra.localScale;
         max_count = (int)(size.x * size.y * 100);
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -39,10 +48,12 @@ public class switch_g1 : MonoBehaviour
                 switch_type = 0;
                 this.GetComponent<Renderer>().material = material[0];
                 this.GetComponent<MeshFilter>().sharedMesh = switch_mesh[1];
+                script.PlaySE(audioClip);
 
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
+                script.PlaySE(audioClip);
 
                 count = 0;
 

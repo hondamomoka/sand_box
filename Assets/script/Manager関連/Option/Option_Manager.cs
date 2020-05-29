@@ -75,6 +75,7 @@ public class Option_Manager : MonoBehaviour
                 sm.SceneChange(Scene_Manager.Stage.TITLE);
                 fadeFlag = true;
             }
+
             if (stickFlag == true)
             {
                 //項目選択
@@ -120,6 +121,8 @@ public class Option_Manager : MonoBehaviour
                         seObousan.transform.position += new Vector3(0.285f, 0, 0);
                         am.PlaySE(audioClip2);
                     }
+
+                    stickFlag = false;
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                 {
@@ -139,6 +142,8 @@ public class Option_Manager : MonoBehaviour
                         seObousan.transform.position -= new Vector3(0.285f, 0, 0);
                         am.PlaySE(audioClip2);
                     }
+
+                    stickFlag = false;
                 }
             }
         }

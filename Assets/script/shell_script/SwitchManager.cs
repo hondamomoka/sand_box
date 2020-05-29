@@ -12,10 +12,19 @@ public class SwitchManager : MonoBehaviour
     bool bTime;
     int next_switch;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         bTime = false;
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -31,6 +40,7 @@ public class SwitchManager : MonoBehaviour
                 timecnt = 0;
                 sw[next_switch].SetActive(true);
                 wall.SendMessage("Be_Invisible");
+                script.PlaySE(audioClip);
             }
         }
     }

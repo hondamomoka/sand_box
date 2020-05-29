@@ -11,11 +11,20 @@ public class switch_pig : MonoBehaviour
     public Material[] material;
     public GameObject sw;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         on = false;
         count = 0;
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -37,10 +46,12 @@ public class switch_pig : MonoBehaviour
             if(count==1)
             {
                 this.GetComponent<Renderer>().material = material[0];
+                script.PlaySE(audioClip);
             }
             else if(count==2)
             {
                 this.GetComponent<Renderer>().material = material[2];
+                script.PlaySE(audioClip);
             }
         }
     }
