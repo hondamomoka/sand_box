@@ -12,6 +12,13 @@ public class JellyfishZoomCheck : MonoBehaviour
     private GameObject doorL;
     private GameObject doorR;
 
+    private bool doorFlag;
+
+    //音を再生するために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +27,11 @@ public class JellyfishZoomCheck : MonoBehaviour
         doorR = GameObject.Find("DoorR");
         doorL.SendMessage("SetSpeed", 0.05f);
         doorR.SendMessage("SetSpeed", 0.05f);
+        doorFlag = false;
+
+        //音を再生するために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -29,11 +41,21 @@ public class JellyfishZoomCheck : MonoBehaviour
         {
             doorL.SendMessage("OpenX", -1);
             doorR.SendMessage("OpenX", 1);
+            if (doorFlag == false)
+            {
+                doorFlag = true;
+                script.PlaySE(audioClip);
+            }
         }
         else
         {
             doorL.SendMessage("CloseX", 1);
             doorR.SendMessage("CloseX", -1);
+            if (doorFlag == true)
+            {
+                doorFlag = false;
+                script.PlaySE(audioClip);
+            }
         }
     }
 

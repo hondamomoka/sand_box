@@ -577,7 +577,6 @@ MonoBehaviour:
   obj: {fileID: 1427520476}
   scene: stage_jellyfish
   gimmick: ZoomD
-  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
 --- !u!114 &408586104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,6 +1378,7 @@ MonoBehaviour:
   readyB: 0
   readyC: 0
   readyD: 0
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
 --- !u!4 &1427520478
 Transform:
   m_ObjectHideFlags: 0
@@ -1505,7 +1505,6 @@ MonoBehaviour:
   obj: {fileID: 1427520476}
   scene: stage_jellyfish
   gimmick: ZoomA
-  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
 --- !u!114 &1530630280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,7 +1629,6 @@ MonoBehaviour:
   obj: {fileID: 1427520476}
   scene: stage_jellyfish
   gimmick: ZoomB
-  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
 --- !u!114 &1646022619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,7 +1899,6 @@ MonoBehaviour:
   obj: {fileID: 1427520476}
   scene: stage_jellyfish
   gimmick: ZoomC
-  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
 --- !u!114 &2032447835
 MonoBehaviour:
   m_ObjectHideFlags: 0
