@@ -12,6 +12,8 @@ public class clear_coin : MonoBehaviour
    public float add;
     float add_pos;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +82,7 @@ public class clear_coin : MonoBehaviour
                 SceneManager.LoadScene("Selects");
             }
         }
+
        
     }
 }

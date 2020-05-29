@@ -301,8 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   add: 0
-  posv: {fileID: 5338306686218212003, guid: 8715d5f6b72151e4dbe518b9ffb39310, type: 3}
-  posv2: {fileID: 4655443919275427122, guid: 7aebb62840c84e54fbc652b17d56c728, type: 3}
 --- !u!1 &5710379874122873384
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,3 +617,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 35d76d6f28684ff4d8800c99b07ee1b8, type: 2}
   - {fileID: 2100000, guid: 8bb97311e05b7af48b77f4cfcd2e5fd7, type: 2}
   - {fileID: 2100000, guid: 1cff61d77a5bb3d49aa73eab6b92b209, type: 2}
+  save: {fileID: 7486226781015317600, guid: b112c27f2aeff0547abca8040220c788, type: 3}
+  delete: 0
