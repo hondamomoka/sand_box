@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -603,6 +603,7 @@ MonoBehaviour:
   Door: {fileID: 1125542663}
   Mats:
   - {fileID: 2100000, guid: 57897dbaa89881e48a08b63c0b94b4bb, type: 2}
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
   Switch_Function: 1
 --- !u!1001 &154246093
 PrefabInstance:
@@ -3980,6 +3981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door: {fileID: 0}
   Mats: []
+  audioClip: {fileID: 0}
   Switch_Function: 0
 --- !u!1 &1127674511
 GameObject:
@@ -4182,6 +4184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door: {fileID: 1275659037}
   Mats: []
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
   Switch_Function: 2
 --- !u!1 &1149978554
 GameObject:
@@ -5135,6 +5138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door: {fileID: 0}
   Mats: []
+  audioClip: {fileID: 0}
   Switch_Function: 0
 --- !u!65 &1275659040
 BoxCollider:
