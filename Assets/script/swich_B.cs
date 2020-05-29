@@ -41,5 +41,4 @@ public class swich_B : MonoBehaviour
             }
         }
     }
-
 }
