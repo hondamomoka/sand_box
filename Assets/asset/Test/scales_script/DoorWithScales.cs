@@ -55,14 +55,12 @@ public class DoorWithScales : MonoBehaviour
         {
             case DOOR_GIMMICK.IF_HANDLE_STAY_IN_LEFT:
                 If_Handle_Stay_In_Left();
-                script.PlaySE(audioClip);
                 break;
             case DOOR_GIMMICK.IF_HANDLE_STAY_IN_RIGHT:
                 If_Handle_Stay_In_Right();
                 break;
             case DOOR_GIMMICK.IF_EVENT_WITH_SWITCH:
                 If_Event_With_Switch();
-                script.PlaySE(audioClip);
                 break;
             default:
                 break;
@@ -100,6 +98,7 @@ public class DoorWithScales : MonoBehaviour
 
             // layer: wall_through_player
             gameObject.layer = 14;
+            script.PlaySE(audioClip);
         }
     }
 
@@ -127,6 +126,7 @@ public class DoorWithScales : MonoBehaviour
             }
 
             Door_Mats[1] = Door_Mats[3];
+            script.PlaySE(audioClip);
         }
     }
 }
