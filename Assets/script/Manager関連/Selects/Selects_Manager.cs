@@ -8,6 +8,7 @@ public class Selects_Manager : MonoBehaviour
     private Audio_Manager am;
     private Scene_Manager sm;
 
+    [SerializeField] private AudioClip titleBGM;        //title
     [SerializeField] private AudioClip audioClip1;      //決定
     [SerializeField] private AudioClip audioClip2;      //キャンセル
     [SerializeField] private AudioClip audioClip3;      //選択
@@ -59,6 +60,13 @@ public class Selects_Manager : MonoBehaviour
         selectObject = GameObject.Find("SelectCursor");
 
         selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+    }
+
+    void Start()
+    {
+        //ステージ帰りだったら場面に応じた曲を流す
+        if (am.source[0].clip != titleBGM)
+            am.PlayBGM(titleBGM);
     }
 
     void Update()

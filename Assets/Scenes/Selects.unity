@@ -1116,6 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439dbe6a2b653da44beb0fd99850cbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleBGM: {fileID: 8300000, guid: 88081403e6023c24195d14eac110056e, type: 3}
   audioClip1: {fileID: 8300000, guid: adffc77510821db499d05c93e47828e2, type: 3}
   audioClip2: {fileID: 8300000, guid: 3e44a6ceeb0ca64449bc95bfb87cc18f, type: 3}
   audioClip3: {fileID: 8300000, guid: fb233818a584b284db8b409bd46f66e5, type: 3}

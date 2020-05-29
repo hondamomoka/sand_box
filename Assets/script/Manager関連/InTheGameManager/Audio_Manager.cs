@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Audio_Manager : MonoBehaviour
 {
-    public AudioSource source;
+    public AudioSource[] source;
 
     public float bgVol;
     public float seVol;
 
     void Awake()
     {
-        source = GetComponent<AudioSource>();
-        bgVol = 0.5f;
-        seVol = 0.5f;
-        source.volume = bgVol;
+        source = GetComponents<AudioSource>();
+        bgVol = 0.4f;
+        seVol = 0.4f;
+        source[0].volume = bgVol;
+        source[1].volume = seVol;
     }
 
     public void PlayBGM(AudioClip audioClip)
     {
-        source.clip = audioClip;
-        source.Play();
+        source[0].clip = audioClip;
+        source[0].Play();
     }
 
     //ギミック作動の際にギミック側で使ってもらう関数
@@ -39,6 +40,6 @@ public class Audio_Manager : MonoBehaviour
     //以上
     public void PlaySE(AudioClip audioClip)
     {
-        source.PlayOneShot(audioClip,seVol);
+        source[1].PlayOneShot(audioClip,seVol);
     }
 }

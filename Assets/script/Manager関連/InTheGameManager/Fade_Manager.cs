@@ -63,7 +63,7 @@ public class Fade_Manager : MonoBehaviour
 
             if ((int)sm.nextScene > (int)Scene_Manager.Stage.MANUAL)
             {
-                am.source.volume -= speed * Time.deltaTime;
+                am.source[0].volume -= speed * Time.deltaTime;
             }
 
             if (color.a >= 1.0f)
@@ -71,8 +71,8 @@ public class Fade_Manager : MonoBehaviour
                 sm.fadeIn = true;
                 SceneManager.LoadScene((int)sm.nextScene);
                 sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
-                if(am.source.volume < am.bgVol)
-                am.source.Stop();
+                if(am.source[0].volume < am.bgVol)
+                am.source[0].Stop();
             }
         }
     }
