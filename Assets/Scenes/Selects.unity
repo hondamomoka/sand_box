@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 129518031}
   - component: {fileID: 129518030}
   m_Layer: 0
-  m_Name: MedalDesign (4)
+  m_Name: "\u30AF\u30E9\u30B2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,11 +284,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129518029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.65, y: 1.172, z: 0.25}
+  m_LocalPosition: {x: 0.812, y: 1.172, z: 1.318}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &179003696
 PrefabInstance:
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 192315504}
   - component: {fileID: 192315503}
   m_Layer: 0
-  m_Name: MedalDesign (11)
+  m_Name: "\u304B\u305F\u3064\u3080\u308A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,11 +543,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192315502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.795, y: 1.172, z: 1.318}
+  m_LocalPosition: {x: 2.812, y: 1.172, z: -0.831}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196070767 stripped
 GameObject:
@@ -1606,7 +1606,7 @@ GameObject:
   - component: {fileID: 617970047}
   - component: {fileID: 617970046}
   m_Layer: 0
-  m_Name: MedalDesign (10)
+  m_Name: "\u308F\u306B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1667,11 +1667,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617970045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.812, y: 1.172, z: 1.318}
+  m_LocalPosition: {x: -1.73, y: 1.172, z: 0.25}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &681483479
 PrefabInstance:
@@ -1775,7 +1775,7 @@ GameObject:
   - component: {fileID: 701382233}
   - component: {fileID: 701382232}
   m_Layer: 0
-  m_Name: MedalDesign (16)
+  m_Name: "\u305B\u308B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1836,11 +1836,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701382231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.842, y: 1.172, z: -0.831}
+  m_LocalPosition: {x: -2.323, y: 1.172, z: 1.29}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &781697771
 PrefabInstance:
@@ -1944,7 +1944,7 @@ GameObject:
   - component: {fileID: 800204756}
   - component: {fileID: 800204755}
   m_Layer: 0
-  m_Name: MedalDesign (7)
+  m_Name: "\u308A\u3059"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,7 +2009,7 @@ Transform:
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810135458
 GameObject:
@@ -2081,7 +2081,7 @@ GameObject:
   - component: {fileID: 824419213}
   - component: {fileID: 824419212}
   m_Layer: 0
-  m_Name: MedalDesign (15)
+  m_Name: "\u306F\u3068"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2142,11 +2142,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824419211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.762, y: 1.172, z: -0.831}
+  m_LocalPosition: {x: 1.292, y: 1.172, z: -1.872}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871389015
 GameObject:
@@ -2432,7 +2432,7 @@ GameObject:
   - component: {fileID: 1021075702}
   - component: {fileID: 1021075701}
   m_Layer: 0
-  m_Name: MedalDesign (6)
+  m_Name: "\u3046\u3055\u304E"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2493,11 +2493,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021075700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.16, y: 1.172, z: -0.86}
+  m_LocalPosition: {x: -2.31, y: 1.172, z: -0.86}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1161722173
 PrefabInstance:
@@ -2601,7 +2601,7 @@ GameObject:
   - component: {fileID: 1257027548}
   - component: {fileID: 1257027547}
   m_Layer: 0
-  m_Name: MedalDesign (18)
+  m_Name: "\u307A\u3093\u304E\u3093"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2662,11 +2662,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257027546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.292, y: 1.172, z: -1.871}
+  m_LocalPosition: {x: 2.8, y: 1.172, z: 1.318}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323793876
 GameObject:
@@ -2680,7 +2680,7 @@ GameObject:
   - component: {fileID: 1323793878}
   - component: {fileID: 1323793877}
   m_Layer: 0
-  m_Name: MedalDesign (3)
+  m_Name: "\u30B4\u30EA\u30E9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2741,11 +2741,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323793876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.73, y: 1.172, z: 0.25}
+  m_LocalPosition: {x: 1.272, y: 1.172, z: 0.278}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336109654
 GameObject:
@@ -2851,7 +2851,7 @@ GameObject:
   - component: {fileID: 1355950398}
   - component: {fileID: 1355950397}
   m_Layer: 0
-  m_Name: MedalDesign (17)
+  m_Name: "\u307C\u308B\u307C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2912,11 +2912,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355950396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.812, y: 1.172, z: -0.831}
+  m_LocalPosition: {x: -1.18, y: 1.172, z: 1.29}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1377058909
 PrefabInstance:
@@ -3095,7 +3095,7 @@ GameObject:
   - component: {fileID: 1415202082}
   - component: {fileID: 1415202081}
   m_Layer: 0
-  m_Name: MedalDesign (5)
+  m_Name: "\u3076\u305F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3156,11 +3156,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415202080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.31, y: 1.172, z: -0.86}
+  m_LocalPosition: {x: -0.65, y: 1.172, z: 0.25}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1418293983
 PrefabInstance:
@@ -3264,7 +3264,7 @@ GameObject:
   - component: {fileID: 1505818447}
   - component: {fileID: 1505818446}
   m_Layer: 0
-  m_Name: MedalDesign (13)
+  m_Name: "\u3046\u3057"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3325,11 +3325,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505818445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.272, y: 1.172, z: 0.278}
+  m_LocalPosition: {x: 1.795, y: 1.172, z: 1.318}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514689564
 GameObject:
@@ -3343,7 +3343,7 @@ GameObject:
   - component: {fileID: 1514689566}
   - component: {fileID: 1514689565}
   m_Layer: 0
-  m_Name: MedalDesign (14)
+  m_Name: "\u304B\u306B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3404,11 +3404,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514689564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.422, y: 1.172, z: 0.278}
+  m_LocalPosition: {x: 0.762, y: 1.172, z: -0.831}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532802174
 GameObject:
@@ -3422,7 +3422,7 @@ GameObject:
   - component: {fileID: 1532802176}
   - component: {fileID: 1532802175}
   m_Layer: 0
-  m_Name: MedalDesign (9)
+  m_Name: "\u3046\u306B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3483,11 +3483,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532802174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 1.172, z: -1.9}
+  m_LocalPosition: {x: -2.7, y: 1.172, z: 0.25}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1578119799
 PrefabInstance:
@@ -3591,7 +3591,7 @@ GameObject:
   - component: {fileID: 1784583704}
   - component: {fileID: 1784583703}
   m_Layer: 0
-  m_Name: MedalDesign (12)
+  m_Name: "\u304B\u3044"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3652,11 +3652,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784583702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 1.172, z: 1.318}
+  m_LocalPosition: {x: 1.842, y: 1.172, z: -0.831}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846424833
 GameObject:
@@ -3670,7 +3670,7 @@ GameObject:
   - component: {fileID: 1846424835}
   - component: {fileID: 1846424834}
   m_Layer: 0
-  m_Name: MedalDesign (1)
+  m_Name: "\u30B3\u30D6\u30E9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3731,11 +3731,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846424833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.18, y: 1.172, z: 1.29}
+  m_LocalPosition: {x: -0.7, y: 1.172, z: -1.9}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1948025430
 GameObject:
@@ -3749,7 +3749,7 @@ GameObject:
   - component: {fileID: 1948025432}
   - component: {fileID: 1948025431}
   m_Layer: 0
-  m_Name: MedalDesign (8)
+  m_Name: "\u304B\u3081"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3810,11 +3810,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948025430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.686, y: 1.172, z: -1.9}
+  m_LocalPosition: {x: 2.37, y: 1.172, z: -1.872}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1958671518
 PrefabInstance:
@@ -4116,7 +4116,7 @@ GameObject:
   - component: {fileID: 2022899295}
   - component: {fileID: 2022899294}
   m_Layer: 0
-  m_Name: MedalDesign (19)
+  m_Name: "\u304F\u3058\u3089"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4177,11 +4177,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022899293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 1.172, z: -1.871}
+  m_LocalPosition: {x: -1.16, y: 1.172, z: -0.86}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2071841541
 GameObject:
@@ -4195,7 +4195,7 @@ GameObject:
   - component: {fileID: 2071841543}
   - component: {fileID: 2071841542}
   m_Layer: 0
-  m_Name: MedalDesign
+  m_Name: "\u30AF\u30EA\u30AA\u30CD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4256,11 +4256,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071841541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.323, y: 1.172, z: 1.29}
+  m_LocalPosition: {x: 2.422, y: 1.172, z: 0.278}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094159210
 GameObject:
@@ -4443,7 +4443,7 @@ GameObject:
   - component: {fileID: 2142884476}
   - component: {fileID: 2142884475}
   m_Layer: 0
-  m_Name: MedalDesign (2)
+  m_Name: "\u30A4\u30EB\u30AB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4504,9 +4504,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142884474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 1.172, z: 0.25}
+  m_LocalPosition: {x: -1.688, y: 1.172, z: -1.9}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
