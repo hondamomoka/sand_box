@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,7 +296,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a0595d9f8e5c3744b8d7f8b791eac4e5, type: 2}
   obj_layer: 25
   frame: 50
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
   Gimmick: 1
 --- !u!135 &130869160
 SphereCollider:
@@ -3033,7 +3033,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 57897dbaa89881e48a08b63c0b94b4bb, type: 2}
   obj_layer: 14
   frame: 50
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
   Gimmick: 1
 --- !u!135 &1153193828
 SphereCollider:
@@ -5509,7 +5509,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 639f9f6a6f4f4854fa90b194411ffb64, type: 2}
   obj_layer: 0
   frame: 50
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
   Gimmick: 3
 --- !u!135 &2123952974
 SphereCollider:
