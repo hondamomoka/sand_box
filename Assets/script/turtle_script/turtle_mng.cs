@@ -9,10 +9,17 @@ public class turtle_mng : MonoBehaviour
     public GameObject cube;
     public Material[] material;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -24,6 +31,7 @@ public class turtle_mng : MonoBehaviour
             cube.layer = 14;
             switch1.fin = true;
             switch2.fin = true;
+            script.PlaySE(audioClip);
         }
     }
 }

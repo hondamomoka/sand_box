@@ -11,6 +11,11 @@ public class switch_pig1 : MonoBehaviour
     int max_count;
     public Material[] material;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,10 @@ public class switch_pig1 : MonoBehaviour
         max_count = (int)(size.x * size.y * 100);
 
         on = false;
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -31,10 +40,13 @@ public class switch_pig1 : MonoBehaviour
             on = true;
             count = 0;
             this.GetComponent<Renderer>().material = material[2];
+            script.PlaySE(audioClip);
 
             wall.layer = 0;
             wall.GetComponent<Renderer>().material = material[3];
-           // sw.on += 1;
+            script.PlaySE(audioClip);
+        
+            // sw.on += 1;
         }
     }
 

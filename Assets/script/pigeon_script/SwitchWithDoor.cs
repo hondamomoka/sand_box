@@ -7,6 +7,11 @@ public class SwitchWithDoor : MonoBehaviour
     public GameObject Door;
     public Material[] Mats;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     public enum SWITCH_FUNCTIN
     {
         NONE,
@@ -19,7 +24,9 @@ public class SwitchWithDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -38,6 +45,7 @@ public class SwitchWithDoor : MonoBehaviour
                     Door_Through_Player();
                     break;
                 case SWITCH_FUNCTIN.DESTROY_DOOR:
+                    script.PlaySE(audioClip);
                     Destroy_Door();
                     break;
                 default:

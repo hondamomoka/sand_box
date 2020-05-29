@@ -12,6 +12,12 @@ public class switch_crab : MonoBehaviour
     public switch_crab sw1;
     public switch_crab sw2;
     bool end;
+
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +27,10 @@ public class switch_crab : MonoBehaviour
 
         max_count = (int)(size.x * size.y * 100);
         end = false;
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -38,12 +48,11 @@ public class switch_crab : MonoBehaviour
                     count = 0;
                     sw1.sw_on();
                     sw2.sw_on();
+
+                    script.PlaySE(audioClip);
                 }
             }
         }
-
-        
-        
     }
 
     private void OnTriggerEnter(Collider other)

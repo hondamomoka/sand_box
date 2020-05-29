@@ -7,10 +7,17 @@ public class swich_Wind : MonoBehaviour
     public wind_2 wind;
     bool on = false;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -28,7 +35,8 @@ public class swich_Wind : MonoBehaviour
                 on = true;
 
                 wind.start();
-              
+                script.PlaySE(audioClip);
+
                 Destroy(this.gameObject);
             }
         }
