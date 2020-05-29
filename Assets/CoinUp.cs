@@ -15,12 +15,14 @@ public class CoinUp : MonoBehaviour
 
     bool start;
     bool start1;
+    bool end;
 
     // Start is called before the first frame update
     void Start()
     {
         start = false;
         start1 = false;
+        end = false;
         add_y = 0;
     }
 
@@ -40,6 +42,10 @@ public class CoinUp : MonoBehaviour
                 {
                     add_y += upspeed;    // y座標へ0.01加算
                 }
+                else
+                {
+                    end = true;
+                }
 
                 this.transform.position = new Vector3(startpos_x, startpos_y + add_y, startpos_z);
             }
@@ -50,5 +56,10 @@ public class CoinUp : MonoBehaviour
     public void StartCoinUp()
     {
         start1 = true;
+    }
+
+    public bool EndCoinUp()
+    {
+        return end;
     }
 }
