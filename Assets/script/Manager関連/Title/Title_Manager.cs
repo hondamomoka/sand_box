@@ -71,7 +71,6 @@ public class Title_Manager : MonoBehaviour
                         break;
                 }
                 fadeFlag = true;
-                sm.stage = Scene_Manager.Stage.SELECTS;
             }
 
             if (stickFlag == true)

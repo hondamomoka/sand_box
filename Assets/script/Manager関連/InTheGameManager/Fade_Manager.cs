@@ -61,17 +61,20 @@ public class Fade_Manager : MonoBehaviour
             panel.color = color;
             color.a += speed * Time.deltaTime;
 
+            //ステージセレクトから各シーンに飛ぶときに音をフェードアウト
             if ((int)sm.nextScene > (int)Scene_Manager.Stage.MANUAL)
-            {
                 am.source[0].volume -= speed * Time.deltaTime;
-            }
+            //各シーンからステージセレクトに飛ぶときに音をフェードアウト
+            if((int)sm.nowScene  > (int)Scene_Manager.Stage.MANUAL && (int)sm.nextScene == (int)Scene_Manager.Stage.SELECTS)
+                am.source[0].volume -= speed * Time.deltaTime;
 
             if (color.a >= 1.0f)
             {
                 sm.fadeIn = true;
                 SceneManager.LoadScene((int)sm.nextScene);
+                sm.nowScene = sm.nextScene;
                 sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
-                if(am.source[0].volume < am.bgVol)
+                if (am.source[0].volume < am.bgVol)
                 am.source[0].Stop();
             }
         }

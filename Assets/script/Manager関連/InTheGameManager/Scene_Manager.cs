@@ -36,20 +36,20 @@ public class Scene_Manager : MonoBehaviour
         SCENE_MAX
     }
 
-    public Stage stage;     //クリア処理出来次第削除予定
-
     public bool fadeIn;
+    public Stage nowScene;
     public Stage nextScene;
 
+    //各シーンでの選択肢の位置を固定したり変更したりするのに用いる
     public int titleSelect;
     public int selectSelect;
 
     void Awake()
     {
         fadeIn = true;
-        nextScene = Stage.SCENE_MAX;
 
-        stage = Stage.TITLE;
+        nowScene = Stage.TITLE;
+        nextScene = Stage.SCENE_MAX;
 
         titleSelect = 0;
         selectSelect = 1;
