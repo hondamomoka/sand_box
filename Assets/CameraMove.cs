@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     GameObject cursor;
-    GameObject openbook;
+    private GameObject openbook;
     private float cursor_x;//進行先カメラ位置
     private float cursor_z;
     private float nowcursor_x;//進行中カメラ位置
