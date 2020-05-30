@@ -394,7 +394,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SandCreater: {fileID: 613416728}
+  Needle: {fileID: 1991483773}
   Needle_Rot: 0
+  Needle_Rot_Low: 0.05
+  Needle_Rot_High: 0.3
+  safe_num: 60
+  safe_rate: 0
 --- !u!1 &134765239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sands: {fileID: 1247860127555892, guid: 5330d06123c718f45b5d2b1015698850, type: 3}
   line: 10
-  col: 10
+  col: 20
   size: 0.1
   stage: stage
   mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
@@ -8219,8 +8224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50.4, y: 73.9}
-  m_SizeDelta: {x: 31.5, y: 63}
+  m_AnchoredPosition: {x: 50, y: 74.3}
+  m_SizeDelta: {x: 16, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991483775
 MonoBehaviour:
@@ -8235,12 +8240,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7830189, g: 0.13665895, b: 0.13665895, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5b086d201cfedd544b6ec5d0476b6f2c, type: 3}
+  m_Texture: {fileID: 2800000, guid: f2fbf732c43b09a4daf7c85fb40a0a0f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
