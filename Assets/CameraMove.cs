@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     GameObject cursor;
+    private GameObject openbook;
     private float cursor_x;//進行先カメラ位置
     private float cursor_z;
     private float nowcursor_x;//進行中カメラ位置
@@ -31,6 +32,7 @@ public class CameraMove : MonoBehaviour
         nowcursor_y = commonpos.y;
         nowcursor_z = commonpos.z;
         movecursor = false;
+        openbook = GameObject.Find("Coin");
 
     }
 
@@ -45,19 +47,18 @@ public class CameraMove : MonoBehaviour
             cursor_z = cursor.transform.position.z;
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (openbook.GetComponent<CoinUp>().EndCoinUp() == true)
         {
-            //this.transform.position = new Vector3(cursor_x, CameraPos_y, cursor_z);
-            //this.transform.eulerAngles = new Vector3(angle_x, 0.0f, 0.0f);
-            MagnifyPos();
-            MagnifyAng();
-        }
-        else
-        {
-            //this.transform.position = commonpos;
-            //this.transform.eulerAngles = commonangle;
-            ReducingPos();
-            ReducingAng();
+            if (Input.GetKey(KeyCode.Space))
+            {
+                MagnifyPos();
+                MagnifyAng();
+            }
+            else
+            {
+                ReducingPos();
+                ReducingAng();
+            }
         }
     }
 

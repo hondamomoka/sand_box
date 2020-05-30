@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinUp : MonoBehaviour
-{
-    
-    GameObject UpObject;
+{ 
     public float startpos_x;
     public float startpos_y;
     public float startpos_z;
