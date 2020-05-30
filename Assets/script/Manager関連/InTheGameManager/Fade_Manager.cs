@@ -87,9 +87,7 @@ public class Fade_Manager : MonoBehaviour
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
-            {
                 sm.fadeIn = false;
-            }
         }
     }
 }

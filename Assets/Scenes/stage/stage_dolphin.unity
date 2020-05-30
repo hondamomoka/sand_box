@@ -3608,6 +3608,11 @@ PrefabInstance:
       propertyPath: ps2
       value: 
       objectReference: {fileID: 1770537188}
+    - target: {fileID: 6995993384628097672, guid: bc226bef7428dff458ccb95c4085067d,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e241b2c317b69d441a8906044e90d1fd, type: 3}
     - target: {fileID: 6995993384628097673, guid: bc226bef7428dff458ccb95c4085067d,
         type: 3}
       propertyPath: m_LocalPosition.z

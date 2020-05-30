@@ -35,7 +35,8 @@ public class Title_Manager : MonoBehaviour
     void Start()
     {
         selectObject.transform.position = new Vector3(1, (-49.0f - 30.0f * sm.titleSelect), 300);
-        if(am.source[0].clip != titleBGM)
+
+        if (am.source[0].clip != titleBGM)
             am.PlayBGM(titleBGM);
     }
 

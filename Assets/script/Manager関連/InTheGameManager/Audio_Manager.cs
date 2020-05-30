@@ -20,6 +20,7 @@ public class Audio_Manager : MonoBehaviour
 
     public void PlayBGM(AudioClip audioClip)
     {
+        source[0].volume = bgVol;
         source[0].clip = audioClip;
         source[0].Play();
     }
