@@ -35,7 +35,9 @@ public class switch_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(count>max_count)
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
+        if (count>max_count)
         {
             if (cube.move == false&&cube2.move==false)
             {

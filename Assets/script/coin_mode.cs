@@ -102,6 +102,25 @@ public class coin_mode : MonoBehaviour
             stage_type = 1;
         }
 
+        //float par = FindObjectOfType<NeedleRot>().safe_rate;
+
+        //if ((float)par >= 0.8f)
+        //{
+        //    save.save_coin(stage_type);
+        //}
+        //else if ((float)par < 0.8f && (float)par >= 0.6f)
+        //{
+        //    save.save_coin(stage_type);
+        //}
+        //else if ((float)par < 0.6f && (float)par >= 0.4f)
+        //{
+        //    save.save_coin(stage_type);
+        //}
+        //else if ((float)par < 0.4f)
+        //{
+        //    save.save_coin(stage_type);
+        //}
+
         this.GetComponent<Renderer>().material = material[stage_type];
         save.save_coin(stage_type);
     }
