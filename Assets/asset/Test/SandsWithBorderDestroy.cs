@@ -20,7 +20,7 @@ public class SandsWithBorderDestroy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("stage_border"))
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
