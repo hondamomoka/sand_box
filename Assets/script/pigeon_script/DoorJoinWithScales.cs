@@ -28,6 +28,9 @@ public class DoorJoinWithScales : MonoBehaviour
             {
                 isRot = true;
                 Door.GetComponent<Renderer>().material = Mat;
+
+                // layer: wall_through_sands
+                Door.layer = 15;
             }
 
         }

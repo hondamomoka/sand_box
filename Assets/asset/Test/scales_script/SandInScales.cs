@@ -51,7 +51,7 @@ public class SandInScales : MonoBehaviour
             Set_Sands_With_Helper_Tigger();
         }
 
-        if(other.gameObject.CompareTag("stage_border"))
+        if(other.gameObject.CompareTag("stage_border_return"))
         {
             transform.position = GameObject.FindGameObjectWithTag("sands").transform.position;
         }

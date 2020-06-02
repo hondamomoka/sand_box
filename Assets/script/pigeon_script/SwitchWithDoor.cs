@@ -45,8 +45,8 @@ public class SwitchWithDoor : MonoBehaviour
                     Door_Through_Player();
                     break;
                 case SWITCH_FUNCTIN.DESTROY_DOOR:
-                    script.PlaySE(audioClip);
                     Destroy_Door();
+                    script.PlaySE(audioClip);
                     break;
                 default:
                     break;
