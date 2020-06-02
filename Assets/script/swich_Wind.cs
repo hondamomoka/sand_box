@@ -6,6 +6,7 @@ public class swich_Wind : MonoBehaviour
 {
     public wind_2 wind;
     bool on = false;
+    public swichEFonly_cobra effect;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -23,7 +24,7 @@ public class swich_Wind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +36,7 @@ public class swich_Wind : MonoBehaviour
                 on = true;
 
                 wind.start();
+                effect.playPS();
                 script.PlaySE(audioClip);
 
                 Destroy(this.gameObject);

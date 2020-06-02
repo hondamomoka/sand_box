@@ -44,12 +44,14 @@ public class SwitchLinkSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cnt++;
+        //cnt++;
 
-        if (cnt % frame == 0)
-        {
-            Switch_Renderer.material = Mats[cnt / frame % Mats.Length];
-        }
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
+        //if (cnt % frame == 0)
+        //{
+        //    Switch_Renderer.material = Mats[cnt / frame % Mats.Length];
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

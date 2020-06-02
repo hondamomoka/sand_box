@@ -141,4 +141,9 @@ public class save : MonoBehaviour
 
         load = false;
     }
+
+    public int GetClear(int i)
+    {
+        return coin[i];
+    }
 }
