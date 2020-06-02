@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NeedleRot : MonoBehaviour
 {
     public GameObject SandCreater;
+    public GameObject Needle_Join;
     public GameObject Needle;
     public float Needle_Rot;
     public float Needle_Rot_Low;
@@ -55,11 +56,11 @@ public class NeedleRot : MonoBehaviour
 
     void Needle_Rotation(float rs_low, float rs_high)
     {
-        float r_idx = Needle_Rot - transform.localEulerAngles.z;
+        float r_idx = Needle_Rot - Needle_Join.transform.localEulerAngles.z;
 
         if (r_idx > 0)
         {
-            Vector3 r = transform.localEulerAngles;
+            Vector3 r = Needle_Join.transform.localEulerAngles;
 
             if( r_idx > rs_high)
             {
@@ -74,7 +75,7 @@ public class NeedleRot : MonoBehaviour
             {
                 r.z = Needle_Rot;
             }
-            transform.localEulerAngles = r;
+            Needle_Join.transform.localEulerAngles = r;
         }
     }
 
