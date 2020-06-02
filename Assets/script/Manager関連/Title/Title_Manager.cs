@@ -20,6 +20,9 @@ public class Title_Manager : MonoBehaviour
     [SerializeField] private AudioClip audioClip1;
     [SerializeField] private AudioClip audioClip2;
 
+    public static bool newgame;
+    public static bool changetitle;
+
 
     void Awake()
     {
@@ -30,6 +33,7 @@ public class Title_Manager : MonoBehaviour
         sm = manager.GetComponent<Scene_Manager>();
 
         fadeFlag = false;
+        changetitle = false;
     }
 
     void Start()
@@ -57,9 +61,11 @@ public class Title_Manager : MonoBehaviour
                     case 0:
                         sm.SceneChange(Scene_Manager.Stage.SELECTS);
                         sm.selectSelect = 1;
+                        newgame = false;
                         break;
                     case 1:
                         sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                        newgame = true;
                         break;
                     case 2:
                         sm.SceneChange(Scene_Manager.Stage.OPTION);
@@ -98,6 +104,11 @@ public class Title_Manager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static bool GetContinue()
+    {
+        return newgame;
     }
 
     void Quit()
