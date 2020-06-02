@@ -19,6 +19,8 @@ public class SwitchLinkSwitch : MonoBehaviour
     Renderer Switch_Renderer;
     int cnt;
 
+    public swichEFonly_cobra effect;
+
     public enum GIMMICK
     {
         GIMMICK_NONE,
@@ -74,6 +76,7 @@ public class SwitchLinkSwitch : MonoBehaviour
                 default:
                     break;
             }
+            effect.playPS();
             script.PlaySE(audioClip);
         }
     }
