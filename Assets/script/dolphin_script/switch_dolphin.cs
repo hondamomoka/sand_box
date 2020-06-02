@@ -9,6 +9,7 @@ public class switch_dolphin : MonoBehaviour
     public bool on;
     public Material[] material;
     public GameObject cube;
+    public swichEFonly_cobra effect;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -34,6 +35,8 @@ public class switch_dolphin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
         if (!on)
         {
             if (count > max_count)
@@ -42,6 +45,7 @@ public class switch_dolphin : MonoBehaviour
                 cube.GetComponent<Renderer>().material = material[1];
                 cube.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
+                effect.playPS();
                 script.PlaySE(audioClip);
             }
         }
