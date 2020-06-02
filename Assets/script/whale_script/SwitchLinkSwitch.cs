@@ -59,7 +59,7 @@ public class SwitchLinkSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("player"))
         {
             gameObject.SetActive(false);
-            script.PlaySE(audioClip);
+            
             switch (Gimmick)
             {
                 case GIMMICK.GIMMICK_ACTIVE_OTHER_SWITCH:
@@ -74,6 +74,7 @@ public class SwitchLinkSwitch : MonoBehaviour
                 default:
                     break;
             }
+            script.PlaySE(audioClip);
         }
     }
 
@@ -96,6 +97,7 @@ public class SwitchLinkSwitch : MonoBehaviour
         Obj_With_Gimmick.GetComponent<LiftMovement>().Lift_State = LiftMovement.LIFT_STATE.STATE_MOVE_UP;
 
         Player.transform.parent = Obj_With_Gimmick.transform;
+        Player.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Gimmick_Active_Lift_Down()
