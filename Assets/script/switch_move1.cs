@@ -8,6 +8,7 @@ public class switch_move1 : MonoBehaviour
     public int max_count;
     public int count;
     public Material[] material;
+    public swichEFonly_cobra se;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -41,6 +42,7 @@ public class switch_move1 : MonoBehaviour
                 count = 0;
                 this.GetComponent<Renderer>().material = material[1];
                 script.PlaySE(audioClip);
+                se.playPS();
             }
         }
 
