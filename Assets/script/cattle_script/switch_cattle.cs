@@ -7,6 +7,7 @@ public class switch_cattle : MonoBehaviour
     public bool on;
     public Material[] material;
     public GameObject cube;
+    public swichEFonly_cobra effect;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -39,6 +40,7 @@ public class switch_cattle : MonoBehaviour
                 cube.GetComponent<Renderer>().material = material[1];
                 cube.layer = 13;
                 this.GetComponent<Renderer>().material = material[0];
+                effect.playPS();
                 script.PlaySE(audioClip);
             }
         }
