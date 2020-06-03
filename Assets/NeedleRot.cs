@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NeedleRot : MonoBehaviour
 {
-    public GameObject SandCreater;
+    public GameObject[] SandCreater;
     public GameObject Needle_Join;
     public GameObject Needle;
     public float Needle_Rot;
@@ -14,18 +14,27 @@ public class NeedleRot : MonoBehaviour
     public int safe_num;
     public float safe_rate;
 
-    CreateSandsKyo Sands_Script;
+    CreateSandsKyo[] Sands_Script;
     RawImage Needle_Image;
 
-    int sands_max;
-    int sands_num;
+    public int sands_max;
+    public int sands_num;
 
     // Start is called before the first frame update
     void Start()
     {
-        Sands_Script = SandCreater.GetComponent<CreateSandsKyo>();
-        sands_max = Sands_Script.Sands_Max;
-        sands_num = Sands_Script.Sands_Num;
+        sands_max = 0;
+        sands_num = 0;
+
+        Sands_Script = new CreateSandsKyo[SandCreater.Length];
+
+        for (int i = 0; i < SandCreater.Length; i++)
+        {
+            Sands_Script[i] = SandCreater[i].GetComponent<CreateSandsKyo>();
+            sands_max += Sands_Script[i].Sands_Max;
+        }
+
+        sands_num = sands_max;
 
         Needle_Image = Needle.GetComponent<RawImage>();
         //GetComponent<RectTransform>().localEulerAngles;
@@ -34,7 +43,11 @@ public class NeedleRot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sands_num = Sands_Script.Sands_Num;
+        sands_num = 0;
+        for (int i = 0; i < SandCreater.Length; i++)
+        {
+            sands_num += Sands_Script[i].Sands_Num;
+        }
 
         Needle_Rot = Get_EulerAngles(sands_num);
 
@@ -115,7 +128,7 @@ public class NeedleRot : MonoBehaviour
         }
         else
         {
-            Needle_Image.color = new Color(250, 50, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(250, 0, 0, 255) / 255.5f;
         }
     }
 }

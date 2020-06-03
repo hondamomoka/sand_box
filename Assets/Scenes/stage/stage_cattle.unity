@@ -4036,7 +4036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807d8c49ffbfb1b488d77f79629699f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SandCreater: {fileID: 1971960149}
+  SandCreater:
+  - {fileID: 1971960149}
   Needle_Join: {fileID: 1455765300}
   Needle: {fileID: 795526032}
   Needle_Rot: 0
@@ -4044,6 +4045,8 @@ MonoBehaviour:
   Needle_Rot_High: 0.7
   safe_num: 63
   safe_rate: 0
+  sands_max: 0
+  sands_num: 0
 --- !u!114 &718464373
 MonoBehaviour:
   m_ObjectHideFlags: 0
