@@ -24,7 +24,7 @@ public class wind_2 : MonoBehaviour
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
-        time = 6.0f;
+        time = 5.0f;
     }
 
     // Update is called once per frame
