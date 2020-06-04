@@ -10,12 +10,17 @@ public class buccal_cone : MonoBehaviour
     public GameObject gole;
     bool on;
     public delete_sand ds;
+    public ParticleSystem ps1;
+    public ParticleSystem ps2;
+
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
         count_max = 0;
         on = true;
+        ps1.Stop();
+        ps2.Stop();
     }
 
     // Update is called once per frame
@@ -29,6 +34,8 @@ public class buccal_cone : MonoBehaviour
                 gole.layer = 14;
                 ds.on = true;
                 on = false;
+                ps1.Play();
+                ps2.Play();
             }
         }
         

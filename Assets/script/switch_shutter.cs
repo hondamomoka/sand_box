@@ -9,6 +9,7 @@ public class switch_shutter : MonoBehaviour
     bool on = false;
     int max_count;
     public Material[] material;
+    public swichEFonly_cobra effect;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -32,6 +33,8 @@ public class switch_shutter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
         if (count > max_count)
         {
             on = true;
@@ -40,6 +43,7 @@ public class switch_shutter : MonoBehaviour
 
             wall.layer = 0;
             wall.GetComponent<Renderer>().material = material[1];
+            effect.playPS();
             script.PlaySE(audioClip);
         }
     }
