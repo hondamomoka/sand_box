@@ -3158,6 +3158,7 @@ MonoBehaviour:
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
+  audioClip: {fileID: 8300000, guid: 0c64bf6c07b15ab4f9fb679641527c63, type: 3}
 --- !u!1 &2032447829
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,10 +18,20 @@ public class clear_coin : MonoBehaviour
     //public float par;
     bool effect;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager am;
+    [SerializeField] private AudioClip audioClip;
+    private bool soundflag;
+    private float soundTime;
+
+    //シーンフェードをつけるために追加
+    private GameObject sceneManager;
+    private Scene_Manager sm;
+
     // Start is called before the first frame update
     void Start()
     {
-
         add = 100.0f;
         add_pos = -0.5f;
         down = true;
@@ -29,7 +39,16 @@ public class clear_coin : MonoBehaviour
         next = false;
         effect = false;
         transform.rotation = Quaternion.Euler(0, 0, 90.0f);
- 
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        am = audioManager.GetComponent<Audio_Manager>();
+        soundflag = false;
+        soundTime = 0.0f;
+
+        //シーンフェードをつけるために追加
+        sceneManager = GameObject.Find("GameManager");
+        sm = sceneManager.GetComponent<Scene_Manager>();
     }
 
     // Update is called once per frame
@@ -65,6 +84,15 @@ public class clear_coin : MonoBehaviour
             {
                 Debug.Log("最低値");
                 add = 25;
+                if (!soundflag)
+                {
+                    soundTime += Time.deltaTime;
+                    if (soundTime > 1.0f)
+                    {
+                        am.PlaySE(audioClip);
+                        soundflag = true;
+                    }
+                }
             }
 
             transform.Rotate(add * Time.deltaTime, 0, 0.0f);
@@ -81,7 +109,6 @@ public class clear_coin : MonoBehaviour
 
         if(next)
         {
-            
             if(!effect)
             {
                 //if ((float)par >= 0.8f)
@@ -107,9 +134,9 @@ public class clear_coin : MonoBehaviour
             }
            
 
-            if (Input.GetKey(KeyCode.Z)||Input.GetKey("joystick button 0")|| Input.GetKey("joystick button 1"))
+            if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
-                SceneManager.LoadScene("Selects");
+                sm.SceneChange(Scene_Manager.Stage.SELECTS);
             }
         }
 

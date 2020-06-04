@@ -18,6 +18,9 @@ public class Option_Manager : MonoBehaviour
     [SerializeField] private AudioClip audioClip2;
     [SerializeField] private AudioClip audioClip3;
 
+    private const float bgMaxVol = 0.8f;
+    private const float seMaxVol = 0.8f;
+
     private float lsv;      //Lスティック縦に動かしたときの値を格納する
     private float lsh;      //Lスティック横に動かしたときの値を格納する
     private bool stickFlag;
