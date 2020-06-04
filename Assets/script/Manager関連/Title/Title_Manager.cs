@@ -33,11 +33,12 @@ public class Title_Manager : MonoBehaviour
         sm = manager.GetComponent<Scene_Manager>();
 
         fadeFlag = false;
-        changetitle = false;
+
     }
 
     void Start()
     {
+        changetitle = false;
         selectObject.transform.position = new Vector3(1, (-49.0f - 30.0f * sm.titleSelect), 300);
 
         if (am.source[0].clip != titleBGM)
