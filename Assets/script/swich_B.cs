@@ -7,6 +7,8 @@ public class swich_B : MonoBehaviour
     public GameObject wall;
     bool on = false;
     public Material[] material;
+    public ParticleSystem ps1;
+    public swichEFonly_cobra effect;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -16,6 +18,7 @@ public class swich_B : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
@@ -37,6 +40,8 @@ public class swich_B : MonoBehaviour
                 wall.GetComponent<Renderer>().material = material[1];
                 wall.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
+                ps1.Play();
+                effect.playPS();
                 script.PlaySE(audioClip);
             }
         }

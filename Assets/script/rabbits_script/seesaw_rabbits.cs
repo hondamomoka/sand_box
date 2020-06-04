@@ -6,6 +6,7 @@ public class seesaw_rabbits : MonoBehaviour
 {
     public gear_rabbits gear1;
     public gear_rabbits gear2;
+    public ParticleSystem ps1;
 
     float rot_max;
     float rot;
@@ -16,6 +17,7 @@ public class seesaw_rabbits : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         on = false;
         stop = false;
         rot_max = 88.0f;
@@ -32,6 +34,7 @@ public class seesaw_rabbits : MonoBehaviour
                 if (gear1.moving && gear2.moving)
                 {
                     on = true;
+                    ps1.Play();
 
                 }
             }

@@ -8,8 +8,10 @@ public class SwitchLinkSwitch : MonoBehaviour
     public GameObject[] Other_Gimmick;
     public GameObject Obj_With_Gimmick;
     public Material[] Mats;
+    public ParticleSystem ps1;
     public int obj_layer;
     public int frame;
+    static bool gole = false;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -37,6 +39,12 @@ public class SwitchLinkSwitch : MonoBehaviour
         Switch_Renderer = GetComponent<Renderer>();
 
         cnt = 0;
+
+        if(!gole)
+        {
+            ps1.Stop();
+        }
+        
 
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
@@ -72,6 +80,8 @@ public class SwitchLinkSwitch : MonoBehaviour
                     break;
                 case GIMMICK.GIMMICK_ACTIVE_LIFT_MOVE_DOWN:
                     Gimmick_Active_Lift_Down();
+                    ps1.Play();
+                    gole = true;
                     break;
                 default:
                     break;

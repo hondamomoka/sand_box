@@ -10,6 +10,8 @@ public class switch_pig : MonoBehaviour
     public switch_pig1 switch2;
     public Material[] material;
     public GameObject sw;
+    public SE_mng_cobra effect;
+    public SWEF_three effect2;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -30,6 +32,8 @@ public class switch_pig : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
         count = 0;
 
         if(!on)
@@ -57,6 +61,8 @@ public class switch_pig : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+       
+
         if (count ==1)
         {
             if (other.gameObject.CompareTag("player"))
@@ -64,6 +70,7 @@ public class switch_pig : MonoBehaviour
                 switch1.reset_p();
                 switch2.reset_p();
                 this.GetComponent<Renderer>().material = material[1];
+                effect.playPS();
                 script.PlaySE(audioClip);
 
                 on = false;
@@ -77,6 +84,7 @@ public class switch_pig : MonoBehaviour
                 switch1.crea();
                 switch2.crea();
                 this.GetComponent<Renderer>().material = material[1];
+                effect2.playPS();
                 script.PlaySE(audioClip);
 
                 sw.layer = 13;

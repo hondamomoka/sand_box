@@ -8,10 +8,12 @@ public class gear_rabbits : MonoBehaviour
     float count_max;
     public bool moving;
     public bool stop;
+    public ParticleSystem ps1;
 
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         count = 0;
         count_max = 10;
         moving = false;
@@ -21,10 +23,15 @@ public class gear_rabbits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(count>count_max)
+        if(!moving)
         {
-            moving = true;
+            if (count > count_max)
+            {
+                moving = true;
+                ps1.Play();
+            }
         }
+        
 
         if(!stop)
         {

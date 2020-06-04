@@ -9,6 +9,8 @@ public class switch_pig2 : MonoBehaviour
     public bool on;
     public Material[] material;
     public GameObject cube;
+    public SE_mng_cobra effect;
+    public ParticleSystem ps1;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -18,6 +20,7 @@ public class switch_pig2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         Transform mytra = this.transform;
 
         Vector3 size = mytra.localScale;
@@ -33,6 +36,8 @@ public class switch_pig2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
         if (!on)
         {
             if (count > max_count)
@@ -41,6 +46,8 @@ public class switch_pig2 : MonoBehaviour
                 cube.GetComponent<Renderer>().material = material[1];
                 cube.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
+                ps1.Play();
+                effect.playPS();
                 script.PlaySE(audioClip);
             }
         }
