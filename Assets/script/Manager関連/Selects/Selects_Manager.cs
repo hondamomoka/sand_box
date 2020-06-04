@@ -51,6 +51,7 @@ public class Selects_Manager : MonoBehaviour
     }
 
     private StageSelect CursorPos;
+    public static bool changeselect;
 
     void Awake()
     {
@@ -97,6 +98,7 @@ public class Selects_Manager : MonoBehaviour
                     am.PlaySE(audioClip1);
                     sm.SceneChange((Scene_Manager.Stage)sm.selectSelect + 3);
                     fadeFlag = true;
+                    changeselect = false;
                 }
                 else if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X)) //キャンセル
                 {
@@ -104,6 +106,7 @@ public class Selects_Manager : MonoBehaviour
                     sm.SceneChange(Scene_Manager.Stage.TITLE);
                     sm.titleSelect = 1;
                     fadeFlag = true;
+                    changeselect = true;
                 }
 
                 if (stickFlag == true)
@@ -152,6 +155,11 @@ public class Selects_Manager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static bool GetOldScene()
+    {
+        return changeselect;
     }
 
     private Vector3 CursorPositionLR(int pos)

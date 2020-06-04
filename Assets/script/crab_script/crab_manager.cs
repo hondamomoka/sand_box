@@ -15,6 +15,7 @@ public class crab_manager : MonoBehaviour
     public GameObject scissor2;
     public GameObject scissor3;
     public GameObject scissor4;
+    public swichEFonly_cobra effect;
     public Material[] material;
 
     // Start is called before the first frame update
@@ -39,6 +40,8 @@ public class crab_manager : MonoBehaviour
                 scissor2.layer = 11;
                 scissor3.layer = 11;
                 scissor4.layer = 11;
+
+                effect.playPS();
 
                 sw0.delete();
                 sw1.delete();

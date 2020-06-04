@@ -6,6 +6,7 @@ public class switch_move : MonoBehaviour
 {
     public move_cube cube;
     public move_cube cube2;
+    public SE_mng_cobra se;
     public int max_count;
     public int count;
     bool c_mane;
@@ -47,6 +48,7 @@ public class switch_move : MonoBehaviour
                 count = 0;
                 this.GetComponent<Renderer>().material = material[1];
                 script.PlaySE(audioClip);
+                se.playPS();
             }
         }
 

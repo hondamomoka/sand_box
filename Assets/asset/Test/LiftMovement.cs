@@ -97,6 +97,7 @@ public class LiftMovement : MonoBehaviour
 
             pos = gameObject.transform.TransformPoint(pos);
 
+            Player.GetComponent<Rigidbody>().isKinematic = false;
             Player.GetComponent<Rigidbody>().AddForceAtPosition(
                 (Player.transform.position - pos).normalized * force,
                 Player.transform.position,

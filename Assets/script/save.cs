@@ -10,11 +10,17 @@ public class save : MonoBehaviour
     public bool delete_save;
     static int []coin;
     static bool start;
+    static bool old;
     int maxStage = 20;
     // Start is called before the first frame update
     void Start()
     {
-        if(!start)
+        old = Selects_Manager.GetOldScene();
+        if (old == true)
+        {
+            start = Title_Manager.GetContinue();
+        }
+        if (!start)
         {
             start = true;
             init = false;
@@ -140,5 +146,10 @@ public class save : MonoBehaviour
         }
 
         load = false;
+    }
+
+    public int GetClear(int i)
+    {
+        return coin[i];
     }
 }

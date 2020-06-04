@@ -19,6 +19,8 @@ public class SwitchLinkSwitch : MonoBehaviour
     Renderer Switch_Renderer;
     int cnt;
 
+    public swichEFonly_cobra effect;
+
     public enum GIMMICK
     {
         GIMMICK_NONE,
@@ -44,12 +46,14 @@ public class SwitchLinkSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cnt++;
+        //cnt++;
 
-        if (cnt % frame == 0)
-        {
-            Switch_Renderer.material = Mats[cnt / frame % Mats.Length];
-        }
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
+        //if (cnt % frame == 0)
+        //{
+        //    Switch_Renderer.material = Mats[cnt / frame % Mats.Length];
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,7 +61,7 @@ public class SwitchLinkSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("player"))
         {
             gameObject.SetActive(false);
-            script.PlaySE(audioClip);
+            
             switch (Gimmick)
             {
                 case GIMMICK.GIMMICK_ACTIVE_OTHER_SWITCH:
@@ -72,6 +76,8 @@ public class SwitchLinkSwitch : MonoBehaviour
                 default:
                     break;
             }
+            effect.playPS();
+            script.PlaySE(audioClip);
         }
     }
 
@@ -94,6 +100,7 @@ public class SwitchLinkSwitch : MonoBehaviour
         Obj_With_Gimmick.GetComponent<LiftMovement>().Lift_State = LiftMovement.LIFT_STATE.STATE_MOVE_UP;
 
         Player.transform.parent = Obj_With_Gimmick.transform;
+        Player.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Gimmick_Active_Lift_Down()

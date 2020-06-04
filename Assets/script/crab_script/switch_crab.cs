@@ -11,6 +11,7 @@ public class switch_crab : MonoBehaviour
     public GameObject kani;
     public switch_crab sw1;
     public switch_crab sw2;
+    public swichEFonly_cobra effect;
     bool end;
 
     //音をつけるために追加
@@ -36,7 +37,9 @@ public class switch_crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!end)
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
+        if (!end)
         {
             if (!on)
             {
@@ -48,7 +51,7 @@ public class switch_crab : MonoBehaviour
                     count = 0;
                     sw1.sw_on();
                     sw2.sw_on();
-
+                    effect.playPS();
                     script.PlaySE(audioClip);
                 }
             }

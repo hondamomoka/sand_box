@@ -5,6 +5,8 @@ using UnityEngine;
 public class swich_A : MonoBehaviour
 {
     public GameObject wall;
+    public Material[] material;
+    public swichEFonly_cobra effect;
     int count = 0;
     bool on = false;
 
@@ -24,14 +26,17 @@ public class swich_A : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(count>10)
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
+        if (count>10)
         {
             on = true;
             count = 0;
-            transform.position += new Vector3(0, 0, 0.2f);
+            this.GetComponent<Renderer>().material = material[0];
+            effect.playPS();
             script.PlaySE(audioClip);
 
-            Destroy(wall);
+            Destroy(wall.gameObject);
         }
     }
 

@@ -28,6 +28,7 @@ TagManager:
   - stage
   - book
   - stage_border
+  - stage_border_return
   layers:
   - Default
   - TransparentFX
@@ -57,7 +58,7 @@ TagManager:
   - wall_through_sands_green
   - sands_trigger_change_parent
   - PostProcessing
-  - 
+  - sands_and_watch
   - 
   - 
   - 
