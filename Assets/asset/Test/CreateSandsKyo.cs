@@ -156,6 +156,5 @@ public class CreateSandsKyo : MonoBehaviour
         //砂の速度の平均を計算してピッチを変更
         //0.7~1.3の変動までの変動は許容する
             am.source[2].pitch += ((Sands_Speed_Avarage / Sands_Max) - 3.0f) * 0.1f;
-
     }
 }
