@@ -51,7 +51,7 @@ public class Selects_Manager : MonoBehaviour
     }
 
     private StageSelect CursorPos;
-    public static bool changeselect;
+    public static bool changeselect = true;
 
     void Awake()
     {

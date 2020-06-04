@@ -9,12 +9,15 @@ public class save : MonoBehaviour
     public bool save_;
     public bool delete_save;
     static int []coin;
+    int maxStage = 20;
     static bool start;
     static bool old;
-    int maxStage = 20;
+    
     // Start is called before the first frame update
     void Start()
     {
+        coin = new int[maxStage];
+
         old = Selects_Manager.GetOldScene();
         if (old == true)
         {
@@ -23,10 +26,7 @@ public class save : MonoBehaviour
         if (!start)
         {
             start = true;
-            init = false;
-            load = false;
-            save_ = false;
-            delete_save = false;
+
             for (int i = 0; i < maxStage; i++)
             {
                 if (PlayerPrefs.HasKey("コイン" + i))
@@ -35,27 +35,22 @@ public class save : MonoBehaviour
 
                     Debug.Log("コイン" + i + "消すよ");
                 }
-            }
-
-
-            for (int i = 0; i < maxStage; i++)
-            {
-
-
-                coin = new int[maxStage];
 
 
                 coin[i] = 0;
 
                 Debug.Log("初期化中！" + "コイン" + i);
-
             }
+
         }
         else
         {
             Debug.Log("する～");
         }
-       
+        init = false;
+        load = false;
+        save_ = false;
+        delete_save = false;
     }
 
       
@@ -133,15 +128,11 @@ public class save : MonoBehaviour
 
         for (int i = 0; i < maxStage; i++)
         {
-            if (coin[i] < 0&&coin[i]>4)
+            if ((coin[i] < 0&&coin[i]>4)||coin[i]==null)
             {
                 coin[i] = 0;
             }
-            else
-            {
-                coin[i] = PlayerPrefs.GetInt("コイン" + i);
-            }
-            
+            coin[i] = PlayerPrefs.GetInt("コイン" + i);
             Debug.Log("コイン" + i + "の状態" + coin[i]);
         }
 
