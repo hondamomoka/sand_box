@@ -4903,7 +4903,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
+      propertyPath: SandCreater.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
       propertyPath: SandCreater
+      value: 
+      objectReference: {fileID: 613416728}
+    - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: SandCreater.Array.data[0]
       value: 
       objectReference: {fileID: 613416728}
     - target: {fileID: 8131490251824567979, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,

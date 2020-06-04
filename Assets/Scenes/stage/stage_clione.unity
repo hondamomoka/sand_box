@@ -1370,7 +1370,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 00b6e473f47a3e8498bc8b54a76fca0b, type: 2}
+      objectReference: {fileID: 2100000, guid: 27c2399e06b00fa42ae0f073b14e88ab, type: 2}
     - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: SandCreater.Array.size
