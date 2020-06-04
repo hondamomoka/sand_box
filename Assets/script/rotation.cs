@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class rotation : MonoBehaviour
 {
     //sand_createrを探し出して砂の数を参照する
     private GameObject sandCreater;
     private CreateSandsKyo csk;
+
+    void Start()
+    {
+        
+    }
 
 
     void Update()
@@ -37,6 +43,11 @@ public class rotation : MonoBehaviour
         else if (Input.GetKey(KeyCode.PageUp))
         {
             transform.Rotate(0, 0, 80.0f * Time.deltaTime, Space.World);
+        }
+
+        if(Input.GetKey(KeyCode.Joystick1Button7))
+        {
+            SceneManager.LoadScene("stage_crab");
         }
     }
 }

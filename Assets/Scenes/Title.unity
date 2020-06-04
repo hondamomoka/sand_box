@@ -868,6 +868,7 @@ MonoBehaviour:
   source: []
   bgVol: 0
   seVol: 0
+  sandVol: 0
 --- !u!82 &1172012498
 AudioSource:
   m_ObjectHideFlags: 0
