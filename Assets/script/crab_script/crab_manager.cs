@@ -17,10 +17,14 @@ public class crab_manager : MonoBehaviour
     public GameObject scissor4;
     public swichEFonly_cobra effect;
     public Material[] material;
+    public ParticleSystem ps1;
+    public ParticleSystem ps2;
 
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
+        ps2.Stop();
         on = false;
     }
 
@@ -42,6 +46,8 @@ public class crab_manager : MonoBehaviour
                 scissor4.layer = 11;
 
                 effect.playPS();
+                ps1.Play();
+                ps2.Play();
 
                 sw0.delete();
                 sw1.delete();

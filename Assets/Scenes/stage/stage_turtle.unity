@@ -4143,7 +4143,7 @@ MonoBehaviour:
   cube: {fileID: 130945087}
   material:
   - {fileID: 2100000, guid: 57897dbaa89881e48a08b63c0b94b4bb, type: 2}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
 --- !u!4 &775604889
 Transform:
   m_ObjectHideFlags: 0
@@ -6592,6 +6592,7 @@ MonoBehaviour:
   on: 0
   set: 0
   postp: {fileID: 1750970239}
+  audioClip: {fileID: 0}
 --- !u!1001 &1296205566
 PrefabInstance:
   m_ObjectHideFlags: 0
