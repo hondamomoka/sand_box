@@ -7,6 +7,7 @@ public class CreateJellyfish : MonoBehaviour
     public float a;
     public float b;
     public int   changeAngle; // 回転角度
+    public int Sand_Destroy_Wall_Low, Sand_Destroy_Wall_High;
 
     public Material[] mat; 
 
@@ -81,6 +82,7 @@ public class CreateJellyfish : MonoBehaviour
             obj_body[i].GetComponent<CapsuleCollider>().height = 4;
             obj_body[i].GetComponent<Renderer>().enabled = true;
             obj_body[i].GetComponent<Renderer>().sharedMaterial = mat[0];
+            obj_body[i].tag = "stage";
 
             if ((i >= aL && i <= aR) || (i >= bL && i <= cR) || (i >= dL && i <= dR))
             //if ((i >= aL && i <= aR) || (i >= bL && i <= bR) || (i >= cL && i <= cR) || (i >= dL && i <= dR))
@@ -88,6 +90,13 @@ public class CreateJellyfish : MonoBehaviour
                 obj_body[i].SetActive(false);
             }
         }
+
+        for(int i = Sand_Destroy_Wall_Low; i <= Sand_Destroy_Wall_High; i++)
+        {
+            obj_body[i].GetComponent<Renderer>().sharedMaterial = mat[1];
+            obj_body[i].layer = 15;
+        }
+
     }
 
     float CreateLeg(int left, int right, GameObject[] obj_leg)
