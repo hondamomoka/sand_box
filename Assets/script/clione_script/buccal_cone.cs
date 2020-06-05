@@ -32,6 +32,7 @@ public class buccal_cone : MonoBehaviour
             {
                 gole.GetComponent<Renderer>().material = material[2];
                 gole.layer = 14;
+                gole.tag = "Untagged";
                 ds.on = true;
                 on = false;
                 ps1.Play();

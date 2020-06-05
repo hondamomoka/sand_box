@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 9742115}
   m_Layer: 15
   m_Name: Crocodile (69)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 29970962}
   m_Layer: 0
   m_Name: Crocodile (15)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 45237371}
   m_Layer: 0
   m_Name: Crocodile (34)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 51313669}
   m_Layer: 0
   m_Name: Crocodile (3)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 64913981}
   m_Layer: 0
   m_Name: Crocodile (53)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -960,6 +960,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64913979}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &74560673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1350279853}
+    m_Modifications:
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913424082118105092, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+        type: 3}
+      propertyPath: m_Name
+      value: Player 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f84c2cb3db4045459fe71ae50f0a4af, type: 3}
 --- !u!1 &98403237
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +1048,7 @@ GameObject:
   - component: {fileID: 98403239}
   m_Layer: 0
   m_Name: Crocodile (1)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1160,7 +1234,7 @@ GameObject:
   - component: {fileID: 101968368}
   m_Layer: 0
   m_Name: Crocodile (38)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1346,7 +1420,7 @@ GameObject:
   - component: {fileID: 136813725}
   m_Layer: 0
   m_Name: Crocodile (20)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1439,7 +1513,7 @@ GameObject:
   - component: {fileID: 151969116}
   m_Layer: 0
   m_Name: Crocodile (42)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1532,7 +1606,7 @@ GameObject:
   - component: {fileID: 161467861}
   m_Layer: 0
   m_Name: Crocodile (21)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1811,7 +1885,7 @@ GameObject:
   - component: {fileID: 200658055}
   m_Layer: 0
   m_Name: Crocodile (44)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2183,7 +2257,7 @@ GameObject:
   - component: {fileID: 267816876}
   m_Layer: 0
   m_Name: Crocodile (65)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2648,7 +2722,7 @@ GameObject:
   - component: {fileID: 309772143}
   m_Layer: 0
   m_Name: Crocodile (64)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2834,7 +2908,7 @@ GameObject:
   - component: {fileID: 328500338}
   m_Layer: 0
   m_Name: Crocodile (54)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3020,7 +3094,7 @@ GameObject:
   - component: {fileID: 337271688}
   m_Layer: 0
   m_Name: Crocodile (73)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3113,7 +3187,7 @@ GameObject:
   - component: {fileID: 344119506}
   m_Layer: 15
   m_Name: Crocodile (78)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3579,7 +3653,7 @@ GameObject:
   - component: {fileID: 391181631}
   m_Layer: 0
   m_Name: Crocodile (83)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3765,7 +3839,7 @@ GameObject:
   - component: {fileID: 416335838}
   m_Layer: 15
   m_Name: Crocodile (77)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3858,7 +3932,7 @@ GameObject:
   - component: {fileID: 419343968}
   m_Layer: 0
   m_Name: Crocodile (12)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4236,7 +4310,7 @@ GameObject:
   - component: {fileID: 502365123}
   m_Layer: 0
   m_Name: Crocodile (60)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4329,7 +4403,7 @@ GameObject:
   - component: {fileID: 508700743}
   m_Layer: 0
   m_Name: Crocodile (50)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4422,7 +4496,7 @@ GameObject:
   - component: {fileID: 520266887}
   m_Layer: 15
   m_Name: Crocodile (14)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4515,7 +4589,7 @@ GameObject:
   - component: {fileID: 527565218}
   m_Layer: 0
   m_Name: Crocodile (52)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4794,7 +4868,7 @@ GameObject:
   - component: {fileID: 565304849}
   m_Layer: 0
   m_Name: Crocodile (48)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4887,7 +4961,7 @@ GameObject:
   - component: {fileID: 574556518}
   m_Layer: 15
   m_Name: Crocodile (79)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5222,7 +5296,7 @@ GameObject:
   - component: {fileID: 621283209}
   m_Layer: 0
   m_Name: Crocodile (29)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5315,7 +5389,7 @@ GameObject:
   - component: {fileID: 645060979}
   m_Layer: 0
   m_Name: Crocodile (39)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5408,7 +5482,7 @@ GameObject:
   - component: {fileID: 649825649}
   m_Layer: 0
   m_Name: Crocodile (17)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5687,7 +5761,7 @@ GameObject:
   - component: {fileID: 680758967}
   m_Layer: 15
   m_Name: Crocodile (10)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5780,7 +5854,7 @@ GameObject:
   - component: {fileID: 681851547}
   m_Layer: 0
   m_Name: Crocodile (47)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6369,7 +6443,7 @@ GameObject:
   - component: {fileID: 743697145}
   m_Layer: 0
   m_Name: Crocodile (51)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6462,7 +6536,7 @@ GameObject:
   - component: {fileID: 757702336}
   m_Layer: 0
   m_Name: Crocodile (49)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6567,7 +6641,7 @@ GameObject:
   - component: {fileID: 774523272}
   m_Layer: 0
   m_Name: Crocodile (16)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6660,7 +6734,7 @@ GameObject:
   - component: {fileID: 775273155}
   m_Layer: 0
   m_Name: Crocodile (24)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6753,7 +6827,7 @@ GameObject:
   - component: {fileID: 830281610}
   m_Layer: 15
   m_Name: Crocodile (68)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6939,7 +7013,7 @@ GameObject:
   - component: {fileID: 877940707}
   m_Layer: 0
   m_Name: Crocodile (13)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7032,7 +7106,7 @@ GameObject:
   - component: {fileID: 892879049}
   m_Layer: 0
   m_Name: Crocodile (35)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7125,7 +7199,7 @@ GameObject:
   - component: {fileID: 896183218}
   m_Layer: 0
   m_Name: Crocodile (25)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7311,7 +7385,7 @@ GameObject:
   - component: {fileID: 897119494}
   m_Layer: 0
   m_Name: Crocodile (57)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7590,7 +7664,7 @@ GameObject:
   - component: {fileID: 909146156}
   m_Layer: 0
   m_Name: Crocodile (8)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8055,7 +8129,7 @@ GameObject:
   - component: {fileID: 1053340349}
   m_Layer: 0
   m_Name: Crocodile (37)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8149,7 +8223,7 @@ PrefabInstance:
     - target: {fileID: 4875308551043280611, guid: 87a461eb5910dd84099311389a995ea2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8499359654970465520, guid: 87a461eb5910dd84099311389a995ea2,
         type: 3}
@@ -8189,7 +8263,7 @@ PrefabInstance:
     - target: {fileID: 8499359654970465520, guid: 87a461eb5910dd84099311389a995ea2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8499359654970465520, guid: 87a461eb5910dd84099311389a995ea2,
         type: 3}
@@ -8315,7 +8389,7 @@ GameObject:
   - component: {fileID: 1090275122}
   m_Layer: 0
   m_Name: Crocodile (80)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8594,7 +8668,7 @@ GameObject:
   - component: {fileID: 1101031452}
   m_Layer: 15
   m_Name: Crocodile (71)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8703,7 +8777,7 @@ Transform:
   m_LocalScale: {x: 1, y: 9.9187, z: 1}
   m_Children: []
   m_Father: {fileID: 1350279853}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1104190653
 MonoBehaviour:
@@ -8722,6 +8796,7 @@ MonoBehaviour:
   on: 0
   set: 0
   postp: {fileID: 761865467}
+  audioClip: {fileID: 0}
 --- !u!65 &1104190654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8842,7 +8917,7 @@ GameObject:
   - component: {fileID: 1128245998}
   m_Layer: 0
   m_Name: Crocodile (70)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9121,7 +9196,7 @@ GameObject:
   - component: {fileID: 1171783788}
   m_Layer: 0
   m_Name: Crocodile (23)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9313,7 +9388,7 @@ Transform:
   - {fileID: 1941012002}
   - {fileID: 554802603}
   m_Father: {fileID: 1350279853}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188057872
 GameObject:
@@ -9422,7 +9497,7 @@ GameObject:
   - component: {fileID: 1192378380}
   m_Layer: 0
   m_Name: Crocodile (11)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9700,7 +9775,7 @@ GameObject:
   - component: {fileID: 1210985329}
   m_Layer: 0
   m_Name: Crocodile (33)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9793,7 +9868,7 @@ GameObject:
   - component: {fileID: 1221130420}
   m_Layer: 0
   m_Name: Crocodile (56)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10258,7 +10333,7 @@ GameObject:
   - component: {fileID: 1249980183}
   m_Layer: 0
   m_Name: Crocodile (36)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10351,7 +10426,7 @@ GameObject:
   - component: {fileID: 1261456399}
   m_Layer: 0
   m_Name: Crocodile (74)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10444,7 +10519,7 @@ GameObject:
   - component: {fileID: 1301039794}
   m_Layer: 0
   m_Name: gole
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10537,7 +10612,7 @@ GameObject:
   - component: {fileID: 1317028238}
   m_Layer: 0
   m_Name: Crocodile (43)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10817,6 +10892,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1483823573}
   - {fileID: 424550378}
   - {fileID: 1832297808}
   - {fileID: 1457581758}
@@ -10946,7 +11022,7 @@ GameObject:
   - component: {fileID: 1367117726}
   m_Layer: 0
   m_Name: Crocodile (62)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11039,7 +11115,7 @@ GameObject:
   - component: {fileID: 1372657685}
   m_Layer: 0
   m_Name: Crocodile (22)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11132,7 +11208,7 @@ GameObject:
   - component: {fileID: 1401865853}
   m_Layer: 0
   m_Name: Crocodile (45)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11225,7 +11301,7 @@ GameObject:
   - component: {fileID: 1408277363}
   m_Layer: 0
   m_Name: Crocodile (59)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11416,7 +11492,7 @@ Transform:
   - {fileID: 391181634}
   - {fileID: 1657107658}
   m_Father: {fileID: 1350279853}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432878158
 GameObject:
@@ -11432,7 +11508,7 @@ GameObject:
   - component: {fileID: 1432878160}
   m_Layer: 0
   m_Name: Crocodile (9)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11780,7 +11856,7 @@ GameObject:
   - component: {fileID: 1446075501}
   m_Layer: 15
   m_Name: Crocodile (2)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12065,7 +12141,7 @@ GameObject:
   - component: {fileID: 1474551477}
   m_Layer: 0
   m_Name: Crocodile (55)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12344,7 +12420,7 @@ GameObject:
   - component: {fileID: 1479625267}
   m_Layer: 0
   m_Name: Crocodile (32)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12423,6 +12499,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479625265}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1483823573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2953092979734749897, guid: 1f84c2cb3db4045459fe71ae50f0a4af,
+    type: 3}
+  m_PrefabInstance: {fileID: 74560673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486396605
 GameObject:
   m_ObjectHideFlags: 0
@@ -12437,7 +12519,7 @@ GameObject:
   - component: {fileID: 1486396607}
   m_Layer: 0
   m_Name: Crocodile (26)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12561,7 +12643,7 @@ PrefabInstance:
     - target: {fileID: 2695593734421343598, guid: 4bcd4cdaaac18de45b149b6e9efee694,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2695593734421343598, guid: 4bcd4cdaaac18de45b149b6e9efee694,
         type: 3}
@@ -12707,7 +12789,7 @@ GameObject:
   - component: {fileID: 1535794606}
   m_Layer: 0
   m_Name: Crocodile (7)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12939,7 +13021,7 @@ PrefabInstance:
     - target: {fileID: 8733836937609609243, guid: 471254d4784582d4aa6c5e9009efcb59,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8733836937609609243, guid: 471254d4784582d4aa6c5e9009efcb59,
         type: 3}
@@ -13052,7 +13134,7 @@ GameObject:
   - component: {fileID: 1606970078}
   m_Layer: 15
   m_Name: Crocodile (81)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13145,7 +13227,7 @@ GameObject:
   - component: {fileID: 1608521611}
   m_Layer: 0
   m_Name: Crocodile (46)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13331,7 +13413,7 @@ GameObject:
   - component: {fileID: 1621959566}
   m_Layer: 0
   m_Name: Crocodile (63)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13424,7 +13506,7 @@ GameObject:
   - component: {fileID: 1636359333}
   m_Layer: 0
   m_Name: Crocodile (67)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13610,7 +13692,7 @@ GameObject:
   - component: {fileID: 1657107659}
   m_Layer: 0
   m_Name: Crocodile (28)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13889,7 +13971,7 @@ GameObject:
   - component: {fileID: 1683322392}
   m_Layer: 0
   m_Name: Crocodile (18)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13982,7 +14064,7 @@ GameObject:
   - component: {fileID: 1699729599}
   m_Layer: 0
   m_Name: Crocodile (31)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14262,7 +14344,7 @@ GameObject:
   - component: {fileID: 1745731326}
   m_Layer: 0
   m_Name: Crocodile (61)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14541,7 +14623,7 @@ GameObject:
   - component: {fileID: 1762049757}
   m_Layer: 0
   m_Name: Crocodile (41)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14634,7 +14716,7 @@ GameObject:
   - component: {fileID: 1772329939}
   m_Layer: 0
   m_Name: Crocodile (82)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15192,7 +15274,7 @@ GameObject:
   - component: {fileID: 1791731090}
   m_Layer: 0
   m_Name: Crocodile (66)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15378,7 +15460,7 @@ GameObject:
   - component: {fileID: 1811832771}
   m_Layer: 0
   m_Name: Crocodile (5)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15471,7 +15553,7 @@ GameObject:
   - component: {fileID: 1827299468}
   m_Layer: 15
   m_Name: Crocodile (72)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15581,7 +15663,7 @@ Transform:
   m_LocalScale: {x: 2.0019, y: 1, z: 1.5061002}
   m_Children: []
   m_Father: {fileID: 1350279853}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &1832297809
 MeshCollider:
@@ -15658,7 +15740,7 @@ GameObject:
   - component: {fileID: 1840193945}
   m_Layer: 0
   m_Name: Crocodile (75)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15751,7 +15833,7 @@ GameObject:
   - component: {fileID: 1841389148}
   m_Layer: 0
   m_Name: Crocodile
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16030,7 +16112,7 @@ GameObject:
   - component: {fileID: 1865667162}
   m_Layer: 0
   m_Name: Crocodile (40)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16495,7 +16577,7 @@ GameObject:
   - component: {fileID: 1990890551}
   m_Layer: 0
   m_Name: Crocodile (27)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16681,7 +16763,7 @@ GameObject:
   - component: {fileID: 2016278235}
   m_Layer: 0
   m_Name: Crocodile (4)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16774,7 +16856,7 @@ GameObject:
   - component: {fileID: 2036141438}
   m_Layer: 0
   m_Name: Crocodile (19)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16867,7 +16949,7 @@ GameObject:
   - component: {fileID: 2038215471}
   m_Layer: 15
   m_Name: Crocodile (6)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17084,7 +17166,7 @@ GameObject:
   - component: {fileID: 2104615685}
   m_Layer: 0
   m_Name: Crocodile (30)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17177,7 +17259,7 @@ GameObject:
   - component: {fileID: 2110011291}
   m_Layer: 0
   m_Name: Crocodile (76)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

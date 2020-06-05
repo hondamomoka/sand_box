@@ -46,6 +46,7 @@ public class switch_dolphin : MonoBehaviour
                 on = true;
                 cube.GetComponent<Renderer>().material = material[1];
                 cube.layer = 14;
+                cube.tag = "Untagged";
                 this.GetComponent<Renderer>().material = material[0];
                 effect.playPS();
                 ps1.Play();

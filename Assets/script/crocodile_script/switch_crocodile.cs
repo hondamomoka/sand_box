@@ -39,6 +39,7 @@ public class switch_crocodile : MonoBehaviour
             {
                 on = true;
                 cube.GetComponent<Renderer>().material = material[1];
+                cube.tag = "Untagged";
                 cube.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
                 script.PlaySE(audioClip);
