@@ -49,7 +49,7 @@ public class CameraMove : MonoBehaviour
 
         if (openbook.GetComponent<CoinUp>().EndCoinUp() == true)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button3))
             {
                 MagnifyPos();
                 MagnifyAng();
