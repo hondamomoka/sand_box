@@ -113,7 +113,6 @@ public class CreateSandsKyo : MonoBehaviour
 
         //砂の音の設定初期化
         am.source[2].volume = am.seVol;
-        am.source[2].pitch = 1.0f;
         for (int i = 0; i < Sands_Max; i++)
         {
             if (obj_sands[i] != null)
@@ -151,10 +150,10 @@ public class CreateSandsKyo : MonoBehaviour
         //SEの音量が0じゃなければ音量調節して再生
         //移動速度が大きい砂の数が多ければそれだけ音量が大きくなる
         if (am.seVol > 0.0f)
-                am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * 0.6f;
+            am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * 0.6f;
 
         //砂の速度の平均を計算してピッチを変更
         //0.7~1.3の変動までの変動は許容する
-            am.source[2].pitch += ((Sands_Speed_Avarage / Sands_Max) - 3.0f) * 0.1f;
+        //am.source[2].pitch += ((Sands_Speed_Avarage / Sands_Max) - 3.0f) * 0.1f;
     }
 }

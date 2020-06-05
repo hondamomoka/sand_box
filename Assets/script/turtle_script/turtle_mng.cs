@@ -29,9 +29,12 @@ public class turtle_mng : MonoBehaviour
         {
             cube.GetComponent<Renderer>().material = material[0];
             cube.layer = 14;
+
+            if (!switch1.fin && !switch2.fin)
+                script.PlaySE(audioClip);
+
             switch1.fin = true;
             switch2.fin = true;
-            script.PlaySE(audioClip);
         }
     }
 }

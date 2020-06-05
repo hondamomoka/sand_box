@@ -57,8 +57,8 @@ public class Scene_Manager : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetKeyDown(KeyCode.R))
-                SceneChange(Stage.SELECTS);
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneChange(Stage.SELECTS);
     }
 
     public void SceneChange(Stage change)

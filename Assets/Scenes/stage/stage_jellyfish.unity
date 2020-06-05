@@ -3313,7 +3313,7 @@ MonoBehaviour:
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
-  audioClip: {fileID: 8300000, guid: 947ef062e1477884bb5f72947601b5a8, type: 3}
+  audioClip: {fileID: 8300000, guid: 4393b8f829acf4b4b82225195adbdce7, type: 3}
 --- !u!1 &2032447829
 GameObject:
   m_ObjectHideFlags: 0
