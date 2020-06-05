@@ -12,6 +12,12 @@ public class DoorWithScales : MonoBehaviour
     public GameObject[] SandCreater;
     public Material[] Door_Mats;
 
+    public swichEFonly_cobra effect0;
+    public swichEFonly_cobra effect1;
+    public swichEFonly_cobra effect2;
+    public ParticleSystem ps1;
+    static int ps;
+
     GameObject[] obj_sands;
 
     Renderer Door_Renderer;
@@ -36,6 +42,9 @@ public class DoorWithScales : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps = 0;
+        ps1.Stop();
+
         // 砂の取得
         obj_sands = SandCreater[0].GetComponent<CreateSandsKyo>().obj_sands;
 
@@ -73,6 +82,13 @@ public class DoorWithScales : MonoBehaviour
             Scales_Script.isPlayerInBucket == false &&
             Scales_Script.isWithPlayer == true)
         {
+            if(ps==0)
+            {
+                effect1.playPS();
+                ps = 1;
+            }
+           
+
             Door_Renderer.material = Door_Mats[1];
 
             // layer: wall_through_player
@@ -81,9 +97,15 @@ public class DoorWithScales : MonoBehaviour
             if (Goal != null)
             {
                 Goal.GetComponent<Renderer>().material = Door_Mats[1];
-
                 // layer: wall_through_player
                 Goal.layer = 14;
+
+                if (ps == 1)
+                {
+                    effect2.playPS();
+                    ps1.Play();
+                    ps = 2;
+                }
             }
         }
     }
@@ -126,6 +148,7 @@ public class DoorWithScales : MonoBehaviour
             }
 
             Door_Mats[1] = Door_Mats[3];
+            effect0.playPS();
             script.PlaySE(audioClip);
         }
     }
