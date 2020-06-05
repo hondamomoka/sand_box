@@ -5,10 +5,12 @@ using UnityEngine;
 public class switch_g0 : MonoBehaviour
 {
     public Material[] material;
-    //public GameObject g_cube;
-   // public GameObject g_cube2;
+    public GameObject g_cube;
+    public GameObject g_cube2;
+    public swichEFonly_cobra effect;
+    public swichEFonly_cobra effect2;
 
-   public int count;
+    public int count;
     int max_count;
     public int switch_type;//０：黄（プレイヤーが押せる)  １：赤（砂が押せる））
 
@@ -48,13 +50,15 @@ public class switch_g0 : MonoBehaviour
                 //スイッチの色を変換：赤から無
                 switch_type = 2;
                 this.GetComponent<Renderer>().material = material[2];
-                script.PlaySE(audioClip);
+                
 
                 //指定キューブの色を変換：赤から黄
-                //g_cube2.layer = 14;
-                //g_cube2.GetComponent<Renderer>().material = material[0];
+                g_cube2.layer = 14;
+                g_cube2.GetComponent<Renderer>().material = material[3];
 
                 count = 0;
+                effect.playPS();
+                script.PlaySE(audioClip);
             }
         }
     }
@@ -65,13 +69,15 @@ public class switch_g0 : MonoBehaviour
         {
             if (other.gameObject.CompareTag("player"))
             {
-                ////スイッチの色を黄から赤に
-                //switch_type = 1;
-                //this.GetComponent<Renderer>().material = material[1];
+                //スイッチの色を黄から赤に
+                switch_type = 1;
+                this.GetComponent<Renderer>().material = material[1];
 
-                ////キューブの色を赤から黄に
-                //g_cube.layer = 14;
-                //g_cube.GetComponent<Renderer>().material = material[0];
+                //キューブの色を赤から黄に
+                g_cube.layer = 14;
+                g_cube.GetComponent<Renderer>().material = material[3];
+
+                effect2.playPS();
             }
         }
         else if (switch_type == 1)

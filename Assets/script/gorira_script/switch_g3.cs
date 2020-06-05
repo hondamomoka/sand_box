@@ -8,6 +8,8 @@ public class switch_g3 : MonoBehaviour
     public GameObject g_cube;
     public switch_g0 switch0;
     public Mesh[] switch_mesh;
+    public swichEFonly_cobra effect;
+    public SE_mng_cobra effect2;
 
     int count;
     int max_count;
@@ -54,6 +56,7 @@ public class switch_g3 : MonoBehaviour
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
                 g_cube.tag = "Untagged";
+                effect.playPS();
                 script.PlaySE(audioClip);
                 //count = 0;
             }
@@ -79,7 +82,7 @@ public class switch_g3 : MonoBehaviour
                 //救済キューブの出現
                 switch0.GetComponent<Renderer>().material = material[1];
                 switch0.switch_type = 1;
-
+                effect2.playPS();
                 script.PlaySE(audioClip);
             }
         }

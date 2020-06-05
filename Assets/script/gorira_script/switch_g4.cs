@@ -8,6 +8,8 @@ public class switch_g4 : MonoBehaviour
     public Material[] material;
     int count = 0;
     bool on = false;
+    public swichEFonly_cobra effect;
+    public ParticleSystem ps1;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -17,6 +19,7 @@ public class switch_g4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
@@ -31,6 +34,9 @@ public class switch_g4 : MonoBehaviour
             on = true;
             count = 0;
             this.GetComponent<Renderer>().material = material[0];
+
+            effect.playPS();
+            ps1.Play();
             script.PlaySE(audioClip);
 
             //Wallの色をゴリラ色から黄（半透明）に

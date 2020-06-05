@@ -8,6 +8,8 @@ public class switch_g1 : MonoBehaviour
     public GameObject g_cube;
     public GameObject g_cube2;
     public Mesh[] switch_mesh;
+    public swichEFonly_cobra effect;
+    public swichEFonly_cobra effect2;
 
     int count;
     int max_count;
@@ -54,6 +56,7 @@ public class switch_g1 : MonoBehaviour
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
+                effect.playPS();
                 script.PlaySE(audioClip);
                 g_cube.tag = "Untagged";
                 count = 0;
@@ -78,6 +81,7 @@ public class switch_g1 : MonoBehaviour
                 g_cube2.layer = 13;
                 g_cube2.GetComponent<Renderer>().material = material[3];
                 g_cube2.tag= tag = "stage";
+                effect2.playPS();
                 script.PlaySE(audioClip);
             }
         }
