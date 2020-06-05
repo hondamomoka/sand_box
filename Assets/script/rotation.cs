@@ -47,7 +47,7 @@ public class rotation : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Joystick1Button7))
         {
-            SceneManager.LoadScene("stage_crab");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
