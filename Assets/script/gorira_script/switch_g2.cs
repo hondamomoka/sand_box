@@ -10,6 +10,10 @@ public class switch_g2 : MonoBehaviour
     public GameObject g_cube3;
     public Mesh[] switch_mesh;
 
+    public swichEFonly_cobra effect;
+    public swichEFonly_cobra effect2;
+
+
     int count;
     int max_count;
     int switch_type;//０：黄（プレイヤーが押せる)  １：赤（砂が押せる））
@@ -57,6 +61,7 @@ public class switch_g2 : MonoBehaviour
 
                 g_cube3.layer = 13;
                 g_cube3.GetComponent<Renderer>().material = material[3];
+                effect.playPS();
                 script.PlaySE(audioClip);
                 g_cube3.tag = "stage";
                 count = 0;
@@ -79,6 +84,7 @@ public class switch_g2 : MonoBehaviour
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
                 g_cube.tag = "Untagged";
+                effect2.playPS();
                 script.PlaySE(audioClip);
             }
         }
