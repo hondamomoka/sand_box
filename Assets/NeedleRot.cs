@@ -20,6 +20,10 @@ public class NeedleRot : MonoBehaviour
     public int sands_max;
     public int sands_num;
 
+    bool isEnd;
+
+    float[] Needle_State;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,15 @@ public class NeedleRot : MonoBehaviour
 
         Needle_Image = Needle.GetComponent<RawImage>();
         //GetComponent<RectTransform>().localEulerAngles;
+
+        isEnd = false;
+
+        Needle_State = new float[11];
+
+        for (int i = 0; i < 11; i++)
+        {
+            Needle_State[i] = i * 30 / 330.0f;
+        }
     }
 
     // Update is called once per frame
@@ -49,7 +62,8 @@ public class NeedleRot : MonoBehaviour
             sands_num += Sands_Script[i].Sands_Num;
         }
 
-        Needle_Rot = Get_EulerAngles(sands_num);
+        //Needle_Rot = Get_EulerAngles(sands_num);
+        Needle_Rot = Get_EulerAngles(sands_num - safe_num);
 
         Needle_Rotation(Needle_Rot_Low, Needle_Rot_High);
 
@@ -62,73 +76,99 @@ public class NeedleRot : MonoBehaviour
     {
         float rot;
 
-        rot = 330 - sn * 330.0f / sands_max;
+        rot = 330 - sn * 330.0f / (sands_max - safe_num);
+        //rot = 330 - sn * 330.0f / (sands_max - safe_num);
 
         return rot;
     }
 
     void Needle_Rotation(float rs_low, float rs_high)
     {
-        float r_idx = Needle_Rot - Needle_Join.transform.localEulerAngles.z;
-
-        if (r_idx > 0)
+        if(isEnd == false)
         {
-            Vector3 r = Needle_Join.transform.localEulerAngles;
+            // 回転量
+            float r_idx = Needle_Rot - Needle_Join.transform.localEulerAngles.z;
 
-            if( r_idx > rs_high)
+            if (r_idx > 0)
             {
-                r.z += rs_high;
-            }
-            else
-            {
-                r.z += rs_low;
-            }
+                Vector3 r = Needle_Join.transform.localEulerAngles;
 
-            if (r.z > Needle_Rot)
-            {
-                r.z = Needle_Rot;
+                // 回転速度
+                if (r_idx > rs_high)
+                {
+                    r.z += rs_high;
+                }
+                else
+                {
+                    r.z += rs_low;
+                }
+
+                // 過ぎた回転量の修正
+                if (r.z > Needle_Rot)
+                {
+                    r.z = Needle_Rot;
+                }
+
+                if (r.z >= 330.0f)
+                {
+                    r.z = 330.0f;
+                    isEnd = true;
+                }
+
+                Needle_Join.transform.localEulerAngles = r;
             }
-            Needle_Join.transform.localEulerAngles = r;
-        }
+        } 
     }
 
     void Change_Color(float n)
     {
-        if (n >= 0.875f)
+        if (n >= Needle_State[10])
         {
             Needle_Image.color = new Color(0, 250, 0, 255) / 255.5f;
         }
-        else if (n >= 0.75f)
+        else if (n >= Needle_State[9])
         {
             Needle_Image.color = new Color(50, 250, 0, 255) / 255.5f;
         }
-        else if (n >= 0.625f)
+        else if (n >= Needle_State[8])
         {
             Needle_Image.color = new Color(100, 250, 0, 255) / 255.5f;
         }
-        else if (n >= 0.5f)
+        else if (n >= Needle_State[7])
         {
             Needle_Image.color = new Color(150, 250, 0, 255) / 255.5f;
         }
-        else if (n >= 0.375f)
+        else if (n >= Needle_State[6])
         {
             Needle_Image.color = new Color(200, 250, 0, 255) / 255.5f;
         }
-        else if (n >= 0.25f)
+        else if (n >= Needle_State[5])
         {
             Needle_Image.color = new Color(250, 250, 0, 255) / 255.5f;
         }
-        else if (n >= 0.125f)
+        else if (n >= Needle_State[4])
         {
             Needle_Image.color = new Color(250, 200, 0, 255) / 255.5f;
         }
-        else if (n >= 0.0f)
+        else if (n >= Needle_State[3])
         {
-            Needle_Image.color = new Color(250, 150, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(250, 180, 0, 255) / 255.5f;
+        }
+        else if (n >= Needle_State[2])
+        {
+            Needle_Image.color = new Color(250, 160, 0, 255) / 255.5f;
+        }
+        else if (n >= Needle_State[1])
+        {
+            Needle_Image.color = new Color(250, 140, 0, 255) / 255.5f;
+        }
+        else if (n >= Needle_State[0])
+        {
+            Needle_Image.color = new Color(250, 120, 0, 255) / 255.5f;
         }
         else
         {
-            Needle_Image.color = new Color(250, 0, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(255, 10, 0, 255) / 255.5f;
         }
     }
 }

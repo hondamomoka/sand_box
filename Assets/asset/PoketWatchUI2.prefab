@@ -280,7 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807d8c49ffbfb1b488d77f79629699f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SandCreater: {fileID: 0}
+  SandCreater:
+  - {fileID: 0}
   Needle_Join: {fileID: 2966375986473040689}
   Needle: {fileID: 2966375986579804053}
   Needle_Rot: 0
@@ -288,6 +289,8 @@ MonoBehaviour:
   Needle_Rot_High: 0.7
   safe_num: 60
   safe_rate: 0
+  sands_max: 0
+  sands_num: 0
 --- !u!1 &2966375986579804053
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,8 +325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 74.3}
-  m_SizeDelta: {x: 16, y: 64}
+  m_AnchoredPosition: {x: 50, y: 73.8}
+  m_SizeDelta: {x: 17.347355, y: 64.658325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2966375986579804055
 CanvasRenderer:
@@ -351,7 +354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: f2fbf732c43b09a4daf7c85fb40a0a0f, type: 3}
+  m_Texture: {fileID: 2800000, guid: c8a6cf8b8450b3d40830a013e1883b1e, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
