@@ -9,6 +9,8 @@ public class switch_crocodile : MonoBehaviour
     public bool on;
     public Material[] material;
     public GameObject cube;
+    public swichEFonly_cobra effect;
+    public ParticleSystem ps1;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -18,6 +20,7 @@ public class switch_crocodile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         Transform mytra = this.transform;
 
         Vector3 size = mytra.localScale;
@@ -33,6 +36,8 @@ public class switch_crocodile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
         if (!on)
         {
             if (count > max_count)
@@ -42,6 +47,8 @@ public class switch_crocodile : MonoBehaviour
                 cube.tag = "Untagged";
                 cube.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
+                effect.playPS();
+                ps1.Play();
                 script.PlaySE(audioClip);
             }
         }
