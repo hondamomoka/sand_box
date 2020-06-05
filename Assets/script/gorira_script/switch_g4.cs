@@ -25,6 +25,7 @@ public class switch_g4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
         if (count > 10)
         {
             on = true;
