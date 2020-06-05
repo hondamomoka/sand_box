@@ -43,6 +43,7 @@ public class switch_cattle2 : MonoBehaviour
                 on = true;
                 cube.GetComponent<Renderer>().material = material[1];
                 cube.layer = 14;
+                cube.tag = "Untagged";
                 this.GetComponent<Renderer>().material = material[0];
                 effect.playPS();
                 script.PlaySE(audioClip);

@@ -41,9 +41,13 @@ public class crab_manager : MonoBehaviour
                 scissor3.GetComponent<Renderer>().material = material[0];
                 scissor4.GetComponent<Renderer>().material = material[0];
                 scissor1.layer = 11;
+                scissor1.tag = "Untagged";
                 scissor2.layer = 11;
+                scissor2.tag = "Untagged";
                 scissor3.layer = 11;
+                scissor3.tag = "Untagged";
                 scissor4.layer = 11;
+                scissor4.tag = "Untagged";
 
                 effect.playPS();
                 ps1.Play();
