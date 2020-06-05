@@ -8,6 +8,9 @@ public class turtle_mng : MonoBehaviour
     public switch_turtle switch2;
     public GameObject cube;
     public Material[] material;
+    public ParticleSystem ps1;
+    public ParticleSystem ps2;
+    bool end;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -17,6 +20,9 @@ public class turtle_mng : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
+        ps2.Stop();
+        end = false;
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
@@ -25,16 +31,23 @@ public class turtle_mng : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(switch1.on&&switch2.on)
+        if(!end)
         {
-            cube.GetComponent<Renderer>().material = material[0];
-            cube.layer = 14;
+            if (switch1.on && switch2.on)
+            {
+                ps1.Play();
+                ps2.Play();
+                cube.GetComponent<Renderer>().material = material[0];
+                cube.layer = 14;
 
-            if (!switch1.fin && !switch2.fin)
-                script.PlaySE(audioClip);
+                if (!switch1.fin && !switch2.fin)
+                    script.PlaySE(audioClip);
 
-            switch1.fin = true;
-            switch2.fin = true;
+                switch1.fin = true;
+                switch2.fin = true;
+                end = true;
+            }
         }
+        
     }
 }

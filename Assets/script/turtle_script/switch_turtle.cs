@@ -9,10 +9,12 @@ public class switch_turtle : MonoBehaviour
    public bool on;
     public Material[] material;
     public bool fin;
+    public ParticleSystem ps1;
 
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         count = 0;
         on = false;
         fin = false;
@@ -25,22 +27,34 @@ public class switch_turtle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!fin)
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
+        if (!fin)
         {
             if (count > max_count)
             {
-                on = true;
-                this.GetComponent<Renderer>().material = material[1];
+                if(!on)
+                {
+                    on = true;
+                    this.GetComponent<Renderer>().material = material[1];
+                    ps1.Play();
+                }
+                
             }
             else
             {
-                on = false;
-                this.GetComponent<Renderer>().material = material[0];
+                if(on)
+                {
+                    on = false;
+                    this.GetComponent<Renderer>().material = material[0];
+                }
+               
             }
         }
         else
         {
             this.GetComponent<Renderer>().material = material[2];
+            ps1.Play();
         }
        
     }
