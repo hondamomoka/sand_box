@@ -24,8 +24,6 @@ public class switch_g3 : MonoBehaviour
         count = 0;
         switch_type = 0;
 
-
-
         Transform mytra = this.transform;
         Vector3 size = mytra.localScale;
         max_count = (int)(size.x * size.y * 100);
@@ -45,7 +43,7 @@ public class switch_g3 : MonoBehaviour
         }
         else
         {
-            if (count > max_count)
+            if (count > max_count && switch_type != 2)
             {
                 //スイッチの色を赤から黄に
                 switch_type = 2;

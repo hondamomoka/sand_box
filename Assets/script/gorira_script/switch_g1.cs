@@ -50,7 +50,6 @@ public class switch_g1 : MonoBehaviour
                 switch_type = 0;
                 this.GetComponent<Renderer>().material = material[0];
                 this.GetComponent<MeshFilter>().sharedMesh = switch_mesh[1];
-                script.PlaySE(audioClip);
 
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
