@@ -202,8 +202,9 @@ GameObject:
   - component: {fileID: 794210646704708213}
   - component: {fileID: 3913424082118105093}
   - component: {fileID: 3913424082118105090}
+  - component: {fileID: 6995727441344444158}
   m_Layer: 12
-  m_Name: Player 2
+  m_Name: player 2
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +323,19 @@ MonoBehaviour:
   player_trigger: 0
   trigger_enter: bucket_right_zone
   trigger_exit: bucket_right_board
-  Player_In_Bucket: 0
+--- !u!114 &6995727441344444158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913424082118105092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d620645f223d75c4f9b5885ae74c24f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: b21c3be4fe45f464ab7d9f007c446d6d, type: 3}
 --- !u!1 &4784774217773584412
 GameObject:
   m_ObjectHideFlags: 0
