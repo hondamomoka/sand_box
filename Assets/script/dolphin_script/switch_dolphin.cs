@@ -10,6 +10,7 @@ public class switch_dolphin : MonoBehaviour
     public Material[] material;
     public GameObject cube;
     public swichEFonly_cobra effect;
+    public ParticleSystem ps1;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -19,6 +20,7 @@ public class switch_dolphin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         Transform mytra = this.transform;
 
         Vector3 size = mytra.localScale;
@@ -46,6 +48,7 @@ public class switch_dolphin : MonoBehaviour
                 cube.layer = 14;
                 this.GetComponent<Renderer>().material = material[0];
                 effect.playPS();
+                ps1.Play();
                 script.PlaySE(audioClip);
             }
         }

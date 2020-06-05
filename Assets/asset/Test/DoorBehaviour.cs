@@ -7,10 +7,12 @@ public class DoorBehaviour : MonoBehaviour
     private float door_size_x;
     private float door_size_y;
     private float door_speed;
+    public ParticleSystem ps1;
 
     // Start is called before the first frame update
     void Start()
     {
+        ps1.Stop();
         door_size_x = GetComponent<Transform>().localScale.x;
         door_size_y = GetComponent<Transform>().localScale.y;
     }
@@ -30,6 +32,7 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (GetComponent<Transform>().localScale.x > 0.0f)
         {
+            ps1.Play();
             GetComponent<Transform>().transform.Translate(new Vector3(door_speed * direction, 0, 0), Space.Self);
             Vector3 work = GetComponent<Transform>().localScale;
             work.x -= door_speed * 2;
@@ -43,6 +46,7 @@ public class DoorBehaviour : MonoBehaviour
 
     void OpenY(int direction)
     {
+        ps1.Play();
         if (GetComponent<Transform>().localScale.y > 0.0f)
         {
             GetComponent<Transform>().transform.Translate(new Vector3(0, door_speed * direction, 0), Space.Self);
@@ -58,6 +62,7 @@ public class DoorBehaviour : MonoBehaviour
 
     void CloseX(int direction)
     {
+        ps1.Stop();
         if (GetComponent<Transform>().localScale.x < door_size_x)
         {
             GetComponent<Transform>().transform.Translate(new Vector3(door_speed * direction, 0, 0), Space.Self);
@@ -73,6 +78,7 @@ public class DoorBehaviour : MonoBehaviour
 
     void CloseY(int direction)
     {
+        ps1.Stop();
         if (GetComponent<Transform>().localScale.y < door_size_y)
         {
             GetComponent<Transform>().transform.Translate(new Vector3(0, door_speed * direction, 0), Space.Self);
