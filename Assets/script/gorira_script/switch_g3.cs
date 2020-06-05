@@ -24,6 +24,8 @@ public class switch_g3 : MonoBehaviour
         count = 0;
         switch_type = 0;
 
+
+
         Transform mytra = this.transform;
         Vector3 size = mytra.localScale;
         max_count = (int)(size.x * size.y * 100);
@@ -49,13 +51,12 @@ public class switch_g3 : MonoBehaviour
                 switch_type = 2;
                 this.GetComponent<Renderer>().material = material[0];
                 this.GetComponent<MeshFilter>().sharedMesh = switch_mesh[1];
-                script.PlaySE(audioClip);
 
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
-                script.PlaySE(audioClip);
 
+                script.PlaySE(audioClip);
                 //count = 0;
             }
         }
@@ -79,6 +80,8 @@ public class switch_g3 : MonoBehaviour
                 //救済キューブの出現
                 switch0.GetComponent<Renderer>().material = material[1];
                 switch0.switch_type = 1;
+
+                script.PlaySE(audioClip);
             }
         }
         else if(switch_type==1)

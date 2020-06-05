@@ -78,6 +78,8 @@ public class switch_g1 : MonoBehaviour
                 //指定キューブの色を変換：黄から赤（半透明）
                 g_cube2.layer = 13;
                 g_cube2.GetComponent<Renderer>().material = material[3];
+
+                script.PlaySE(audioClip);
             }
         }
         else

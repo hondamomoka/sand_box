@@ -50,7 +50,6 @@ public class switch_g2 : MonoBehaviour
                 switch_type = 0;
                 this.GetComponent<Renderer>().material = material[0];
                 this.GetComponent<MeshFilter>().sharedMesh = switch_mesh[1];
-                script.PlaySE(audioClip);
 
                 //指定キューブの色を変換：黄から赤
                 //g_cube2.layer = 13;
@@ -79,6 +78,8 @@ public class switch_g2 : MonoBehaviour
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
+
+                script.PlaySE(audioClip);
             }
         }
         else
