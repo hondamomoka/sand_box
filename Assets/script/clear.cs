@@ -10,12 +10,22 @@ public class clear : MonoBehaviour
     public bool on;
     public bool set;
     public postp postp;
+
+    //音追加用
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         camera_pos = came.transform.position;
         on = false;
         set = false;
+
+        //音追加用
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -39,6 +49,7 @@ public class clear : MonoBehaviour
             if (other.gameObject.CompareTag("player"))
             {
                 on = true;
+                script.source[2].Stop();
             }
         }
         
