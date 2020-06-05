@@ -58,7 +58,7 @@ public class switch_g2 : MonoBehaviour
                 g_cube3.layer = 13;
                 g_cube3.GetComponent<Renderer>().material = material[3];
                 script.PlaySE(audioClip);
-
+                g_cube3.tag = "stage";
                 count = 0;
             }
         }
@@ -78,7 +78,7 @@ public class switch_g2 : MonoBehaviour
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
-
+                g_cube.tag = "Untagged";
                 script.PlaySE(audioClip);
             }
         }

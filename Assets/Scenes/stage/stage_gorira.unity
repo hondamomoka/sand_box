@@ -606,7 +606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &37548490
 Transform:
   m_ObjectHideFlags: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 66489592}
   m_Layer: 14
   m_Name: gimmick_cube (4)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3355,7 +3355,7 @@ PrefabInstance:
     - target: {fileID: 3185670571207555417, guid: 4bcd4cdaaac18de45b149b6e9efee694,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bcd4cdaaac18de45b149b6e9efee694, type: 3}
@@ -3559,7 +3559,7 @@ GameObject:
   - component: {fileID: 670133900}
   m_Layer: 13
   m_Name: gimmick_cube
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7058,7 +7058,7 @@ GameObject:
   - component: {fileID: 1297707595}
   m_Layer: 13
   m_Name: gimmick_cube (1)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8592,7 +8592,7 @@ GameObject:
   - component: {fileID: 1574831839}
   m_Layer: 14
   m_Name: gimmick_cube (2)
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

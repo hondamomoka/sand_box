@@ -36,6 +36,7 @@ public class switch_g4 : MonoBehaviour
             //Wallの色をゴリラ色から黄（半透明）に
             wall.layer = 14;
             wall.GetComponent<Renderer>().material = material[1];
+            wall.tag = "Untagged";
         }
     }
 
