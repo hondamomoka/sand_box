@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class Title_Manager : MonoBehaviour
 {
     private GameObject selectObject;
+    private Material selectMaterial;
+    private int selectCount;
+    private const int selectCountMax = 30;
+    private Color color;
+    private float flashFlag;
 
     private float lsv;      //Lスティック縦に動かしたときの値を格納する
     private bool stickFlag;
@@ -27,13 +32,16 @@ public class Title_Manager : MonoBehaviour
     void Awake()
     {
         selectObject = GameObject.Find("select");
+        selectMaterial = selectObject.GetComponent<Renderer>().sharedMaterial;
+        selectCount = 0;
+        color = selectMaterial.color;
+        flashFlag = 0.0f;
 
         manager = GameObject.Find("GameManager");
         am = manager.GetComponent<Audio_Manager>();
         sm = manager.GetComponent<Scene_Manager>();
 
         fadeFlag = false;
-
     }
 
     void Start()
@@ -49,9 +57,33 @@ public class Title_Manager : MonoBehaviour
     {
         if (!sm.fadeIn && !fadeFlag)
         {
+            //スティックの値取得
             lsv = Input.GetAxis("L_Stick_V");
             if (lsv <= 0.1 && lsv >= -0.1)
                 stickFlag = true;
+
+            //カーソル点滅
+            selectMaterial.color = color;
+            if (flashFlag == 0.0f)
+            {
+                color.a += 1.5f * Time.deltaTime;
+                if (color.a > 1)
+                    flashFlag = 1.5f;
+            }
+            else if (flashFlag < 2.0f)
+            {
+                flashFlag += Time.deltaTime;
+                if (flashFlag > 2.0f)
+                {
+                    flashFlag = 2;
+                }
+            }
+            else if (flashFlag == 2)
+            {
+                color.a -= 1.5f * Time.deltaTime;
+                if (color.a < 0)
+                    flashFlag = 0;
+            }
 
             //決定Aボタン
             if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))
@@ -81,29 +113,52 @@ public class Title_Manager : MonoBehaviour
                 fadeFlag = true;
             }
 
+            //カーソル移動上下
             if (stickFlag == true)
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
                 {
-                    if (selectObject.transform.position.y != -49.0f)
+                    if (sm.titleSelect > 0)
                     {
-                        selectObject.transform.position += new Vector3(0, 30.0f, 0);
+                        selectCount += 30;
                         sm.titleSelect -= 1;
+
                         am.PlaySE(audioClip2);
+
                         stickFlag = false;
+
+                        color.a = 1.0f;
+                        flashFlag = 1.0f;
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                 {
-                    if (selectObject.transform.position.y != -169.0f)
+                    if (sm.titleSelect < 4)
                     {
-                        selectObject.transform.position += new Vector3(0, -30.0f, 0);
+                        selectCount -= 30;
                         sm.titleSelect += 1;
+
                         am.PlaySE(audioClip2);
+
                         stickFlag = false;
+
+                        color.a = 1.0f;
+                        flashFlag = 1.0f;
                     }
                 }
             }
+
+            //カーソルをぬるっと動かす
+            if (selectCount < 0)
+            {
+                selectObject.transform.position += new Vector3(0, -1.0f, 0);
+                selectCount++;
+            }
+            if (selectCount > 0)
+            {
+                selectObject.transform.position += new Vector3(0, 1.0f, 0);
+                selectCount--;
+            }   
         }
     }
 

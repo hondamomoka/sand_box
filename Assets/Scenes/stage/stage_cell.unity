@@ -1252,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce7350e032cbcd46b699f8bd1120ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateFlag: 0
 --- !u!1 &485480523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4344,7 +4345,7 @@ MonoBehaviour:
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 4393b8f829acf4b4b82225195adbdce7, type: 3}
 --- !u!1001 &1907364975
 PrefabInstance:
   m_ObjectHideFlags: 0
