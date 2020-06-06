@@ -27,6 +27,8 @@ public class DesignManager : MonoBehaviour
     private GameObject Stage_19;
     private GameObject Stage_20;
 
+    private float pos;
+
     public save selectsave;
 
     int save;
@@ -57,27 +59,7 @@ public class DesignManager : MonoBehaviour
         Stage_19 = GameObject.Find("はと");
         Stage_20 = GameObject.Find("かめ");
 
-        Stage_1.SetActive(false);
-        Stage_2.SetActive(false);
-        Stage_3.SetActive(false);
-        Stage_4.SetActive(false);
-        Stage_5.SetActive(false);
-        Stage_6.SetActive(false);
-        Stage_7.SetActive(false);
-        Stage_8.SetActive(false);
-        Stage_9.SetActive(false);
-        Stage_10.SetActive(false);
-        Stage_11.SetActive(false);
-        Stage_12.SetActive(false);
-        Stage_13.SetActive(false);
-        Stage_14.SetActive(false);
-        Stage_15.SetActive(false);
-        Stage_16.SetActive(false);
-        Stage_17.SetActive(false);
-        Stage_18.SetActive(false);
-        Stage_19.SetActive(false);
-        Stage_20.SetActive(false);
-
+        pos = 1.19f;
         selectsave.load_coin();
         //selectsave.init_coin();
     }
@@ -89,83 +71,201 @@ public class DesignManager : MonoBehaviour
         {
             if (selectsave.GetClear(0) > 0)//りす
             {
-                Stage_8.SetActive(true);
+                Stage_8.transform.position = new Vector3(Stage_8.transform.position.x, pos, Stage_8.transform.position.z);
             }
+            else
+            {
+                Stage_8.transform.position = new Vector3(Stage_8.transform.position.x, 0.0f, Stage_8.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(1) > 0)//うし
             {
-                Stage_12.SetActive(true);
+                Stage_12.transform.position = new Vector3(Stage_12.transform.position.x, pos, Stage_12.transform.position.z);
             }
+            else
+            {
+                Stage_12.transform.position = new Vector3(Stage_12.transform.position.x, 0.0f, Stage_12.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(2) > 0)//せる
             {
-                Stage_1.SetActive(true);
+                Stage_1.transform.position = new Vector3(Stage_1.transform.position.x, pos, Stage_1.transform.position.z);
             }
+            else
+            {
+                Stage_1.transform.position = new Vector3(Stage_1.transform.position.x, 0.0f, Stage_1.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(3) > 0)//クリオネ
             {
-                Stage_15.SetActive(true);
+                Stage_15.transform.position = new Vector3(Stage_15.transform.position.x, pos, Stage_15.transform.position.z);
             }
+            else
+            {
+                Stage_15.transform.position = new Vector3(Stage_15.transform.position.x, 0.0f, Stage_15.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(4) > 0)//コブラ
             {
-                Stage_10.SetActive(true);
+                Stage_10.transform.position = new Vector3(Stage_10.transform.position.x, pos, Stage_10.transform.position.z);
             }
+            else
+            {
+                Stage_10.transform.position = new Vector3(Stage_10.transform.position.x, 0.0f, Stage_10.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(5) > 0)//かに
             {
-                Stage_16.SetActive(true);
+                Stage_16.transform.position = new Vector3(Stage_16.transform.position.x, pos, Stage_16.transform.position.z);
             }
+            else
+            {
+                Stage_16.transform.position = new Vector3(Stage_16.transform.position.x, 0.0f, Stage_16.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(6) > 0)//わに
             {
-                Stage_4.SetActive(true);
+                Stage_4.transform.position = new Vector3(Stage_4.transform.position.x, pos, Stage_4.transform.position.z);
             }
+            else
+            {
+                Stage_4.transform.position = new Vector3(Stage_4.transform.position.x, 0.0f, Stage_4.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(7) > 0)//イルカ
             {
-                Stage_9.SetActive(true);
+                Stage_9.transform.position = new Vector3(Stage_9.transform.position.x, pos, Stage_9.transform.position.z);
             }
+            else
+            {
+                Stage_9.transform.position = new Vector3(Stage_9.transform.position.x, 0.0f, Stage_9.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(8) > 0)//ゴリラ
             {
-                Stage_14.SetActive(true);
+                Stage_14.transform.position = new Vector3(Stage_14.transform.position.x, pos, Stage_14.transform.position.z);
             }
+            else
+            {
+                Stage_14.transform.position = new Vector3(Stage_14.transform.position.x, 0.0f, Stage_14.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(9) > 0)//クラゲ
             {
-                Stage_11.SetActive(true);
+                Stage_11.transform.position = new Vector3(Stage_11.transform.position.x, pos, Stage_11.transform.position.z);
             }
+            else
+            {
+                Stage_11.transform.position = new Vector3(Stage_11.transform.position.x, 0.0f, Stage_11.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(10) > 0)//ぺんぎん
             {
-                Stage_13.SetActive(true);
+                Stage_13.transform.position = new Vector3(Stage_13.transform.position.x, pos, Stage_13.transform.position.z);
             }
+            else
+            {
+                Stage_13.transform.position = new Vector3(Stage_13.transform.position.x, 0.0f, Stage_13.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(11) > 0)//ぶた
             {
-                Stage_5.SetActive(true);
+                Stage_5.transform.position = new Vector3(Stage_5.transform.position.x, pos, Stage_5.transform.position.z);
             }
+            else
+            {
+                Stage_5.transform.position = new Vector3(Stage_5.transform.position.x, 0.0f, Stage_5.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(12) > 0)//はと
             {
-                Stage_19.SetActive(true);
+                Stage_19.transform.position = new Vector3(Stage_19.transform.position.x, pos, Stage_19.transform.position.z);
             }
+            else
+            {
+                Stage_19.transform.position = new Vector3(Stage_19.transform.position.x, 0.0f, Stage_19.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(13) > 0)//うさぎ
             {
-                Stage_6.SetActive(true);
+                Stage_6.transform.position = new Vector3(Stage_6.transform.position.x, pos, Stage_6.transform.position.z);
             }
+            else
+            {
+                Stage_6.transform.position = new Vector3(Stage_6.transform.position.x, 0.0f, Stage_6.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(14) > 0)//かい
             {
-                Stage_17.SetActive(true);
+                Stage_17.transform.position = new Vector3(Stage_17.transform.position.x, pos, Stage_17.transform.position.z);
             }
+            else
+            {
+                Stage_17.transform.position = new Vector3(Stage_17.transform.position.x, 0.0f, Stage_17.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(15) > 0)//かたつむり
             {
-                Stage_18.SetActive(true);
+                Stage_18.transform.position = new Vector3(Stage_18.transform.position.x, pos, Stage_18.transform.position.z);
             }
+            else
+            {
+                Stage_18.transform.position = new Vector3(Stage_18.transform.position.x, 0.0f, Stage_18.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(16) > 0)//かめ
             {
-                Stage_20.SetActive(true);
+                Stage_20.transform.position = new Vector3(Stage_20.transform.position.x, pos, Stage_20.transform.position.z);
             }
+            else
+            {
+                Stage_20.transform.position = new Vector3(Stage_20.transform.position.x, 0.0f, Stage_20.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(17) > 0)//うに
             {
-                Stage_3.SetActive(true);
+                Stage_3.transform.position = new Vector3(Stage_3.transform.position.x, pos, Stage_3.transform.position.z);
             }
+            else
+            {
+                Stage_3.transform.position = new Vector3(Stage_3.transform.position.x, 0.0f, Stage_3.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(18) > 0)//ぼるぼ
             {
-                Stage_2.SetActive(true);
+                Stage_2.transform.position = new Vector3(Stage_2.transform.position.x, pos, Stage_2.transform.position.z);
             }
+            else
+            {
+                Stage_2.transform.position = new Vector3(Stage_2.transform.position.x, 0.0f, Stage_2.transform.position.z);
+            }
+
+
             if (selectsave.GetClear(19) > 0)//くじら
             {
-                Stage_7.SetActive(true);
+                Stage_7.transform.position = new Vector3(Stage_7.transform.position.x, pos, Stage_7.transform.position.z);
+            }
+            else
+            {
+                Stage_7.transform.position = new Vector3(Stage_7.transform.position.x, 0.0f, Stage_7.transform.position.z);
             }
         }
     }

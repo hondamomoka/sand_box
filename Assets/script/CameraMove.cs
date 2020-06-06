@@ -92,7 +92,7 @@ public class CameraMove : MonoBehaviour
     {
         if (nowangle_x <= angle_x)
         {
-            nowangle_x += 1.0f;
+            nowangle_x += (angle_x - commonangle.x) / 100 * MoveSpeed;
         }
         this.transform.eulerAngles = new Vector3(nowangle_x, 0.0f, 0.0f);
 
@@ -125,7 +125,7 @@ public class CameraMove : MonoBehaviour
     {
         if (nowangle_x >= commonangle.x)
         {
-            nowangle_x -= 1.0f;
+            nowangle_x -= (angle_x - commonangle.x) / 100 * MoveSpeed;
         }
         this.transform.eulerAngles = new Vector3(nowangle_x, 0.0f, 0.0f);
     }
