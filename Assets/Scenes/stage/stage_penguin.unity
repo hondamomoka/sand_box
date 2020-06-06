@@ -26578,10 +26578,11 @@ MonoBehaviour:
   size: 0.1
   sands_mass: 1
   stage: stage
-  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   other_mats:
-  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  - {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
@@ -26589,6 +26590,7 @@ MonoBehaviour:
   isWithWind: 1
   isSandsDelete: 0
   ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  Size_Change_Idx: 1.008
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
@@ -27765,6 +27767,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -403.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -226.796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966375986463950286, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27c2399e06b00fa42ae0f073b14e88ab, type: 2}
     - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: SandCreater.Array.size

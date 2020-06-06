@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2594,6 +2594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce7350e032cbcd46b699f8bd1120ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateFlag: 0
 --- !u!1 &472585981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,27 +5602,27 @@ PrefabInstance:
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.88
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.88
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -227.5
+      value: -227.31
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -405.59
+      value: -405.139
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950286, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
@@ -6598,7 +6599,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10339,8 +10340,9 @@ MonoBehaviour:
   size: 0.1
   sands_mass: 10
   stage: stage
-  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
-  other_mats: []
+  default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  other_mats:
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
@@ -10348,6 +10350,7 @@ MonoBehaviour:
   isWithWind: 0
   isSandsDelete: 0
   ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  Size_Change_Idx: 1.01
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []

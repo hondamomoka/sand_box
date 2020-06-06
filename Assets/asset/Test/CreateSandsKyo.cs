@@ -19,6 +19,7 @@ public class CreateSandsKyo : MonoBehaviour
     public  bool       isWithWind;
     public  bool       isSandsDelete;
     public  ParticleSystem ps;
+    public  float       Size_Change_Idx;
     public  int         Sands_Max;       // 発生するオブジェクトの総数
     public  int         Sands_Num;
     public  GameObject[] obj_sands;      // 生成されたオブジェクトを格納する行列
@@ -97,7 +98,16 @@ public class CreateSandsKyo : MonoBehaviour
         {
             for (int i = 0; i < obj_sands.Length; i++)
             {
+                
                 obj_sands[i].AddComponent<SandsWithBorderDestroy>();
+
+                SandsWithBorderDestroy work = obj_sands[i].GetComponent<SandsWithBorderDestroy>();
+
+                work.material = other_mats;
+
+                work.ps = ps;
+
+                work.Size_Change_Idx = Size_Change_Idx;
             }
         }
 
@@ -187,15 +197,15 @@ public class CreateSandsKyo : MonoBehaviour
         //0.7~1.3の変動までの変動は許容する
         //am.source[2].pitch += ((Sands_Speed_Avarage / Sands_Max) - 3.0f) * 0.1f;
 
-        // 砂の削除
+        // 砂の一斉削除
         if (isSandsDelete == true)
         {
             for (int i = 0; i < Sands_Max; i++)
             {
                 if (obj_sands[i] != null)
                 {
+                    Instantiate(ps, obj_sands[i].transform.position, Quaternion.identity);
                     Destroy(obj_sands[i]);
-                    ParticleSystem psw = Instantiate(ps, obj_sands[i].transform.position, Quaternion.identity);
                 }
             }
         }

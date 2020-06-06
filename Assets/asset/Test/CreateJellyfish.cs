@@ -78,7 +78,7 @@ public class CreateJellyfish : MonoBehaviour
             obj_body[i].transform.parent = GameObject.Find("jellyfish").transform;
             obj_body[i].transform.position = new Vector3(posx, posy, center.z);
             obj_body[i].transform.Rotate(90, 0, 0, Space.World);
-            obj_body[i].transform.localScale = new Vector3(1.0f, 2.0f, 1.0f);
+            obj_body[i].transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
             obj_body[i].GetComponent<CapsuleCollider>().height = 4;
             obj_body[i].GetComponent<Renderer>().enabled = true;
             obj_body[i].GetComponent<Renderer>().sharedMaterial = mat[0];
@@ -129,10 +129,11 @@ public class CreateJellyfish : MonoBehaviour
             obj_leg[i].transform.parent = GameObject.Find("jellyfish").transform;
             obj_leg[i].transform.position = new Vector3(posx, posy, center.z);
             obj_leg[i].transform.Rotate(90, 0, 0, Space.World);
-            obj_leg[i].transform.localScale = new Vector3(1.0f, 2.0f, 1.0f);
+            obj_leg[i].transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
             obj_leg[i].GetComponent<CapsuleCollider>().height = 4;
             obj_leg[i].GetComponent<Renderer>().enabled = true;
             obj_leg[i].GetComponent<Renderer>().sharedMaterial = mat[0];
+            obj_leg[i].tag = "stage";
         }
 
         for (int i = leg_partsA; i < leg_partsA + leg_partsB; i++)
@@ -145,10 +146,11 @@ public class CreateJellyfish : MonoBehaviour
             obj_leg[i].transform.parent = GameObject.Find("jellyfish").transform;
             obj_leg[i].transform.position = new Vector3(posx, posy, center.z);
             obj_leg[i].transform.Rotate(90, 0, 0, Space.World);
-            obj_leg[i].transform.localScale = new Vector3(1.0f, 2.0f, 1.0f);
+            obj_leg[i].transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
             obj_leg[i].GetComponent<CapsuleCollider>().height = 4;
             obj_leg[i].GetComponent<Renderer>().enabled = true;
             obj_leg[i].GetComponent<Renderer>().sharedMaterial = mat[0];
+            obj_leg[i].tag = "stage";
         }
 
         for (int i = leg_partsA + leg_partsB; i < leg_partsA + leg_partsB + leg_partsC; i++)
@@ -161,10 +163,11 @@ public class CreateJellyfish : MonoBehaviour
             obj_leg[i].transform.parent = GameObject.Find("jellyfish").transform;
             obj_leg[i].transform.position = new Vector3(posx, posy, center.z);
             obj_leg[i].transform.Rotate(90, 0, 0, Space.World);
-            obj_leg[i].transform.localScale = new Vector3(1.0f, 2.0f, 1.0f);
+            obj_leg[i].transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
             obj_leg[i].GetComponent<CapsuleCollider>().height = 4;
             obj_leg[i].GetComponent<Renderer>().enabled = true;
             obj_leg[i].GetComponent<Renderer>().sharedMaterial = mat[0];
+            obj_leg[i].tag = "stage";
 
             posCy = posy;
         }
@@ -177,7 +180,7 @@ public class CreateJellyfish : MonoBehaviour
         GameObject doorL, doorR;
         Vector3 pos;
         float scale_x = (obj_body[right].transform.position.x - obj_body[left].transform.position.x) / 2;
-        float scale_z = 4;
+        float scale_z = 1;
 
         doorL = GameObject.Find("DoorL");
         pos = obj_body[left].transform.position;
@@ -199,7 +202,7 @@ public class CreateJellyfish : MonoBehaviour
         GameObject zoom;
         Vector3 pos;
         float scale_x = obj_body[right].transform.position.x - obj_body[left].transform.position.x - obj_body[left].transform.localScale.x;
-        float scale_z = 4;
+        float scale_z = 1;
 
         zoom = GameObject.Find(name);
         pos.x = (obj_body[left].transform.position.x + obj_body[right].transform.position.x) / 2;

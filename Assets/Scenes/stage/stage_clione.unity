@@ -1344,27 +1344,27 @@ PrefabInstance:
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -227.21
+      value: -227.12
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -404.92
+      value: -404.717
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.55
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.55
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950286, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
@@ -4264,8 +4264,9 @@ MonoBehaviour:
   size: 0.1
   sands_mass: 10
   stage: stage
-  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
-  other_mats: []
+  default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  other_mats:
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
@@ -4273,6 +4274,7 @@ MonoBehaviour:
   isWithWind: 0
   isSandsDelete: 0
   ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  Size_Change_Idx: 1.008
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
@@ -6872,6 +6874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce7350e032cbcd46b699f8bd1120ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateFlag: 0
 --- !u!4 &1664530707
 Transform:
   m_ObjectHideFlags: 0
@@ -8419,8 +8422,9 @@ MonoBehaviour:
   size: 0.1
   sands_mass: 10
   stage: stage
-  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
-  other_mats: []
+  default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  other_mats:
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
@@ -8428,6 +8432,7 @@ MonoBehaviour:
   isWithWind: 0
   isSandsDelete: 0
   ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  Size_Change_Idx: 1.008
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
@@ -9148,8 +9153,9 @@ MonoBehaviour:
   size: 0.1
   sands_mass: 10
   stage: stage
-  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
-  other_mats: []
+  default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  other_mats:
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
@@ -9157,6 +9163,7 @@ MonoBehaviour:
   isWithWind: 0
   isSandsDelete: 0
   ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  Size_Change_Idx: 1.008
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []

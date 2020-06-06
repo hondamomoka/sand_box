@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2907,6 +2907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce7350e032cbcd46b699f8bd1120ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateFlag: 0
 --- !u!4 &930463899
 Transform:
   m_ObjectHideFlags: 0
@@ -3819,7 +3820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1113554814
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3958,6 +3959,7 @@ MonoBehaviour:
   on: 0
   set: 0
   postp: {fileID: 877046011}
+  audioClip: {fileID: 0}
 --- !u!1 &1243823810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +4535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_Alpha
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185670571207555417, guid: 4bcd4cdaaac18de45b149b6e9efee694,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bcd4cdaaac18de45b149b6e9efee694, type: 3}

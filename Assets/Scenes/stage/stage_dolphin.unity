@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -914,10 +914,11 @@ MonoBehaviour:
   size: 0.1
   sands_mass: 1
   stage: stage
-  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   other_mats:
-  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  - {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
+  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
@@ -925,6 +926,7 @@ MonoBehaviour:
   isWithWind: 1
   isSandsDelete: 0
   ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  Size_Change_Idx: 1.004
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
@@ -1380,33 +1382,33 @@ PrefabInstance:
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -402.94
+      value: -402.786
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -226.33
+      value: -226.257
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950284, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986463950286, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 00b6e473f47a3e8498bc8b54a76fca0b, type: 2}
+      objectReference: {fileID: 2100000, guid: 27c2399e06b00fa42ae0f073b14e88ab, type: 2}
     - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: SandCreater.Array.size
@@ -4437,6 +4439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce7350e032cbcd46b699f8bd1120ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateFlag: 0
 --- !u!4 &1499884495
 Transform:
   m_ObjectHideFlags: 0

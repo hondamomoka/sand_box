@@ -25,7 +25,7 @@ public class ZoneCheck : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("sands"))
+        if (other.gameObject.CompareTag("sand_normal"))
         {
             sand_cnt++;
         }
@@ -33,7 +33,7 @@ public class ZoneCheck : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("sands"))
+        if (other.gameObject.CompareTag("sand_normal"))
         {
             sand_cnt--;
         }
