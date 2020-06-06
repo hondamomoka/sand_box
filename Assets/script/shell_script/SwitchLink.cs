@@ -23,7 +23,7 @@ public class SwitchLink : MonoBehaviour
         transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
         if (sand_cnt >= trigger_cnt)
         {
-            Debug.Log("にゃ～");
+
             effect.playPS();
             sand_cnt = 0;
             gameObject.SetActive(false);
