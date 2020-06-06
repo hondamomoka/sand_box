@@ -10,8 +10,11 @@ public class buccal_cone : MonoBehaviour
     public GameObject gole;
     bool on;
     public delete_sand ds;
+    public GameObject[] Sand_Creater;
     public ParticleSystem ps1;
     public ParticleSystem ps2;
+
+    CreateSandsKyo[] Sands_Scripts;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,13 @@ public class buccal_cone : MonoBehaviour
         on = true;
         ps1.Stop();
         ps2.Stop();
+
+        Sands_Scripts = new CreateSandsKyo[Sand_Creater.Length];
+
+        for (int i = 0; i < Sand_Creater.Length; i++)
+        {
+            Sands_Scripts[i] = Sand_Creater[i].GetComponent<CreateSandsKyo>();
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +47,11 @@ public class buccal_cone : MonoBehaviour
                 on = false;
                 ps1.Play();
                 ps2.Play();
+
+                for (int i = 0; i < Sand_Creater.Length; i++)
+                {
+                    Sands_Scripts[i].isSandsDelete = true;
+                }
             }
         }
         

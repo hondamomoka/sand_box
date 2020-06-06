@@ -3472,11 +3472,17 @@ MonoBehaviour:
   line: 5
   col: 30
   size: 0.3
+  sands_mass: 10
   stage: Stage
-  mat: {fileID: 0}
+  default_mat: {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  other_mats: []
+  sands_tag: sand_normal
   sands_layer: sand_normal
   isWithScales: 0
   isWithBorderDestroy: 1
+  isWithWind: 0
+  isSandsDelete: 0
+  ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []

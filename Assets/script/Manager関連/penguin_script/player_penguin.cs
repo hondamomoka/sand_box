@@ -5,13 +5,13 @@ using UnityEngine;
 public class player_penguin : MonoBehaviour
 {
     int float_time;
-    Vector3 add;
+    public Vector3 add;
 
     // Start is called before the first frame update
     void Start()
     {
         float_time = 0;
-        add = new Vector3(0.0f, 40.0f, 0.0f);
+        //add = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
     // Update is called once per frame

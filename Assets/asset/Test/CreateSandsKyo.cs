@@ -8,14 +8,21 @@ public class CreateSandsKyo : MonoBehaviour
     public  int        line;            // 発生するオブジェクトの行数
     public  int        col;             // 発生するオブジェクトの列数
     public  float      size;
+    public  float      sands_mass;
     public  string     stage;
-    public  Material   mat;
+    public  Material   default_mat;
+    public  Material[] other_mats;
+    public  string     sands_tag;
     public  string     sands_layer;
-    public bool        isWithScales;
-    public bool        isWithBorderDestroy;
-    public int         Sands_Max;       // 発生するオブジェクトの総数
-    public int         Sands_Num;
-    public GameObject[] obj_sands;      // 生成されたオブジェクトを格納する行列
+    public  bool       isWithScales;
+    public  bool       isWithBorderDestroy;
+    public  bool       isWithWind;
+    public  bool       isSandsDelete;
+    public  ParticleSystem ps;
+    public  int         Sands_Max;       // 発生するオブジェクトの総数
+    public  int         Sands_Num;
+    public  GameObject[] obj_sands;      // 生成されたオブジェクトを格納する行列
+
     Transform          sandscreater;    // 生成器のTransform情報
 
     private Rigidbody[] rb_sands;
@@ -58,9 +65,14 @@ public class CreateSandsKyo : MonoBehaviour
             obj_sands[i].transform.parent = GameObject.Find(stage).transform;
             obj_sands[i].transform.localScale = new Vector3(size, size, size);
 
-            if (mat != null)
+            if (default_mat != null)
             {
-                obj_sands[i].GetComponent<Renderer>().sharedMaterial = mat;
+                obj_sands[i].GetComponent<Renderer>().sharedMaterial = default_mat;
+            }
+
+            if (sands_tag != "sands")
+            {
+                obj_sands[i].tag = sands_tag;
             }
 
             if (sands_layer != "sands_normal")
@@ -69,6 +81,16 @@ public class CreateSandsKyo : MonoBehaviour
             }
 
             rb_sands[i] = obj_sands[i].GetComponent<Rigidbody>();
+
+            if (rb_sands[i].constraints != RigidbodyConstraints.FreezePositionZ)
+            {
+                rb_sands[i].constraints = RigidbodyConstraints.FreezePositionZ;
+            }
+
+            if (sands_mass != 10.0f)
+            {
+                rb_sands[i].mass = sands_mass;
+            }
         }
 
         if (isWithBorderDestroy == true)
@@ -87,7 +109,16 @@ public class CreateSandsKyo : MonoBehaviour
                 obj_sands[i].AddComponent<SandInScales>();
             }
         }
+        
+        if (isWithWind == true)
+        {
+            for (int i = 0; i < obj_sands.Length; i++)
+            {
+                obj_sands[i].AddComponent<SandWithWind>();
 
+                obj_sands[i].GetComponent<SandWithWind>().material = other_mats;
+            }
+        }
         //音を鳴らすために追加
         audioManager = GameObject.Find("GameManager");
         am = audioManager.GetComponent<Audio_Manager>();
@@ -155,5 +186,18 @@ public class CreateSandsKyo : MonoBehaviour
         //砂の速度の平均を計算してピッチを変更
         //0.7~1.3の変動までの変動は許容する
         //am.source[2].pitch += ((Sands_Speed_Avarage / Sands_Max) - 3.0f) * 0.1f;
+
+        // 砂の削除
+        if (isSandsDelete == true)
+        {
+            for (int i = 0; i < Sands_Max; i++)
+            {
+                if (obj_sands[i] != null)
+                {
+                    Destroy(obj_sands[i]);
+                    ParticleSystem psw = Instantiate(ps, obj_sands[i].transform.position, Quaternion.identity);
+                }
+            }
+        }
     }
 }

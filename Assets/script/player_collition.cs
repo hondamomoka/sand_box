@@ -18,7 +18,7 @@ public class player_collition : MonoBehaviour
         script = audioManager.GetComponent<Audio_Manager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("stage"))
         {

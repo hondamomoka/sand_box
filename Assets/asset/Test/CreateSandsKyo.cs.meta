@@ -3,7 +3,11 @@ guid: fd4f72bac386cbf4288676ffeebde949
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
+  - mat: {instanceID: 0}
+  - ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  - audioClip: {fileID: 8300000, guid: 4393b8f829acf4b4b82225195adbdce7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
