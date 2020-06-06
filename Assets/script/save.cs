@@ -26,26 +26,28 @@ public class save : MonoBehaviour
         if (!start)
         {
             start = true;
+            init_coin();
 
-            for (int i = 0; i < maxStage; i++)
-            {
-                if (PlayerPrefs.HasKey("コイン" + i))
-                {
-                    PlayerPrefs.DeleteKey("コイン" + i);
+            //for (int i = 0; i < maxStage; i++)
+            //{
+            //    if (PlayerPrefs.HasKey("コイン" + i))
+            //    {
+            //        PlayerPrefs.DeleteKey("コイン" + i);
 
-                    Debug.Log("コイン" + i + "消すよ");
-                }
+            //        Debug.Log("コイン" + i + "消すよ");
+            //    }
 
 
-                coin[i] = 0;
+            //    coin[i] = 0;
 
-                Debug.Log("初期化中！" + "コイン" + i);
-            }
+            //    Debug.Log("初期化中！" + "コイン" + i);
+            //}
 
         }
         else
         {
             Debug.Log("する～");
+            load_coin();
         }
         init = false;
         load = false;
@@ -86,9 +88,12 @@ public class save : MonoBehaviour
         for (int i = 0; i < maxStage; i++)
         {
             coin[i] = 0;
+            PlayerPrefs.GetInt("コイン" + i, 1);
             PlayerPrefs.SetInt("コイン" + i, coin[i]);
+            PlayerPrefs.Save();
+            //PlayerPrefs.SetInt("コイン" + i, coin[i]);
         }
-
+        //PlayerPrefs.Save();
         Debug.Log("初期化したよ");
 
         init = false;
@@ -118,6 +123,7 @@ public class save : MonoBehaviour
         //}
 
         PlayerPrefs.SetInt("コイン" + num, 1);
+        PlayerPrefs.Save();
         Debug.Log("セーブするよ");
         save_ = false;
     }
@@ -128,11 +134,9 @@ public class save : MonoBehaviour
 
         for (int i = 0; i < maxStage; i++)
         {
-            if ((coin[i] < 0&&coin[i]>4)||coin[i]==null)
-            {
-                coin[i] = 0;
-            }
-            coin[i] = PlayerPrefs.GetInt("コイン" + i);
+
+
+            coin[i] = PlayerPrefs.GetInt("コイン" + i, 0);
             Debug.Log("コイン" + i + "の状態" + coin[i]);
         }
 
