@@ -21,6 +21,12 @@ public class Selects_Manager : MonoBehaviour
     private bool startFlag;
 
     private GameObject selectObject;
+    private Material selectMaterial;
+    private Color color;
+    private float flashFlag;
+    private int selectCount;
+    private int oldSelect;
+
     private GameObject endanimation;
     private CoinUp cu;
 
@@ -63,6 +69,11 @@ public class Selects_Manager : MonoBehaviour
         startFlag = false;
 
         selectObject = GameObject.Find("SelectCursor");
+        selectMaterial = selectObject.GetComponent<Renderer>().sharedMaterial;
+        color = selectMaterial.color;
+        flashFlag = 0.0f;
+        selectCount = 0;
+        oldSelect = sm.selectSelect;
 
         endanimation = GameObject.Find("Coin");
         cu = endanimation.GetComponent<CoinUp>();
@@ -86,6 +97,29 @@ public class Selects_Manager : MonoBehaviour
             //ステージが一気に動かないようにする
             if (lsv <= 0.1 && lsv >= -0.1 && lsh <= 0.1 && lsh >= -0.1)
                 stickFlag = true;
+
+            //カーソル点滅
+            selectMaterial.color = color;
+            if (flashFlag == 0.0f)
+            {
+                color.a += 1.5f * Time.deltaTime;
+                if (color.a > 1)
+                    flashFlag = 1.5f;
+            }
+            else if (flashFlag < 2.0f)
+            {
+                flashFlag += Time.deltaTime;
+                if (flashFlag > 2.0f)
+                {
+                    flashFlag = 2;
+                }
+            }
+            else if (flashFlag == 2)
+            {
+                color.a -= 1.5f * Time.deltaTime;
+                if (color.a < 0)
+                    flashFlag = 0;
+            }
 
             if (cu.EndCoinUp() == true){
                 if (!startFlag)
@@ -115,20 +149,28 @@ public class Selects_Manager : MonoBehaviour
                     {
                         if (sm.selectSelect != 5 && sm.selectSelect != 10 && sm.selectSelect != 15 && sm.selectSelect != 20)
                         {
+                            oldSelect = sm.selectSelect;
                             sm.selectSelect++;
+                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                            selectCount += 30;
+
                             am.PlaySE(audioClip3);
+
                             stickFlag = false;
-                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                         }
                     }
                     else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                     {
                         if (sm.selectSelect != 1 && sm.selectSelect != 6 && sm.selectSelect != 11 && sm.selectSelect != 16)
                         {
+                            oldSelect = sm.selectSelect;
                             sm.selectSelect--;
+                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                            selectCount += 30;
+
                             am.PlaySE(audioClip3);
+
                             stickFlag = false;
-                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                         }
                     }
 
@@ -136,24 +178,34 @@ public class Selects_Manager : MonoBehaviour
                     {
                         if (sm.selectSelect >= 6)
                         {
+                            oldSelect = sm.selectSelect;
                             sm.selectSelect -= 5;
+                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                            selectCount += 30;
+
                             am.PlaySE(audioClip3);
+
                             stickFlag = false;
-                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                         }
                     }
                     else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                     {
                         if (sm.selectSelect <= 15)
                         {
+                            oldSelect = sm.selectSelect;
                             sm.selectSelect += 5;
+                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
+                            selectCount += 30;
+
                             am.PlaySE(audioClip3);
+
                             stickFlag = false;
-                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
                         }
                     }
                 }
             }
+
+            CursorMove(CursorPositionLR(sm.selectSelect),CursorPositionLR(oldSelect));
         }
     }
 
@@ -255,5 +307,19 @@ public class Selects_Manager : MonoBehaviour
         }
 
         return select;
+    }
+
+    private void CursorMove(Vector3 next,Vector3 now)
+    {
+         Vector3 calc;
+
+         calc = new Vector3(next.x - now.x, 0, next.z - now.z);
+
+         if (selectCount > 0)
+         {
+            selectObject.transform.position += new Vector3(calc.x / 30, 0, calc.z / 30);
+            selectCount--;
+            Debug.Log(calc.x);
+         }
     }
 }

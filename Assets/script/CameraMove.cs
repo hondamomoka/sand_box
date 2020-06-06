@@ -19,6 +19,7 @@ public class CameraMove : MonoBehaviour
     Vector3 commonpos;
     Vector3 commonangle;
     Vector3 commoncursor;
+    private bool moveflag;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class CameraMove : MonoBehaviour
         nowcursor_y = commonpos.y;
         nowcursor_z = commonpos.z;
         movecursor = false;
+        moveflag = false;
         openbook = GameObject.Find("Coin");
 
     }
@@ -49,7 +51,19 @@ public class CameraMove : MonoBehaviour
 
         if (openbook.GetComponent<CoinUp>().EndCoinUp() == true)
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button3))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button3))
+            {
+                if (moveflag == false)
+                {
+                    moveflag = true;
+                }
+                else
+                {
+                    moveflag = false;
+                }
+            }
+
+            if (moveflag == true)
             {
                 MagnifyPos();
                 MagnifyAng();
@@ -92,7 +106,7 @@ public class CameraMove : MonoBehaviour
     {
         if (nowangle_x <= angle_x)
         {
-            nowangle_x += 1.0f;
+            nowangle_x += (angle_x - commonangle.x) / 100 * MoveSpeed;
         }
         this.transform.eulerAngles = new Vector3(nowangle_x, 0.0f, 0.0f);
 
@@ -125,7 +139,7 @@ public class CameraMove : MonoBehaviour
     {
         if (nowangle_x >= commonangle.x)
         {
-            nowangle_x -= 1.0f;
+            nowangle_x -= (angle_x - commonangle.x) / 100 * MoveSpeed;
         }
         this.transform.eulerAngles = new Vector3(nowangle_x, 0.0f, 0.0f);
     }
