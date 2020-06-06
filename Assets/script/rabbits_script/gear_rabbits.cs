@@ -48,7 +48,7 @@ public class gear_rabbits : MonoBehaviour
         {
             if (moving)
             {
-                transform.Rotate(0, 1.0f, 0);
+                transform.Rotate(0, 25.0f*Time.deltaTime, 0);
 
                 time += Time.deltaTime;
                 if (time > 0.6f)
