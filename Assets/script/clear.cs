@@ -37,7 +37,7 @@ public class clear : MonoBehaviour
             on = false;
             set = true;
             postp.on = true;
-
+            script.source[2].Stop();
         }
      
     }
