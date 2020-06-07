@@ -251,7 +251,6 @@ GameObject:
   - component: {fileID: 1338174081644987731}
   - component: {fileID: -748798390425455102}
   - component: {fileID: 3271963482031171262}
-  - component: {fileID: -2765599392014355092}
   m_Layer: 12
   m_Name: player 1
   m_TagString: player
@@ -347,19 +346,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01695411, y: 0.0017302253, z: 0.012905546}
   m_Center: {x: -0.0002586329, y: -0.00010798784, z: -0.00008900642}
---- !u!114 &-2765599392014355092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4875308551043280611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d620645f223d75c4f9b5885ae74c24f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: b21c3be4fe45f464ab7d9f007c446d6d, type: 3}
 --- !u!1 &7250531627082770140
 GameObject:
   m_ObjectHideFlags: 0
