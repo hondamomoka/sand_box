@@ -24,8 +24,6 @@ public class Selects_Manager : MonoBehaviour
     private Material selectMaterial;
     private Color color;
     private float flashFlag;
-    private int selectCount;
-    private int oldSelect;
 
     private GameObject endanimation;
     private CoinUp cu;
@@ -72,8 +70,6 @@ public class Selects_Manager : MonoBehaviour
         selectMaterial = selectObject.GetComponent<Renderer>().sharedMaterial;
         color = selectMaterial.color;
         flashFlag = 0.0f;
-        selectCount = 0;
-        oldSelect = sm.selectSelect;
 
         endanimation = GameObject.Find("Coin");
         cu = endanimation.GetComponent<CoinUp>();
@@ -149,28 +145,30 @@ public class Selects_Manager : MonoBehaviour
                     {
                         if (sm.selectSelect != 5 && sm.selectSelect != 10 && sm.selectSelect != 15 && sm.selectSelect != 20)
                         {
-                            oldSelect = sm.selectSelect;
                             sm.selectSelect++;
-                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
-                            selectCount += 30;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
 
                             am.PlaySE(audioClip3);
 
                             stickFlag = false;
+
+                            color.a = 1.0f;
+                            flashFlag = 1.0f;
                         }
                     }
                     else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                     {
                         if (sm.selectSelect != 1 && sm.selectSelect != 6 && sm.selectSelect != 11 && sm.selectSelect != 16)
                         {
-                            oldSelect = sm.selectSelect;
                             sm.selectSelect--;
-                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
-                            selectCount += 30;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
 
                             am.PlaySE(audioClip3);
 
                             stickFlag = false;
+
+                            color.a = 1.0f;
+                            flashFlag = 1.0f;
                         }
                     }
 
@@ -178,34 +176,34 @@ public class Selects_Manager : MonoBehaviour
                     {
                         if (sm.selectSelect >= 6)
                         {
-                            oldSelect = sm.selectSelect;
                             sm.selectSelect -= 5;
-                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
-                            selectCount += 30;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
 
                             am.PlaySE(audioClip3);
 
                             stickFlag = false;
+
+                            color.a = 1.0f;
+                            flashFlag = 1.0f;
                         }
                     }
                     else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                     {
                         if (sm.selectSelect <= 15)
                         {
-                            oldSelect = sm.selectSelect;
                             sm.selectSelect += 5;
-                            //selectObject.transform.position = CursorPositionLR(sm.selectSelect);
-                            selectCount += 30;
+                            selectObject.transform.position = CursorPositionLR(sm.selectSelect);
 
                             am.PlaySE(audioClip3);
 
                             stickFlag = false;
+
+                            color.a = 1.0f;
+                            flashFlag = 1.0f;
                         }
                     }
                 }
             }
-
-            CursorMove(CursorPositionLR(sm.selectSelect),CursorPositionLR(oldSelect));
         }
     }
 
@@ -307,19 +305,5 @@ public class Selects_Manager : MonoBehaviour
         }
 
         return select;
-    }
-
-    private void CursorMove(Vector3 next,Vector3 now)
-    {
-         Vector3 calc;
-
-         calc = new Vector3(next.x - now.x, 0, next.z - now.z);
-
-         if (selectCount > 0)
-         {
-            selectObject.transform.position += new Vector3(calc.x / 30, 0, calc.z / 30);
-            selectCount--;
-            Debug.Log(calc.x);
-         }
     }
 }
