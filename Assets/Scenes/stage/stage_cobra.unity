@@ -2140,7 +2140,7 @@ MonoBehaviour:
   isWithBorderDestroy: 1
   isWithWind: 0
   isSandsDelete: 0
-  ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  ps: {fileID: 8058764569408430951, guid: 8e85b13e016492543afc73fba485ab78, type: 3}
   Size_Change_Idx: 1.008
   Sands_Max: 0
   Sands_Num: 0

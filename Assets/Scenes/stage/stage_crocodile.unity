@@ -11044,12 +11044,12 @@ PrefabInstance:
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.88
+      value: -6.13
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.56
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
@@ -17672,7 +17672,7 @@ MonoBehaviour:
   isWithBorderDestroy: 1
   isWithWind: 0
   isSandsDelete: 0
-  ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
+  ps: {fileID: 8058764569408430951, guid: 8e85b13e016492543afc73fba485ab78, type: 3}
   Size_Change_Idx: 1.008
   Sands_Max: 0
   Sands_Num: 0
