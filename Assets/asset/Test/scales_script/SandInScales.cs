@@ -16,6 +16,19 @@ public class SandInScales : MonoBehaviour
     int sand_layer;
     int weight_index;
 
+    public enum SAND_STATE
+    {
+        SAND_STATE_NONE,
+        SAND_STATE_STAGE,
+        SAND_STATE_FALLING_IN_BUCKET,
+        SAND_STATE_FALLING_OUT_BUCKET,
+        SAND_STATE_PERHAPS_STAY_IN_BUCKET,
+        SAND_STATE_STAY_IN_BUCKET,
+        SAND_STATE_THROUGH_SCALES,
+    };
+
+    public SAND_STATE Sand_State;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,145 +41,223 @@ public class SandInScales : MonoBehaviour
         Scales_Script = Scales.GetComponent<ScalesBehaviour>();
         Bucket_Board_Collider = Bucket_Board.GetComponent<Collider>();
         sand_layer = gameObject.layer;
+
+        Sand_State = SAND_STATE.SAND_STATE_STAGE;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.y <= -20.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
         {
-            if (other.gameObject.CompareTag("bucket_left_zone") &&
-            isInBucket == false)
+            if(other.gameObject.CompareTag("sands_trigger_change_parent"))
             {
-                Set_Sands_When_In_Bucket();
+                switch (Sand_State)
+                {
+                    case SAND_STATE.SAND_STATE_STAGE:
+                        Sand_State = SAND_STATE.SAND_STATE_FALLING_IN_BUCKET;
+                        break;
+                    case SAND_STATE.SAND_STATE_FALLING_IN_BUCKET:
+                        Sand_State = SAND_STATE.SAND_STATE_STAGE;
+                        break;
+                    case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
+                    case SAND_STATE.SAND_STATE_STAY_IN_BUCKET:
+                        Sand_State = SAND_STATE.SAND_STATE_FALLING_OUT_BUCKET;
+
+                        //transform.parent = null;
+                        transform.parent = Stage.transform;
+
+                        // layer: sand_normal
+                        gameObject.layer = 8;
+                        break;
+                }
+            }
+
+            if (other.gameObject.CompareTag("bucket_left_zone"))
+            {
+                switch (Sand_State)
+                {
+                    case SAND_STATE.SAND_STATE_FALLING_IN_BUCKET:
+                    case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
+                        Sand_State = SAND_STATE.SAND_STATE_STAY_IN_BUCKET;
+
+                        transform.parent = Bucket.transform;
+
+                        // layer: wall_through_player
+                        gameObject.layer = 14;
+                        break;
+                }
             }
         }
         else
         {
-            Set_Sands_With_Helper_Tigger();
+            if (other.gameObject.CompareTag("sands_trigger_change_parent"))
+            {
+                switch (Sand_State)
+                {
+                    case SAND_STATE.SAND_STATE_FALLING_IN_BUCKET:
+                    case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
+                    case SAND_STATE.SAND_STATE_STAY_IN_BUCKET:
+                        Sand_State = SAND_STATE.SAND_STATE_FALLING_OUT_BUCKET;
+
+                        //transform.parent = null;
+                        transform.parent = Stage.transform;
+
+                        // layer: sand_normal
+                        gameObject.layer = 8;
+                        break;
+                }
+            }
         }
 
-        if(other.gameObject.CompareTag("stage_border_return"))
+        if (other.gameObject.CompareTag("stage_border_return") && gameObject.layer != 28)
         {
-            transform.position = GameObject.FindGameObjectWithTag("sands").transform.position;
+            transform.position = GameObject.FindGameObjectWithTag("sand_normal").transform.position;
+            gameObject.tag = "sand_normal";
+            Sand_State = SAND_STATE.SAND_STATE_STAGE;
+            transform.parent = Stage.transform;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
+        {
+            if (other.gameObject.CompareTag("bucket_left_zone"))
+            {
+                Sand_State = SAND_STATE.SAND_STATE_STAY_IN_BUCKET;
+
+                transform.parent = Bucket.transform;
+
+                // layer: wall_through_player
+                gameObject.layer = 14;
+            }
+        }
+
+        if (other.gameObject.CompareTag("stage_border_return") && gameObject.layer != 28)
+        {
+            transform.position = GameObject.FindGameObjectWithTag("sand_normal").transform.position;
+            gameObject.tag = "sand_normal";
+            Sand_State = SAND_STATE.SAND_STATE_STAGE;
+            transform.parent = Stage.transform;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
+        if (other.gameObject.CompareTag("sands_trigger_change_parent"))
         {
-            if (other.gameObject.CompareTag("bucket_left_board") &&
-            isInBucket == true)
+            switch (Sand_State)
             {
-                Set_Sands_When_Out_Bucket();
+                case SAND_STATE.SAND_STATE_FALLING_OUT_BUCKET:
+                case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
+                case SAND_STATE.SAND_STATE_STAY_IN_BUCKET:
+                case SAND_STATE.SAND_STATE_THROUGH_SCALES:
+                    Sand_State = SAND_STATE.SAND_STATE_STAGE;
+
+                    transform.parent = Stage.transform;
+
+                    // layer: sand_normal
+                    gameObject.layer = 8;
+                    break;
             }
         }
-        else
-        {
-            Set_Sands_With_Helper_Tigger();
-        }
 
-        if (other.gameObject.CompareTag("stage_border"))
+        if (other.gameObject.CompareTag("stage_border_return") && gameObject.layer != 28)
         {
-            transform.position = GameObject.FindGameObjectWithTag("sands").transform.position;
+            transform.position = GameObject.FindGameObjectWithTag("sand_normal").transform.position;
+            gameObject.tag = "sand_normal";
+            Sand_State = SAND_STATE.SAND_STATE_STAGE;
+            transform.parent = Stage.transform;
         }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
+        if(other.gameObject.CompareTag("sand_normal"))
         {
-            if (other.collider.gameObject.CompareTag("stage"))
+            SAND_STATE work = other.gameObject.GetComponent<SandInScales>().Sand_State;
+
+            if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
             {
-                if (isInBucket == true)
+                if (work == SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET || work == SAND_STATE.SAND_STATE_STAY_IN_BUCKET)
                 {
-                    isInBucket = false;
-                    if (Scales_Script.weights[0] > 50)
+                    switch (Sand_State)
                     {
-                        Scales_Script.weights[0] -= Sand_Rb.mass;
+                        //case SAND_STATE.SAND_STATE_STAGE:
+                        case SAND_STATE.SAND_STATE_FALLING_IN_BUCKET:
+                        case SAND_STATE.SAND_STATE_FALLING_OUT_BUCKET:
+                            Sand_State = SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET;
+
+                            transform.parent = Bucket.transform;
+
+                            // layer: wall_through_player
+                            gameObject.layer = 14;
+                            break;
                     }
                 }
-
-                if (transform.parent != Stage.transform)
-                {
-                    transform.parent = Stage.transform;
-                }
-
-                // layer: もとに戻る
-                gameObject.layer = sand_layer;
-            }
-            else if (other.collider.gameObject.CompareTag("sands") &&
-                other.collider.gameObject.GetComponent<SandInScales>().isInBucket == true &&
-                isInBucket == false)
-            {
-                Set_Sands_When_In_Bucket();
-            }
-        }
-        else
-        {
-            if (other.collider.gameObject.CompareTag("sands") &&
-                other.collider.gameObject.transform.parent == Stage.transform)
-            {
-                Set_Sands_With_Helper_Collision();
             }
         }
     }
 
     void OnCollisionExit(Collision other)
     {
-        if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
+        if (other.gameObject.CompareTag("sand_normal"))
         {
-            if (other.collider.gameObject.CompareTag("sands") &&
-            other.collider.gameObject.GetComponent<SandInScales>().isInBucket == true &&
-            isInBucket == true)
+            SAND_STATE work = other.gameObject.GetComponent<SandInScales>().Sand_State;
+
+            if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
             {
-                Set_Sands_When_Out_Bucket();
+                if (work == SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET || work == SAND_STATE.SAND_STATE_STAY_IN_BUCKET)
+                {
+                    switch (Sand_State)
+                    {
+                        case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
+                            Sand_State = SAND_STATE.SAND_STATE_FALLING_OUT_BUCKET;
+
+                            //transform.parent = null;
+
+                            transform.parent = Stage.transform;
+
+                            // layer: sand_normal
+                            gameObject.layer = 8;
+                            break;
+                    }
+                }
             }
-        }   
+        }  
     }
 
     void OnCollisionStay(Collision other)
     {
-        if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
+        if (other.gameObject.CompareTag("sand_normal"))
         {
-            if (other.collider.gameObject.CompareTag("stage"))
+            SAND_STATE work = other.gameObject.GetComponent<SandInScales>().Sand_State;
+
+            if (Scales_Script.Handle_State != ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER)
             {
-                if (isInBucket == true)
+                if (work == SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET || work == SAND_STATE.SAND_STATE_STAY_IN_BUCKET)
                 {
-                    isInBucket = false;
-                    if (Scales_Script.weights[0] > 50)
+                    switch (Sand_State)
                     {
-                        Scales_Script.weights[0] -= Sand_Rb.mass;
+                        case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
+                            Sand_State = SAND_STATE.SAND_STATE_STAY_IN_BUCKET;
+
+                            transform.parent = Bucket.transform;
+
+                            // layer: wall_through_player
+                            gameObject.layer = 14;
+                            break;
                     }
                 }
-
-                if (transform.parent != Stage.transform)
-                {
-                    transform.parent = Stage.transform;
-                }
-
-                // layer: もとに戻る
-                gameObject.layer = sand_layer;
-            }
-            else if (other.collider.gameObject.CompareTag("sands") &&
-                other.collider.gameObject.GetComponent<SandInScales>().isInBucket == true &&
-                isInBucket == false)
-            {
-                Set_Sands_When_In_Bucket();
-            }
-        }
-        else
-        {
-            if (other.collider.gameObject.CompareTag("sands") &&
-                other.collider.gameObject.transform.parent == Stage.transform)
-            {
-                Set_Sands_With_Helper_Collision();
             }
         }
     }

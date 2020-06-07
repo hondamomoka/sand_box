@@ -9,9 +9,11 @@ public class ScalesHelper : MonoBehaviour
     public GameObject SandCreater;
     public GameObject[] obj_sands;
     public GameObject Sands_Trigger;
+    public GameObject Stage;
 
     ScalesBehaviour Scales_Script;
     Collider Bucket_Board_Collider;
+    SandInScales[] Sands_Script;
 
     bool isHelper;
 
@@ -25,9 +27,10 @@ public class ScalesHelper : MonoBehaviour
         // 砂の取得
         obj_sands = SandCreater.GetComponent<CreateSandsKyo>().obj_sands;
 
+        Sands_Script = new SandInScales[obj_sands.Length];
         for (int i = 0; i < obj_sands.Length; i++)
         {
-            //obj_sands_Collier[i] = obj_sands[i].GetComponent<Collider>();
+            Sands_Script[i] = obj_sands[i].GetComponent<SandInScales>();
         }
     }
 
@@ -38,7 +41,7 @@ public class ScalesHelper : MonoBehaviour
         {
             Bucket_Board_Collider.isTrigger = false;
             isHelper = false;
-            Sands_Trigger.SetActive(false);
+            //Sands_Trigger.SetActive(false);
         }
     }
 
@@ -49,8 +52,22 @@ public class ScalesHelper : MonoBehaviour
             Scales_Script.Handle_State = ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER;
             Bucket_Board_Collider.isTrigger = true;
             isHelper = true;
-            Scales_Script.weights[0] = 50;
-            Sands_Trigger.SetActive(true);
+
+            for (int i = 0; i < obj_sands.Length; i++)
+            {
+                if (Sands_Script[i].Sand_State != SandInScales.SAND_STATE.SAND_STATE_STAGE ||
+                    Sands_Script[i].Sand_State != SandInScales.SAND_STATE.SAND_STATE_FALLING_OUT_BUCKET)
+                {
+                    Sands_Script[i].Sand_State = SandInScales.SAND_STATE.SAND_STATE_THROUGH_SCALES;
+
+                    transform.parent = Stage.transform;
+
+                    // layer: sand_normal
+                    gameObject.layer = 8;
+                }
+            }
+            //Scales_Script.weights[0] = 50;
+            //Sands_Trigger.SetActive(true);
         }
     }
 }

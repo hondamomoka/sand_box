@@ -53,6 +53,8 @@ public class SandsWithBorderDestroy : MonoBehaviour
             // layer: sands_and_watch
             gameObject.layer = 28;
 
+            gameObject.tag = "Untagged";
+
             transform.parent = null;
 
             degree = Mathf.Atan2(

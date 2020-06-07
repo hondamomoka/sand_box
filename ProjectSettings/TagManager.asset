@@ -29,6 +29,7 @@ TagManager:
   - book
   - stage_border
   - stage_border_return
+  - sands_trigger_change_parent
   layers:
   - Default
   - TransparentFX

@@ -20,10 +20,31 @@ public class SandsChangeParent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("sands") &&
-            other.transform.parent != Parent.transform)
-        {
-            other.transform.parent = Parent.transform;
-        }
+        //if ((other.gameObject.CompareTag("sands") || other.gameObject.CompareTag("sand_normal")) &&
+        //    other.transform.parent != Parent.transform)
+        //{
+        //    other.transform.parent = Parent.transform;
+        //    other.GetComponent<SandInScales>().isInBucket = false;
+        //}
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //if ((other.gameObject.CompareTag("sands") || other.gameObject.CompareTag("sand_normal")) &&
+        //    other.transform.parent != Parent.transform)
+        //{
+        //    other.transform.parent = Parent.transform;
+        //    other.GetComponent<SandInScales>().isInBucket = false;
+        //}
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //if ((other.gameObject.CompareTag("sands") || other.gameObject.CompareTag("sand_normal")) &&
+        //    other.transform.parent != Parent.transform)
+        //{
+        //    other.transform.parent = Parent.transform;
+        //    other.GetComponent<SandInScales>().isInBucket = false;
+        //}
     }
 }
