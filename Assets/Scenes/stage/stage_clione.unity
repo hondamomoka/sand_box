@@ -4266,6 +4266,8 @@ MonoBehaviour:
   stage: stage
   default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   other_mats:
+  - {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
   - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
@@ -7192,7 +7194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   material:
-  - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
+  - {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
   - {fileID: 2100000, guid: 57897dbaa89881e48a08b63c0b94b4bb, type: 2}
   gole: {fileID: 867650204}
@@ -8424,6 +8426,8 @@ MonoBehaviour:
   stage: stage
   default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   other_mats:
+  - {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
   - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
@@ -9155,6 +9159,8 @@ MonoBehaviour:
   stage: stage
   default_mat: {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
   other_mats:
+  - {fileID: 2100000, guid: 361d2c512e4936d49893246e1ce6d9bd, type: 2}
+  - {fileID: 2100000, guid: 655e7a260ef4007479930f89cb52dfe7, type: 2}
   - {fileID: 2100000, guid: dfbb35ecd6e3cdd4bbe19ea40c6bf444, type: 2}
   sands_tag: sand_normal
   sands_layer: sand_normal
