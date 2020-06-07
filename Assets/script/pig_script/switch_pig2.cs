@@ -45,6 +45,7 @@ public class switch_pig2 : MonoBehaviour
                 on = true;
                 cube.GetComponent<Renderer>().material = material[1];
                 cube.layer = 14;
+                cube.tag = "Untagged";
                 this.GetComponent<Renderer>().material = material[0];
                 ps1.Play();
                 effect.playPS();
