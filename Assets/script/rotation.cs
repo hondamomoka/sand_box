@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class rotation : MonoBehaviour
 {
-    //sand_createrを探し出して砂の数を参照する
-    private GameObject sandCreater;
-    private CreateSandsKyo csk;
-
     //クリア時やメニューの時に回転しないようのフラグ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
     public bool rotateFlag;
 

@@ -7203,6 +7203,9 @@ MonoBehaviour:
   - {fileID: 952460156}
   ps1: {fileID: 710759976}
   ps2: {fileID: 1093182700}
+  audioClip1: {fileID: 8300000, guid: 0c735c559e348cf44a89569899cf2048, type: 3}
+  audioClip2: {fileID: 8300000, guid: dc051696a5abe08418a81404ab3df616, type: 3}
+  audioClip3: {fileID: 8300000, guid: 56233551163264e498ca34283d5d1a78, type: 3}
 --- !u!65 &1698408331
 BoxCollider:
   m_ObjectHideFlags: 0

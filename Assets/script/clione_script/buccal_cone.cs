@@ -16,6 +16,14 @@ public class buccal_cone : MonoBehaviour
 
     CreateSandsKyo[] Sands_Scripts;
 
+    //音を流すため追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip1;
+    [SerializeField] private AudioClip audioClip2;
+    [SerializeField] private AudioClip audioClip3;
+    private int soundFlag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +39,11 @@ public class buccal_cone : MonoBehaviour
         {
             Sands_Scripts[i] = Sand_Creater[i].GetComponent<CreateSandsKyo>();
         }
+
+        //音を流すため追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
+        soundFlag = 0;
     }
 
     // Update is called once per frame
@@ -52,7 +65,28 @@ public class buccal_cone : MonoBehaviour
                 {
                     Sands_Scripts[i].isSandsDelete = true;
                 }
+
+                if (soundFlag == 3)
+                {
+                    script.PlaySE(audioClip3);
+                    soundFlag = 4;
+                }
             }
+            else if (count > 110 && soundFlag == 0)
+            {
+                script.PlaySE(audioClip1);
+                soundFlag = 1;
+            }
+            else if (count > 220 && soundFlag == 1)
+            {
+                script.PlaySE(audioClip2);
+                soundFlag = 3;
+            }
+
+            if (count < 220)
+                soundFlag = 1;
+            if (count < 110)
+                soundFlag = 0;
         }
         
     }
