@@ -61,7 +61,7 @@ TagManager:
   - sands_trigger_change_parent
   - PostProcessing
   - sands_and_watch
-  - 
+  - wall_through_all
   - 
   - 
   m_SortingLayers:

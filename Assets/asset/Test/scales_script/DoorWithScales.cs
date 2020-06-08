@@ -8,10 +8,11 @@ public class DoorWithScales : MonoBehaviour
     public GameObject Player;
     public GameObject Goal;
     public GameObject Door_Switch;
-    public GameObject Bucket;
+    public GameObject[] Bucket;
     public GameObject[] SandCreater;
     public Material[] Door_Mats;
-
+    public Material[] Bucket_Mats;
+    public Material[] Goal_Mats;
     public swichEFonly_cobra effect0;
     public swichEFonly_cobra effect1;
     public swichEFonly_cobra effect2;
@@ -22,9 +23,12 @@ public class DoorWithScales : MonoBehaviour
     GameObject[] obj_sands;
 
     Renderer Door_Renderer;
-    Renderer[] Bucket_Renderer;
+    Renderer[] Bucket_Left_Renderer;
+    Renderer[] Bucket_Right_Renderer;
     ScalesBehaviour Scales_Script;
     SandInScales[] Sand_Script;
+
+    bool isNextGoal;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -51,7 +55,13 @@ public class DoorWithScales : MonoBehaviour
         obj_sands = SandCreater[0].GetComponent<CreateSandsKyo>().obj_sands;
 
         Door_Renderer = GetComponent<Renderer>();
-        Bucket_Renderer = Bucket.GetComponentsInChildren<Renderer>();
+
+        if(Bucket.Length == 2)
+        {
+            Bucket_Left_Renderer = Bucket[0].GetComponentsInChildren<Renderer>();
+            Debug.Log("children: " + Bucket_Left_Renderer.Length);
+            Bucket_Right_Renderer = Bucket[1].GetComponentsInChildren<Renderer>();
+        }
         Scales_Script = Scales.GetComponent<ScalesBehaviour>();
         Sand_Script = new SandInScales[obj_sands.Length];
 
@@ -63,6 +73,8 @@ public class DoorWithScales : MonoBehaviour
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
+
+        isNextGoal = false;
     }
 
     // Update is called once per frame
@@ -96,8 +108,14 @@ public class DoorWithScales : MonoBehaviour
                 ps = 1;
             }
            
-
-            Door_Renderer.material = Door_Mats[1];
+            if(isNextGoal == false)
+            {
+                Door_Renderer.material = Door_Mats[1];
+            }
+            else
+            {
+                Door_Renderer.material = Goal_Mats[0];
+            }
 
             // layer: wall_through_player
             gameObject.layer = 14;
@@ -114,7 +132,7 @@ public class DoorWithScales : MonoBehaviour
 
             if (Goal != null)
             {
-                Goal.GetComponent<Renderer>().material = Door_Mats[1];
+                Goal.GetComponent<Renderer>().material = Goal_Mats[0];
                 // layer: wall_through_player
                 Goal.layer = 14;
 
@@ -131,14 +149,22 @@ public class DoorWithScales : MonoBehaviour
     void If_Handle_Stay_In_Right()
     {
         if (Scales_Script.Handle_State == ScalesBehaviour.HANDLE_STATE.STATE_STAY_IN_RIGHT &&
-            Scales_Script.isPlayerInBucket == false &&
+            Scales_Script.isPlayerInBucket == true &&
             Scales_Script.isWithPlayer == true)
         {
-            Door_Renderer.material = Door_Mats[1];
+            Door_Gimmick = DOOR_GIMMICK.IF_HANDLE_STAY_IN_LEFT;
 
-            // layer: wall_through_player
-            gameObject.layer = 14;
-            script.PlaySE(audioClip);
+            // Bucket_Leftの表示
+            for (int i = 0; i < Bucket_Left_Renderer.Length - 5; i++)
+            {
+                Bucket_Left_Renderer[i].material = Bucket_Mats[0];
+                // layer: wall_through_player
+                Bucket_Left_Renderer[i].gameObject.layer = 14;
+            }
+            Bucket_Left_Renderer[4].gameObject.layer = 14;
+
+            isNextGoal = true;
+            //script.PlaySE(audioClip);
         }
     }
 
@@ -146,7 +172,7 @@ public class DoorWithScales : MonoBehaviour
     {
         if(Door_Switch == null)
         {
-            Door_Gimmick = DOOR_GIMMICK.IF_HANDLE_STAY_IN_LEFT;
+            Door_Gimmick = DOOR_GIMMICK.IF_HANDLE_STAY_IN_RIGHT;
             Door_Renderer.material = Door_Mats[1];
 
             // layer: wall_through_sands_green
@@ -161,12 +187,22 @@ public class DoorWithScales : MonoBehaviour
             //Scales_Script.weights[0] = 50;
             Scales_Script.Reset_Sands(SandCreater[1]);
 
-            for (int i = 0; i < Bucket_Renderer.Length - 2; i++)
+            // Bucket_Leftの非表示
+            for (int i = 0; i < Bucket_Left_Renderer.Length - 5; i++)
             {
-                Bucket_Renderer[i].material = Door_Mats[1];
+                Bucket_Left_Renderer[i].material = Bucket_Mats[2];
+
+                // layer: wall_through_all
+                Bucket_Left_Renderer[i].gameObject.layer = 29;
+            }
+            Bucket_Left_Renderer[4].gameObject.layer = 29;
+
+            // Bucekt_Rightの色替え
+            for (int i = 0; i < Bucket_Right_Renderer.Length - 2; i++)
+            {
+                Bucket_Right_Renderer[i].material = Bucket_Mats[1];
             }
 
-            Door_Mats[1] = Door_Mats[3];
             effect0.playPS();
             script.PlaySE(audioClip);
         }

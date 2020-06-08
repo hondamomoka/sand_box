@@ -206,6 +206,14 @@ public class SandInScales : MonoBehaviour
                 }
             }
         }
+
+        if (other.gameObject.CompareTag("stage") &&
+            (Sand_State == SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET || Sand_State == SAND_STATE.SAND_STATE_STAY_IN_BUCKET))
+        {
+            gameObject.tag = "sand_normal";
+            Sand_State = SAND_STATE.SAND_STATE_STAGE;
+            transform.parent = Stage.transform;
+        }
     }
 
     void OnCollisionExit(Collision other)

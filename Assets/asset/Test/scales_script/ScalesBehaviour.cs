@@ -291,6 +291,9 @@ public class ScalesBehaviour : MonoBehaviour
 
     public void Reset_Sands(GameObject SC)
     {
+        //obj_sands = null;
+        //obj_sands_Script = null;
+
         // 砂の取得
         obj_sands = SC.GetComponent<CreateSandsKyo>().obj_sands;
 
