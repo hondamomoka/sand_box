@@ -44,6 +44,9 @@ public class Scene_Manager : MonoBehaviour
     public int titleSelect;
     public int selectSelect;
 
+    //メニュー表示用の変数
+    public bool menuFlag;
+
     void Awake()
     {
         fadeIn = true;
@@ -53,13 +56,26 @@ public class Scene_Manager : MonoBehaviour
 
         titleSelect = 0;
         selectSelect = 1;
+
+        menuFlag = false;
     }
 
     void Update()
     {
+        //if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button3))
+        //    if (nowScene > Stage.MANUAL)
+        //        SceneChange(Stage.SELECTS);
+
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button3))
-            if(nowScene > Stage.MANUAL)
-                SceneChange(Stage.SELECTS);
+        {
+            if (nowScene > Stage.MANUAL)
+            {
+                //GameObjectの型を作ってプレハブを取得
+                GameObject obj = (GameObject)Resources.Load("menu");
+                //型をもとにプレハブを生成、
+                Instantiate(obj, new Vector3(-6.290911f, -1.094278f, -0.5368786f), Quaternion.identity);
+            }
+        }
     }
 
     public void SceneChange(Stage change)
