@@ -35,7 +35,7 @@ public class SwitchLink : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("sands"))
+        if (other.gameObject.CompareTag("sands")|| other.gameObject.CompareTag("sand_normal"))
         {
             sand_cnt++;   
         }
@@ -43,7 +43,7 @@ public class SwitchLink : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("sands"))
+        if (other.gameObject.CompareTag("sands") || other.gameObject.CompareTag("sand_normal"))
         {
             sand_cnt--;
         }
