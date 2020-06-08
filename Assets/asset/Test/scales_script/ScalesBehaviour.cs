@@ -10,7 +10,6 @@ public class ScalesBehaviour : MonoBehaviour
     public GameObject[] StickJoin;
     public GameObject[] Stick;
     public GameObject[] Bucket;
-    public GameObject Scales_Pos;
     public float[] weights;
     public int weights_index;
     public float rot_limit;
@@ -112,12 +111,6 @@ public class ScalesBehaviour : MonoBehaviour
     {
         handle_Angular_Velocity = Handle_Rb.angularVelocity;
 
-        // 天秤の位置更新
-        if (Scales_Pos != null)
-        {
-            transform.position = Scales_Pos.transform.position;
-        }
-
         int work_weight_idx = 0;
 
         for (int i = 0; i < obj_sands.Length; i++)
@@ -171,13 +164,22 @@ public class ScalesBehaviour : MonoBehaviour
         if (weights[0] > weights[1] &&
             Handle_State != HANDLE_STATE.STATE_STAY_IN_LEFT)
         {
+            if (Handle_State == HANDLE_STATE.STATE_TURN_TO_RIGHT)
+            {
+                Handle_Rb.angularVelocity = Vector3.zero;
+            }
             Handle_State = HANDLE_STATE.STATE_TURN_TO_LEFT;
+            
         }
 
         // 右端が重い
         if (weights[0] < weights[1] &&
             Handle_State != HANDLE_STATE.STATE_STAY_IN_RIGHT)
         {
+            if (Handle_State == HANDLE_STATE.STATE_TURN_TO_LEFT)
+            {
+                Handle_Rb.angularVelocity = Vector3.zero;
+            }
             Handle_State = HANDLE_STATE.STATE_TURN_TO_RIGHT;
         }
 
@@ -189,12 +191,14 @@ public class ScalesBehaviour : MonoBehaviour
                 Handle_State == HANDLE_STATE.STATE_TURN_TO_LEFT)
             {
                 Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT;
+                Handle_Rb.angularVelocity = Vector3.zero;
             }
             // 右端が沈んでいる
             else if (Handle_State == HANDLE_STATE.STATE_STAY_IN_RIGHT ||
                 Handle_State == HANDLE_STATE.STATE_TURN_TO_RIGHT)
             {
                 Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT;
+                Handle_Rb.angularVelocity = Vector3.zero;
             }
         }
     }

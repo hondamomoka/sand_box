@@ -51,6 +51,7 @@ public class ScalesHelper : MonoBehaviour
         {
             Scales_Script.Handle_State = ScalesBehaviour.HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER;
             Bucket_Board_Collider.isTrigger = true;
+            Scales_Script.Handle.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             isHelper = true;
 
             for (int i = 0; i < obj_sands.Length; i++)
