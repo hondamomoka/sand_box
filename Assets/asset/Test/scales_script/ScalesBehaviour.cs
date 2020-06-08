@@ -277,5 +277,10 @@ public class ScalesBehaviour : MonoBehaviour
     {
         // 砂の取得
         obj_sands = SC.GetComponent<CreateSandsKyo>().obj_sands;
+
+        for (int i = 0; i < obj_sands.Length; i++)
+        {
+            obj_sands_Script[i] = obj_sands[i].GetComponent<SandInScales>();
+        }
     }
 }

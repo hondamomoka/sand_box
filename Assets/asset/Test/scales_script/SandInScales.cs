@@ -248,6 +248,13 @@ public class SandInScales : MonoBehaviour
                 {
                     switch (Sand_State)
                     {
+                        case SAND_STATE.SAND_STATE_FALLING_IN_BUCKET:
+                            Sand_State = SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET;
+                            transform.parent = Bucket.transform;
+
+                            // layer: wall_through_player
+                            gameObject.layer = 14;
+                            break;
                         case SAND_STATE.SAND_STATE_PERHAPS_STAY_IN_BUCKET:
                             Sand_State = SAND_STATE.SAND_STATE_STAY_IN_BUCKET;
 

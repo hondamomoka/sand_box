@@ -16,6 +16,7 @@ public class DoorWithScales : MonoBehaviour
     public swichEFonly_cobra effect1;
     public swichEFonly_cobra effect2;
     public ParticleSystem ps1;
+    public bool isDestroySand;
     static int ps;
 
     GameObject[] obj_sands;
@@ -23,6 +24,7 @@ public class DoorWithScales : MonoBehaviour
     Renderer Door_Renderer;
     Renderer[] Bucket_Renderer;
     ScalesBehaviour Scales_Script;
+    SandInScales[] Sand_Script;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -51,6 +53,12 @@ public class DoorWithScales : MonoBehaviour
         Door_Renderer = GetComponent<Renderer>();
         Bucket_Renderer = Bucket.GetComponentsInChildren<Renderer>();
         Scales_Script = Scales.GetComponent<ScalesBehaviour>();
+        Sand_Script = new SandInScales[obj_sands.Length];
+
+        for(int i = 0; i < obj_sands.Length; i++)
+        {
+            Sand_Script[i] = obj_sands[i].GetComponent<SandInScales>();
+        }
 
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
@@ -94,6 +102,16 @@ public class DoorWithScales : MonoBehaviour
             // layer: wall_through_player
             gameObject.layer = 14;
 
+            //if(isDestroySand == true)
+            //{
+            //    //for(int i = 0; i < obj_sands.Length; i++)
+            //    //{
+            //    //    Destroy(obj_sands[i]);
+
+            //    //}
+            //    Scales_Script.weights[0] = 50;
+            //}
+
             if (Goal != null)
             {
                 Goal.GetComponent<Renderer>().material = Door_Mats[1];
@@ -136,10 +154,11 @@ public class DoorWithScales : MonoBehaviour
             
             for (int i = 0; i < obj_sands.Length; i++)
             {
+
                 Destroy(obj_sands[i]);
             }
 
-            Scales_Script.weights[0] = 50;
+            //Scales_Script.weights[0] = 50;
             Scales_Script.Reset_Sands(SandCreater[1]);
 
             for (int i = 0; i < Bucket_Renderer.Length - 1; i++)

@@ -37,11 +37,11 @@ public class rotation : MonoBehaviour
             {
                 transform.Rotate(0, 0, 44.5f * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.PageDown))
+            else if (Input.GetKey(KeyCode.E))
             {
                 transform.Rotate(0, 0, -80.0f * Time.deltaTime, Space.World);
             }
-            else if (Input.GetKey(KeyCode.PageUp))
+            else if (Input.GetKey(KeyCode.Q))
             {
                 transform.Rotate(0, 0, 80.0f * Time.deltaTime, Space.World);
             }
