@@ -44,7 +44,9 @@ public class SandsWithBorderDestroy : MonoBehaviour
     {
         if (other.gameObject == Watch)
         {
-            Instantiate(ps, transform.position, Quaternion.identity);
+            ParticleSystem work = Instantiate(ps, transform.position, Quaternion.identity);
+            work.transform.localScale = new Vector3(other.transform.lossyScale.x, other.transform.lossyScale.z, 1) * 0.6f;
+            //work.gameObject.transform.lossyScale
             Destroy(gameObject);
         }
 
