@@ -161,7 +161,7 @@ public class DoorWithScales : MonoBehaviour
             //Scales_Script.weights[0] = 50;
             Scales_Script.Reset_Sands(SandCreater[1]);
 
-            for (int i = 0; i < Bucket_Renderer.Length - 1; i++)
+            for (int i = 0; i < Bucket_Renderer.Length - 2; i++)
             {
                 Bucket_Renderer[i].material = Door_Mats[1];
             }

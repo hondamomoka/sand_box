@@ -30,6 +30,7 @@ TagManager:
   - stage_border
   - stage_border_return
   - sands_trigger_change_parent
+  - player_get_out_bucket
   layers:
   - Default
   - TransparentFX

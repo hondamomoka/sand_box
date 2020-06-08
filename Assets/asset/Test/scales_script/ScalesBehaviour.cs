@@ -29,6 +29,7 @@ public class ScalesBehaviour : MonoBehaviour
     Rigidbody Handle_Rb;
 
     SandInScales[] obj_sands_Script;
+    PlayerInScales Player_Script;
 
     Vector3 Weights_World_Pos; // 天秤の両端に力を加える点
 
@@ -102,6 +103,8 @@ public class ScalesBehaviour : MonoBehaviour
         {
             obj_sands_Script[i] = obj_sands[i].GetComponent<SandInScales>();
         }
+
+        Player_Script = Player.GetComponent<PlayerInScales>();
     }
 
     // Update is called once per frame
@@ -129,6 +132,15 @@ public class ScalesBehaviour : MonoBehaviour
         }
 
         weights[0] = work_weight_idx * 10.0f + 50;
+
+        if (Player_Script.Player_State == PlayerInScales.PLAYER_STATE.PLAYER_STATE_STAY_IN_BUCKET)
+        {
+            weights[1] = 500;
+        }
+        else
+        {
+            weights[1] = 50;
+        }
 
         // Handle_Stateのチェック・回転前
         Check_Handle_State_Before_Rotate();
