@@ -12,10 +12,10 @@ public class clear_coin : MonoBehaviour
    public float add;
     float add_pos;
     public ParticleSystem ps;
-    //public ParticleSystem ps2;
-    //public ParticleSystem ps3;
-    //public ParticleSystem ps4;
-    //public float par;
+    public ParticleSystem ps2;
+    public ParticleSystem ps3;
+    public ParticleSystem ps4;
+    public float par;
     bool effect;
 
     //音をつけるために追加
@@ -71,8 +71,8 @@ public class clear_coin : MonoBehaviour
             {
                 down = false;
                 slow = true;
-               // next = true;
-               
+                //next = true;
+
             }
         }
 
@@ -102,7 +102,7 @@ public class clear_coin : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 90.0f);
                 slow = false;
                 next = true;
-                //par = FindObjectOfType<NeedleRot>().safe_rate;
+                par = FindObjectOfType<NeedleRot>().safe_rate;
 
             }
         }
@@ -111,24 +111,26 @@ public class clear_coin : MonoBehaviour
         {
             if(!effect)
             {
-                //if ((float)par >= 0.8f)
-                //{
-                //    Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
-                //}
-                //else if ((float)par < 0.8f && (float)par >= 0.6f)
-                //{
-                //    Instantiate(ps2, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
-                //}
-                //else if ((float)par < 0.6f && (float)par >= 0.4f)
-                //{
-                //    Instantiate(ps3, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
-                //}
-                //else if ((float)par < 0.4f)
-                //{
-                //    Instantiate(ps4, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
-                //}
+                Debug.Log(par);
 
-                Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
+                if ((float)par >= 0.8f)
+                {
+                    Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
+                }
+                else if ((float)par < 0.8f && (float)par >= 0.6f)
+                {
+                    Instantiate(ps2, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
+                }
+                else if ((float)par < 0.6f && (float)par >= 0.4f)
+                {
+                    Instantiate(ps3, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
+                }
+                else if ((float)par < 0.4f)
+                {
+                    Instantiate(ps4, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
+                }
+
+                //Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
 
                 effect = true;
             }
