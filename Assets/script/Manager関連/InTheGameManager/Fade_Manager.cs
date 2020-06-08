@@ -48,6 +48,12 @@ public class Fade_Manager : MonoBehaviour
     {
         FadeIn();
         FadeOut();
+
+        if (sm.menuFlag == true)
+        {
+            color.a = 0.5f;
+            panel.color = color;
+        }
     }
 
     //フェードの関数
@@ -88,7 +94,20 @@ public class Fade_Manager : MonoBehaviour
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
                 sm.fadeIn = false;
+            Debug.Log("いん");
         }
+    }
+
+    public void MenuIn()
+    {
+        color.a = 0.5f;
+        panel.color = color;
+    }
+
+    public void MenuOut()
+    {
+        color.a = 0.0f;
+        panel.color = color;
     }
 }
 

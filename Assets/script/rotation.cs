@@ -8,6 +8,16 @@ public class rotation : MonoBehaviour
     //クリア時やメニューの時に回転しないようのフラグ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
     public bool rotateFlag;
 
+    private GameObject sceneManager;
+    private Scene_Manager sm;
+
+
+    void Awake()
+    {
+        sceneManager = GameObject.Find("GameManager");
+        sm = sceneManager.GetComponent<Scene_Manager>();
+    }
+
     void Start()
     {
         rotateFlag = true;
