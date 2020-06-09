@@ -140,6 +140,10 @@ public class clear_coin : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
+               if(FindObjectOfType<postp>())
+                {
+                    FindObjectOfType<postp>().end();
+                }
                 sm.SceneChange(Scene_Manager.Stage.SELECTS);
             }
         }
