@@ -22,6 +22,7 @@ public class Game_Manager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        //シングルトン運用をちゃんとする
         sm = GetComponent<Scene_Manager>();
         am = GetComponent<Audio_Manager>();
     }

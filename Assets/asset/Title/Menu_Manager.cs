@@ -12,26 +12,17 @@ public class Menu_Manager : MonoBehaviour
     private GameObject rotateManager;
     private rotation rotateScript;
 
-    private GameObject gameManager;
-    private Audio_Manager am;
-    private Scene_Manager sm;
 
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip audioClip1;      //決定
+    [SerializeField] private AudioClip audioClip2;      //キャンセル
+    [SerializeField] private AudioClip audioClip3;      //選択
 
     private float lsv;                                  //Lスティック縦に動かしたときの値を格納する
     private bool stickFlag;
 
-    [SerializeField]
-    private Image panel;
+    [SerializeField] private Image panel;
     private Color color;                                //RGBを操作するための変数
 
-
-    void Awake()
-    {
-        gameManager = GameObject.Find("GameManager");
-        am = gameManager.GetComponent<Audio_Manager>();
-        sm = gameManager.GetComponent<Scene_Manager>();
-    }
 
     void Start()
     {
@@ -48,20 +39,26 @@ public class Menu_Manager : MonoBehaviour
         selectCount = 0;
 
         Fade_Manager.Instance.MenuIn();
+        Game_Manager.Instance.am.PlaySE(audioClip3);
     }
 
     void Update()
     {
+        //クリア時じゃなくメニューも開いてなければ生成できる
+
         //スティックの値取得
         lsv = Input.GetAxis("L_Stick_V");
         if (lsv <= 0.1 && lsv >= -0.1)
             stickFlag = true;
 
         //YorB押したときに反映、ゲームに戻る
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X))
         {
             rotateScript.rotateFlag = true;
             Fade_Manager.Instance.MenuOut();
+            Game_Manager.Instance.sm.menuFlag = false;
+
+            Game_Manager.Instance.am.PlaySE(audioClip2);
             Destroy(this.gameObject);
         }
 
@@ -72,13 +69,16 @@ public class Menu_Manager : MonoBehaviour
             {
                 case false:
                     //リスタート
-                    sm.SceneChange(sm.nowScene);
+                    Game_Manager.Instance.sm.SceneChange(Game_Manager.Instance.sm.nowScene);
+                    Game_Manager.Instance.am.PlaySE(audioClip1);
                     break;
                 case true:
                     //ステージセレクトに戻る
-                    sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                    Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                    Game_Manager.Instance.am.PlaySE(audioClip1);
                     break;
             }
+            Game_Manager.Instance.sm.menuFlag = false;
             Destroy(this.gameObject);
         }
         //上下選択
@@ -91,6 +91,7 @@ public class Menu_Manager : MonoBehaviour
                 {
                     selectCount += 21;
                     selectFlag = false;
+                    Game_Manager.Instance.am.PlaySE(audioClip3);
                 }
             }
             //下選択
@@ -100,20 +101,24 @@ public class Menu_Manager : MonoBehaviour
                 {
                     selectCount += -21;
                     selectFlag = true;
+                    Game_Manager.Instance.am.PlaySE(audioClip3);
                 }
             }
         }
+    }
+
+    void FixedUpdate()
+    {
         //ぬるっとうごくよ
         if (selectCount > 0)
         {
-            select.transform.position += new Vector3(0, 0.1f, 0);
-            selectCount--;
+            select.transform.position += new Vector3(0, 0.3f, 0);
+            selectCount -= 3;
         }
         if (selectCount < 0)
         {
-            select.transform.position -= new Vector3(0, 0.1f, 0);
-            selectCount++;
+            select.transform.position -= new Vector3(0, 0.3f, 0);
+            selectCount += 3;
         }
-
     }
 }
