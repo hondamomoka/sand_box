@@ -19,6 +19,7 @@ public class clear : MonoBehaviour
     private GameObject rotateManager;
     private rotation rotateScript;
 
+
     // Start is called before the first frame update
     void Start()
     {
