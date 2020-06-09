@@ -105,6 +105,7 @@ public class PlayerInScales : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameObject.Find("SnailAlpha").GetComponent<TurnToThroughSands>().Set_Snail_Alpha();
+            GameObject.Find("SandCreater_Red").GetComponent<CreateSandsKyo>().isSandsDelete = true;
         }
     }
 
