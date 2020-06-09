@@ -21095,6 +21095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2893e52c9377e24cb120a7604586a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rot_limit: 20
+  deviation: 5
 --- !u!1 &631725213
 GameObject:
   m_ObjectHideFlags: 0
@@ -41488,7 +41490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1274bb784385d5f4f96f08d5d7f4f3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  add: {x: 0, y: 25, z: 0}
+  add: {x: 0, y: 20, z: 0}
 --- !u!1 &2023625258
 GameObject:
   m_ObjectHideFlags: 0
