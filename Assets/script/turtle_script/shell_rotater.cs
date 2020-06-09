@@ -8,6 +8,8 @@ public class shell_rotater : MonoBehaviour
 
     public bool rot_right;
     public bool rot_left;
+
+    public float rot_speed;
     float rot;
 
     void Start()
@@ -26,11 +28,11 @@ public class shell_rotater : MonoBehaviour
         }
         else if(rot_right==true)
         {
-            rot = -0.3f;
+            rot = -rot_speed;
         }
        else  if (rot_left==true)
         {
-            rot = 0.3f;
+            rot = rot_speed;
         }
         else
         {

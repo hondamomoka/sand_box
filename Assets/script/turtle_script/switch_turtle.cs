@@ -6,10 +6,15 @@ public class switch_turtle : MonoBehaviour
 {
     int count;
     int max_count;
-   public bool on;
+    public bool on;
     public Material[] material;
     public bool fin;
     public ParticleSystem ps1;
+
+    public GameObject Turtle_Leg;
+    public Material[] Turtle_Leg_Mat;
+
+    Renderer Turtle_Renderer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +27,8 @@ public class switch_turtle : MonoBehaviour
         Transform mytra = this.transform;
         Vector3 size = mytra.localScale;
         max_count = (int)(size.x * size.y * 100);
+
+        Turtle_Renderer = Turtle_Leg.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -31,13 +38,18 @@ public class switch_turtle : MonoBehaviour
 
         if (!fin)
         {
-            if (count > max_count)
+            if (count >= max_count)
             {
                 if(!on)
                 {
                     on = true;
                     this.GetComponent<Renderer>().material = material[1];
                     ps1.Play();
+
+                    Turtle_Renderer.material = Turtle_Leg_Mat[1];
+
+                    // layer: wall_through_sands
+                    Turtle_Leg.layer = 15;
                 }
                 
             }
@@ -47,6 +59,10 @@ public class switch_turtle : MonoBehaviour
                 {
                     on = false;
                     this.GetComponent<Renderer>().material = material[0];
+                    Turtle_Renderer.material = Turtle_Leg_Mat[0];
+
+                    // layer: default
+                    Turtle_Leg.layer = 0;
                 }
                
             }
