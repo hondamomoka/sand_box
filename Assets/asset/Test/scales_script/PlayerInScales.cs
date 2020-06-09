@@ -104,7 +104,7 @@ public class PlayerInScales : MonoBehaviour
         if (other.gameObject.CompareTag("player_switch"))
         {
             Destroy(other.gameObject);
-            GameObject.Find("SnailAlpha").GetComponent<TurnToThroughSands>().Set_Snail_Alpha();
+            GameObject.Find("SnailAlpha").GetComponent<TurnToThroughSands>().Set_Alpha();
             GameObject.Find("SandCreater_Red").GetComponent<CreateSandsKyo>().isSandsDelete = true;
         }
     }

@@ -6,12 +6,12 @@ public class TurnToThroughSands : MonoBehaviour
 {
     public Material mat;
 
-    Renderer[] Snail_Alpha;
+    Renderer[] Alpha;
 
     // Start is called before the first frame update
     void Start()
     {
-        Snail_Alpha = GetComponentsInChildren<Renderer>();
+        Alpha = GetComponentsInChildren<Renderer>();
     }
 
     // Update is called once per frame
@@ -20,14 +20,14 @@ public class TurnToThroughSands : MonoBehaviour
         
     }
 
-    public void Set_Snail_Alpha()
+    public void Set_Alpha()
     {
-        for (int i = 0; i < Snail_Alpha.Length; i++)
+        for (int i = 0; i < Alpha.Length; i++)
         {
-            Snail_Alpha[i].material = mat;
+            Alpha[i].material = mat;
 
             // layer: wall_through_sands
-            Snail_Alpha[i].gameObject.layer = 15;
+            Alpha[i].gameObject.layer = 15;
         }
     }
 }
