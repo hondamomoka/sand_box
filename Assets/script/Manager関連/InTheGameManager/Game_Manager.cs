@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Game_Manager : MonoBehaviour
 {
+    public Audio_Manager am;
+    public Scene_Manager sm;
+
     //シーン遷移をしてもこのオブジェクトが破棄されない
     public static Game_Manager Instance
     {
@@ -18,5 +21,8 @@ public class Game_Manager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        sm = GetComponent<Scene_Manager>();
+        am = GetComponent<Audio_Manager>();
     }
 }

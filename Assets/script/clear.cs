@@ -12,9 +12,13 @@ public class clear : MonoBehaviour
     public postp postp;
 
     //音追加用
-    private GameObject audioManager;
-    private Audio_Manager script;
-    [SerializeField] private AudioClip audioClip;
+    private GameObject GameManager;
+    private Audio_Manager am;
+    private Scene_Manager sm;
+
+    private GameObject rotateManager;
+    private rotation rotateScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +28,16 @@ public class clear : MonoBehaviour
         set = false;
 
         //音追加用
-        audioManager = GameObject.Find("GameManager");
-        script = audioManager.GetComponent<Audio_Manager>();
+        GameManager = GameObject.Find("GameManager");
+        am = GameManager.GetComponent<Audio_Manager>();
+        sm = GameManager.GetComponent<Scene_Manager>();
+
+        //ステージの値を無理やり取得(変更予定)
+        rotateManager = GameObject.Find("stage");
+        if (rotateManager == null)
+            rotateManager = GameObject.Find("Stage");
+
+        rotateScript = rotateManager.GetComponent<rotation>();
     }
 
     // Update is called once per frame
@@ -37,9 +49,13 @@ public class clear : MonoBehaviour
             on = false;
             set = true;
             postp.on = true;
-            script.source[2].Stop();
+            am.source[2].Stop();
+            rotateScript.rotateFlag = false;
+
+            if(sm.selectSelect != 20)
+                sm.selectSelect++;
         }
-     
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,7 +65,6 @@ public class clear : MonoBehaviour
             if (other.gameObject.CompareTag("player"))
             {
                 on = true;
-                script.source[2].Stop();
             }
         }
         

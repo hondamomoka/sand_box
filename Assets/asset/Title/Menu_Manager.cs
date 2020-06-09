@@ -23,7 +23,7 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField]
     private Image panel;
-    private Color color;         //RGBを操作するための変数
+    private Color color;                                //RGBを操作するための変数
 
 
     void Awake()

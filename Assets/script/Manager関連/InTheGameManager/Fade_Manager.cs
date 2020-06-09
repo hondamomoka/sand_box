@@ -12,9 +12,9 @@ public class Fade_Manager : MonoBehaviour
     private float speed;         //透明化の速さ
     private Color color;         //RGBを操作するための変数
 
-    private GameObject gameManager;
-    private Scene_Manager sm;
-    private Audio_Manager am;
+    //private GameObject gameManager;
+    //private Scene_Manager sm;
+    //private Audio_Manager am;
 
     [SerializeField]
     private Image panel;
@@ -30,9 +30,9 @@ public class Fade_Manager : MonoBehaviour
         color = panel.color;
 
         //GameManagerを取得してFadeとシーン遷移を関連づける
-        gameManager = GameObject.Find("GameManager");
-        sm = gameManager.GetComponent<Scene_Manager>();
-        am = gameManager.GetComponent<Audio_Manager>();
+        //gameManager = GameObject.Find("GameManager");
+        //sm = gameManager.GetComponent<Scene_Manager>();
+        //am = gameManager.GetComponent<Audio_Manager>();
 
         //シングルトン的運用
         if (Instance != null)
@@ -49,7 +49,7 @@ public class Fade_Manager : MonoBehaviour
         FadeIn();
         FadeOut();
 
-        if (sm.menuFlag == true)
+        if (Game_Manager.Instance.sm.menuFlag == true)
         {
             color.a = 0.5f;
             panel.color = color;
@@ -59,41 +59,41 @@ public class Fade_Manager : MonoBehaviour
     //フェードの関数
     void FadeOut()
     {
-        if (sm.nextScene != Scene_Manager.Stage.SCENE_MAX)
+        if (Game_Manager.Instance.sm.nextScene != Scene_Manager.Stage.SCENE_MAX)
         {
-            if (sm.fadeIn == true)
-                sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
+            if (Game_Manager.Instance.sm.fadeIn == true)
+                Game_Manager.Instance.sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
 
             panel.color = color;
             color.a += speed * Time.deltaTime;
 
             //ステージセレクトから各シーンに飛ぶときに音をフェードアウト
-            if ((int)sm.nextScene > (int)Scene_Manager.Stage.MANUAL)
-                am.source[0].volume -= speed * Time.deltaTime;
+            if ((int)Game_Manager.Instance.sm.nextScene > (int)Scene_Manager.Stage.MANUAL)
+                Game_Manager.Instance.am.source[0].volume -= speed * Time.deltaTime;
             //各シーンからステージセレクトに飛ぶときに音をフェードアウト
-            if((int)sm.nowScene  > (int)Scene_Manager.Stage.MANUAL && (int)sm.nextScene == (int)Scene_Manager.Stage.SELECTS)
-                am.source[0].volume -= speed * Time.deltaTime;
+            if((int)Game_Manager.Instance.sm.nowScene  > (int)Scene_Manager.Stage.MANUAL && (int)Game_Manager.Instance.sm.nextScene == (int)Scene_Manager.Stage.SELECTS)
+                Game_Manager.Instance.am.source[0].volume -= speed * Time.deltaTime;
 
             if (color.a >= 1.0f)
             {
-                sm.fadeIn = true;
-                SceneManager.LoadScene((int)sm.nextScene);
-                sm.nowScene = sm.nextScene;
-                sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
-                if (am.source[0].volume < am.bgVol)
-                am.source[0].Stop();
+                Game_Manager.Instance.sm.fadeIn = true;
+                SceneManager.LoadScene((int)Game_Manager.Instance.sm.nextScene);
+                Game_Manager.Instance.sm.nowScene = Game_Manager.Instance.sm.nextScene;
+                Game_Manager.Instance.sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
+                if (Game_Manager.Instance.am.source[0].volume < Game_Manager.Instance.am.bgVol)
+                    Game_Manager.Instance.am.source[0].Stop();
             }
         }
     }
 
     void FadeIn()
     {
-        if (sm.fadeIn == true)
+        if (Game_Manager.Instance.sm.fadeIn == true)
         {
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
-                sm.fadeIn = false;
+                Game_Manager.Instance.sm.fadeIn = false;
             Debug.Log("いん");
         }
     }

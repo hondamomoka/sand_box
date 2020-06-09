@@ -17,9 +17,9 @@ public class Title_Manager : MonoBehaviour
 
     private bool fadeFlag;
 
-    private GameObject manager;
-    private Audio_Manager am;
-    private Scene_Manager sm;
+    //private GameObject manager;
+    //private Audio_Manager am;
+    //private Scene_Manager sm;
 
     [SerializeField] private AudioClip titleBGM;
     [SerializeField] private AudioClip audioClip1;
@@ -37,9 +37,9 @@ public class Title_Manager : MonoBehaviour
         color = selectMaterial.color;
         flashFlag = 0.0f;
 
-        manager = GameObject.Find("GameManager");
-        am = manager.GetComponent<Audio_Manager>();
-        sm = manager.GetComponent<Scene_Manager>();
+        //manager = GameObject.Find("GameManager");
+        //am = manager.GetComponent<Audio_Manager>();
+        //sm = manager.GetComponent<Scene_Manager>();
 
         fadeFlag = false;
     }
@@ -47,15 +47,15 @@ public class Title_Manager : MonoBehaviour
     void Start()
     {
         changetitle = false;
-        selectObject.transform.position = new Vector3(1, (-49.0f - 30.0f * sm.titleSelect), 300);
+        selectObject.transform.position = new Vector3(1, (-49.0f - 30.0f * Game_Manager.Instance.sm.titleSelect), 300);
 
-        if (am.source[0].clip != titleBGM)
-            am.PlayBGM(titleBGM);
+        if (Game_Manager.Instance.am.source[0].clip != titleBGM)
+            Game_Manager.Instance.am.PlayBGM(titleBGM);
     }
 
     void Update()
     {
-        if (!sm.fadeIn && !fadeFlag)
+        if (!Game_Manager.Instance.sm.fadeIn && !fadeFlag)
         {
             //スティックの値取得
             lsv = Input.GetAxis("L_Stick_V");
@@ -88,23 +88,23 @@ public class Title_Manager : MonoBehaviour
             //決定Aボタン
             if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Z))
             {
-                am.PlaySE(audioClip1);
-                switch (sm.titleSelect)
+                Game_Manager.Instance.am.PlaySE(audioClip1);
+                switch (Game_Manager.Instance.sm.titleSelect)
                 {
                     case 0:
-                        sm.SceneChange(Scene_Manager.Stage.SELECTS);
-                        sm.selectSelect = 1;
+                        Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                        Game_Manager.Instance.sm.selectSelect = 1;
                         newgame = false;
                         break;
                     case 1:
-                        sm.SceneChange(Scene_Manager.Stage.SELECTS);
+                        Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
                         newgame = true;
                         break;
                     case 2:
-                        sm.SceneChange(Scene_Manager.Stage.OPTION);
+                        Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.OPTION);
                         break;
                     case 3:
-                        sm.SceneChange(Scene_Manager.Stage.MANUAL);
+                        Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.MANUAL);
                         break;
                     case 4:
                         Quit();
@@ -118,12 +118,12 @@ public class Title_Manager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow) || lsv >= 0.9)
                 {
-                    if (sm.titleSelect > 0)
+                    if (Game_Manager.Instance.sm.titleSelect > 0)
                     {
                         selectCount += 30;
-                        sm.titleSelect -= 1;
+                        Game_Manager.Instance.sm.titleSelect -= 1;
 
-                        am.PlaySE(audioClip2);
+                        Game_Manager.Instance.am.PlaySE(audioClip2);
 
                         stickFlag = false;
 
@@ -133,12 +133,12 @@ public class Title_Manager : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || lsv <= -0.9)
                 {
-                    if (sm.titleSelect < 4)
+                    if (Game_Manager.Instance.sm.titleSelect < 4)
                     {
                         selectCount -= 30;
-                        sm.titleSelect += 1;
+                        Game_Manager.Instance.sm.titleSelect += 1;
 
-                        am.PlaySE(audioClip2);
+                        Game_Manager.Instance.am.PlaySE(audioClip2);
 
                         stickFlag = false;
 
@@ -147,18 +147,21 @@ public class Title_Manager : MonoBehaviour
                     }
                 }
             }
+        }
+    }
 
-            //カーソルをぬるっと動かす
-            if (selectCount < 0)
-            {
-                selectObject.transform.position += new Vector3(0, -1.0f, 0);
-                selectCount++;
-            }
-            if (selectCount > 0)
-            {
-                selectObject.transform.position += new Vector3(0, 1.0f, 0);
-                selectCount--;
-            }   
+    void FixedUpdate()
+    {
+        //カーソルをぬるっと動かす
+        if (selectCount < 0)
+        {
+            selectObject.transform.position += new Vector3(0, -1.0f, 0);
+            selectCount++;
+        }
+        if (selectCount > 0)
+        {
+            selectObject.transform.position += new Vector3(0, 1.0f, 0);
+            selectCount--;
         }
     }
 
