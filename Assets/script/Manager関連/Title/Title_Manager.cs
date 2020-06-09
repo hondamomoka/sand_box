@@ -150,18 +150,19 @@ public class Title_Manager : MonoBehaviour
         }
     }
 
+    //固定フレーム更新
     void FixedUpdate()
     {
         //カーソルをぬるっと動かす
         if (selectCount < 0)
         {
-            selectObject.transform.position += new Vector3(0, -1.0f, 0);
-            selectCount++;
+            selectObject.transform.position += new Vector3(0, -3.0f, 0);
+            selectCount += 3;
         }
         if (selectCount > 0)
         {
-            selectObject.transform.position += new Vector3(0, 1.0f, 0);
-            selectCount--;
+            selectObject.transform.position += new Vector3(0, 3.0f, 0);
+            selectCount -= 3;
         }
     }
 

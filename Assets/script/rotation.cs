@@ -14,15 +14,11 @@ public class rotation : MonoBehaviour
 
     void Awake()
     {
+        rotateFlag = true;
+
         sceneManager = GameObject.Find("GameManager");
         sm = sceneManager.GetComponent<Scene_Manager>();
     }
-
-    void Start()
-    {
-        rotateFlag = true;
-    }
-
 
     void Update()
     {
