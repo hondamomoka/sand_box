@@ -20213,8 +20213,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534307474}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.11, y: 0, z: 0}
-  m_LocalScale: {x: 0.065, y: 1, z: 0.065}
+  m_LocalPosition: {x: 0.01, y: -0.09, z: 0}
+  m_LocalScale: {x: 0.04, y: 1, z: 0.04}
   m_Children: []
   m_Father: {fileID: 1596119181}
   m_RootOrder: 2
@@ -37414,9 +37414,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1596119181}
   - component: {fileID: 1596119183}
-  - component: {fileID: 1596119185}
-  - component: {fileID: 1596119184}
-  - component: {fileID: 1596119182}
   m_Layer: 0
   m_Name: wind (2)
   m_TagString: wind
@@ -37441,19 +37438,6 @@ Transform:
   m_Father: {fileID: 630317358}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1596119182
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1596119180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18822145, y: 0.14973259, z: 1}
-  m_Center: {x: -0.22603312, y: 0.3545022, z: 0}
 --- !u!65 &1596119183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37465,34 +37449,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6469704, y: 0.599453, z: 1}
-  m_Center: {x: -0.12626392, y: -0.02183342, z: 0}
---- !u!65 &1596119184
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1596119180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45177037, y: 1.0671935, z: 1}
-  m_Center: {x: 0.028609239, y: 1.884906, z: 0}
---- !u!65 &1596119185
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1596119180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.33090448, y: 1.1305423, z: 1}
-  m_Center: {x: 0.028599054, y: 0.782181, z: 0}
+  m_Size: {x: 0.34683794, y: 2.9982543, z: 1}
+  m_Center: {x: 0.08339518, y: 1.1775672, z: 0}
 --- !u!1 &1598908749
 GameObject:
   m_ObjectHideFlags: 0
