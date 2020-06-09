@@ -6,6 +6,7 @@ public class switch_g3 : MonoBehaviour
 {
     public Material[] material;
     public GameObject g_cube;
+    public GameObject g_cube2;
     public switch_g0 switch0;
     public Mesh[] switch_mesh;
     public swichEFonly_cobra effect;
@@ -54,8 +55,11 @@ public class switch_g3 : MonoBehaviour
 
                 //キューブの色を赤から黄（半透明）に
                 g_cube.layer = 14;
+                g_cube2.layer = 14;
                 g_cube.GetComponent<Renderer>().material = material[2];
+                g_cube2.GetComponent<Renderer>().material = material[2];
                 g_cube.tag = "Untagged";
+                g_cube2.tag = "Untagged";
                 effect.playPS();
                 script.PlaySE(audioClip);
                 //count = 0;
