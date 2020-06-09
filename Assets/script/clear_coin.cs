@@ -49,6 +49,8 @@ public class clear_coin : MonoBehaviour
         //シーンフェードをつけるために追加
         sceneManager = GameObject.Find("GameManager");
         sm = sceneManager.GetComponent<Scene_Manager>();
+
+        par = FindObjectOfType<NeedleRot>().safe_rate;
     }
 
     // Update is called once per frame
@@ -102,7 +104,7 @@ public class clear_coin : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 90.0f);
                 slow = false;
                 next = true;
-                par = FindObjectOfType<NeedleRot>().safe_rate;
+                
 
             }
         }

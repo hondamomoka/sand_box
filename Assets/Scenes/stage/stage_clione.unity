@@ -617,7 +617,7 @@ PrefabInstance:
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.11
+      value: -3.83
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
@@ -3414,12 +3414,12 @@ PrefabInstance:
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.58
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
@@ -4260,7 +4260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
   line: 13
-  col: 12
+  col: 14
   size: 0.1
   sands_mass: 10
   stage: stage
@@ -7356,7 +7356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1713856566
 Transform:
   m_ObjectHideFlags: 0
@@ -7764,8 +7764,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754292879}
   m_LocalRotation: {x: -0, y: -0, z: 0.9743701, w: 0.22495107}
-  m_LocalPosition: {x: 10.044, y: -1.5505, z: 0}
-  m_LocalScale: {x: 2.2000012, y: 0.5, z: 1}
+  m_LocalPosition: {x: 10.1, y: -1.58, z: 0}
+  m_LocalScale: {x: 2.3, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1932882798}
   m_RootOrder: 10
@@ -8422,7 +8422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
-  line: 10
+  line: 12
   col: 13
   size: 0.1
   sands_mass: 10
@@ -9156,7 +9156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
-  line: 10
+  line: 12
   col: 13
   size: 0.1
   sands_mass: 10
