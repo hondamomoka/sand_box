@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1649,6 +1649,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 57897dbaa89881e48a08b63c0b94b4bb, type: 2}
   - {fileID: 2100000, guid: cb04ce3fab52fdc47938dc1a10546950, type: 2}
   g_cube: {fileID: 1574831837}
+  g_cube2: {fileID: 670133899}
   switch0: {fileID: 1874222407}
   switch_mesh:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -1907,7 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps1: {fileID: 839383254}
-  ps2: {fileID: 1170675004}
+  ps2: {fileID: 839383254}
 --- !u!4 &255538395
 Transform:
   m_ObjectHideFlags: 0
@@ -5388,6 +5389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle_switch5
       objectReference: {fileID: 0}
+    - target: {fileID: 5871504860149827705, guid: 7cd01d2ff31975840907833831833007,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5871504860149827708, guid: 7cd01d2ff31975840907833831833007,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5981,12 +5987,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949594869}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!198 &972018212 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5871504860149827707, guid: 7cd01d2ff31975840907833831833007,
-    type: 3}
-  m_PrefabInstance: {fileID: 887476442}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &972018214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5871504860149827708, guid: 7cd01d2ff31975840907833831833007,
@@ -9737,7 +9737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b032c23bf4647943b0328e0e1fbdfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps1: {fileID: 972018212}
+  ps1: {fileID: 839383254}
   ps2: {fileID: 839383254}
 --- !u!4 &1569694943
 Transform:
@@ -10848,7 +10848,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3913424082118105090, guid: 1f84c2cb3db4045459fe71ae50f0a4af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f84c2cb3db4045459fe71ae50f0a4af, type: 3}
 --- !u!1 &1801913253
 GameObject:
@@ -11344,8 +11345,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2a830dbaa7887384f8516a1c78876fb8, type: 2}
   - {fileID: 2100000, guid: 27c2399e06b00fa42ae0f073b14e88ab, type: 2}
   - {fileID: 2100000, guid: 57897dbaa89881e48a08b63c0b94b4bb, type: 2}
-  g_cube: {fileID: 1574831837}
-  g_cube2: {fileID: 670133899}
   effect: {fileID: 255538394}
   effect2: {fileID: 1569694942}
   count: 0

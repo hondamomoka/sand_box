@@ -5,8 +5,8 @@ using UnityEngine;
 public class switch_g0 : MonoBehaviour
 {
     public Material[] material;
-    public GameObject g_cube;
-    public GameObject g_cube2;
+    //public GameObject g_cube;
+    //public GameObject g_cube2;
     public swichEFonly_cobra effect;
     public swichEFonly_cobra effect2;
 
@@ -53,8 +53,8 @@ public class switch_g0 : MonoBehaviour
                 
 
                 //指定キューブの色を変換：赤から黄
-                g_cube2.layer = 14;
-                g_cube2.GetComponent<Renderer>().material = material[3];
+                //g_cube2.layer = 14;
+                //g_cube2.GetComponent<Renderer>().material = material[3];
 
                 count = 0;
                 effect.playPS();
@@ -74,8 +74,8 @@ public class switch_g0 : MonoBehaviour
                 this.GetComponent<Renderer>().material = material[1];
 
                 //キューブの色を赤から黄に
-                g_cube.layer = 14;
-                g_cube.GetComponent<Renderer>().material = material[3];
+                //g_cube.layer = 14;
+                //g_cube.GetComponent<Renderer>().material = material[3];
 
                 effect2.playPS();
             }
