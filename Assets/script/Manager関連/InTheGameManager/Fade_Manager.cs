@@ -48,12 +48,6 @@ public class Fade_Manager : MonoBehaviour
     {
         FadeIn();
         FadeOut();
-
-        if (Game_Manager.Instance.sm.menuFlag == true)
-        {
-            color.a = 0.5f;
-            panel.color = color;
-        }
     }
 
     //フェードの関数
@@ -80,6 +74,7 @@ public class Fade_Manager : MonoBehaviour
                 SceneManager.LoadScene((int)Game_Manager.Instance.sm.nextScene);
                 Game_Manager.Instance.sm.nowScene = Game_Manager.Instance.sm.nextScene;
                 Game_Manager.Instance.sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
+                Game_Manager.Instance.sm.menuFlag = true;
                 if (Game_Manager.Instance.am.source[0].volume < Game_Manager.Instance.am.bgVol)
                     Game_Manager.Instance.am.source[0].Stop();
             }
@@ -93,8 +88,10 @@ public class Fade_Manager : MonoBehaviour
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
+            {
                 Game_Manager.Instance.sm.fadeIn = false;
-            Debug.Log("いん");
+                Game_Manager.Instance.sm.menuFlag = false;
+            }
         }
     }
 

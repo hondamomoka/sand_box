@@ -62,18 +62,15 @@ public class Scene_Manager : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button3))
-        //    if (nowScene > Stage.MANUAL)
-        //        SceneChange(Stage.SELECTS);
-
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
-            if (nowScene > Stage.MANUAL)
+            if (nowScene > Stage.MANUAL && !menuFlag)
             {
                 //GameObjectの型を作ってプレハブを取得
                 GameObject obj = (GameObject)Resources.Load("menu");
                 //型をもとにプレハブを生成、
-                Instantiate(obj, new Vector3(-6.290911f, -1.094278f, -0.5368786f), Quaternion.identity);
+                Instantiate(obj, Camera.main.transform.position + Camera.main.transform.forward * 10.0f + new Vector3(-6.0f,-1.0f,0), Quaternion.identity);
+                menuFlag = true;
             }
         }
     }

@@ -35,4 +35,9 @@ public class postp : MonoBehaviour
             on = false;
         }
     }
+
+    public void end()
+    {
+        posv = PostProcessManager.instance.QuickVolume(gameObject.layer, 0f, bloom2);
+    }
 }

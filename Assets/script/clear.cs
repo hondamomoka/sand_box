@@ -52,8 +52,23 @@ public class clear : MonoBehaviour
             am.source[2].Stop();
             rotateScript.rotateFlag = false;
 
-            if(sm.selectSelect != 20)
-                sm.selectSelect++;
+            switch(sm.selectSelect)
+            {
+                case 2:
+                case 12:
+                case 5:
+                case 15:
+                    sm.selectSelect += 4;
+                    break;
+                case 8:
+                case 10:
+                case 18:
+                    sm.selectSelect += 3;
+                    break;
+                default:
+                    sm.selectSelect++;
+                    break;
+            }
         }
 
     }
