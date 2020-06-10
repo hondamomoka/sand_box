@@ -752,7 +752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252195152}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.54, y: -0.42, z: 2.6399999}
+  m_LocalPosition: {x: 0.54, y: -0.4, z: 2.6399999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 265021439}
@@ -4960,7 +4960,7 @@ MonoBehaviour:
   startpos_x: 0
   startpos_y: 4.61
   startpos_z: -0.2999999
-  endpos_y: 5.92
+  endpos_y: 5.91
   upspeed: 0.02
 --- !u!4 &2031032008
 Transform:
