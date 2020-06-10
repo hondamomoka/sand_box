@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ public class ScalesHelper : MonoBehaviour
     public GameObject Bucket_Board;
     public GameObject SandCreater;
     public GameObject[] obj_sands;
-    public GameObject Sands_Trigger;
     public GameObject Stage;
 
     ScalesBehaviour Scales_Script;
@@ -41,7 +41,6 @@ public class ScalesHelper : MonoBehaviour
         {
             Bucket_Board_Collider.isTrigger = false;
             isHelper = false;
-            //Sands_Trigger.SetActive(false);
         }
     }
 
@@ -67,8 +66,13 @@ public class ScalesHelper : MonoBehaviour
                     gameObject.layer = 8;
                 }
             }
-            //Scales_Script.weights[0] = 50;
-            //Sands_Trigger.SetActive(true);
         }
+    }
+
+    public void Set_Active(Material m)
+    {
+        // layer: default
+        gameObject.layer = 0;
+        GetComponent<Renderer>().material = m;
     }
 }

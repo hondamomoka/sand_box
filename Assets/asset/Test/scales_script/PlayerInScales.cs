@@ -9,6 +9,7 @@ public class PlayerInScales : MonoBehaviour
     public bool player_trigger;
     public string trigger_enter;
     public string trigger_exit;
+    public bool isOutBucket;
 
     Rigidbody Player_Rb;
     Collider[] Player_Collider;
@@ -39,6 +40,8 @@ public class PlayerInScales : MonoBehaviour
         Stage = GameObject.Find("Stage");
 
         Player_State = PLAYER_STATE.PLAYER_STATE_STAGE;
+
+        isOutBucket = false;
     }
 
     // Update is called once per frame
@@ -121,6 +124,8 @@ public class PlayerInScales : MonoBehaviour
             {
                 Player_Collider[i].isTrigger = false;
             }
+
+            isOutBucket = true;
         }
     }
 
