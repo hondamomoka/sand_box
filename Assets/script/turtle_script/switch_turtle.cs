@@ -70,7 +70,7 @@ public class switch_turtle : MonoBehaviour
         else
         {
             this.GetComponent<Renderer>().material = material[2];
-            ps1.Play();
+            //ps1.Play();
         }
        
     }
