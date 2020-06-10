@@ -60,27 +60,27 @@ public class save : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(load)
-        {
-            load_coin();
-        }
+        //if(load)
+        //{
+        //    load_coin();
+        //}
 
-        if(save_)
-        {
-            save_coin(1);
+        //if(save_)
+        //{
+        //    save_coin(1);
 
             
-        }
+        //}
 
-        if(delete_save)
-        {
-            delete_coin();
-        }
+        //if(delete_save)
+        //{
+        //    delete_coin();
+        //}
 
-        if(init)
-        {
-            init_coin();
-        }
+        //if(init)
+        //{
+        //    init_coin();
+        //}
     }
 
     public void init_coin()
@@ -114,7 +114,7 @@ public class save : MonoBehaviour
         delete_save = false;
     }
 
-    public void save_coin(int num)
+    public void save_coin(int num,int lank)
     {
         //coin[num] = 1;
         //for (int i = 0; i < maxStage; i++)
@@ -122,9 +122,9 @@ public class save : MonoBehaviour
         //    PlayerPrefs.SetInt("コイン"+i, coin[i]);
         //}
 
-        PlayerPrefs.SetInt("コイン" + num, 1);
+        PlayerPrefs.SetInt("コイン" + num, lank);
         PlayerPrefs.Save();
-        Debug.Log("セーブするよ");
+        Debug.Log("セーブするよ"+lank);
         save_ = false;
     }
 

@@ -153,7 +153,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd1fcadf09ef45945bb413e9d0979b03, type: 2}
+  - {fileID: 2100000, guid: 16d11cc1c6894cb4b8b98815006bc047, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -306,6 +306,14 @@ MonoBehaviour:
   ps3: {fileID: 3683272014373245473, guid: c61a451d9b0d57443b352ab152ad7296, type: 3}
   ps4: {fileID: 1040027964594785213, guid: d90c0c329b7e01a449e6a8224647b9bb, type: 3}
   par: 0
+  save: {fileID: 7486226781015317600, guid: b112c27f2aeff0547abca8040220c788, type: 3}
+  made: {fileID: 1636980003645618446}
+  material:
+  - {fileID: 2100000, guid: 4ae99160ab8b1e94593acc30226428b7, type: 2}
+  - {fileID: 2100000, guid: 16d11cc1c6894cb4b8b98815006bc047, type: 2}
+  - {fileID: 2100000, guid: 049ce524ee36b614ca680ba56f57a6d3, type: 2}
+  - {fileID: 2100000, guid: b608b0cee9d75da40876fca086b692b3, type: 2}
+  coinbody: {fileID: 2677509668872244396}
   audioClip: {fileID: 8300000, guid: acfad7570393b874599ae6b28c305851, type: 3}
 --- !u!1 &5710379874122873384
 GameObject:
@@ -623,6 +631,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 35d76d6f28684ff4d8800c99b07ee1b8, type: 2}
   - {fileID: 2100000, guid: 8bb97311e05b7af48b77f4cfcd2e5fd7, type: 2}
   - {fileID: 2100000, guid: 1cff61d77a5bb3d49aa73eab6b92b209, type: 2}
-  save: {fileID: 7486226781015317600, guid: b112c27f2aeff0547abca8040220c788, type: 3}
+  stage_type: 0
   delete: 0
   load: 0
