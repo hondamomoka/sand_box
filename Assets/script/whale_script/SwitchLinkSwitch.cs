@@ -8,6 +8,7 @@ public class SwitchLinkSwitch : MonoBehaviour
     public GameObject[] Other_Gimmick;
     public GameObject Obj_With_Gimmick;
     public Material[] Mats;
+    public TurnToThroughSands[] Wall_Through_Sands;
     public ParticleSystem ps1;
     public int obj_layer;
     public int frame;
@@ -69,6 +70,11 @@ public class SwitchLinkSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("player"))
         {
             gameObject.SetActive(false);
+
+            for (int i = 0; i < Wall_Through_Sands.Length; i++)
+            {
+                Wall_Through_Sands[i].Set_Alpha();
+            }
             
             switch (Gimmick)
             {

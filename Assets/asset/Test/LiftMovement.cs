@@ -9,6 +9,7 @@ public class LiftMovement : MonoBehaviour
     public GameObject Switch;
     public float speed;
     public float force;
+    public float move_y;
 
     float origin_pos_y;
 
@@ -60,7 +61,7 @@ public class LiftMovement : MonoBehaviour
             transform.localPosition.y + speed,
             transform.localPosition.z);
 
-        if (transform.localPosition.y > origin_pos_y)
+        if (transform.localPosition.y >= origin_pos_y)
         {
             transform.localPosition = new Vector3(
                 transform.localPosition.x,
@@ -78,11 +79,11 @@ public class LiftMovement : MonoBehaviour
             transform.localPosition.y - speed,
             transform.localPosition.z);
 
-        if (transform.localPosition.y < origin_pos_y - 3.5f)
+        if (transform.localPosition.y < origin_pos_y - move_y)
         {
             transform.localPosition = new Vector3(
                 transform.localPosition.x,
-                origin_pos_y - 3.5f,
+                origin_pos_y - move_y,
                 transform.localPosition.z);
             Lift_State = LIFT_STATE.STATE_STAY_IN_DOWN;
         }
