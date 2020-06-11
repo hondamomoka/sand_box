@@ -22,7 +22,7 @@ public class clear_coin : MonoBehaviour
     public Material[] material;
     public GameObject coinbody;
     int lank;
-
+    //public buccal_cone buccal;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -56,7 +56,19 @@ public class clear_coin : MonoBehaviour
         sceneManager = GameObject.Find("GameManager");
         sm = sceneManager.GetComponent<Scene_Manager>();
 
-        par = FindObjectOfType<NeedleRot>().safe_rate;
+        if(FindObjectOfType<buccal_cone>())
+        {
+            
+            par = FindObjectOfType<buccal_cone>().meter;
+            Debug.Log("クリオネ" + par);
+        }
+        else
+        {
+            Debug.Log("無し");
+            par = FindObjectOfType<NeedleRot>().safe_rate;
+        }
+
+        
 
 
 
@@ -168,6 +180,7 @@ public class clear_coin : MonoBehaviour
                 }
 
                 int oldLank = PlayerPrefs.GetInt("コイン" + made.stage_type, 0);
+                PlayerPrefs.Save();
                 Debug.Log("前セーブデータ" + oldLank);
 
                 if (lank > oldLank)

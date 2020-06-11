@@ -7205,6 +7205,8 @@ MonoBehaviour:
   - {fileID: 952460156}
   ps1: {fileID: 710759976}
   ps2: {fileID: 1093182700}
+  needl: {fileID: 1701759198}
+  meter: 0
   audioClip1: {fileID: 8300000, guid: 0c735c559e348cf44a89569899cf2048, type: 3}
   audioClip2: {fileID: 8300000, guid: dc051696a5abe08418a81404ab3df616, type: 3}
   audioClip3: {fileID: 8300000, guid: 56233551163264e498ca34283d5d1a78, type: 3}
@@ -7221,6 +7223,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8464262, z: 1}
   m_Center: {x: 0, y: 0.07677965, z: 0}
+--- !u!114 &1701759198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
+    type: 3}
+  m_PrefabInstance: {fileID: 244083452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807d8c49ffbfb1b488d77f79629699f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1707393755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2067768195582235757, guid: 5ab72402ef98b024ab4820f1b5e92648,

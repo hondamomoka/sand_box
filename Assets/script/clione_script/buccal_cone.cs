@@ -13,6 +13,8 @@ public class buccal_cone : MonoBehaviour
     public GameObject[] Sand_Creater;
     public ParticleSystem ps1;
     public ParticleSystem ps2;
+    public NeedleRot needl;
+    public float meter;
 
     CreateSandsKyo[] Sands_Scripts;
 
@@ -53,6 +55,8 @@ public class buccal_cone : MonoBehaviour
         {
             if (count > 340)
             {
+                meter= needl.safe_rate;
+
                 gole.GetComponent<Renderer>().material = material[2];
                 gole.layer = 14;
                 gole.tag = "Untagged";
