@@ -282,6 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SandCreater:
   - {fileID: 0}
+  Pocket_Watch_Pad: {fileID: 2966375987141477831}
   Needle_Join: {fileID: 2966375986473040689}
   Needle: {fileID: 2966375986579804053}
   Needle_Rot: 0
@@ -289,8 +290,11 @@ MonoBehaviour:
   Needle_Rot_High: 0.7
   safe_num: 60
   safe_rate: 0
+  isGameClear: 0
   sands_max: 0
   sands_num: 0
+  origin_alpha: 200
+  pause_alpha: 100
 --- !u!1 &2966375986579804053
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
