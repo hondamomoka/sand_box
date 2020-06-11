@@ -11,6 +11,7 @@ public class turtle_mng : MonoBehaviour
     public ParticleSystem ps1;
     public ParticleSystem ps2;
     bool end;
+    public TurnToWall[] Wall;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -46,6 +47,11 @@ public class turtle_mng : MonoBehaviour
                 switch1.fin = true;
                 switch2.fin = true;
                 end = true;
+
+                for (int i = 0; i < Wall.Length; i++)
+                {
+                    Wall[i].Set_Wall();
+                }
             }
         }
         
