@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class clear_ocean : MonoBehaviour
 {
@@ -11,6 +11,11 @@ public class clear_ocean : MonoBehaviour
     public bool on;
     public bool set;
     public postp_ocean postp;
+    public NeedleRot Stop_Watch;
+
+    private GameObject rotateManager;
+    private rotation rotateScript;
+    private rotation_panguin rotateScript2;
 
     //音追加用
     private GameObject audioManager;
@@ -27,6 +32,20 @@ public class clear_ocean : MonoBehaviour
         //音追加用
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
+
+        //ステージの値を無理やり取得(変更予定)
+        rotateManager = GameObject.Find("stage");
+        if (rotateManager == null)
+            rotateManager = GameObject.Find("Stage");
+
+        if (SceneManager.GetActiveScene().name != "stage_penguin")
+        {
+            rotateScript = rotateManager.GetComponent<rotation>();
+        }
+        else
+        {
+            rotateScript2 = rotateManager.GetComponent<rotation_panguin>();
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +58,16 @@ public class clear_ocean : MonoBehaviour
             set = true;
             postp.on = true;
 
+            if (SceneManager.GetActiveScene().name != "stage_penguin")
+            {
+                rotateScript.rotateFlag = false;
+            }
+            else
+            {
+                rotateScript2.rotateFlag = false;
+            }
+
+            Stop_Watch.Set_Stop();
         }
 
     }

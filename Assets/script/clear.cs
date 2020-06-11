@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class clear : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class clear : MonoBehaviour
 
     private GameObject rotateManager;
     private rotation rotateScript;
+    private rotation_panguin rotateScript2;
 
 
     // Start is called before the first frame update
@@ -27,7 +29,6 @@ public class clear : MonoBehaviour
         camera_pos = came.transform.position;
         on = false;
         set = false;
-        Stop_Watch.Set_Stop();
 
         //音追加用
         GameManager = GameObject.Find("GameManager");
@@ -39,7 +40,14 @@ public class clear : MonoBehaviour
         if (rotateManager == null)
             rotateManager = GameObject.Find("Stage");
 
-        rotateScript = rotateManager.GetComponent<rotation>();
+        if (SceneManager.GetActiveScene().name != "stage_penguin")
+        {
+            rotateScript = rotateManager.GetComponent<rotation>();
+        }
+        else
+        {
+            rotateScript2 = rotateManager.GetComponent<rotation_panguin>();
+        }
     }
 
     // Update is called once per frame
@@ -52,9 +60,19 @@ public class clear : MonoBehaviour
             set = true;
             postp.on = true;
             am.source[2].Stop();
-            rotateScript.rotateFlag = false;
 
-            switch(sm.selectSelect)
+            if (SceneManager.GetActiveScene().name != "stage_penguin")
+            {
+                rotateScript.rotateFlag = false;
+            }
+            else
+            {
+                rotateScript2.rotateFlag = false;
+            }
+            
+            Stop_Watch.Set_Stop();
+
+            switch (sm.selectSelect)
             {
                 case 2:
                 case 12:
