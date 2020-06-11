@@ -81,23 +81,23 @@ public class CameraMove : MonoBehaviour
     {
         if (nowcursor_x > cursor_x)
         {
-            nowcursor_x -= (nowcursor_x - cursor_x) / 100 * MoveSpeed;
+            nowcursor_x -= (nowcursor_x - cursor_x) * MoveSpeed;
         }
         if (nowcursor_x < cursor_x)
         {
-            nowcursor_x += (cursor_x - nowcursor_x) / 100 * MoveSpeed;
+            nowcursor_x += (cursor_x - nowcursor_x) * MoveSpeed;
         }
         if (nowcursor_y >= CameraPos_y)
         {
-            nowcursor_y -= (nowcursor_y - CameraPos_y) / 100 * MoveSpeed;
+            nowcursor_y -= (nowcursor_y - CameraPos_y) * MoveSpeed;
         }
         if (nowcursor_z < cursor_z)
         {
-            nowcursor_z += (cursor_z - nowcursor_z) / 100 * MoveSpeed;
+            nowcursor_z += (cursor_z - nowcursor_z) * MoveSpeed;
         }
         if (nowcursor_z > cursor_z)
         {
-            nowcursor_z -= (nowcursor_z - cursor_z) / 100 * MoveSpeed;
+            nowcursor_z -= (nowcursor_z - cursor_z) * MoveSpeed;
         }
 
         this.transform.position = new Vector3(nowcursor_x, nowcursor_y, nowcursor_z);
@@ -106,7 +106,7 @@ public class CameraMove : MonoBehaviour
     {
         if (nowangle_x <= angle_x)
         {
-            nowangle_x += (angle_x - commonangle.x) / 100 * MoveSpeed;
+            nowangle_x += (angle_x - commonangle.x) * MoveSpeed;
         }
         this.transform.eulerAngles = new Vector3(nowangle_x, 0.0f, 0.0f);
 
@@ -117,19 +117,19 @@ public class CameraMove : MonoBehaviour
     {
         if (nowcursor_x > commonpos.x)
         {
-            nowcursor_x -= (nowcursor_x - commonpos.x) / 100 * MoveSpeed;
+            nowcursor_x -= (nowcursor_x - commonpos.x) * MoveSpeed;
         }
         if (nowcursor_x < commonpos.x)
         {
-            nowcursor_x += (commonpos.x - nowcursor_x) / 100 * MoveSpeed;
+            nowcursor_x += (commonpos.x - nowcursor_x) * MoveSpeed;
         }
         if (nowcursor_y <= commonpos.y)
         {
-            nowcursor_y += (commonpos.y - nowcursor_y) / 100 * MoveSpeed;
+            nowcursor_y += (commonpos.y - nowcursor_y) * MoveSpeed;
         }
         if (nowcursor_z > commonpos.z)
         {
-            nowcursor_z -= (nowcursor_z - commonpos.z) / 100 * MoveSpeed;
+            nowcursor_z -= (nowcursor_z - commonpos.z) * MoveSpeed;
         }
 
 
@@ -137,9 +137,9 @@ public class CameraMove : MonoBehaviour
     }
     void ReducingAng()
     {
-        if (nowangle_x >= commonangle.x)
+        if (nowangle_x >= commonangle.x + 1)
         {
-            nowangle_x -= (angle_x - commonangle.x) / 100 * MoveSpeed;
+            nowangle_x -= (angle_x - commonangle.x) * MoveSpeed;
         }
         this.transform.eulerAngles = new Vector3(nowangle_x, 0.0f, 0.0f);
     }
