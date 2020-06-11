@@ -7395,7 +7395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1274bb784385d5f4f96f08d5d7f4f3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  add: {x: 0, y: 20, z: 0}
+  add: {x: 0, y: 30, z: 0}
 --- !u!33 &4400680888488191223
 MeshFilter:
   m_ObjectHideFlags: 0
