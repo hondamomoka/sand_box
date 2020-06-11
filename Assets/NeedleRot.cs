@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NeedleRot : MonoBehaviour
 {
     public GameObject[] SandCreater;
+    public GameObject Pocket_Watch_Pad;
     public GameObject Needle_Join;
     public GameObject Needle;
     public float Needle_Rot;
@@ -16,10 +17,14 @@ public class NeedleRot : MonoBehaviour
     public bool isGameClear;
 
     CreateSandsKyo[] Sands_Script;
+    RawImage Watch_Image;
     RawImage Needle_Image;
 
     public int sands_max;
     public int sands_num;
+
+    public float origin_alpha;
+    public float pause_alpha;
 
     bool isEnd;
 
@@ -43,7 +48,11 @@ public class NeedleRot : MonoBehaviour
 
         sands_num = sands_max;
 
+        Watch_Image = Pocket_Watch_Pad.GetComponent<RawImage>();
         Needle_Image = Needle.GetComponent<RawImage>();
+
+        origin_alpha = origin_alpha / 255.0f;
+        pause_alpha = pause_alpha / 255.0f;
         //GetComponent<RectTransform>().localEulerAngles;
 
         isEnd = false;
@@ -75,6 +84,17 @@ public class NeedleRot : MonoBehaviour
             safe_rate = (float)(sands_num - safe_num) / (sands_max - safe_num);
 
             Change_Color(safe_rate);
+
+            if (Game_Manager.Instance.sm.menuFlag == true)
+            {
+                Watch_Image.color = new Color(Watch_Image.color.r, Watch_Image.color.g, Watch_Image.color.b, pause_alpha);
+                Needle_Image.color = new Color(Needle_Image.color.r, Needle_Image.color.g, Needle_Image.color.b, pause_alpha);
+            }
+            else
+            {
+                Watch_Image.color = new Color(Watch_Image.color.r, Watch_Image.color.g, Watch_Image.color.b, origin_alpha);
+                Needle_Image.color = new Color(Needle_Image.color.r, Needle_Image.color.g, Needle_Image.color.b, origin_alpha);
+            }
         }
     }
 
@@ -130,35 +150,35 @@ public class NeedleRot : MonoBehaviour
     {
         if (n >= Needle_State[10])
         {
-            Needle_Image.color = new Color(0, 250, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(0, 250, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[9])
         {
-            Needle_Image.color = new Color(50, 250, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(50, 250, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[8])
         {
-            Needle_Image.color = new Color(100, 250, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(100, 250, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[7])
         {
-            Needle_Image.color = new Color(150, 250, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(150, 250, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[6])
         {
-            Needle_Image.color = new Color(200, 250, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(200, 250, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[5])
         {
-            Needle_Image.color = new Color(250, 250, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(250, 250, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[4])
         {
-            Needle_Image.color = new Color(250, 200, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(250, 200, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[3])
         {
-            Needle_Image.color = new Color(250, 180, 0, 255) / 255.5f;
+            Needle_Image.color = new Color(250, 180, 0, 200) / 255.5f;
         }
         else if (n >= Needle_State[2])
         {

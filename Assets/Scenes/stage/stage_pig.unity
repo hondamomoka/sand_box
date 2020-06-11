@@ -3560,7 +3560,7 @@ Transform:
   m_GameObject: {fileID: 1021017147}
   m_LocalRotation: {x: -0, y: -0, z: 0.07314632, w: -0.99732125}
   m_LocalPosition: {x: -1.3273, y: 1.1229, z: -7.5951}
-  m_LocalScale: {x: 2, y: 0.2, z: 1}
+  m_LocalScale: {x: 2, y: 0.2, z: 0.99}
   m_Children:
   - {fileID: 776617897}
   m_Father: {fileID: 1747463810}
@@ -7452,8 +7452,8 @@ MonoBehaviour:
   isWithBorderDestroy: 1
   isWithWind: 0
   isSandsDelete: 0
-  ps: {fileID: 8058764569408430951, guid: 38af253441430eb46beb65aade907516, type: 3}
-  Size_Change_Idx: 1.008
+  ps: {fileID: 8058764569408430951, guid: 8e85b13e016492543afc73fba485ab78, type: 3}
+  Size_Change_Idx: 1.006
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
