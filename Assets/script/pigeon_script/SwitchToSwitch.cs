@@ -7,6 +7,9 @@ public class SwitchToSwitch : MonoBehaviour
     public GameObject other_switch;
     public Material Mat;
 
+    public swichEFonly_cobra effect;
+    bool on;
+
     //音をつけるために追加
     private GameObject audioManager;
     private Audio_Manager script;
@@ -15,6 +18,7 @@ public class SwitchToSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        on = false;
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
         script = audioManager.GetComponent<Audio_Manager>();
@@ -28,11 +32,17 @@ public class SwitchToSwitch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("player"))
+        if(!on)
         {
-            other_switch.GetComponent<Collider>().isTrigger = true;
-            other_switch.GetComponent<Renderer>().material = Mat;
-            script.PlaySE(audioClip);
+            if (other.gameObject.CompareTag("player"))
+            {
+                on = true;
+                other_switch.GetComponent<Collider>().isTrigger = true;
+                other_switch.GetComponent<Renderer>().material = Mat;
+                effect.playPS();
+                script.PlaySE(audioClip);
+            }
         }
+       
     }
 }

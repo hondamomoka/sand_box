@@ -9,11 +9,15 @@ public class SandZone : MonoBehaviour
     public int cnt;
     public int cnt_max;
 
+    public swichEFonly_cobra effect;
+    bool eOn;
+
     Renderer Wall_Renderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        eOn = false;
         Wall_Renderer = Wall.GetComponent<Renderer>();
     }
 
@@ -26,6 +30,12 @@ public class SandZone : MonoBehaviour
 
             // layer: wall_through_player
             Wall.layer = 14;
+
+            if(!eOn)
+            {
+                effect.playPS();
+                eOn = true;
+            }
         }
         else
         {
@@ -33,6 +43,8 @@ public class SandZone : MonoBehaviour
 
             // layer: default
             Wall.layer = 0;
+
+            eOn = false;
         }
     }
 

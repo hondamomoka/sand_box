@@ -8,11 +8,15 @@ public class DoorJoinWithScales : MonoBehaviour
     public GameObject Door;
     public Material Mat;
 
+    public swichEFonly_cobra effect;
+    bool e_on;
+
     bool isRot;
 
     // Start is called before the first frame update
     void Start()
     {
+        e_on = false;
         isRot = false;
     }
 
@@ -21,6 +25,11 @@ public class DoorJoinWithScales : MonoBehaviour
     {
         if (Handle.transform.localEulerAngles.z >= 319.0f && isRot == false)
         {
+            if(!e_on)
+            {
+                effect.playPS();
+                e_on = true;
+            }
             float z = (360 - Handle.transform.localEulerAngles.z) * 2.25f;
             transform.localEulerAngles = new Vector3(0, 0, z);
 

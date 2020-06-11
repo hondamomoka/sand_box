@@ -7,6 +7,8 @@ public class SwitchWithDoor : MonoBehaviour
     public GameObject Door;
     public Material[] Mats;
 
+    public swichEFonly_cobra effect;
+
     //音をつけるために追加
     private GameObject audioManager;
     private Audio_Manager script;
@@ -42,9 +44,11 @@ public class SwitchWithDoor : MonoBehaviour
             switch(Switch_Function)
             {
                 case SWITCH_FUNCTIN.DOOR_THROUGH_PLAYER:
+                    effect.playPS();
                     Door_Through_Player();
                     break;
                 case SWITCH_FUNCTIN.DESTROY_DOOR:
+                    effect.playPS();
                     Destroy_Door();
                     script.PlaySE(audioClip);
                     break;

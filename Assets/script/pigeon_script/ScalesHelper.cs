@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,9 @@ public class ScalesHelper : MonoBehaviour
     public GameObject SandCreater;
     public GameObject[] obj_sands;
     public GameObject Stage;
+
+
+    public swichEFonly_cobra effect;
 
     ScalesBehaviour Scales_Script;
     Collider Bucket_Board_Collider;
@@ -76,6 +79,7 @@ public class ScalesHelper : MonoBehaviour
                 }
             }
 
+            effect.playPS();
             script.PlaySE(audioClip);
         }
     }

@@ -11,6 +11,9 @@ public class SandSwitch : MonoBehaviour
     public int cnt_max;
     public bool isActive;
 
+    public swichEFonly_cobra effect;
+    public swichEFonly_cobra effect2;
+
     Renderer Switch_Renderer;
 
     //音をつけるために追加
@@ -33,8 +36,11 @@ public class SandSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+
         if (Player.isOutBucket == true && isActive == false)
         {
+            effect.playPS();
             isActive = true;
             Switch_Renderer.material = Mats[0];
 
@@ -44,6 +50,7 @@ public class SandSwitch : MonoBehaviour
 
         if (cnt >= cnt_max)
         {
+            effect2.playPS();
             Other_Switch.Set_Active(Mats[1]);
             script.PlaySE(audioClip);
             Destroy(gameObject);
