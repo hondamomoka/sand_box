@@ -13,6 +13,7 @@ public class NeedleRot : MonoBehaviour
     public float Needle_Rot_High;
     public int safe_num;
     public float safe_rate;
+    public bool isGameClear;
 
     CreateSandsKyo[] Sands_Script;
     RawImage Needle_Image;
@@ -27,6 +28,8 @@ public class NeedleRot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isGameClear = false;
+
         sands_max = 0;
         sands_num = 0;
 
@@ -56,20 +59,23 @@ public class NeedleRot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sands_num = 0;
-        for (int i = 0; i < SandCreater.Length; i++)
+        if (isGameClear == false)
         {
-            sands_num += Sands_Script[i].Sands_Num;
+            sands_num = 0;
+            for (int i = 0; i < SandCreater.Length; i++)
+            {
+                sands_num += Sands_Script[i].Sands_Num;
+            }
+
+            //Needle_Rot = Get_EulerAngles(sands_num);
+            Needle_Rot = Get_EulerAngles(sands_num - safe_num);
+
+            Needle_Rotation(Needle_Rot_Low, Needle_Rot_High);
+
+            safe_rate = (float)(sands_num - safe_num) / (sands_max - safe_num);
+
+            Change_Color(safe_rate);
         }
-
-        //Needle_Rot = Get_EulerAngles(sands_num);
-        Needle_Rot = Get_EulerAngles(sands_num - safe_num);
-
-        Needle_Rotation(Needle_Rot_Low, Needle_Rot_High);
-
-        safe_rate = (float)(sands_num - safe_num) / (sands_max - safe_num);
-
-        Change_Color(safe_rate);
     }
 
     float Get_EulerAngles(int sn)
@@ -170,5 +176,10 @@ public class NeedleRot : MonoBehaviour
         {
             Needle_Image.color = new Color(255, 10, 0, 255) / 255.5f;
         }
+    }
+
+    public void Set_Stop()
+    {
+        isGameClear = true;
     }
 }

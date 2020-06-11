@@ -10,6 +10,7 @@ public class clear : MonoBehaviour
     public bool on;
     public bool set;
     public postp postp;
+    public NeedleRot Stop_Watch;
 
     //音追加用
     private GameObject GameManager;
@@ -26,6 +27,7 @@ public class clear : MonoBehaviour
         camera_pos = came.transform.position;
         on = false;
         set = false;
+        Stop_Watch.Set_Stop();
 
         //音追加用
         GameManager = GameObject.Find("GameManager");
