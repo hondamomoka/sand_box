@@ -59,8 +59,8 @@ public class DoorWithScales : MonoBehaviour
         if(Bucket.Length == 2)
         {
             Bucket_Left_Renderer = Bucket[0].GetComponentsInChildren<Renderer>();
-            Debug.Log("children: " + Bucket_Left_Renderer.Length);
             Bucket_Right_Renderer = Bucket[1].GetComponentsInChildren<Renderer>();
+            //Debug.Log("children: " + Bucket_Right_Renderer.Length);
         }
         Scales_Script = Scales.GetComponent<ScalesBehaviour>();
         Sand_Script = new SandInScales[obj_sands.Length];
@@ -198,7 +198,7 @@ public class DoorWithScales : MonoBehaviour
             Bucket_Left_Renderer[4].gameObject.layer = 29;
 
             // Bucekt_Rightの色替え
-            for (int i = 0; i < Bucket_Right_Renderer.Length - 2; i++)
+            for (int i = 0; i < Bucket_Right_Renderer.Length - 5; i++)
             {
                 Bucket_Right_Renderer[i].material = Bucket_Mats[1];
             }
