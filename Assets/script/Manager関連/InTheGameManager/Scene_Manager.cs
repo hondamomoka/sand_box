@@ -69,7 +69,7 @@ public class Scene_Manager : MonoBehaviour
                 //GameObjectの型を作ってプレハブを取得
                 GameObject obj = (GameObject)Resources.Load("menu");
                 //型をもとにプレハブを生成、
-                Instantiate(obj, Camera.main.transform.position + Camera.main.transform.forward * 10.0f + new Vector3(-6.0f,-1.0f,0), Quaternion.identity);
+                Instantiate(obj, Camera.main.transform.position + Camera.main.transform.forward * 8.0f, Quaternion.identity);
                 menuFlag = true;
             }
         }

@@ -13,15 +13,9 @@ public class clear : MonoBehaviour
     public postp postp;
     public NeedleRot Stop_Watch;
 
-    //音追加用
-    private GameObject GameManager;
-    private Audio_Manager am;
-    private Scene_Manager sm;
-
     private GameObject rotateManager;
     private rotation rotateScript;
     private rotation_panguin rotateScript2;
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +23,6 @@ public class clear : MonoBehaviour
         camera_pos = came.transform.position;
         on = false;
         set = false;
-
-        //音追加用
-        GameManager = GameObject.Find("GameManager");
-        am = GameManager.GetComponent<Audio_Manager>();
-        sm = GameManager.GetComponent<Scene_Manager>();
 
         //ステージの値を無理やり取得(変更予定)
         rotateManager = GameObject.Find("stage");
@@ -59,7 +48,7 @@ public class clear : MonoBehaviour
             on = false;
             set = true;
             postp.on = true;
-            am.source[2].Stop();
+            Game_Manager.Instance.am.source[2].Stop();
 
             if (SceneManager.GetActiveScene().name != "stage_penguin")
             {
@@ -72,21 +61,21 @@ public class clear : MonoBehaviour
             
             Stop_Watch.Set_Stop();
 
-            switch (sm.selectSelect)
+            switch (Game_Manager.Instance.sm.selectSelect)
             {
                 case 2:
                 case 12:
                 case 5:
                 case 15:
-                    sm.selectSelect += 4;
+                    Game_Manager.Instance.sm.selectSelect += 4;
                     break;
                 case 8:
                 case 10:
                 case 18:
-                    sm.selectSelect += 3;
+                    Game_Manager.Instance.sm.selectSelect += 3;
                     break;
                 default:
-                    sm.selectSelect++;
+                    Game_Manager.Instance.sm.selectSelect++;
                     break;
             }
         }

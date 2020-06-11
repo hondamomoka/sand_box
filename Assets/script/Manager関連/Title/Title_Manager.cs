@@ -37,10 +37,6 @@ public class Title_Manager : MonoBehaviour
         color = selectMaterial.color;
         flashFlag = 0.0f;
 
-        //manager = GameObject.Find("GameManager");
-        //am = manager.GetComponent<Audio_Manager>();
-        //sm = manager.GetComponent<Scene_Manager>();
-
         fadeFlag = false;
     }
 
@@ -156,13 +152,13 @@ public class Title_Manager : MonoBehaviour
         //カーソルをぬるっと動かす
         if (selectCount < 0)
         {
-            selectObject.transform.position += new Vector3(0, -3.0f, 0);
-            selectCount += 3;
+            selectObject.transform.position += new Vector3(0, -5.0f, 0);
+            selectCount += 5;
         }
         if (selectCount > 0)
         {
-            selectObject.transform.position += new Vector3(0, 3.0f, 0);
-            selectCount -= 3;
+            selectObject.transform.position += new Vector3(0, 5.0f, 0);
+            selectCount -= 5;
         }
     }
 

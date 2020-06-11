@@ -12,10 +12,6 @@ public class Fade_Manager : MonoBehaviour
     private float speed;         //透明化の速さ
     private Color color;         //RGBを操作するための変数
 
-    //private GameObject gameManager;
-    //private Scene_Manager sm;
-    //private Audio_Manager am;
-
     [SerializeField]
     private Image panel;
 
@@ -29,10 +25,10 @@ public class Fade_Manager : MonoBehaviour
         //Panelの色を取得
         color = panel.color;
 
-        //GameManagerを取得してFadeとシーン遷移を関連づける
-        //gameManager = GameObject.Find("GameManager");
-        //sm = gameManager.GetComponent<Scene_Manager>();
-        //am = gameManager.GetComponent<Audio_Manager>();
+        //現在シーンのカメラを取得
+        //Canvas kore = GameObject.Find("Canvas").GetComponent<Canvas>();
+        //kore.worldCamera = Camera.main;
+        //kore.planeDistance = 30;
 
         //シングルトン的運用
         if (Instance != null)
@@ -58,6 +54,13 @@ public class Fade_Manager : MonoBehaviour
             if (Game_Manager.Instance.sm.fadeIn == true)
                 Game_Manager.Instance.sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
 
+            Canvas kore = this.GetComponent<Canvas>();
+            if (kore.worldCamera != null)
+                kore.worldCamera = null;
+
+            //シーン遷移中はメニューが開けない
+            Game_Manager.Instance.sm.menuFlag = true;
+
             panel.color = color;
             color.a += speed * Time.deltaTime;
 
@@ -70,11 +73,15 @@ public class Fade_Manager : MonoBehaviour
 
             if (color.a >= 1.0f)
             {
+                //シーンの移動
                 Game_Manager.Instance.sm.fadeIn = true;
                 SceneManager.LoadScene((int)Game_Manager.Instance.sm.nextScene);
+
+                //現在のシーンを更新して次のシーンを初期化しておく
                 Game_Manager.Instance.sm.nowScene = Game_Manager.Instance.sm.nextScene;
                 Game_Manager.Instance.sm.nextScene = Scene_Manager.Stage.SCENE_MAX;
-                Game_Manager.Instance.sm.menuFlag = true;
+                
+                //bgmを完全に止めておく
                 if (Game_Manager.Instance.am.source[0].volume < Game_Manager.Instance.am.bgVol)
                     Game_Manager.Instance.am.source[0].Stop();
             }
@@ -83,13 +90,21 @@ public class Fade_Manager : MonoBehaviour
 
     void FadeIn()
     {
-        if (Game_Manager.Instance.sm.fadeIn == true)
+        if (Game_Manager.Instance.sm.fadeIn)
         {
             panel.color = color;
             color.a -= speed * Time.deltaTime;
             if (color.a <= 0.0f)
             {
+                //現在シーンのカメラを取得
+                Camera nowCamera = Camera.main;
+                Canvas kore = this.GetComponent<Canvas>();
+                kore.worldCamera = nowCamera;
+
+                //フェードイン終了確認
                 Game_Manager.Instance.sm.fadeIn = false;
+
+                //メニューを使用可能にする
                 Game_Manager.Instance.sm.menuFlag = false;
             }
         }
@@ -97,12 +112,22 @@ public class Fade_Manager : MonoBehaviour
 
     public void MenuIn()
     {
+        //明かりを消す
+        GameObject stagelight = GameObject.Find("Directional Light");
+        Light nowLight = stagelight.GetComponent<Light>();
+        nowLight.enabled = false;
+
         color.a = 0.5f;
         panel.color = color;
     }
 
     public void MenuOut()
     {
+        //明かりをつける
+        GameObject stagelight = GameObject.Find("Directional Light");
+        Light nowLight = stagelight.GetComponent<Light>();
+        nowLight.enabled = true;
+
         color.a = 0.0f;
         panel.color = color;
     }
