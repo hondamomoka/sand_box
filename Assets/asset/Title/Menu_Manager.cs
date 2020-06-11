@@ -23,7 +23,6 @@ public class Menu_Manager : MonoBehaviour
     [SerializeField] private Image panel;
     private Color color;                                //RGBを操作するための変数
 
-
     void Start()
     {
         selectFlag = false;
@@ -44,8 +43,6 @@ public class Menu_Manager : MonoBehaviour
 
     void Update()
     {
-        //クリア時じゃなくメニューも開いてなければ生成できる
-
         //スティックの値取得
         lsv = Input.GetAxis("L_Stick_V");
         if (lsv <= 0.1 && lsv >= -0.1)
@@ -76,6 +73,7 @@ public class Menu_Manager : MonoBehaviour
                     //ステージセレクトに戻る
                     Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
                     Game_Manager.Instance.am.PlaySE(audioClip1);
+                    Game_Manager.Instance.am.source[2].Stop();
                     break;
             }
             Game_Manager.Instance.sm.menuFlag = false;

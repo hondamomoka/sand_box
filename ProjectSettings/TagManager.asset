@@ -62,7 +62,7 @@ TagManager:
   - PostProcessing
   - sands_and_watch
   - wall_through_all
-  - 
+  - menu
   - 
   m_SortingLayers:
   - name: Default
