@@ -17,6 +17,11 @@ public class ScalesHelper : MonoBehaviour
 
     bool isHelper;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,10 @@ public class ScalesHelper : MonoBehaviour
         {
             Sands_Script[i] = obj_sands[i].GetComponent<SandInScales>();
         }
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -66,6 +75,8 @@ public class ScalesHelper : MonoBehaviour
                     gameObject.layer = 8;
                 }
             }
+
+            script.PlaySE(audioClip);
         }
     }
 

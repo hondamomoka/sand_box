@@ -13,12 +13,21 @@ public class SandSwitch : MonoBehaviour
 
     Renderer Switch_Renderer;
 
+    //音をつけるために追加
+    private GameObject audioManager;
+    private Audio_Manager script;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         //isActive = false;
         Switch_Renderer = GetComponent<Renderer>();
         cnt = 0;
+
+        //音をつけるために追加
+        audioManager = GameObject.Find("GameManager");
+        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -36,6 +45,7 @@ public class SandSwitch : MonoBehaviour
         if (cnt >= cnt_max)
         {
             Other_Switch.Set_Active(Mats[1]);
+            script.PlaySE(audioClip);
             Destroy(gameObject);
         }
     }
