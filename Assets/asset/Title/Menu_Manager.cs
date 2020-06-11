@@ -49,7 +49,7 @@ public class Menu_Manager : MonoBehaviour
             stickFlag = true;
 
         //YorB押したときに反映、ゲームに戻る
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             rotateScript.rotateFlag = true;
             Fade_Manager.Instance.MenuOut();

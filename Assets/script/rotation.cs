@@ -52,10 +52,10 @@ public class rotation : MonoBehaviour
                 transform.Rotate(0, 0, 80.0f * Time.deltaTime, Space.World);
             }
 
-            if (Input.GetKey(KeyCode.Joystick1Button7))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            //if (Input.GetKey(KeyCode.Joystick1Button7))
+            //{
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //}
 
         }
     }
