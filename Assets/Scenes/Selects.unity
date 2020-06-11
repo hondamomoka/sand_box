@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPos_y: 3
-  MoveSpeed: 5
+  MoveSpeed: 0.05
 --- !u!1001 &616605821
 PrefabInstance:
   m_ObjectHideFlags: 0
