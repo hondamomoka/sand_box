@@ -35,6 +35,11 @@ public class clear_coin : MonoBehaviour
     private GameObject sceneManager;
     private Scene_Manager sm;
 
+    float rank_a;
+    float rank_b;
+    float rank_c;
+    float rank_d;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,26 +73,27 @@ public class clear_coin : MonoBehaviour
             par = FindObjectOfType<NeedleRot>().safe_rate;
         }
 
-        
+        rank_a = (float)9 / 11;
+        rank_b = (float)6 / 11;
+        rank_c = (float)3 / 11;
+        rank_d = 0.0f;
 
-
-
-        if ((float)par >= 0.8f)
+        if ((float)par >= rank_a)
         {
             lank = 4;
             coinbody.GetComponent<Renderer>().material = material[0];
         }
-        else if ((float)par < 0.8f && (float)par >= 0.6f)
+        else if ((float)par < rank_a && (float)par >= rank_b)
         {
             lank = 3;
             coinbody.GetComponent<Renderer>().material = material[1];
         }
-        else if ((float)par < 0.6f && (float)par >= 0.4f)
+        else if ((float)par < rank_b && (float)par >= rank_c)
         {
             lank = 2;
             coinbody.GetComponent<Renderer>().material = material[2];
         }
-        else if ((float)par < 0.4f)
+        else if ((float)par < rank_c)
         {
             lank = 1;
             coinbody.GetComponent<Renderer>().material = material[3];
@@ -158,22 +164,22 @@ public class clear_coin : MonoBehaviour
             {
                 Debug.Log(par);
 
-                if ((float)par >= 0.8f)
+                if ((float)par >= rank_a)
                 {
                     Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
 
                 }
-                else if ((float)par < 0.8f && (float)par >= 0.6f)
+                else if ((float)par < rank_a && (float)par >= rank_b)
                 {
                     Instantiate(ps2, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
 
                 }
-                else if ((float)par < 0.6f && (float)par >= 0.4f)
+                else if ((float)par < rank_b && (float)par >= rank_c)
                 {
                     Instantiate(ps3, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
 
                 }
-                else if ((float)par < 0.4f)
+                else if ((float)par < rank_c)
                 {
                     Instantiate(ps4, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
 

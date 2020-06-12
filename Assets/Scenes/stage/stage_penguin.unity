@@ -21730,12 +21730,12 @@ PrefabInstance:
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.13
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.81
+      value: -5.69
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
@@ -26578,8 +26578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
-  line: 3
-  col: 10
+  line: 4
+  col: 14
   size: 0.1
   sands_mass: 1
   stage: stage
@@ -27815,7 +27815,7 @@ PrefabInstance:
     - target: {fileID: 2966375986539440497, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
       propertyPath: safe_num
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2966375986539440502, guid: f2b0feeec6dc8f14b84395ee7bc2e9df,
         type: 3}
@@ -37464,8 +37464,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34683794, y: 2.9982543, z: 1}
-  m_Center: {x: 0.08339518, y: 1.1775672, z: 0}
+  m_Size: {x: 0.39554968, y: 2.9982543, z: 1}
+  m_Center: {x: 0.1340826, y: 1.1775672, z: 0}
 --- !u!1 &1598908749
 GameObject:
   m_ObjectHideFlags: 0
@@ -40303,7 +40303,7 @@ GameObject:
   - component: {fileID: 1835376607}
   - component: {fileID: 1835376606}
   - component: {fileID: 1835376609}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Penguin (41)
   m_TagString: stage
   m_Icon: {fileID: 0}
@@ -40355,7 +40355,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb04ce3fab52fdc47938dc1a10546950, type: 2}
+  - {fileID: 2100000, guid: 3e58c24c144be894090b9ba80924acd0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
