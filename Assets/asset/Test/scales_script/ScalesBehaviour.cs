@@ -15,6 +15,8 @@ public class ScalesBehaviour : MonoBehaviour
     public float rot_limit;
     public float return_rot_speed;
     public float deviation;
+    public float switch_time_max;
+    public float time_cnt;
     public Vector3 handle_Angular_Velocity;
     public GameObject[] obj_sands;
     public bool isPlayerInBucket;
@@ -31,6 +33,8 @@ public class ScalesBehaviour : MonoBehaviour
     PlayerInScales Player_Script;
 
     Vector3 Weights_World_Pos; // 天秤の両端に力を加える点
+
+    [SerializeField] private AudioClip audioClip;
 
     public enum HANDLE_STATE
     {
@@ -104,6 +108,8 @@ public class ScalesBehaviour : MonoBehaviour
         }
 
         Player_Script = Player.GetComponent<PlayerInScales>();
+
+        time_cnt = switch_time_max;
     }
 
     // Update is called once per frame
@@ -227,22 +233,27 @@ public class ScalesBehaviour : MonoBehaviour
                 Weights_World_Pos = LocalPos_To_World_Pos(Handle_Trs.localPosition, -0.45f, 0.5f, 0);
                 // 力を加える
                 Handle_Rb.AddForceAtPosition(Vector3.down * (weights[0] - weights[1]) / weights_index, Weights_World_Pos);
+                Scales_SE();
                 break;
             case HANDLE_STATE.STATE_TURN_TO_RIGHT:
                 // 力を加える点のワールド座標の取得
                 Weights_World_Pos = LocalPos_To_World_Pos(Handle_Trs.localPosition, 0.45f, 0.5f, 0);
                 // 力を加える
                 Handle_Rb.AddForceAtPosition(Vector3.down * (weights[1] - weights[0]) / weights_index, Weights_World_Pos);
+                Scales_SE();
                 break;
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT:
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_HELPER:
                 Return_To_Balance(rot_limit, -return_rot_speed);
+                Scales_SE();
                 break;
             case HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT:
                 Return_To_Balance(rot_limit, return_rot_speed);
+                Scales_SE();
                 break;
             default:
                 Handle_Rb.angularVelocity = Vector3.zero;
+                time_cnt = switch_time_max;
                 break;
         }
     }
@@ -314,6 +325,17 @@ public class ScalesBehaviour : MonoBehaviour
         for (int i = 0; i < obj_sands.Length; i++)
         {
             obj_sands_Script[i] = obj_sands[i].GetComponent<SandInScales>();
+        }
+    }
+
+    void Scales_SE()
+    {
+        time_cnt += Time.deltaTime;
+        if (time_cnt >= switch_time_max &&
+            (Handle_State != HANDLE_STATE.STATE_STAY_IN_RIGHT && Handle_State != HANDLE_STATE.STATE_STAY_IN_LEFT))
+        {
+            Game_Manager.Instance.am.PlaySE(audioClip);
+            time_cnt = 0;
         }
     }
 }

@@ -908,7 +908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: cb04ce3fab52fdc47938dc1a10546950, type: 2}
-  Particle: {fileID: 0}
 --- !u!1 &86698728
 GameObject:
   m_ObjectHideFlags: 0
@@ -14245,6 +14244,16 @@ PrefabInstance:
       propertyPath: SandCreater
       value: 
       objectReference: {fileID: 1066782189}
+    - target: {fileID: 7222498843808078418, guid: 3595861560de9c64caa6d458465f4a02,
+        type: 3}
+      propertyPath: switch_time_max
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222498843808078418, guid: 3595861560de9c64caa6d458465f4a02,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
     - target: {fileID: 7222498843808078419, guid: 3595861560de9c64caa6d458465f4a02,
         type: 3}
       propertyPath: m_Name

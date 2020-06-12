@@ -11704,6 +11704,21 @@ PrefabInstance:
       propertyPath: deviation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3685467352772425774, guid: ab9c53e4c9fbfa44db68740abcf5dd5c,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 836fc10622d50114fb14fdedeb2fa6a4, type: 3}
+    - target: {fileID: 3685467352772425774, guid: ab9c53e4c9fbfa44db68740abcf5dd5c,
+        type: 3}
+      propertyPath: swtich_time_max
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685467352772425774, guid: ab9c53e4c9fbfa44db68740abcf5dd5c,
+        type: 3}
+      propertyPath: switch_time_max
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3685467352772425775, guid: ab9c53e4c9fbfa44db68740abcf5dd5c,
         type: 3}
       propertyPath: m_Name
