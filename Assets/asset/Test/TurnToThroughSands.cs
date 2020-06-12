@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnToThroughSands : MonoBehaviour
 {
     public Material mat;
+    public GameObject Particle;
 
     Renderer[] Alpha;
 
@@ -29,5 +30,6 @@ public class TurnToThroughSands : MonoBehaviour
             // layer: wall_through_sands
             Alpha[i].gameObject.layer = 15;
         }
+        Particle.SetActive(true);
     }
 }
