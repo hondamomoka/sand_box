@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Option_Manager : MonoBehaviour
 {
-    private GameObject manager;
-    private Audio_Manager am;
-    private Scene_Manager sm;
-
     private GameObject bgmObousan;
     private GameObject bgmButton;
     private GameObject seObousan;
@@ -31,13 +27,9 @@ public class Option_Manager : MonoBehaviour
 
     void Awake()
     {
-        manager = GameObject.Find("GameManager");
-        am = manager.GetComponent<Audio_Manager>();
-        sm = manager.GetComponent<Scene_Manager>();
-
-        bgmObousan = GameObject.Find("barbgm");
+        bgmObousan = GameObject.Find("bgfix");
         bgmButton  = GameObject.Find("buttonbgm");
-        seObousan  = GameObject.Find("barse");
+        seObousan  = GameObject.Find("sefix");
         seButton   = GameObject.Find("buttonse");
         sentaku    = GameObject.Find("sentaku");
 
@@ -47,21 +39,18 @@ public class Option_Manager : MonoBehaviour
 
     void Start()
     {
-        sentaku.transform.position = new Vector3(2.1f,2.2f,-0.99f);
+        bgmObousan.transform.localScale = new Vector3((Game_Manager.Instance.am.bgVol / 0.8f),1,1);
+        seObousan.transform.localScale  = new Vector3((Game_Manager.Instance.am.seVol / 0.8f),1,1);
 
-        bgmObousan.transform.localScale = new Vector3(((am.bgVol / 0.08f) * 0.07f),1,1);
-        seObousan.transform.localScale  = new Vector3(((am.seVol / 0.08f) * 0.07f), 1,1);
+        bgmButton.transform.position = new Vector3(-0.44f + ((Game_Manager.Instance.am.bgVol / 0.08f) * 0.51f), 2.18f,-1.0f);
+        seButton.transform.position  = new Vector3(-0.44f + ((Game_Manager.Instance.am.seVol / 0.08f) * 0.51f),-0.44f,-1.0f);
 
-        bgmObousan.transform.position = new Vector3(-0.55f + ((am.bgVol / 0.08f) * 0.285f), 2.3f,0);
-        seObousan.transform.position  = new Vector3(-0.55f + ((am.seVol / 0.08f) * 0.285f), -0.6f,0);
-
-        bgmButton.transform.position = new Vector3(-0.44f + ((am.bgVol / 0.08f) * 0.51f), 2.18f,-1.0f);
-        seButton.transform.position  = new Vector3(-0.44f + ((am.seVol / 0.08f) * 0.51f),-0.44f,-1.0f);
+        sentaku.transform.position = bgmButton.transform.position + new Vector3(0, 0.02f, 0.01f);
     }
 
     void Update()
     {
-        if (!sm.fadeIn && !fadeFlag)
+        if (!Game_Manager.Instance.sm.fadeIn && !fadeFlag)
         {
             //コントローラ左スティックの更新
             lsv = Input.GetAxis("L_Stick_V");
@@ -74,8 +63,8 @@ public class Option_Manager : MonoBehaviour
             //戻るボタン
             if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.X))
             {
-                am.PlaySE(audioClip1);
-                sm.SceneChange(Scene_Manager.Stage.TITLE);
+                Game_Manager.Instance.am.PlaySE(audioClip1);
+                Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.TITLE);
                 fadeFlag = true;
             }
 
@@ -86,9 +75,9 @@ public class Option_Manager : MonoBehaviour
                 {
                     if (erabu == true)
                     {
-                        sentaku.transform.position = new Vector3(2.1f, 2.2f, -0.99f);
+                        sentaku.transform.position = bgmButton.transform.position + new Vector3(0, 0.02f, 0.01f);
                         erabu = false;
-                        am.PlaySE(audioClip3);
+                        Game_Manager.Instance.am.PlaySE(audioClip3);
                     }
 
                     stickFlag = false;
@@ -97,9 +86,9 @@ public class Option_Manager : MonoBehaviour
                 {
                     if (erabu == false)
                     {
-                        sentaku.transform.position = new Vector3(2.1f, -0.44f, -0.99f);
+                        sentaku.transform.position = seButton.transform.position + new Vector3(0, 0.02f, 0.01f);
                         erabu = true;
-                        am.PlaySE(audioClip3);
+                        Game_Manager.Instance.am.PlaySE(audioClip3);
                     }
 
                     stickFlag = false;
@@ -108,42 +97,50 @@ public class Option_Manager : MonoBehaviour
                 //音量変更
                 if (Input.GetKeyDown(KeyCode.RightArrow) || lsh >= 0.9)
                 {
-                    if (erabu == false && am.bgVol < 0.79f)
+                    if (erabu == false && Game_Manager.Instance.am.bgVol < 0.79f)
                     {
-                        am.bgVol += 0.08f;
-                        am.source[0].volume = am.bgVol;
+                        Game_Manager.Instance.am.bgVol += 0.08f;
+                        Game_Manager.Instance.am.source[0].volume = Game_Manager.Instance.am.bgVol;
+
                         bgmButton.transform.position += new Vector3(0.51f, 0, 0);
-                        bgmObousan.transform.localScale += new Vector3(0.07f, 0, 0);
-                        bgmObousan.transform.position += new Vector3(0.285f, 0, 0);
+                        sentaku.transform.position = bgmButton.transform.position + new Vector3(0, 0.02f, 0.01f);
+
+                        bgmObousan.transform.localScale += new Vector3(0.1f, 0, 0);
                     }
-                    else if (erabu == true && am.seVol < 0.79f)
+                    else if (erabu == true && Game_Manager.Instance.am.seVol < 0.79f)
                     {
-                        am.seVol += 0.08f;
+                        Game_Manager.Instance.am.seVol += 0.08f;
+                        Game_Manager.Instance.am.PlaySE(audioClip2);
+
                         seButton.transform.position += new Vector3(0.51f, 0, 0);
-                        seObousan.transform.localScale += new Vector3(0.07f, 0, 0);
-                        seObousan.transform.position += new Vector3(0.285f, 0, 0);
-                        am.PlaySE(audioClip2);
+                        sentaku.transform.position = seButton.transform.position + new Vector3(0, 0.02f, 0.01f);
+
+                        seObousan.transform.localScale += new Vector3(0.1f, 0, 0);
                     }
 
                     stickFlag = false;
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || lsh <= -0.9)
                 {
-                    if (erabu == false && am.bgVol > 0.01f)
+                    if (erabu == false && Game_Manager.Instance.am.bgVol > 0.01f)
                     {
-                        am.bgVol -= 0.08f;
-                        am.source[0].volume = am.bgVol;
+                        Game_Manager.Instance.am.bgVol -= 0.08f;
+                        Game_Manager.Instance.am.source[0].volume = Game_Manager.Instance.am.bgVol;
+
                         bgmButton.transform.position -= new Vector3(0.51f, 0, 0);
-                        bgmObousan.transform.localScale -= new Vector3(0.07f, 0, 0);
-                        bgmObousan.transform.position -= new Vector3(0.285f, 0, 0);
+                        sentaku.transform.position = bgmButton.transform.position + new Vector3(0, 0.02f, 0.01f);
+
+                        bgmObousan.transform.localScale -= new Vector3(0.1f, 0, 0);
                     }
-                    else if (erabu == true && am.seVol > 0.01f)
+                    else if (erabu == true && Game_Manager.Instance.am.seVol > 0.01f)
                     {
-                        am.seVol -= 0.08f;
+                        Game_Manager.Instance.am.seVol -= 0.08f;
+                        Game_Manager.Instance.am.PlaySE(audioClip2);
+
                         seButton.transform.position -= new Vector3(0.51f, 0, 0);
-                        seObousan.transform.localScale -= new Vector3(0.07f, 0, 0);
-                        seObousan.transform.position -= new Vector3(0.285f, 0, 0);
-                        am.PlaySE(audioClip2);
+                        sentaku.transform.position = seButton.transform.position + new Vector3(0, 0.02f, 0.01f);
+
+                        seObousan.transform.localScale -= new Vector3(0.1f, 0, 0);
                     }
 
                     stickFlag = false;
