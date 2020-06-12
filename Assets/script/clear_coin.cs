@@ -14,7 +14,6 @@ public class clear_coin : MonoBehaviour
     public ParticleSystem ps;
     public ParticleSystem ps2;
     public ParticleSystem ps3;
-    public ParticleSystem ps4;
     public float par;
     bool effect;
     public save save;
@@ -181,20 +180,21 @@ public class clear_coin : MonoBehaviour
                 }
                 else if ((float)par < rank_c)
                 {
-                    Instantiate(ps4, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
+                    
 
                 }
 
                 int oldLank = PlayerPrefs.GetInt("コイン" + made.stage_type, 0);
-                PlayerPrefs.Save();
+                
                 Debug.Log("前セーブデータ" + oldLank);
 
                 if (lank > oldLank)
                 {
                     save.save_coin(made.stage_type, lank);
                 }
-                //Instantiate(ps, new Vector3(this.transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(-90, 0, 0));
 
+                PlayerPrefs.Save();
+                
                 effect = true;
             }
 
