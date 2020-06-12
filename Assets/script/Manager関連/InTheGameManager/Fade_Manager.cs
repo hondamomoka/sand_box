@@ -25,11 +25,6 @@ public class Fade_Manager : MonoBehaviour
         //Panelの色を取得
         color = panel.color;
 
-        //現在シーンのカメラを取得
-        //Canvas kore = GameObject.Find("Canvas").GetComponent<Canvas>();
-        //kore.worldCamera = Camera.main;
-        //kore.planeDistance = 30;
-
         //シングルトン的運用
         if (Instance != null)
         {
