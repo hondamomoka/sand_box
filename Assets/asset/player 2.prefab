@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 794210646704708213}
   - component: {fileID: 3913424082118105093}
   - component: {fileID: 3913424082118105090}
+  - component: {fileID: -5136805132424700160}
   m_Layer: 12
   m_Name: player 2
   m_TagString: player
@@ -322,6 +323,22 @@ MonoBehaviour:
   player_trigger: 0
   trigger_enter: bucket_right_zone
   trigger_exit: bucket_right_board
+  isOutBucket: 0
+  Player_State: 0
+--- !u!114 &-5136805132424700160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913424082118105092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e292fbcff601d9344aab9d18443c09e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 0}
+  pScript: {fileID: 0}
 --- !u!1 &4784774217773584412
 GameObject:
   m_ObjectHideFlags: 0
