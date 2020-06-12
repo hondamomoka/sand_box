@@ -57,6 +57,18 @@ public class Scene_Manager : MonoBehaviour
         titleSelect = 0;
         selectSelect = 1;
 
+        //セーブデータが残ってたらその位置からスタート
+        for (int i = 0; i < 20; i++)
+        {
+            int num = PlayerPrefs.GetInt("コイン" + i, 0);
+            if (num != 0)
+            {
+                selectSelect = i + 2;
+                titleSelect = 1;
+                break;
+            }
+        }
+
         menuFlag = false;
     }
 
