@@ -33,6 +33,7 @@ public class Title_Manager : MonoBehaviour
     {
         selectObject = GameObject.Find("select");
         selectMaterial = selectObject.GetComponent<Renderer>().sharedMaterial;
+
         selectCount = 0;
         color = selectMaterial.color;
         flashFlag = 0.0f;
