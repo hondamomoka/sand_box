@@ -17,6 +17,8 @@ public class DoorWithScales : MonoBehaviour
     public swichEFonly_cobra effect1;
     public swichEFonly_cobra effect2;
     public ParticleSystem ps1;
+    public ParticleSystem ps2;
+    public ParticleSystem ps3;
     public bool isDestroySand;
     static int ps;
 
@@ -50,6 +52,8 @@ public class DoorWithScales : MonoBehaviour
     {
         ps = 0;
         ps1.Stop();
+        ps2.Stop();
+        ps3.Stop();
 
         // 砂の取得
         obj_sands = SandCreater[0].GetComponent<CreateSandsKyo>().obj_sands;
@@ -204,6 +208,8 @@ public class DoorWithScales : MonoBehaviour
             }
 
             effect0.playPS();
+            ps2.Play();
+            ps3.Play();
             script.PlaySE(audioClip);
         }
     }
