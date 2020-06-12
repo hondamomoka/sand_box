@@ -26,17 +26,17 @@ public class CreateSandsKyo : MonoBehaviour
 
     Transform          sandscreater;    // 生成器のTransform情報
 
-    private Rigidbody[] rb_sands;
-    private int         MoveSands_Cnt;       //動いている砂の数を数える
-    private int         VeryMoveSands_Cnt;   //特に動いている砂の数を数える
-    private float       Sands_Speed;         //動いている砂の速度
-    private float       Sands_Speed_Avarage; //動いている砂の速度の平均
-    private Vector2[]   Sands_velocity;      //動いている砂の速度を一時格納していじるための変数
+    public Rigidbody[] rb_sands;
+    //private int         MoveSands_Cnt;       //動いている砂の数を数える
+    //private int         VeryMoveSands_Cnt;   //特に動いている砂の数を数える
+    //private float       Sands_Speed;         //動いている砂の速度
+    //private float       Sands_Speed_Avarage; //動いている砂の速度の平均
+    //private Vector2[]   Sands_velocity;      //動いている砂の速度を一時格納していじるための変数
 
-    //音を鳴らすために追加
-    private GameObject audioManager;
-    private Audio_Manager am;
-    [SerializeField] private AudioClip audioClip;
+    ////音を鳴らすために追加
+    //private GameObject audioManager;
+    //private Audio_Manager am;
+    //[SerializeField] private AudioClip audioClip;
 
     void Awake()
     {
@@ -45,11 +45,11 @@ public class CreateSandsKyo : MonoBehaviour
 
         obj_sands       = new GameObject[Sands_Max];
         rb_sands        = new Rigidbody[Sands_Max];
-        Sands_velocity  = new Vector2[Sands_Max];
+        //Sands_velocity  = new Vector2[Sands_Max];
 
         sandscreater = GetComponent<Transform>();
 
-        MoveSands_Cnt = 0;
+        //MoveSands_Cnt = 0;
 
         if (size == 0)
         {
@@ -129,16 +129,16 @@ public class CreateSandsKyo : MonoBehaviour
                 obj_sands[i].GetComponent<SandWithWind>().material = other_mats;
             }
         }
-        //音を鳴らすために追加
-        audioManager = GameObject.Find("GameManager");
-        am = audioManager.GetComponent<Audio_Manager>();
+        ////音を鳴らすために追加
+        //audioManager = GameObject.Find("GameManager");
+        //am = audioManager.GetComponent<Audio_Manager>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        //砂の音生成
-        if(am.seVol > 0.0f)
-            am.PlaySandSE(audioClip);
+        ////砂の音生成
+        //if(am.seVol > 0.0f)
+        //    am.PlaySandSE(audioClip);
     }
 
     // Update is called once per frame
@@ -147,13 +147,13 @@ public class CreateSandsKyo : MonoBehaviour
         //現在の砂の数を取得
         //砂はおそらく自由落下で13ほど
         Sands_Num     = 0;
-        MoveSands_Cnt = 0;
-        VeryMoveSands_Cnt = 0;
-        Sands_Speed = 0;
-        Sands_Speed_Avarage = 0;
+        //MoveSands_Cnt = 0;
+        //VeryMoveSands_Cnt = 0;
+        //Sands_Speed = 0;
+        //Sands_Speed_Avarage = 0;
 
         //砂の音の設定初期化
-        am.source[2].volume = am.seVol;
+        //am.source[2].volume = am.seVol;
         for (int i = 0; i < Sands_Max; i++)
         {
             if (obj_sands[i] != null)
@@ -161,37 +161,37 @@ public class CreateSandsKyo : MonoBehaviour
                 //生きてる砂をカウントする
                 Sands_Num++;
 
-                //生きてる砂の速度をそれ用の変数に格納する
-                Sands_velocity[i].x = rb_sands[i].velocity.x;
-                Sands_velocity[i].y = rb_sands[i].velocity.y;
+                ////生きてる砂の速度をそれ用の変数に格納する
+                //Sands_velocity[i].x = rb_sands[i].velocity.x;
+                //Sands_velocity[i].y = rb_sands[i].velocity.y;
 
-                //使いやすくするために+-を調整する
-                if (Sands_velocity[i].x < 0)
-                    Sands_velocity[i].x *= -1.0f;
-                if (Sands_velocity[i].y < 0)
-                    Sands_velocity[i].y *= -1.0f;
+                ////使いやすくするために+-を調整する
+                //if (Sands_velocity[i].x < 0)
+                //    Sands_velocity[i].x *= -1.0f;
+                //if (Sands_velocity[i].y < 0)
+                //    Sands_velocity[i].y *= -1.0f;
 
-                //砂の速度が一定以上であったら動いてると判定する
-                if (rb_sands[i].velocity.x < -0.5f || rb_sands[i].velocity.y < -0.5f)
-                    MoveSands_Cnt++;
+                ////砂の速度が一定以上であったら動いてると判定する
+                //if (rb_sands[i].velocity.x < -0.5f || rb_sands[i].velocity.y < -0.5f)
+                //    MoveSands_Cnt++;
 
-                //砂の速度を変数に格納
-                Sands_Speed = (float)System.Math.Sqrt(System.Math.Pow(Sands_velocity[i].x,2) + System.Math.Pow(Sands_velocity[i].y, 2));
+                ////砂の速度を変数に格納
+                //Sands_Speed = (float)System.Math.Sqrt(System.Math.Pow(Sands_velocity[i].x,2) + System.Math.Pow(Sands_velocity[i].y, 2));
 
-                Sands_Speed_Avarage += Sands_Speed;
+                //Sands_Speed_Avarage += Sands_Speed;
 
-                //砂の速さは2.3以上で早いと判断
-                if (Sands_Speed > 2.3f)
-                {
-                    VeryMoveSands_Cnt++;
-                }
+                ////砂の速さは2.3以上で早いと判断
+                //if (Sands_Speed > 2.3f)
+                //{
+                //    VeryMoveSands_Cnt++;
+                //}
             }
         }
 
         //SEの音量が0じゃなければ音量調節して再生
         //移動速度が大きい砂の数が多ければそれだけ音量が大きくなる
-        if (am.seVol > 0.0f)
-            am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * 0.6f;
+        //if (am.seVol > 0.0f)
+        //    am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * 0.6f;
 
         //砂の速度の平均を計算してピッチを変更
         //0.7~1.3の変動までの変動は許容する
