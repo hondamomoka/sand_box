@@ -75,8 +75,25 @@ public class clear_ocean : MonoBehaviour
             }
 
             Stop_Watch.Set_Stop();
-        }
 
+            switch (Game_Manager.Instance.sm.selectSelect)
+            {
+                case 2:
+                case 12:
+                case 5:
+                case 15:
+                    Game_Manager.Instance.sm.selectSelect += 4;
+                    break;
+                case 8:
+                case 10:
+                case 18:
+                    Game_Manager.Instance.sm.selectSelect += 3;
+                    break;
+                default:
+                    Game_Manager.Instance.sm.selectSelect++;
+                    break;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -85,8 +85,9 @@ public class clear : MonoBehaviour
                     break;
                 case 8:
                 case 10:
+                    break;
                 case 18:
-                    Game_Manager.Instance.sm.selectSelect += 3;
+                    Game_Manager.Instance.sm.selectSelect = 3;
                     break;
                 default:
                     Game_Manager.Instance.sm.selectSelect++;
