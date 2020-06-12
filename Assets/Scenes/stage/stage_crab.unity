@@ -932,7 +932,7 @@ MonoBehaviour:
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
-  audioClip: {fileID: 8300000, guid: 4393b8f829acf4b4b82225195adbdce7, type: 3}
+  rb_sands: []
 --- !u!1 &114284940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,6 +2179,85 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 202329340}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &223683042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1183450672976632869, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_Name
+      value: SandSE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632870, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: SandCreater.Array.data[0]
+      value: 
+      objectReference: {fileID: 113092806}
+    - target: {fileID: 1183450672976632870, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: SandCreater.Array.data[1]
+      value: 
+      objectReference: {fileID: 951531718}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.11302835
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.6816816
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.890424
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c54aca7524b8e64d8bc1cf719131a41, type: 3}
 --- !u!1 &231399401
 GameObject:
   m_ObjectHideFlags: 0
@@ -9003,7 +9082,7 @@ MonoBehaviour:
   Sands_Max: 0
   Sands_Num: 0
   obj_sands: []
-  audioClip: {fileID: 8300000, guid: 4393b8f829acf4b4b82225195adbdce7, type: 3}
+  rb_sands: []
 --- !u!1 &973426242
 GameObject:
   m_ObjectHideFlags: 0
