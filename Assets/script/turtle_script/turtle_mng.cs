@@ -10,6 +10,10 @@ public class turtle_mng : MonoBehaviour
     public Material[] material;
     public ParticleSystem ps1;
     public ParticleSystem ps2;
+    public ParticleSystem ps3;
+    public ParticleSystem ps4;
+    public ParticleSystem ps5;
+    public ParticleSystem ps6;
     bool end;
     public TurnToWall[] Wall;
 
@@ -23,6 +27,8 @@ public class turtle_mng : MonoBehaviour
     {
         ps1.Stop();
         ps2.Stop();
+        ps5.Stop();
+        ps6.Stop();
         end = false;
         //音をつけるために追加
         audioManager = GameObject.Find("GameManager");
@@ -38,6 +44,10 @@ public class turtle_mng : MonoBehaviour
             {
                 ps1.Play();
                 ps2.Play();
+                ps5.Play();
+                ps6.Play();
+                ps3.Stop();
+                ps4.Stop();
                 cube.GetComponent<Renderer>().material = material[0];
                 cube.layer = 14;
 
