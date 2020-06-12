@@ -13,6 +13,7 @@ public class buccal_cone : MonoBehaviour
     public GameObject[] Sand_Creater;
     public ParticleSystem ps1;
     public ParticleSystem ps2;
+    public GameObject ps3;
     public NeedleRot needl;
     public float meter;
 
@@ -75,6 +76,7 @@ public class buccal_cone : MonoBehaviour
                     script.PlaySE(audioClip3);
                     soundFlag = 4;
                 }
+                ps3.SetActive(false);
             }
             else if (count > 110 && soundFlag == 0)
             {
