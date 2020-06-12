@@ -17,10 +17,6 @@ public class clear_ocean : MonoBehaviour
     private rotation rotateScript;
     private rotation_panguin rotateScript2;
 
-    //音追加用
-    private GameObject audioManager;
-    private Audio_Manager script;
-    [SerializeField] private AudioClip audioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +24,6 @@ public class clear_ocean : MonoBehaviour
         camera_pos = came.transform.position;
         on = false;
         set = false;
-
-        //音追加用
-        audioManager = GameObject.Find("GameManager");
-        script = audioManager.GetComponent<Audio_Manager>();
 
         //ステージの値を無理やり取得(変更予定)
         rotateManager = GameObject.Find("stage");
@@ -58,6 +50,21 @@ public class clear_ocean : MonoBehaviour
             set = true;
             postp.on = true;
 
+            //砂の音を消しましょう
+            Game_Manager.Instance.am.source[2].Stop();
+
+            //メニューが出てる状態でクリアしたら勝手に消す
+            GameObject menu = GameObject.Find("menu(Clone)");
+            if (menu != null)
+            {
+                Fade_Manager.Instance.MenuOut();
+                Destroy(menu);
+            }
+
+            //これ以降このステージ内ではメニューは開けません
+            Game_Manager.Instance.sm.menuFlag = true;
+
+            //回転も禁止
             if (SceneManager.GetActiveScene().name != "stage_penguin")
             {
                 rotateScript.rotateFlag = false;
@@ -79,7 +86,6 @@ public class clear_ocean : MonoBehaviour
             if (other.gameObject.CompareTag("player"))
             {
                 on = true;
-                script.source[2].Stop();
             }
         }
 

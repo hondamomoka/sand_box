@@ -48,8 +48,22 @@ public class clear : MonoBehaviour
             on = false;
             set = true;
             postp.on = true;
+
+            //砂の音を消しましょう
             Game_Manager.Instance.am.source[2].Stop();
 
+            //メニューが出てる状態でクリアしたら勝手に消す
+            GameObject menu = GameObject.Find("menu(Clone)");
+            if (menu != null)
+            {
+                Fade_Manager.Instance.MenuOut();
+                Destroy(menu);
+            }
+
+            //これ以降このステージ内ではメニューは開けません
+            Game_Manager.Instance.sm.menuFlag = true;
+
+            //回転も禁止
             if (SceneManager.GetActiveScene().name != "stage_penguin")
             {
                 rotateScript.rotateFlag = false;
