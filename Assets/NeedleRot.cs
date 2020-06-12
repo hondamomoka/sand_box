@@ -30,6 +30,8 @@ public class NeedleRot : MonoBehaviour
 
     float[] Needle_State;
 
+    int sands;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +69,7 @@ public class NeedleRot : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         if (isGameClear == false)
         {
             sands_num = 0;

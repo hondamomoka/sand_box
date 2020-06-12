@@ -205,9 +205,11 @@ public class CreateSandsKyo : MonoBehaviour
                 if (obj_sands[i] != null)
                 {
                     Instantiate(ps, obj_sands[i].transform.position, Quaternion.identity);
-                    Destroy(obj_sands[i]);
+                    //Destroy(obj_sands[i]);
+                    obj_sands[i].SetActive(false);
                 }
             }
+            isSandsDelete = false;
         }
     }
 }
