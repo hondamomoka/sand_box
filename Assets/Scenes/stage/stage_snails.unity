@@ -13772,6 +13772,11 @@ PrefabInstance:
       propertyPath: SandCreater.Array.data[1]
       value: 
       objectReference: {fileID: 1695860898}
+    - target: {fileID: 1183450672976632870, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: SE_Idx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
         type: 3}
       propertyPath: m_LocalPosition.x
