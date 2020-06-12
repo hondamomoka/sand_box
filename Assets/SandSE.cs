@@ -26,8 +26,6 @@ public class SandSE : MonoBehaviour
     private bool menuFlag;                         //menuが開かれた瞬間だけonになる
 
     //音を鳴らすために追加
-    private GameObject audioManager;
-    private Audio_Manager am;
     [SerializeField] private AudioClip audioClip;
 
     // Start is called before the first frame update
@@ -50,13 +48,10 @@ public class SandSE : MonoBehaviour
         }
 
         MoveSands_Cnt = 0;
-        //音を鳴らすために追加
-        audioManager = GameObject.Find("GameManager");
-        am = audioManager.GetComponent<Audio_Manager>();
 
         //砂の音生成
-        if (am.seVol > 0.0f)
-            am.PlaySandSE(audioClip);
+        if (Game_Manager.Instance.am.seVol > 0.0f)
+            Game_Manager.Instance.am.PlaySandSE(audioClip);
 
         menuFlag = false;
     }
@@ -78,7 +73,7 @@ public class SandSE : MonoBehaviour
                     }
                 }
                 //音は小さめにしておく
-                am.source[2].volume = 0.1f;
+                Game_Manager.Instance.am.source[2].volume = 0.1f;
 
                 menuFlag = true;
                 return;
@@ -119,7 +114,7 @@ public class SandSE : MonoBehaviour
                     }
                 }
                 //音は小さめにしておく
-                am.source[2].volume = 0.1f;
+                Game_Manager.Instance.am.source[2].volume = 0.1f;
 
                 menuFlag = true;
                 return;
@@ -157,7 +152,7 @@ public class SandSE : MonoBehaviour
         Sands_Speed_Avarage = 0;
 
         //砂の音の設定初期化
-        am.source[2].volume = am.seVol;
+        Game_Manager.Instance.am.source[2].volume = Game_Manager.Instance.am.seVol;
 
         for (int i = 0; i < obj_sands.Length; i++)
         {
@@ -201,8 +196,8 @@ public class SandSE : MonoBehaviour
 
         //SEの音量が0じゃなければ音量調節して再生
         //移動速度が大きい砂の数が多ければそれだけ音量が大きくなる
-        if (am.seVol > 0.0f)
-            am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * Move_Idx;
+        if (Game_Manager.Instance.am.seVol > 0.0f)
+            Game_Manager.Instance.am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * Move_Idx;
 
         //砂の速度の平均を計算してピッチを変更
         //0.7~1.3の変動までの変動は許容する

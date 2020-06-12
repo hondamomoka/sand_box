@@ -72,7 +72,7 @@ public class playerscript : MonoBehaviour
                 menuFlag = false;
             }
         }
-
+        
         //値を保存しておく
         player_velocity = rb_Player.velocity;
     }
