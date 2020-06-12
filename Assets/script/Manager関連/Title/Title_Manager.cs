@@ -17,10 +17,6 @@ public class Title_Manager : MonoBehaviour
 
     private bool fadeFlag;
 
-    //private GameObject manager;
-    //private Audio_Manager am;
-    //private Scene_Manager sm;
-
     [SerializeField] private AudioClip titleBGM;
     [SerializeField] private AudioClip audioClip1;
     [SerializeField] private AudioClip audioClip2;

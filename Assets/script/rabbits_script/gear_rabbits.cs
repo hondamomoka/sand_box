@@ -20,6 +20,7 @@ public class gear_rabbits : MonoBehaviour
     void Start()
     {
         ps1.Stop();
+
         count = 0;
         count_max = 10;
         moving = false;
