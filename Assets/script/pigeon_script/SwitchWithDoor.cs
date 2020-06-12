@@ -55,6 +55,10 @@ public class SwitchWithDoor : MonoBehaviour
                 default:
                     break;
             }
+
+            // layer: wall_through_player
+            gameObject.layer = 14;
+            GetComponent<Renderer>().material = Mats[0];
         }
     }
 

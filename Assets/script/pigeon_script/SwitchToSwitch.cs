@@ -6,6 +6,7 @@ public class SwitchToSwitch : MonoBehaviour
 {
     public GameObject other_switch;
     public Material Mat;
+    public Material MatAlpha;
 
     public swichEFonly_cobra effect;
     bool on;
@@ -41,8 +42,8 @@ public class SwitchToSwitch : MonoBehaviour
                 other_switch.GetComponent<Renderer>().material = Mat;
                 effect.playPS();
                 script.PlaySE(audioClip);
+                GetComponent<Renderer>().material = MatAlpha;
             }
         }
-       
     }
 }

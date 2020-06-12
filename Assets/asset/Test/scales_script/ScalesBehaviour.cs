@@ -190,14 +190,28 @@ public class ScalesBehaviour : MonoBehaviour
             if (Handle_State == HANDLE_STATE.STATE_STAY_IN_LEFT ||
                 Handle_State == HANDLE_STATE.STATE_TURN_TO_LEFT)
             {
-                Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT;
+                if (Handle.transform.localEulerAngles.z >= 360.0f - rot_limit)
+                {
+                    Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT; 
+                }
+                else
+                {
+                    Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT;
+                }
                 Handle_Rb.angularVelocity = Vector3.zero;
             }
             // 右端が沈んでいる
             else if (Handle_State == HANDLE_STATE.STATE_STAY_IN_RIGHT ||
                 Handle_State == HANDLE_STATE.STATE_TURN_TO_RIGHT)
             {
-                Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT;
+                if (Handle.transform.localEulerAngles.z <= rot_limit)
+                {
+                    Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT;
+                }
+                else
+                {
+                    Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT;
+                } 
                 Handle_Rb.angularVelocity = Vector3.zero;
             }
         }
