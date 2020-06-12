@@ -30,4 +30,9 @@ public class wind : MonoBehaviour
             time = 0;
         }
     }
+
+    public void Stop_WindSE()
+    {
+        script.source[1].Stop();
+    }
 }

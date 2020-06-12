@@ -17,6 +17,8 @@ public class clear_ocean : MonoBehaviour
     private rotation rotateScript;
     private rotation_panguin rotateScript2;
 
+    wind[] Winds;
+    wind_2 Wind;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,8 @@ public class clear_ocean : MonoBehaviour
         {
             rotateScript2 = rotateManager.GetComponent<rotation_panguin>();
         }
+
+        Winds = null;
     }
 
     // Update is called once per frame
@@ -64,6 +68,8 @@ public class clear_ocean : MonoBehaviour
             //これ以降このステージ内ではメニューは開けません
             Game_Manager.Instance.sm.menuFlag = true;
 
+            
+
             //回転も禁止
             if (SceneManager.GetActiveScene().name != "stage_penguin")
             {
@@ -72,7 +78,24 @@ public class clear_ocean : MonoBehaviour
             else
             {
                 rotateScript2.rotateFlag = false;
+                Winds = FindObjectsOfType<wind>();
+
+                for (int i = 0; i < Winds.Length; i++)
+                {
+                    Winds[i].Stop_WindSE();
+                    Destroy(Winds[i].gameObject);
+                }
             }
+
+            if (SceneManager.GetActiveScene().name != "stage_dophin")
+            {
+                Wind = FindObjectOfType<wind_2>();
+                Wind.Stop_WindSE();
+                Destroy(Wind.gameObject);
+            }
+
+
+            
 
             Stop_Watch.Set_Stop();
 

@@ -50,4 +50,9 @@ public class wind_2 : MonoBehaviour
         ps1.Play();
         ps2.Play();
     }
+
+    public void Stop_WindSE()
+    {
+        script.source[1].Stop();
+    }
 }
