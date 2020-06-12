@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -913,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
-  line: 11
+  line: 12
   col: 14
   size: 0.1
   sands_mass: 10
@@ -2201,6 +2201,11 @@ PrefabInstance:
       propertyPath: SandCreater.Array.data[1]
       value: 
       objectReference: {fileID: 951531718}
+    - target: {fileID: 1183450672976632870, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: SE_Idx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6555,12 +6560,12 @@ PrefabInstance:
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.03
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 4614387569118744891, guid: 003c96d22ddcd914ea0e30f57b11a192,
         type: 3}
@@ -9063,7 +9068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sands: {fileID: 8423659487369616138, guid: d023da60531069a4184a7ab8ce42deae, type: 3}
-  line: 11
+  line: 12
   col: 14
   size: 0.1
   sands_mass: 10
@@ -17432,7 +17437,6 @@ MonoBehaviour:
   set: 0
   postp: {fileID: 1212012351}
   Stop_Watch: {fileID: 1344869241}
-  audioClip: {fileID: 0}
 --- !u!1 &1839406532
 GameObject:
   m_ObjectHideFlags: 0

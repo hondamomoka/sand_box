@@ -277,7 +277,6 @@ MonoBehaviour:
   set: 0
   postp: {fileID: 1276576355}
   Stop_Watch: {fileID: 1245286688}
-  audioClip: {fileID: 0}
 --- !u!1 &15416114
 GameObject:
   m_ObjectHideFlags: 0
@@ -24341,6 +24340,11 @@ PrefabInstance:
       propertyPath: SandCreater.Array.data[0]
       value: 
       objectReference: {fileID: 1136711079}
+    - target: {fileID: 1183450672976632870, guid: 2c54aca7524b8e64d8bc1cf719131a41,
+        type: 3}
+      propertyPath: SE_Idx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183450672976632871, guid: 2c54aca7524b8e64d8bc1cf719131a41,
         type: 3}
       propertyPath: m_LocalPosition.x

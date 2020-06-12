@@ -6,8 +6,10 @@ public class SandSE : MonoBehaviour
 {
     public GameObject[] SandCreater;
     public int Sands_Max;       // 発生するオブジェクトの総数
-    //public int Sands_Num;
+    public int Sands_Num;
     public GameObject[][] obj_sands;
+    public float SE_Idx;
+    public float Move_Idx;
 
     CreateSandsKyo[] Sand_Script;
 
@@ -55,7 +57,7 @@ public class SandSE : MonoBehaviour
     void Update()
     {
         //現在の砂の数を取得
-        //Sands_Num = 0;
+        Sands_Num = 0;
 
         //砂はおそらく自由落下で13ほど
         MoveSands_Cnt = 0;
@@ -70,8 +72,9 @@ public class SandSE : MonoBehaviour
         {
             for (int j = 0; j < obj_sands[i].Length; j++)
             {
-                if (obj_sands[i][j] != null)
+                if (obj_sands[i][j] != null && obj_sands[i][j].activeSelf == true)
                 {
+                    Sands_Num++;
                     //生きてる砂の速度をそれ用の変数に格納する
                     Sands_velocity[i][j].x = rb_sands[i][j].velocity.x;
                     Sands_velocity[i][j].y = rb_sands[i][j].velocity.y;
@@ -92,7 +95,7 @@ public class SandSE : MonoBehaviour
                     Sands_Speed_Avarage += Sands_Speed;
 
                     //砂の速さは2.3以上で早いと判断
-                    if (Sands_Speed > 2.3f)
+                    if (Sands_Speed > SE_Idx)
                     {
                         VeryMoveSands_Cnt++;
                     }
@@ -103,7 +106,7 @@ public class SandSE : MonoBehaviour
         //SEの音量が0じゃなければ音量調節して再生
         //移動速度が大きい砂の数が多ければそれだけ音量が大きくなる
         if (am.seVol > 0.0f)
-            am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * 0.6f;
+            am.source[2].volume += ((float)VeryMoveSands_Cnt / (float)Sands_Max - 0.5f) * Move_Idx;
 
         //砂の速度の平均を計算してピッチを変更
         //0.7~1.3の変動までの変動は許容する

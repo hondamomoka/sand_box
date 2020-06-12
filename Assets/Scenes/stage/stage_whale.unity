@@ -768,7 +768,6 @@ MonoBehaviour:
   set: 0
   postp: {fileID: 1579084147}
   Stop_Watch: {fileID: 396338080}
-  audioClip: {fileID: 0}
 --- !u!65 &180908548
 BoxCollider:
   m_ObjectHideFlags: 0

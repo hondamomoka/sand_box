@@ -47,4 +47,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Sands_Max: 0
+  Sands_Num: 0
+  SE_Idx: 2.3
+  Move_Idx: 0.6
   audioClip: {fileID: 8300000, guid: 4393b8f829acf4b4b82225195adbdce7, type: 3}
