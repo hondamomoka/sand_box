@@ -7,6 +7,9 @@ public class seesaw_rabbits : MonoBehaviour
     public gear_rabbits gear1;
     public gear_rabbits gear2;
     public ParticleSystem ps1;
+    public ParticleSystem ps2;
+    public ParticleSystem ps3;
+    public ParticleSystem ps4;
     public TurnToThroughSands Rabbit_Alpha;
 
     float rot_max;
@@ -19,6 +22,9 @@ public class seesaw_rabbits : MonoBehaviour
     void Start()
     {
         ps1.Stop();
+        ps2.Stop();
+        ps3.Stop();
+        ps4.Stop();
         on = false;
         stop = false;
         rot_max = 88.0f;
@@ -36,6 +42,9 @@ public class seesaw_rabbits : MonoBehaviour
                 {
                     on = true;
                     ps1.Play();
+                    ps2.Play();
+                    ps3.Play();
+                    ps4.Play();
 
                 }
             }
