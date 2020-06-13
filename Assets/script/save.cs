@@ -10,7 +10,7 @@ public class save : MonoBehaviour
     public bool delete_save;
     static int []coin;
     int maxStage = 20;
-    static bool start;
+    static bool start=false;
     static bool old;
     
     // Start is called before the first frame update
@@ -23,32 +23,9 @@ public class save : MonoBehaviour
         {
             start = Title_Manager.GetContinue();
         }
-        if (!start)
-        {
-            start = true;
-            init_coin();
-
-            //for (int i = 0; i < maxStage; i++)
-            //{
-            //    if (PlayerPrefs.HasKey("コイン" + i))
-            //    {
-            //        PlayerPrefs.DeleteKey("コイン" + i);
-
-            //        Debug.Log("コイン" + i + "消すよ");
-            //    }
-
-
-            //    coin[i] = 0;
-
-            //    Debug.Log("初期化中！" + "コイン" + i);
-            //}
-
-        }
-        else
-        {
-            Debug.Log("する～");
+       
             load_coin();
-        }
+
         init = false;
         load = false;
         save_ = false;
@@ -60,27 +37,7 @@ public class save : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(load)
-        //{
-        //    load_coin();
-        //}
-
-        //if(save_)
-        //{
-        //    save_coin(1);
-
-            
-        //}
-
-        //if(delete_save)
-        //{
-        //    delete_coin();
-        //}
-
-        //if(init)
-        //{
-        //    init_coin();
-        //}
+       
     }
 
     public void init_coin()
@@ -101,17 +58,31 @@ public class save : MonoBehaviour
 
     public void delete_coin()
     {
-        for (int i = 0; i < maxStage; i++)
-        {
-            if (PlayerPrefs.HasKey("コイン" + i))
-            {
-                PlayerPrefs.DeleteKey("コイン" + i);
+       // for (int i = 0; i < maxStage; i++)
+       // {
+       //     if (PlayerPrefs.HasKey("コイン" + i))
+       //     {
+       //         PlayerPrefs.DeleteKey("コイン" + i);
 
-                Debug.Log("コイン" + i + "消すよ");
-            }
-        }
+       //         Debug.Log("コイン" + i + "消すよ");
+       //     }
+       // }
 
-        delete_save = false;
+       // delete_save = false;
+       //// PlayerPrefs.Save();
+
+       // for (int i = 0; i > 20; i++)
+       // {
+       //     if(PlayerPrefs.HasKey("time" + i))
+       //     {
+       //         PlayerPrefs.DeleteKey("time" + i);
+       //     }
+            
+       // }
+
+       // Debug.Log(PlayerPrefs.GetFloat("time" + 2, 0.0f));
+        PlayerPrefs.DeleteAll();
+
         PlayerPrefs.Save();
     }
 
@@ -138,7 +109,7 @@ public class save : MonoBehaviour
 
 
             coin[i] = PlayerPrefs.GetInt("コイン" + i, 0);
-            Debug.Log("コイン" + i + "の状態" + coin[i]);
+            //Debug.Log("コイン" + i + "の状態" + coin[i]);
         }
 
         load = false;
