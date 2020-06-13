@@ -103,8 +103,7 @@ public class DoorWithScales : MonoBehaviour
     void If_Handle_Stay_In_Left()
     {
         if (Scales_Script.Handle_State == ScalesBehaviour.HANDLE_STATE.STATE_STAY_IN_LEFT &&
-            Scales_Script.isPlayerInBucket == false &&
-            Scales_Script.isWithPlayer == true)
+            Player.GetComponent<PlayerInScales>().Player_State == PlayerInScales.PLAYER_STATE.PLAYER_STATE_FALLING_OUT_BUCKET)
         {
             if(ps==0)
             {
@@ -153,8 +152,7 @@ public class DoorWithScales : MonoBehaviour
     void If_Handle_Stay_In_Right()
     {
         if (Scales_Script.Handle_State == ScalesBehaviour.HANDLE_STATE.STATE_STAY_IN_RIGHT &&
-            Scales_Script.isPlayerInBucket == true &&
-            Scales_Script.isWithPlayer == true)
+            Player.GetComponent<PlayerInScales>().Player_State == PlayerInScales.PLAYER_STATE.PLAYER_STATE_STAY_IN_BUCKET)
         {
             Door_Gimmick = DOOR_GIMMICK.IF_HANDLE_STAY_IN_LEFT;
 

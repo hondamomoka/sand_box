@@ -196,7 +196,7 @@ public class ScalesBehaviour : MonoBehaviour
             if (Handle_State == HANDLE_STATE.STATE_STAY_IN_LEFT ||
                 Handle_State == HANDLE_STATE.STATE_TURN_TO_LEFT)
             {
-                if (Handle.transform.localEulerAngles.z >= 360.0f - rot_limit)
+                if (Handle.transform.localEulerAngles.z >= 360.0f - rot_limit - deviation * 5)
                 {
                     Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_RIGHT; 
                 }
@@ -210,7 +210,7 @@ public class ScalesBehaviour : MonoBehaviour
             else if (Handle_State == HANDLE_STATE.STATE_STAY_IN_RIGHT ||
                 Handle_State == HANDLE_STATE.STATE_TURN_TO_RIGHT)
             {
-                if (Handle.transform.localEulerAngles.z <= rot_limit)
+                if (Handle.transform.localEulerAngles.z <= rot_limit + deviation * 5)
                 {
                     Handle_State = HANDLE_STATE.STATE_RETURN_BALANCE_FROM_LEFT;
                 }
