@@ -17,17 +17,20 @@ public class hint : MonoBehaviour
     bool tutrial;
     bool Fin;
     bool Fout;
+    bool stop;
 
     float display_count;
-    int farst_count;
+    float time_count;
     int span = 100;
-    int Dspan = 1200;
+    int in_span = 50;
+    float Dspan = 90;
     float a_max = 0.84f;
 
     void Start()
     {
         Fin = false;
         Fout = false;
+        stop = false;
         col = Lt.color;
 
         if (SceneManager.GetActiveScene().name == "stage_risu")
@@ -127,69 +130,69 @@ public class hint : MonoBehaviour
         Rt.color = col;
         arrowL.color = col;
         arrowR.color = col;
+
+        time_count = PlayerPrefs.GetFloat("time" + stage_type, 0.0f);
+
+        Debug.Log(time_count);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float tri = Input.GetAxis("L_R_Trigger");
-        //Debug.Log(tri);
-
-        //Debug.Log(Input.GetKey(KeyCode.RightArrow));
-        //Debug.Log(Input.GetKey(KeyCode.LeftArrow));
-
-        //何も押されてなかったら
-        if(Input.GetKey(KeyCode.RightArrow)==false &&Input.GetKey(KeyCode.LeftArrow)==false&& tri == 0)
+        if(!stop)
         {
-            // Debug.Log(1);
-            display_count += 20 * Time.deltaTime;
-        }
-        else
-        {
-            display_count = 0;
-            //fade_out();
-            if(!Fin)
+            float tri = Input.GetAxis("L_R_Trigger");
+
+            //何も押されてなかったら
+            if (Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.LeftArrow) == false && tri == 0)
             {
-                Fout = true;
+                display_count += 20 * Time.deltaTime;
+            }
+            else
+            {
+                display_count = 0;
+
+                if (!Fin)
+                {
+                    Fout = true;
+                }
             }
 
-            //if (tutrial)
-            //{
-            //    if (farst_count > span)
-            //    {
-            //        farst_count = span;
-            //        fade_out();
-            //    }
-            //}
-
-        }
-
-       // Debug.Log(display_count);
-
-        if(display_count>span)
-        {
-            display_count = span;
-            // fade_in();
-            if(!Fout)
+            //カウントが一定以上かつフェードアウト中でなかったら
+            if (display_count > in_span)
             {
-                Fin = true;
+                display_count = span;
+
+                if (!Fout)
+                {
+                    Fin = true;
+                }
             }
-        }
 
-        if(Fin)
-        {
-            fade_in();
-        }
+            //フラグがたってたらin.out実行
+            if (Fin)
+            {
+                fade_in();
+            }
+            if (Fout)
+            {
+                fade_out();
+            }
 
-        if(Fout)
-        {
-            fade_out();
+            if (time_count > Dspan)
+            {
+                time_count = Dspan;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-       
+        if(!stop)
+        {
+            time_count += 0.01f;
+        }
+        
     }
 
     public void fade_out()
@@ -226,5 +229,57 @@ public class hint : MonoBehaviour
         arrowR.color = col;
 
         
+    }
+
+    public void count_save()
+    {
+        PlayerPrefs.SetFloat("time" + stage_type, time_count);
+        PlayerPrefs.Save();
+
+        Debug.Log("現在の時間は" + time_count);
+    }
+
+    public bool hint_flag()
+    {
+        bool tf = false;
+
+        if(time_count>=89.0f)
+        {
+            tf = true;
+        }
+
+        return tf;
+    }
+
+    public void Stop()
+    {
+        Debug.Log("stop");
+        stop = true;
+        //col.a = 0f;
+
+        //Lt.color = col;
+        //Rt.color = col;
+        //arrowL.color = col;
+        //arrowR.color = col;
+
+        Lt.enabled = false;
+        Rt.enabled = false;
+        arrowL.enabled = false;
+        arrowR.enabled = false;
+    }
+   
+    public void start()
+    {
+        stop = false;
+
+        Lt.enabled = true;
+        Rt.enabled = true;
+        arrowL.enabled = true;
+        arrowR.enabled = true;
+    }
+
+    public int Get_stagetype()
+    {
+        return stage_type;
     }
 }
