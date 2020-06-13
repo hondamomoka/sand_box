@@ -4,35 +4,29 @@ using UnityEngine;
 
 public class wind : MonoBehaviour
 {
-    //音をつけるために追加
-    private GameObject audioManager;
-    private Audio_Manager script;
     [SerializeField] private AudioClip audioClip;
-    private float time;
+    private bool StartWind;
 
     // Start is called before the first frame update
     void Start()
     {
-        //音をつけるために追加
-        audioManager = GameObject.Find("GameManager");
-        script = audioManager.GetComponent<Audio_Manager>();
-        time = 5.0f;
+        Game_Manager.Instance.am.clear = false;
+        Game_Manager.Instance.am.source[1].clip = audioClip;
+        Game_Manager.Instance.am.source[1].loop = true;
+
+        StartWind = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 2.0f, 0);
-        time += Time.deltaTime;
-        if (time > 5.0f)
+        if (!StartWind)
         {
-            script.PlaySE(audioClip);
-            time = 0;
+            Game_Manager.Instance.am.source[1].Play();
+            StartWind = true;
         }
-    }
-
-    public void Stop_WindSE()
-    {
-        script.source[1].Stop();
+        transform.Rotate(0, 2.0f, 0);
+        if (Game_Manager.Instance.am.clear)
+            Game_Manager.Instance.am.source[1].Stop();
     }
 }

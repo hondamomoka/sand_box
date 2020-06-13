@@ -11,6 +11,7 @@ public class Menu_Manager : MonoBehaviour
 
     private GameObject rotateManager;
     private rotation rotateScript;
+    private rotation_panguin rotateScript2;
 
 
     [SerializeField] private AudioClip audioClip1;      //決定
@@ -32,9 +33,16 @@ public class Menu_Manager : MonoBehaviour
         if(rotateManager == null)
             rotateManager = GameObject.Find("Stage");
 
-        rotateScript = rotateManager.GetComponent<rotation>();
-        rotateScript.rotateFlag = false;
-
+        if (Game_Manager.Instance.sm.nowScene != Scene_Manager.Stage.STAGE_PENGUIN)
+        {
+            rotateScript = rotateManager.GetComponent<rotation>();
+            rotateScript.rotateFlag = false;
+        }
+        else
+        {
+            rotateScript2 = rotateManager.GetComponent<rotation_panguin>();
+            rotateScript2.rotateFlag = false;
+        }
         selectCount = 0;
 
         Fade_Manager.Instance.MenuIn();
@@ -51,7 +59,11 @@ public class Menu_Manager : MonoBehaviour
         //YorB押したときに反映、ゲームに戻る
         if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            rotateScript.rotateFlag = true;
+            if (Game_Manager.Instance.sm.nowScene != Scene_Manager.Stage.STAGE_PENGUIN)
+                rotateScript.rotateFlag = true;
+            else
+                rotateScript2.rotateFlag = true;
+
             Fade_Manager.Instance.MenuOut();
             Game_Manager.Instance.sm.menuFlag = false;
 
@@ -73,7 +85,9 @@ public class Menu_Manager : MonoBehaviour
                     //ステージセレクトに戻る
                     Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
                     Game_Manager.Instance.am.PlaySE(audioClip1);
+                    Game_Manager.Instance.am.source[1].Stop();
                     Game_Manager.Instance.am.source[2].Stop();
+
                     break;
             }
             Game_Manager.Instance.sm.menuFlag = false;

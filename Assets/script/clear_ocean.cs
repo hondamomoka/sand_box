@@ -32,7 +32,7 @@ public class clear_ocean : MonoBehaviour
         if (rotateManager == null)
             rotateManager = GameObject.Find("Stage");
 
-        if (SceneManager.GetActiveScene().name != "stage_penguin")
+        if (Game_Manager.Instance.sm.nowScene != Scene_Manager.Stage.STAGE_PENGUIN)
         {
             rotateScript = rotateManager.GetComponent<rotation>();
         }
@@ -40,6 +40,8 @@ public class clear_ocean : MonoBehaviour
         {
             rotateScript2 = rotateManager.GetComponent<rotation_panguin>();
         }
+
+
 
         Winds = null;
     }
@@ -68,34 +70,25 @@ public class clear_ocean : MonoBehaviour
             //これ以降このステージ内ではメニューは開けません
             Game_Manager.Instance.sm.menuFlag = true;
 
-            
+
 
             //回転も禁止
-            if (SceneManager.GetActiveScene().name != "stage_penguin")
+            if (Game_Manager.Instance.sm.nowScene == Scene_Manager.Stage.STAGE_PENGUIN)
+            {
+                rotateScript2.rotateFlag = false;
+                Game_Manager.Instance.am.clear = true;
+
+            }
+            else if (Game_Manager.Instance.sm.nowScene == Scene_Manager.Stage.STAGE_DOLPHIN)
             {
                 rotateScript.rotateFlag = false;
+                Game_Manager.Instance.am.clear = true;
             }
             else
             {
-                rotateScript2.rotateFlag = false;
-                Winds = FindObjectsOfType<wind>();
-
-                for (int i = 0; i < Winds.Length; i++)
-                {
-                    Winds[i].Stop_WindSE();
-                    Destroy(Winds[i].gameObject);
-                }
+                rotateScript.rotateFlag = false;
             }
 
-            if (SceneManager.GetActiveScene().name != "stage_dophin")
-            {
-                Wind = FindObjectOfType<wind_2>();
-                Wind.Stop_WindSE();
-                Destroy(Wind.gameObject);
-            }
-
-
-            
 
             Stop_Watch.Set_Stop();
 
@@ -109,8 +102,10 @@ public class clear_ocean : MonoBehaviour
                     break;
                 case 8:
                 case 10:
-                case 18:
                     Game_Manager.Instance.sm.selectSelect += 3;
+                    break;
+                case 18:
+                    Game_Manager.Instance.sm.selectSelect = 3;
                     break;
                 default:
                     Game_Manager.Instance.sm.selectSelect++;
