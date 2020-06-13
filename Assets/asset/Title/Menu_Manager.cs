@@ -63,6 +63,7 @@ public class Menu_Manager : MonoBehaviour
             if (FindObjectOfType<hint>().hint_flag())
             {
                 hint = true;
+                c_hint.a = 0.8f;
                 t_hint.color = c_hint;
             }
             else
@@ -81,7 +82,8 @@ public class Menu_Manager : MonoBehaviour
             if (FindObjectOfType<hint>().hint_flag())
             {
                 hint = true;
-               // t_hint.color = c_hint;
+                // t_hint.color = c_hint;
+                FindObjectOfType<hint_tex>().tex_on();
             }
             else
             {
@@ -100,6 +102,8 @@ public class Menu_Manager : MonoBehaviour
         //YorB押したときに反映、ゲームに戻る
         if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
+            FindObjectOfType<hint>().start();
+
             if (Game_Manager.Instance.sm.nowScene != Scene_Manager.Stage.STAGE_PENGUIN)
                 rotateScript.rotateFlag = true;
             else

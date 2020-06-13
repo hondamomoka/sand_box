@@ -23,7 +23,7 @@ public class hint : MonoBehaviour
     float time_count;
     int span = 100;
     int in_span = 50;
-    float Dspan = 90;
+    float Dspan = 60;
     float a_max = 0.84f;
 
     void Start()
@@ -243,7 +243,7 @@ public class hint : MonoBehaviour
     {
         bool tf = false;
 
-        if(time_count>=89.0f)
+        if(time_count>=55.0f)
         {
             tf = true;
         }
