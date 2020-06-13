@@ -20,6 +20,8 @@ public class clear_ocean : MonoBehaviour
     wind[] Winds;
     wind_2 Wind;
 
+    public hint h;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,8 @@ public class clear_ocean : MonoBehaviour
     {
         if (on)
         {
+            h.count_save();
+
             Instantiate(coin, new Vector3(camera_pos.x, camera_pos.y + 3.0f, camera_pos.z + 1.5f), Quaternion.identity);
             on = false;
             set = true;
