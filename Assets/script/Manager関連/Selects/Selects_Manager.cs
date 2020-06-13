@@ -300,7 +300,7 @@ public class Selects_Manager : MonoBehaviour
                 break;
 
             default:
-                Debug.Log("エラッたww");
+                //Debug.Log("エラッたww");
                 break;
         }
 

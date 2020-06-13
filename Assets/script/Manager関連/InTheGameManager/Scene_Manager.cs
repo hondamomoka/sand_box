@@ -61,7 +61,7 @@ public class Scene_Manager : MonoBehaviour
         for (int i = 0; i < 20; i++)
         {
             int num = PlayerPrefs.GetInt("コイン" + i, 0);
-            Debug.Log(num);
+            //Debug.Log(num);
             if (num != 0)
             {
                 titleSelect = 1;

@@ -33,11 +33,11 @@ public class Bucket_Player : MonoBehaviour
             {
                 // layer: wall_through_sands
                 children[i].gameObject.layer = 15;
-                Debug.Log("Length: " + children.Length.ToString());
+                //Debug.Log("Length: " + children.Length.ToString());
             }
 
             Scales.GetComponent<ScalesBehaviour>().weights[1] += other.GetComponent<Rigidbody>().mass;
-            Debug.Log("weights[1]: " + Scales.GetComponent<ScalesBehaviour>().weights[1].ToString());
+            //Debug.Log("weights[1]: " + Scales.GetComponent<ScalesBehaviour>().weights[1].ToString());
         }
     }
 }

@@ -23,7 +23,7 @@ public class player_collition : MonoBehaviour
         if (other.gameObject.CompareTag("stage"))
         {
             script.PlaySE(audioClip);
-            Debug.Log("聞こえてる？");
+            //Debug.Log("聞こえてる？");
         }
     }
 }

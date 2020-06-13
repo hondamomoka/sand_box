@@ -13,7 +13,7 @@ public class hint_tex : MonoBehaviour
     {
         stage_type = FindObjectOfType<hint>().Get_stagetype();
 
-        Debug.Log(stage_type);
+        //Debug.Log(stage_type);
 
         this.GetComponent<Image>().material = material[stage_type];
 

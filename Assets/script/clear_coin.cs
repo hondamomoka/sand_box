@@ -59,11 +59,11 @@ public class clear_coin : MonoBehaviour
         {
             
             par = FindObjectOfType<buccal_cone>().meter;
-            Debug.Log("クリオネ" + par);
+            //Debug.Log("クリオネ" + par);
         }
         else
         {
-            Debug.Log("無し");
+            //Debug.Log("無し");
             par = FindObjectOfType<NeedleRot>().safe_rate;
         }
 
@@ -127,7 +127,7 @@ public class clear_coin : MonoBehaviour
 
             if (add < 25)
             {
-                Debug.Log("最低値");
+                //Debug.Log("最低値");
                 add = 25;
                 if (!soundflag)
                 {
@@ -135,7 +135,7 @@ public class clear_coin : MonoBehaviour
                     if (soundTime > 1.0f)
                     {
                         Game_Manager.Instance.am.PlaySE(audioClip);
-                        Debug.Log("ちゃりん");
+                        //Debug.Log("ちゃりん");
                         soundflag = true;
                     }
                 }
@@ -157,7 +157,7 @@ public class clear_coin : MonoBehaviour
         {
             if (!effect)
             {
-                Debug.Log(par);
+                //Debug.Log(par);
 
                 if ((float)par >= rank_a)
                 {
@@ -182,7 +182,7 @@ public class clear_coin : MonoBehaviour
 
                 int oldLank = PlayerPrefs.GetInt("コイン" + made.stage_type, 0);
                 
-                Debug.Log("前セーブデータ" + oldLank);
+                //Debug.Log("前セーブデータ" + oldLank);
 
                 if (lank > oldLank)
                 {

@@ -51,7 +51,7 @@ public class save : MonoBehaviour
             //PlayerPrefs.SetInt("コイン" + i, coin[i]);
         }
         //PlayerPrefs.Save();
-        Debug.Log("初期化したよ");
+        //Debug.Log("初期化したよ");
 
         init = false;
     }
@@ -96,13 +96,13 @@ public class save : MonoBehaviour
 
         PlayerPrefs.SetInt("コイン" + num, lank);
         PlayerPrefs.Save();
-        Debug.Log("セーブするよ"+lank);
+       // Debug.Log("セーブするよ"+lank);
         save_ = false;
     }
 
     public void load_coin()
     {
-        Debug.Log("ロードするよ");
+        //Debug.Log("ロードするよ");
 
         for (int i = 0; i < maxStage; i++)
         {

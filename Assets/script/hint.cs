@@ -133,7 +133,7 @@ public class hint : MonoBehaviour
 
         time_count = PlayerPrefs.GetFloat("time" + stage_type, 0.0f);
 
-        Debug.Log(time_count);
+        //Debug.Log(time_count);
     }
 
     // Update is called once per frame
@@ -236,7 +236,7 @@ public class hint : MonoBehaviour
         PlayerPrefs.SetFloat("time" + stage_type, time_count);
         PlayerPrefs.Save();
 
-        Debug.Log("現在の時間は" + time_count);
+        //Debug.Log("現在の時間は" + time_count);
     }
 
     public bool hint_flag()
@@ -253,7 +253,7 @@ public class hint : MonoBehaviour
 
     public void Stop()
     {
-        Debug.Log("stop");
+        //Debug.Log("stop");
         stop = true;
         //col.a = 0f;
 
