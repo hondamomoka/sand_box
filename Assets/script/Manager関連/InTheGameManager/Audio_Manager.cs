@@ -11,6 +11,8 @@ public class Audio_Manager : MonoBehaviour
     public float seVol;
     public float sandVol;
 
+    public bool clear;
+
     void Awake()
     {
         source  = GetComponents<AudioSource>();
@@ -21,6 +23,8 @@ public class Audio_Manager : MonoBehaviour
         source[1].volume = seVol;
         source[2].volume = sandVol;
         source[2].loop = true;
+
+        clear = false;
     }
 
     public void PlayBGM(AudioClip audioClip)
@@ -43,15 +47,10 @@ public class Audio_Manager : MonoBehaviour
     //これを使うとSEが1度だけ流れる
     //使い方
     //1.以下の変数を宣言
-    //private GameObject audioManager;
-    //private Audio_Manager script;
     //[SerializeField] private AudioClip audioClip;
-    //2.Start(Awake)で以下を宣言
-    //audioManager = GameObject.Find("GameManager");
-    //script = audioManager.GetComponent<Audio_Manager>();
-    //3.Unity側のScriptにaudioClipがアタッチできるようになってるので使いたい音をアタッチ
-    //4.使いたい場面で以下を宣言
-    //script.PlaySE(audioClip);
+    //2.Unity側のScriptにaudioClipがアタッチできるようになってるので使いたい音をアタッチ
+    //3.使いたい場面で以下を宣言
+    //Game_Manager.Instance.am.PlaySE(audioClip);
     //以上
     public void PlaySE(AudioClip audioClip)
     {

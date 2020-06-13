@@ -29,7 +29,8 @@ public class clear : MonoBehaviour
         if (rotateManager == null)
             rotateManager = GameObject.Find("Stage");
 
-        if (SceneManager.GetActiveScene().name != "stage_penguin")
+        //if (SceneManager.GetActiveScene().name != "stage_penguin")
+        if(Game_Manager.Instance.sm.nowScene != Scene_Manager.Stage.STAGE_PENGUIN)
         {
             rotateScript = rotateManager.GetComponent<rotation>();
         }
@@ -85,6 +86,7 @@ public class clear : MonoBehaviour
                     break;
                 case 8:
                 case 10:
+                    Game_Manager.Instance.sm.selectSelect += 3;
                     break;
                 case 18:
                     Game_Manager.Instance.sm.selectSelect = 3;

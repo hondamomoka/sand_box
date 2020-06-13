@@ -8,17 +8,11 @@ public class swich_Wind : MonoBehaviour
     bool on = false;
     public swichEFonly_cobra effect;
 
-    //音をつけるために追加
-    private GameObject audioManager;
-    private Audio_Manager script;
     [SerializeField] private AudioClip audioClip;
 
     // Start is called before the first frame update
     void Start()
     {
-        //音をつけるために追加
-        audioManager = GameObject.Find("GameManager");
-        script = audioManager.GetComponent<Audio_Manager>();
     }
 
     // Update is called once per frame
@@ -37,7 +31,7 @@ public class swich_Wind : MonoBehaviour
 
                 wind.start();
                 effect.playPS();
-                script.PlaySE(audioClip);
+                Game_Manager.Instance.am.PlaySE(audioClip);
 
                 Destroy(this.gameObject);
             }

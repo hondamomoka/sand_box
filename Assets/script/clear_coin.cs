@@ -24,8 +24,6 @@ public class clear_coin : MonoBehaviour
     //public buccal_cone buccal;
 
     //音をつけるために追加
-    private GameObject audioManager;
-    private Audio_Manager am;
     [SerializeField] private AudioClip audioClip;
     private bool soundflag;
     private float soundTime;
@@ -50,9 +48,6 @@ public class clear_coin : MonoBehaviour
         effect = false;
         transform.rotation = Quaternion.Euler(0, 0, 90.0f);
 
-        //音をつけるために追加
-        audioManager = GameObject.Find("GameManager");
-        am = audioManager.GetComponent<Audio_Manager>();
         soundflag = false;
         soundTime = 0.0f;
 
@@ -139,7 +134,8 @@ public class clear_coin : MonoBehaviour
                     soundTime += Time.deltaTime;
                     if (soundTime > 1.0f)
                     {
-                        am.PlaySE(audioClip);
+                        Game_Manager.Instance.am.PlaySE(audioClip);
+                        Debug.Log("ちゃりん");
                         soundflag = true;
                     }
                 }
