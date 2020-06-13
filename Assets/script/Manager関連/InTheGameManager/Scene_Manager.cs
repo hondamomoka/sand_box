@@ -63,12 +63,29 @@ public class Scene_Manager : MonoBehaviour
             int num = PlayerPrefs.GetInt("コイン" + i, 0);
             if (num != 0)
             {
-                selectSelect = i + 2;
+                i++;
+                switch (i)
+                {
+                    case 2:
+                    case 12:
+                    case 5:
+                    case 15:
+                        selectSelect += 4;
+                        break;
+                    case 8:
+                    case 10:
+                        break;
+                    case 18:
+                        selectSelect = 3;
+                        break;
+                    default:
+                        selectSelect++;
+                        break;
+                }
                 titleSelect = 1;
                 break;
             }
         }
-
         menuFlag = false;
     }
 
