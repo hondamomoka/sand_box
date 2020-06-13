@@ -24,6 +24,10 @@ public class Menu_Manager : MonoBehaviour
     [SerializeField] private Image panel;
     private Color color;                                //RGBを操作するための変数
 
+    bool hint;
+    public Image t_hint;
+    Color c_hint;
+
     void Start()
     {
         selectFlag = false;
@@ -47,6 +51,23 @@ public class Menu_Manager : MonoBehaviour
 
         Fade_Manager.Instance.MenuIn();
         Game_Manager.Instance.am.PlaySE(audioClip3);
+
+
+        c_hint = t_hint.color;
+
+        FindObjectOfType<hint>().count_save();
+        FindObjectOfType<hint>().Stop();
+
+        if (FindObjectOfType<hint>().hint_flag())
+        {
+            hint = true;
+        }
+        else
+        {
+            c_hint.a = 0f;
+        }
+
+        t_hint.color = c_hint;
     }
 
     void Update()
