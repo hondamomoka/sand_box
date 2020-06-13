@@ -13,6 +13,7 @@ public class SwitchLinkSwitch : MonoBehaviour
     public int obj_layer;
     public int frame;
     static bool gole = false;
+    public bool isRot;
 
     //音をつけるために追加
     private GameObject audioManager;
@@ -57,8 +58,11 @@ public class SwitchLinkSwitch : MonoBehaviour
     {
         //cnt++;
 
-        transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
-
+        if (isRot == true)
+        {
+            transform.Rotate(10f * Time.deltaTime, 0, 20f * Time.deltaTime);
+        }
+        
         //if (cnt % frame == 0)
         //{
         //    Switch_Renderer.material = Mats[cnt / frame % Mats.Length];
@@ -115,6 +119,13 @@ public class SwitchLinkSwitch : MonoBehaviour
     {
         Obj_With_Gimmick.GetComponent<LiftMovement>().Lift_State = LiftMovement.LIFT_STATE.STATE_MOVE_UP;
 
+        if (Other_Gimmick != null)
+        {
+            for (int i = 0; i < Other_Gimmick.Length; i++)
+            {
+                Other_Gimmick[i].GetComponent<TurnToThroughPlayer>().Set_Alpha();
+            }
+        }
         Player.transform.parent = Obj_With_Gimmick.transform;
         Player.GetComponent<Rigidbody>().isKinematic = true;
     }

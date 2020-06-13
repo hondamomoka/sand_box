@@ -5,7 +5,6 @@ using UnityEngine;
 public class LiftMovement : MonoBehaviour
 {
     public GameObject Player;
-    //public GameObject Player_Force;
     public GameObject Switch;
     public float speed;
     public float force;
