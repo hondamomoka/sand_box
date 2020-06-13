@@ -17,6 +17,8 @@ public class Title_Manager : MonoBehaviour
 
     private bool fadeFlag;
 
+    public save save;
+
     [SerializeField] private AudioClip titleBGM;
     [SerializeField] private AudioClip audioClip1;
     [SerializeField] private AudioClip audioClip2;
@@ -88,6 +90,7 @@ public class Title_Manager : MonoBehaviour
                         Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
                         Game_Manager.Instance.sm.selectSelect = 1;
                         newgame = false;
+                        save.delete_coin();
                         break;
                     case 1:
                         Game_Manager.Instance.sm.SceneChange(Scene_Manager.Stage.SELECTS);
