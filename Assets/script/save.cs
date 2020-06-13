@@ -112,6 +112,7 @@ public class save : MonoBehaviour
         }
 
         delete_save = false;
+        PlayerPrefs.Save();
     }
 
     public void save_coin(int num,int lank)
