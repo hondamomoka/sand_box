@@ -48,6 +48,7 @@ public class clear : MonoBehaviour
         if(on)
         {
             hint.count_save();
+            hint.Stop();
 
             Instantiate(coin, new Vector3(camera_pos.x, camera_pos.y + 3.0f, camera_pos.z + 1.5f), Quaternion.identity);
             on = false;

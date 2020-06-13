@@ -54,6 +54,7 @@ public class clear_ocean : MonoBehaviour
         if (on)
         {
             h.count_save();
+            h.Stop();
 
             Instantiate(coin, new Vector3(camera_pos.x, camera_pos.y + 3.0f, camera_pos.z + 1.5f), Quaternion.identity);
             on = false;
