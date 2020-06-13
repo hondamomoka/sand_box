@@ -29,4 +29,9 @@ public class wind : MonoBehaviour
         if (Game_Manager.Instance.am.clear)
             Game_Manager.Instance.am.source[1].Stop();
     }
+
+    public void Stop_WindSE()
+    {
+        Game_Manager.Instance.am.source[1].Stop();
+    }
 }

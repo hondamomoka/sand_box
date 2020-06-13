@@ -76,17 +76,26 @@ public class clear_ocean : MonoBehaviour
             if (Game_Manager.Instance.sm.nowScene == Scene_Manager.Stage.STAGE_PENGUIN)
             {
                 rotateScript2.rotateFlag = false;
-                Game_Manager.Instance.am.clear = true;
+                
 
             }
             else if (Game_Manager.Instance.sm.nowScene == Scene_Manager.Stage.STAGE_DOLPHIN)
             {
                 rotateScript.rotateFlag = false;
-                Game_Manager.Instance.am.clear = true;
+                Wind = FindObjectOfType<wind_2>();
+                Wind.Stop_WindSE();
+                Destroy(Wind.gameObject);
             }
             else
             {
                 rotateScript.rotateFlag = false;
+                Winds = FindObjectsOfType<wind>();
+
+                for (int i = 0; i < Winds.Length; i++)
+                {
+                    Winds[i].Stop_WindSE();
+                    Destroy(Winds[i].gameObject);
+                }
             }
 
 

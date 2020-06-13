@@ -44,4 +44,9 @@ public class wind_2 : MonoBehaviour
         Game_Manager.Instance.am.source[1].loop = true;
         Game_Manager.Instance.am.source[1].Play();
     }
+
+    public void Stop_WindSE()
+    {
+        Game_Manager.Instance.am.source[1].Stop();
+    }
 }
