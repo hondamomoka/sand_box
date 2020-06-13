@@ -63,6 +63,7 @@ public class Menu_Manager : MonoBehaviour
             if (FindObjectOfType<hint>().hint_flag())
             {
                 hint = true;
+                c_hint.a = 0.8f;
                 t_hint.color = c_hint;
             }
             else
@@ -81,7 +82,8 @@ public class Menu_Manager : MonoBehaviour
             if (FindObjectOfType<hint>().hint_flag())
             {
                 hint = true;
-               // t_hint.color = c_hint;
+                // t_hint.color = c_hint;
+                FindObjectOfType<hint_tex>().tex_on();
             }
             else
             {

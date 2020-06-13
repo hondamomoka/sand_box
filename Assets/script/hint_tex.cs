@@ -107,4 +107,9 @@ public class hint_tex : MonoBehaviour
     {
         this.enabled = false;
     }
+
+    public void tex_on()
+    {
+        this.enabled = true;
+    }
 }
