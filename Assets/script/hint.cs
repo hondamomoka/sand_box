@@ -243,7 +243,7 @@ public class hint : MonoBehaviour
     {
         bool tf = false;
 
-        if(time_count>=89.0f)
+        if(time_count>=55.0f)
         {
             tf = true;
         }
