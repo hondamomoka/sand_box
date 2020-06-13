@@ -102,4 +102,9 @@ public class hint_tex : MonoBehaviour
     {
         
     }
+
+    public void tex_off()
+    {
+        this.enabled = false;
+    }
 }

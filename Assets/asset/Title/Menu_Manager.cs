@@ -31,6 +31,7 @@ public class Menu_Manager : MonoBehaviour
     void Start()
     {
         selectFlag = false;
+        hint = false;
 
         //ステージの値を無理やり取得(変更予定)
         rotateManager = GameObject.Find("stage");
@@ -52,28 +53,47 @@ public class Menu_Manager : MonoBehaviour
         Fade_Manager.Instance.MenuIn();
         Game_Manager.Instance.am.PlaySE(audioClip3);
 
-
-        c_hint = t_hint.color;
-
-        FindObjectOfType<hint>().count_save();
-        FindObjectOfType<hint>().Stop();
-
-        if (FindObjectOfType<hint>().hint_flag())
+        if(t_hint)
         {
-            hint = true;
+            c_hint = t_hint.color;
+
+            FindObjectOfType<hint>().count_save();
+            FindObjectOfType<hint>().Stop();
+
+            if (FindObjectOfType<hint>().hint_flag())
+            {
+                hint = true;
+                t_hint.color = c_hint;
+            }
+            else
+            {
+                c_hint.a = 0f;
+                t_hint.color = c_hint;
+            }
         }
         else
         {
-            c_hint.a = 0f;
-        }
+            
 
-        t_hint.color = c_hint;
+            FindObjectOfType<hint>().count_save();
+            FindObjectOfType<hint>().Stop();
+
+            if (FindObjectOfType<hint>().hint_flag())
+            {
+                hint = true;
+               // t_hint.color = c_hint;
+            }
+            else
+            {
+                FindObjectOfType<hint_tex>().tex_off();
+            }
+        }
     }
 
     void Update()
     {
-        //スティックの値取得
-        lsv = Input.GetAxis("L_Stick_V");
+            //スティックの値取得
+            lsv = Input.GetAxis("L_Stick_V");
         if (lsv <= 0.1 && lsv >= -0.1)
             stickFlag = true;
 
