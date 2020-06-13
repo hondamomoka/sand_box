@@ -20,7 +20,7 @@ public class PlayerDestroy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("stage_border"))
+        if(other.gameObject.name == "KillCoin")
         {
             Instantiate(ps1, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
